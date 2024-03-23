@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class OnlyAdmin
+class OnlySuperadmin
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class OnlyAdmin
     {
         $user = Auth::user();
         if($user && $user->role_id != 1) {
-            return redirect('loginp');
+            return redirect('login');
         }
         return $next($request);
     }

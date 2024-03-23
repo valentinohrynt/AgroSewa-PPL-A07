@@ -18,7 +18,7 @@ class OnlyGovernment
     {
         $user = Auth::user();
         if($user && $user->role_id != 2) {
-            return redirect('loginp');
+            return redirect('login');
         }
         return $next($request);
     }

@@ -18,7 +18,7 @@ class OnlyLender
     {
         $user = Auth::user();
         if($user && $user->role_id != 4) {
-            return redirect('loginp');
+            return redirect('login');
         }
         return $next($request);
     }

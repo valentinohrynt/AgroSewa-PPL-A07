@@ -17,8 +17,8 @@ class OnlyBorrower
     public function handle(Request $request, Closure $next): Response
     {
         $user = Auth::user();
-        if($user && $user->role_id != 3) {
-            return redirect('loginp');
+        if($user&& $user->role_id != 3) {
+            return redirect('login');
         }
         return $next($request);
     }

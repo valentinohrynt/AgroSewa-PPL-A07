@@ -7,9 +7,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->middleware('auth');
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('auth');
 
 Route::middleware('only_guest')->group(function () {
     Route::get('login', [AuthController::class,'login'])->name('login');
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('home', [DashboardController::class,'home'])->middleware('only_borrower','verified');
     Route::get('dashboard-superadmin', [DashboardController::class,'dashboardsuperadmin'])->middleware('only_superadmin');
     Route::get('dashboard-pemerintah', [DashboardController::class,'dashboardpemerintah'])->middleware('only_government');
-    Route::get('dashboard-poktan', [DashboardController::class,'dashboardpoktan'])->middleware('only_lender');
+    Route::get('home-poktan', [DashboardController::class,'homepoktan'])->middleware('only_lender');
     Route::get('logout', [AuthController::class,'logout']);
 });
 

@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function dashboardpemerintah(){
         return view("dashboard-pemerintah");
     }
-    public function dashboardpoktan(){
-        return view("dashboard-poktan");
+    public function homepoktan(){
+        return view("home-poktan");
     }
 }

@@ -39,7 +39,7 @@ class AuthController extends Controller
                 return redirect('home');
             }
             if (Auth::user()->role_id == 4){
-                return redirect('dashboard-poktan');
+                return redirect('home-poktan');
             }
         }
         Session::flash('status', 'failed');

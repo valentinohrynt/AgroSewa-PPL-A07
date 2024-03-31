@@ -79,7 +79,6 @@ class AuthController extends Controller
                 'phone'=> $validated['phone'],
                 'nik'=> $validated['nik'],
                 'street'=> $validated['street'],
-                'district_id'=> $validated['district_id'],
                 'village_id'=> $validated['village_id'],
                 'user_id' => $user->id,
             ]

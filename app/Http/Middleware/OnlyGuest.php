@@ -28,7 +28,7 @@ class OnlyGuest
             }elseif(Auth::user()->role_id == 2){
                 return redirect("dashboard-pemerintah");
             }elseif(Auth::user()->role_id == 4){
-                return redirect("dashboard-poktan");
+                return redirect("home-poktan");
             }
         }
         return $next($request);

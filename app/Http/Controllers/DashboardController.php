@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function home(){
-        return view("home");
+        return view("borrowers.home");
     }
     public function dashboardsuperadmin(){
-        return view("dashboard-superadmin");
+        return view("superadmin.dashboard-superadmin");
     }
     public function dashboardpemerintah(){
-        return view("dashboard-pemerintah");
+        return view("government.dashboard-pemerintah");
     }
     public function homepoktan(){
-        return view("home-poktan");
+        return view("lenders.home-poktan");
     }
 }

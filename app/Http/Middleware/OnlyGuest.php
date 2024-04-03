@@ -18,7 +18,7 @@ class OnlyGuest
     {
         if(Auth::user()) {
             if(Auth::user()->role_id ==3 && Auth::user()->email_verified_at != null) {
-                return redirect("home");
+                return redirect("HomepagePetani");
             }elseif(Auth::user()->role_id ==3 && Auth::user()->email_verified_at == null){
                 Auth::logout();
                 return redirect("login");
@@ -28,7 +28,7 @@ class OnlyGuest
             }elseif(Auth::user()->role_id == 2){
                 return redirect("dashboard-pemerintah");
             }elseif(Auth::user()->role_id == 4){
-                return redirect("home-poktan");
+                return redirect("HomepageKT");
             }
         }
         return $next($request);

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('rent_transaction_id');
             $table->foreign('rent_transaction_id')->references('id')->on('rent_transactions');
-            $table->dateTime('actual_return_date')->nullable();
+            $table->date('actual_return_date')->nullable();
             $table->integer('total_price');
             $table->timestamps();
         });

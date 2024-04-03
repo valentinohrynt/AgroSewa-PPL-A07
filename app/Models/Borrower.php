@@ -14,11 +14,23 @@ class Borrower extends Model
         'phone',
         'street',
         'village_id',
-        'district_id',
+        'lender_id',
         'user_id'
     ];
+    public function rentTransactions()
+    {
+        return $this->hasMany(RentTransaction::class, 'borrower_id');
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function hasOngoingTransaction()
+    {
+        return RentTransaction::whereHas('borrower', function ($query) {
+                $query->where('borrower_id', $this->id);
+            })
+            ->where('is_completed', 'no')
+            ->exists();
     }
 }

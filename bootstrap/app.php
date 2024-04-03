@@ -1,15 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Config;
-use App\Http\Middleware\OnlySuperadmin;
 use App\Http\Middleware\OnlyGuest;
 use App\Http\Middleware\OnlyLender;
 use App\Http\Middleware\OnlyBorrower;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Config;
 use App\Http\Middleware\OnlyGovernment;
+use App\Http\Middleware\OnlySuperadmin;
+use Illuminate\Http\Middleware\TrustHosts;
+use App\Console\Commands\UpdateIsRentedCommand;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Http\Middleware\TrustHosts;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -32,7 +33,16 @@ return Application::configure(basePath: dirname(__DIR__))
             'only_lender' => OnlyLender::class,
             'only_guest' => OnlyGuest::class
         ]);
+
+  
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
+    })
+    ->withCommands([
+        Commands\UpdateIsRentedCommand::class,
+    ])
+    ->withSchedule(function ($schedule) {
+        $schedule->command('update:is_rented')->hourly();
+    })
+    ->create();

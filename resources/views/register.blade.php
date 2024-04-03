@@ -35,7 +35,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" value="{{old('name')}}" required>
                         </div>
                         <div class="input-group col-lg-6 mb-4">
                             <div class="input-group-prepend">
@@ -43,7 +43,7 @@
                                     <i class="fa-regular fa-address-card text-muted"></i>
                                 </span>
                             </div>
-                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" value="{{old('nik')}}" required>
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -51,7 +51,7 @@
                                     <i class="fa-regular fa-envelope text-muted"></i>
                                 </span>
                             </div>
-                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" value="{{old('email')}}" required>
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -59,7 +59,7 @@
                                     <i class="fa fa-phone text-muted"></i>
                                 </span>
                             </div>
-                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" value="{{old('phone')}}" required>
                         </div>
                         <div class="form-group col-lg-12 mx-auto d-flex align-items-center">
                             <div class="border-bottom w-100 ml-5"></div>
@@ -72,7 +72,7 @@
                                     <i class="fa fa-map-marker text-muted"></i>
                                 </span>
                             </div>
-                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" value="{{old('street')}}" required>
                         </div>
                         <br>
                         <div class="kecamatan-desa d-flex flex-col">
@@ -82,7 +82,7 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" required>
+                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('district_id')}}" required>
                                     <option value="" >Kecamatan</option>
                                     @foreach($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -98,7 +98,7 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md " style="cursor: not-allowed" disabled required>
+                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('village_id')}}" style="cursor: not-allowed" disabled required>
                                     <option value="">Desa</option>
                                     @foreach ($villages as $village)
                                     <option value="{{ $village->id }}" data-district="{{ $village->district_id }}">{{ $village->name }}</option>
@@ -107,6 +107,22 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-white px-4 border-md border-left-0"></span>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-house text-muted"></i>
+                                </span>
+                            </div>
+                            <select name="lender_id" id="lender" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('lender_id')}}" style="cursor: not-allowed" disabled required>
+                                <option value="">Nama Kelompok Tani</option>
+                                @foreach ($lenders as $lender)
+                                <option value="{{ $lender->id }}" data-village="{{ $lender->village_id }}">{{ $lender->name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-white px-4 border-md border-left-0"></span>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 mx-auto d-flex align-items-center">
@@ -120,7 +136,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" value="{{old('username')}}" required>
                         </div>
                         <br>
                         <div class="input-group col-lg-6 mb-4">
@@ -172,47 +188,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
-<script>
-    function password_show_hide(id, showEyeId, hideEyeId) {
-    var x = document.getElementById(id);
-    var show_eye = document.getElementById(showEyeId);
-    var hide_eye = document.getElementById(hideEyeId);
-    hide_eye.classList.remove("d-none");
-    if (x.type === "password") {
-        x.type = "text";
-        show_eye.style.display = "none";
-        hide_eye.style.display = "block";
-    } else {
-        x.type = "password";
-        show_eye.style.display = "block";
-        hide_eye.style.display = "none";
-    }
-}
-    $(function () {
-    $('input, select').on('focus', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
-    });
-    $('input, select').on('blur', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
-    });
-});
-
-document.getElementById('district').addEventListener('change', function() {
-    var selectedDistrictId = this.value;
-    var villageSelect = document.getElementById('village');
-    villageSelect.removeAttribute('style');
-    villageSelect.removeAttribute('disabled');
-    for (var i = 0; i < villageSelect.options.length; i++) {
-        var option = villageSelect.options[i];
-        if (option.value !== "" && option.getAttribute('data-district') !== selectedDistrictId) {
-            option.style.display = 'none';
-        } else {
-            option.style.display = '';
-        }
-    }
-    var defaultVillageId = villageSelect.querySelector('option[data-district="' + selectedDistrictId + '"]').value;
-    villageSelect.value = defaultVillageId;
-});
-</script>
+<script src="{{asset('/assets/js/register.js')}}"></script>
 </body>
 </html>

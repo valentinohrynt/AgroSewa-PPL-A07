@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Borrower;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -31,6 +34,16 @@ class PageController extends Controller
 
     public function productslender(Request $request){
         return view('lenders.alat-poktan');
+    }
+    public function transaksipenyewaan(Request $request){
+        $user = Auth::user();
+        $borrower = Borrower::where('user_id', $user->id)->first();
+        if ($borrower->hasOngoingTransaction()) {
+            return back()->with('status', 'error')->with('message', 'Maaf, Anda masih memiliki transaksi yang sedang berjalan.');
+        }    
+        $productId = $request->query('product_id');
+        $product = Product::findOrFail($productId);
+        return view('borrowers.transaksi-penyewaan', compact('product'));
     }
     public function apply(Request $request){
         $user = Auth::user();

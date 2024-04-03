@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Ramsey\Uuid\Uuid;
 use App\Models\Product;
 use App\Models\Borrower;
 use Illuminate\Database\Eloquent\Model;
@@ -10,9 +11,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class RentTransaction extends Model
 {
     protected $fillable = [
+        'borrower_id',
+        'product_id',
+        'transaction_number',
         'rent_date',
         'return_date',
+        'is_completed'
     ];
+
+    protected $table = 'rent_transactions';
+    protected $dates = ['rent_date', 'return_date'];
+    
     public function borrower()
     {
         return $this->belongsTo(Borrower::class, 'borrower_id');
@@ -25,12 +34,9 @@ class RentTransaction extends Model
     protected static function boot()
     {
         parent::boot();
-
+    
         static::creating(function ($transaction) {
-            $lastTransaction = RentTransaction::latest()->first();
-            $prefix = 'T';
-            $newNumber = $lastTransaction ? intval(substr($lastTransaction->transaction_number, 1)) + 1 : 1;
-            $transaction->transaction_number = $prefix . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
+            $transaction->transaction_number = Uuid::uuid4()->toString();
         });
     }
 }

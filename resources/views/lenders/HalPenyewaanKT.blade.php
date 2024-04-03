@@ -4,7 +4,7 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link" href="home-poktan">Home</a></li>
+<li><a class="nav-link" href="HomepageKT">Home</a></li>
 <li><a class="nav-link active" href="#">Penyewaan</a></li>
 <li><a class="nav-link" href="pengajuan-poktan">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="riwayat-poktan">Riwayat</a></li>
@@ -20,26 +20,25 @@
 @section('content')
 
 <section id="penyewaan_dt" class="penyewaan-data-table">
-    <div class="container pt-5 ">
+    <div class="container pt-5" data-aos="fade-up">
         @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success mb-5">
             {{ session('success') }}
         </div>
         @endif
-    
-        @if(session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
+        @if ($errors->any())
+        <div class="alert alert-danger mb-5">
+          @foreach ($errors->all() as $error)
+          {{ $error }}<br>
+          @endforeach
         </div>
         @endif
-    </div>
-    <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Penyewaan</h2>
-            <p>Berikut penyewaan yang sedang berjalan</p>
+            <h6>Berikut penyewaan yang sedang berjalan</h6>
         </div>
         <div class="d-flex justify-content-end button-data-alat pb-2">
-            <a href="alat-poktan" class="btn btn-primary pb-2">Data Alat</a>
+            <a href="{{ route('HalDataAlatKT') }}" class="btn btn-primary pb-2">Data Alat</a>
         </div>
         <table class="table">
             <thead>
@@ -101,13 +100,13 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="rent_date" class="pb-2">Tanggal awal</label>
-                                        <input type="datetime-local" name="rent_date" id="rent_date"
+                                        <input type="datetime" name="rent_date" id="rent_date"
                                             class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label for="return_date" class="pb-2">Tanggal pengembalian</label>
-                                        <input type="datetime-local" name="return_date" id="return_date"
+                                        <input type="datetime" name="return_date" id="return_date"
                                             class="form-control">
                                     </div>
                                 </form>

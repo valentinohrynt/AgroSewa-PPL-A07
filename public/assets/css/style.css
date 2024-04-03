@@ -13,13 +13,26 @@ a:hover {
     text-decoration: none;
 }
 
+p {
+    cursor: default;
+}
+
 h1,
 h2,
-h3,
+h3 {
+    font-family: "Raleway", sans-serif;
+    cursor: default;
+}
+
 h4,
 h5,
 h6 {
-    font-family: "Raleway", sans-serif;
+    font-family: Poppins;
+    cursor: default;
+}
+
+h6 {
+    font-size: 1.2rem;
 }
 
 .back-to-top {
@@ -196,6 +209,10 @@ h6 {
     color: #3a6351;
 }
 
+.dropdown {
+    font-size: 1.3rem;
+}
+
 .dropdown ul {
     display: block;
     position: absolute;
@@ -217,14 +234,14 @@ h6 {
 
 .dropdown ul a {
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-transform: none;
     color: #151515;
     font-weight: 400;
 }
 
 .dropdown ul a i {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .dropdown ul a:hover,
@@ -489,7 +506,7 @@ section {
 }
 
 .section-title h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     padding: 0;
     line-height: 1px;
@@ -509,10 +526,10 @@ section {
     margin: 4px 10px;
 }
 
-.section-title p {
+.section-title h6 {
     margin: 0;
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
@@ -1053,12 +1070,11 @@ section {
     bottom: 15px;
 }
 
-.contact .info {
+.product-display .info {
     width: 100%;
-    background: #fff;
 }
 
-.contact .info i {
+.product-display .info i {
     font-size: 20px;
     background: #ffc451;
     color: #151515;
@@ -1072,7 +1088,7 @@ section {
     transition: all 0.3s ease-in-out;
 }
 
-.contact .info h4 {
+.product-display .info h4 {
     padding: 0 0 0 60px;
     font-size: 22px;
     font-weight: 600;
@@ -1080,28 +1096,28 @@ section {
     color: #151515;
 }
 
-.contact .info p {
+.product-display .info p {
     padding: 0 0 0 60px;
     margin-bottom: 0;
     font-size: 14px;
     color: #484848;
 }
 
-.contact .info .email,
-.contact .info .phone {
+.product-display .info .email,
+.product-display .info .phone {
     margin-top: 40px;
 }
 
-.contact .php-email-form {
+.product-display .transaction-form {
     width: 100%;
-    background: #fff;
 }
 
-.contact .php-email-form .form-group {
+.product-display .transaction-form .form-group {
     padding-bottom: 8px;
+    font-size: 1.2rem;
 }
 
-.contact .php-email-form .error-message {
+.product-display .transaction-form .error-message {
     display: none;
     color: #fff;
     background: #ed3c0d;
@@ -1110,11 +1126,11 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.product-display .transaction-form .error-message br + br {
     margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.product-display .transaction-form .sent-message {
     display: none;
     color: #fff;
     background: #18d26e;
@@ -1123,14 +1139,14 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.product-display .transaction-form .loading {
     display: none;
     background: #fff;
     text-align: center;
     padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.product-display .transaction-form .loading:before {
     content: "";
     display: inline-block;
     border-radius: 50%;
@@ -1142,38 +1158,32 @@ section {
     animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.product-display .transaction-form input,
+.product-display .transaction-form textarea {
     border-radius: 0;
     box-shadow: none;
-    font-size: 14px;
-    border-radius: 4px;
+    font-size: 1rem;
+    border-radius: 10px;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.product-display .transaction-form input:focus,
+.product-display .transaction-form textarea:focus {
     border-color: #ffc451;
 }
 
-.contact .php-email-form input {
+.product-display .transaction-form input {
     height: 44px;
 }
 
-.contact .php-email-form textarea {
+.product-display .transaction-form textarea {
     padding: 10px 12px;
 }
 
-.contact .php-email-form button[type="submit"] {
-    background: #ffc451;
+.product-display .transaction-form button[type="submit"] {
     border: 0;
     padding: 10px 24px;
-    color: #151515;
     transition: 0.4s;
     border-radius: 4px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-    background: #ffcd6b;
 }
 
 @keyframes animate-loading {
@@ -1404,4 +1414,157 @@ section {
 
 .penyewaan-data-table .container-pdt {
     padding: 3rem 5rem !important;
+}
+
+.product-display .icon-box {
+    text-align: center;
+    border: 1px solid #ebebeb;
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s;
+    background: #fff;
+}
+
+.product-display .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #ffc451;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.product-display .icon-box .icon i {
+    color: #151515;
+    font-size: 28px;
+    transition: ease-in-out 0.3s;
+}
+
+.product-display .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.product-display .icon-box h4 a {
+    color: #151515;
+    transition: ease-in-out 0.3s;
+}
+
+.product-display .icon-box h4 a:hover {
+    color: #ffc451;
+}
+
+.product-display .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.product-display .icon-box:hover {
+    border-color: #fff;
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+}
+
+.cta {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/cta-bg.jpg") fixed center center;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.cta h3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cta p {
+    color: #fff;
+}
+
+.cta .cta-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.cta .cta-btn:hover {
+    background: #ffc451;
+    border-color: #ffc451;
+    color: #151515;
+}
+
+/* CALENDAR */
+/* Custom styles for FullCalendar */
+#calendar {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fc-header-toolbar {
+    margin-bottom: 20px;
+}
+
+.fc-toolbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.fc-day-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+}
+
+.fc-day {
+    padding: 5px;
+}
+
+.fc-day-number {
+    color: #333;
+}
+
+.fc-day-today {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.fc-event {
+    background-color: red;
+    color: #fff;
+    border: none;
+}
+
+.fc-event:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #calendar {
+        font-size: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #calendar {
+        font-size: 55%;
+    }
 }

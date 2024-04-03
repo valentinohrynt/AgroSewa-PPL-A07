@@ -19,9 +19,11 @@ class AuthController extends Controller
     public function login(){
         return view("login");
     }
+
     public function register(){
         return view("register");
     }
+
     public function authenticating(Request $request){
         $credentials = $request->validate([
             'username' => ['required'],
@@ -36,22 +38,24 @@ class AuthController extends Controller
                 return redirect('dashboard-pemerintah');
             }
             if (Auth::user()->role_id == 3){
-                return redirect('home');
+                return redirect('HomepagePetani');
             }
             if (Auth::user()->role_id == 4){
-                return redirect('home-poktan');
+                return redirect('HomepageKT');
             }
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'Username atau Password salah, silahkan ulangi kembali');
         return redirect('/login');
     }
+
     public function logout(Request $request){
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();;
         return redirect('login');
     }
+
     public function registerProcess(Request $request)
     {
         $validated = $request->validate([
@@ -62,7 +66,7 @@ class AuthController extends Controller
             'email'=>'required|unique:users|max:255',
             'nik'=>'required|unique:borrowers|max:255',
             'street'=>'required',
-            'district_id'=>'required',
+            'lender_id'=>'required',
             'village_id'=>'required'
         ]);
         $request->password = Hash::make($request->password);
@@ -81,15 +85,18 @@ class AuthController extends Controller
                 'street'=> $validated['street'],
                 'village_id'=> $validated['village_id'],
                 'user_id' => $user->id,
+                'lender_id' => $validated['lender_id']
             ]
         );
         event(new Registered($user));
         Auth::login($user);
         return redirect()->route('verification.notice');
     }
+
     public function forgotPassword(){
         return view('auth.forgot-password');
     }
+
     public function forgotPasswordProcess(Request $request){
         $request->validate(['email' => 'required|email']);
         
@@ -100,9 +107,11 @@ class AuthController extends Controller
         ? back()->with(['status' => __($status)])
         : back()->withErrors(['email' => __($status)]);
     }
+
     public function resetPassword(string $token){
         return view('auth.reset-password', ['token' => $token]);
     }
+
     public function resetPasswordProcess(Request $request){
         $request->validate([
             'token' => 'required',

@@ -2,9 +2,18 @@
 
 @section('title', 'Penyewaan Poktan')
 
-@section('some-user')
+@section('navbar-nav')
 
+<li><a class="nav-link" href="HomepageKT">Home</a></li>
+<li><a class="nav-link active" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="pengajuan-poktan">Pengajuan Bantuan</a></li>
+<li><a class="nav-link" href="riwayat-poktan">Riwayat</a></li>
+<li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
+    <ul>
+        <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
+    </ul>
+</li>
 
 @endsection
 
@@ -13,24 +22,24 @@
 <section id="penyewaan_dt" class="penyewaan-data-table">
     <div class="container pt-5" data-aos="fade-up">
         @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success mb-5">
             {{ session('success') }}
         </div>
         @endif
 
         @if(session('error'))
-        <div class="alert alert-danger">
+        <div class="alert alert-danger mb-5">
             {{ session('error') }}
         </div>
         @endif
         <div class="section-title">
             <h2>Alat</h2>
-            <p>Berikut alat yang Anda sediakan</p>
+            <h6>Berikut alat yang Anda sediakan</h6>
         </div>
         <table class="table">
             <div class="row pb-2 justify-content-between">
                 <div class="col-4">
-                    <a href="penyewaan-poktan" class="btn btn-warning"><i class="bi-arrow-left-short"></i> Kembali</a>
+                    <a href="HalPenyewaanKT" class="btn btn-warning"><i class="bi-arrow-left-short"></i> Kembali</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -117,10 +126,10 @@
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('storage/product_img/'.$item->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
-                                <p><strong>Nama:</strong><br> {{ $item->name }}</p>
-                                <p><strong>Kode Alat:</strong><br> {{ $item->product_code }}</p>
-                                <p><strong>Deskripsi:</strong><br> {{ $item->product_description }}</p>
-                                <p><strong>Harga:</strong><br> {{ $item->price }}</p>
+                                <h6><strong>Nama:</strong><br> {{ $item->name }}</h6>
+                                <h6><strong>Kode Alat:</strong><br> {{ $item->product_code }}</h6>
+                                <h6><strong>Deskripsi:</strong><br> {{ $item->product_description }}</h6>
+                                <h6><strong>Harga:</strong><br> {{ $item->price }}</h6>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

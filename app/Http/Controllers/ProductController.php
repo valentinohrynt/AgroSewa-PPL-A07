@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Lender;
 use App\Models\Product;
+use App\Models\Borrower;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function showProducts()
+    public function showProductstoPoktan()
     {
         $user = Auth::user();
         $lender = Lender::where('user_id', $user->id)->first();
@@ -18,6 +19,7 @@ class ProductController extends Controller
     
         return view('lenders.alat-poktan', ['products' => $products]);
     }
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -96,5 +98,12 @@ class ProductController extends Controller
 
             return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
         }
+    }
+    public function showProductstoPetani(Request $request){
+        $userId = auth()->user()->id;
+        $borrower = Borrower::where('user_id', $userId)->firstOrFail();
+        $borrowerLenderId = $borrower->lender_id;
+        $products = Product::where('lender_id', $borrowerLenderId)->get();
+        return view('borrowers.penyewaan', ['products' => $products]);
     }
 }

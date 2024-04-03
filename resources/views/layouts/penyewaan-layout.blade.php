@@ -23,11 +23,6 @@
 
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
-<style>
-    *{
-        font-size: 1.1rem;
-    }
-</style>
 
 <body>
     <!-- header -->
@@ -101,9 +96,10 @@
     <script src="{{asset('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
     <script src="{{asset('/assets/vendor/php-email-form/validate.js')}}"></script>
 
-    <!-- Template Main JS File -->
     <script src="{{asset('/assets/js/main.js')}}"></script>
     <script src="{{asset('/assets/js/complete-rent.js')}}"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
 
 </body>
 

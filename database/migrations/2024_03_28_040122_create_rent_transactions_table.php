@@ -17,8 +17,9 @@ return new class extends Migration
             $table->foreign('borrower_id')->references('id')->on('borrowers');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->dateTime('rent_date');
-            $table->dateTime('return_date');
+            $table->date('rent_date');
+            $table->date('return_date');
+            $table->string('is_completed')->default('no');
             $table->timestamps();
         });
     }

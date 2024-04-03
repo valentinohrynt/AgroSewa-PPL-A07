@@ -18,4 +18,9 @@ class Lender extends Model
         return $this->hasMany(Product::class, 'lender_id');
     }
     use HasFactory;
+    public function borrowers()
+    {
+        return $this->hasMany(Borrower::class, 'lender_id');
+    }
+    use HasFactory;
 }

@@ -88,22 +88,4 @@ class FormSewaAlat extends Controller
     
         return redirect('HalPenyewaanPetani');
     }
-
-    public function showProductCalendar($productId)
-    {
-        $product = Product::find($productId);
-        $rentTransactions = RentTransaction::where('product_id', $productId)->get();
-
-        $events = [];
-        foreach ($rentTransactions as $transaction) {
-            $events[] = [
-                'title' => $transaction->borrower->name,
-                'start' => $transaction->rent_date,
-                'end' => $transaction->return_date,
-                'product_id' => $transaction->product_id,
-            ];
-        }
-
-        return view('', compact('product', 'events'));
-    }
 }

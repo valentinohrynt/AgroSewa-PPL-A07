@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Lender;
 use App\Models\Product;
+use App\Models\RentLog;
 use Illuminate\Http\Request;
 use App\Models\RentTransaction;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class HalPenyewaanKT extends Controller
 {
@@ -24,5 +28,74 @@ class HalPenyewaanKT extends Controller
             ->get();
     
         return view('lenders.HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
+    }
+
+    public function completeRent(Request $request)
+    {
+        $request->validate([
+            'rent_transaction_id' => 'required',
+            'total_price' => 'required',
+            'actual_return_date' => 'required|date_format:Y-m-d',
+        ]);
+    
+        $rentTransactionId = $request->input('rent_transaction_id');
+        $totalPrice = $request->input('total_price');
+        $actualReturnDate = $request->input('actual_return_date');
+        $parsedActualReturnDate = Carbon::parse($actualReturnDate);
+    
+        RentTransaction::where('id', $rentTransactionId)
+            ->update(['is_completed' => 'yes']);
+
+        $rentTransaction = RentTransaction::find($rentTransactionId);
+        $product = Product::find($rentTransaction->product_id);
+        $product->is_rented = 'no';
+        $product->save();
+    
+        RentLog::create([
+            'rent_transaction_id' => $rentTransactionId,
+            'total_price' => $totalPrice,
+            'actual_return_date' => $parsedActualReturnDate,
+        ]);
+        $request->session()->flash('success', 'Transaksi berhasil diselesaikan dan ditambahkan ke Riwayat');
+        return redirect()->back();
+    }
+
+    public function forceCancelTransaction(Request $request, $id)
+    {
+        $transaction = RentTransaction::findOrFail($id);
+        $currentTime = Carbon::now();
+
+        $request->validate([
+            'total_price' => 'required',
+        ]);
+
+        try {
+            $decryptedTotalPrice = Crypt::decrypt($request->total_price);
+        } catch (DecryptException $e) {
+            return back()->with('error', 'Terjadi kesalahan, silahkan coba kembali');
+        }
+
+        $rentTransactionId = $id;
+        $totalPrice = $decryptedTotalPrice;
+        $actualReturnDate = $currentTime;
+    
+        $rentTransactionId = $id;
+        $totalPrice = $request->input('total_price');
+        $actualReturnDate = $currentTime;
+    
+        RentTransaction::where('id', $rentTransactionId)
+            ->update(['is_completed' => 'cancelled']);
+
+        $rentTransaction = RentTransaction::find($rentTransactionId);
+        $product = Product::find($rentTransaction->product_id);
+        $product->is_rented = 'no';
+        $product->save();
+    
+        RentLog::create([
+            'rent_transaction_id' => $rentTransactionId,
+            'total_price' => $totalPrice,
+            'actual_return_date' => $actualReturnDate,
+        ]);
+        return redirect('HalPenyewaanKT')->with('success', 'Penyewaan berhasil dibatalkan!');
     }
 }

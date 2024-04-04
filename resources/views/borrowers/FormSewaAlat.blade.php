@@ -4,8 +4,8 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link" href="home">Home</a></li>
-<li><a class="nav-link active" href="penyewaan">Penyewaan</a></li>
+<li><a class="nav-link" href="HomepagePetani">Home</a></li>
+<li><a class="nav-link active" href="HalPenyewaanPetani">Penyewaan</a></li>
 <li><a class="nav-link" href="riwayat">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
@@ -63,13 +63,13 @@
                                 <div class="col pt-5">
                                     <div class="form-group">
                                         <label for="rent_date" class="pb-2">Tanggal awal</label>
-                                        <input type="date" name="rent_date" id="rent_date"
+                                        <input type="date" name="rent_date" id="rent_date" min="{{ date('Y-m-d') }}"
                                             class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label for="return_date" class="pb-2">Tanggal pengembalian</label>
-                                        <input type="date" name="return_date" id="return_date"
+                                        <input type="date" name="return_date" id="return_date" min="{{ date('Y-m-d') }}"
                                             class="form-control">
                                         <input name="product_id" value={{$product->id}} hidden>
                                     </div>

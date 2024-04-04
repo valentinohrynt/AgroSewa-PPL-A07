@@ -39,7 +39,7 @@
         <table class="table">
             <div class="row pb-2 justify-content-between">
                 <div class="col-4">
-                    <a href="HalPenyewaanKT" class="btn btn-warning"><i class="bi-arrow-left-short"></i> Kembali</a>
+                    <a href="HalPenyewaanKT" class="btn btn-secondary"><i class="bi-arrow-left-square"></i> Kembali</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -56,12 +56,11 @@
                     <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Ubah</th>
-                    <th>Detail</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($products as $item)
-                <tr>
+                <tr data-bs-toggle="modal" data-bs-target="#detailModal{{ $item->id }}">
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->product_code }}</td>
                     <td>{{ $item->name }}</td>
@@ -70,12 +69,8 @@
                     <td>
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                             data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>
-                            Ubah
+                            <span>Ubah</span>
                         </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#detailModal{{ $item->id }}"><i class="bi-info-circle"></i> Detail</button>
                     </td>
                 </tr>
                 <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog"

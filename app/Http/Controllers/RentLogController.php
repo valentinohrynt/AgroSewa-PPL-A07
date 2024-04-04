@@ -16,7 +16,7 @@ class RentLogController extends Controller
         $request->validate([
             'rent_transaction_id' => 'required',
             'total_price' => 'required',
-            'actual_return_date' => 'required|date_format:Y-m-d H:i:s',
+            'actual_return_date' => 'required|date_format:Y-m-d',
         ]);
     
         $rentTransactionId = $request->input('rent_transaction_id');

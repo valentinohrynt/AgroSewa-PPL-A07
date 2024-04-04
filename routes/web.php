@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/loading/HalPenyewaanPetani', [HomepagePetani::class,'HalPenyewaanPetani'])->middleware('only_borrower','verified')->name('HalPenyewaanPetani()');
 
     Route::get('HalPenyewaanPetani', [HalPenyewaanPetani::class,'setHalPenyewaanPetani'])->middleware('only_borrower','verified');
+    Route::put('/cancel-transaction/{id}', [HalPenyewaanPetani::class,'cancelTransaction'])->name('cancel-transaction');
     // Route::get('penyewaan', [ProductAndRentTransactionController::class, 'showProductsAndRentTransactionstoPetani'])->middleware('only_borrower','verified');
 
     Route::get('FormSewaAlat', [FormSewaAlat::class, 'setFormSewaAlat'])->middleware('only_borrower','verified')->name('transaksi-penyewaan');
@@ -68,8 +69,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/loading/HalPenyewaanKT', [HomepageKT::class,'HalPenyewaanKT'])->middleware('only_lender')->name('HalPenyewaanKT()');
 
     Route::get('HalPenyewaanKT', [HalPenyewaanKT::class, 'setHalPenyewaanKT'])->middleware('only_lender');
+    Route::put('/force-cancel-transaction/{id}', [HalPenyewaanKT::class, 'forceCancelTransaction'])->name('force-cancel-transaction');
     Route::post('/update-rent-transaction/{id}', [FormEditSewaAlat::class, 'update'])->name('update-rent-transaction');
-    Route::post('HalPenyewaanKT', [RentLogController::class, 'completeRent'])->middleware('only_lender');
+    Route::post('HalPenyewaanKT', [HalPenyewaanKT::class, 'completeRent'])->middleware('only_lender');
 
     Route::get('HalDataAlatKT', [HalDataAlatKT::class, 'setHalDataAlatKT'])->middleware('only_lender')->name('HalDataAlatKT');
     Route::post('/update-product/{id}', [FormEditDataAlat::class, 'update'])->name('update-product');

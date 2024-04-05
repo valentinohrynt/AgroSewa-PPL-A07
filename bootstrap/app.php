@@ -43,6 +43,6 @@ return Application::configure(basePath: dirname(__DIR__))
         Commands\UpdateIsRentedCommand::class,
     ])
     ->withSchedule(function ($schedule) {
-        $schedule->command('update:is_rented')->hourly();
+        $schedule->command('app:update-is-rented-command')->everyMinute();
     })
     ->create();

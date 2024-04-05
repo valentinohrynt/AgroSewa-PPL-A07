@@ -4,8 +4,8 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link active" href="home">Home</a></li>
-<li><a class="nav-link" href="">Penyewaan</a></li>
+<li><a class="nav-link active" href="HomepagePetani">Home</a></li>
+<li><a class="nav-link" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="riwayat">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
   <ul>

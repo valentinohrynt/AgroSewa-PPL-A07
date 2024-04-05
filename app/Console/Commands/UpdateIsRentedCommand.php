@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use Carbon\Carbon;
+use App\Models\Product;
+use App\Models\RentLog;
 use App\Models\RentTransaction;
 use Illuminate\Console\Command;
 
@@ -27,14 +29,20 @@ class UpdateIsRentedCommand extends Command
      */
     public function handle()
     {
-        $rentedProducts = RentTransaction::whereDate('rent_date', Carbon::now()->format('Y-m-d'))
-        ->where('is_rented', 'no')
-        ->get();
-
-        foreach ($rentedProducts as $rentedProduct) {
-            $product = $rentedProduct->product;
-            $product->is_rented = 'yes';
-            $product->save();
+        $rentTransactions = RentTransaction::whereDate('rent_date', Carbon::now()->format('Y-m-d'))
+            ->orWhereDate('return_date', Carbon::now()->format('Y-m-d'))
+            ->get();
+    
+        foreach ($rentTransactions as $rentTransaction) {
+            $rentLogsExist = RentLog::where('rent_transaction_id', $rentTransaction->id)->exists();
+    
+            if (!$rentLogsExist) {
+                $product = Product::find($rentTransaction->product_id);
+                if ($product) {
+                    $product->is_rented = 'yes';
+                    $product->save();
+                }
+            }
         }
-    }
+    }    
 }

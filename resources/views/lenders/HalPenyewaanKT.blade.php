@@ -35,11 +35,14 @@
         @endif
         <div class="section-title">
             <h2>Penyewaan</h2>
-            <h6>Berikut penyewaan yang sedang berjalan</h6>
+            <h6>DAFTAR PENYEWAAN ALAT PERTANIAN</h6>
         </div>
         <div class="d-flex justify-content-end button-data-alat pb-2">
             <a href="{{ route('HalDataAlatKT') }}" class="btn btn-primary pb-2">Data Alat</a>
         </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Pencarian" id="searchInput">
+        </div>        
         <table class="table">
             <thead>
                 <tr>
@@ -68,19 +71,13 @@
                     </td>
                     <td>
                         <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal"
-                            data-bs-target="#aksiModal{{ $item->id }}">
+                            data-bs-target="#editModal{{ $item->id }}">
                             <i class="bi bi-pencil"></i>
                             <span>Ubah</span>
                         </button>
-                        @php
-                        $encryptedTotalPrice = encrypt($total);
-                        @endphp
-                        <form action="#" method="post">
-                            @csrf
-                            <input type="hidden" name="total_price" value="{{ $encryptedTotalPrice }}">
-                            <button type="submit" class="btn btn-success mb-2"><i class="bi-check-lg"></i>
+                            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
+                            data-bs-target="#confirmationCompleteModal{{ $item->id }}"><i class="bi-check-lg"></i>
                                 <span>Selesai</span></button>
-                        </form>
                         <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal"
                             data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
                             <span>Batal</span>
@@ -111,12 +108,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="aksiModal{{ $item->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="aksiModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog"
+                    aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="aksiModalLabel{{ $item->id }}">Ubah Tanggal Penyewaan</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Ubah Tanggal Penyewaan</h5>
                             </div>
                             <div class="modal-body">
                                 <form id="editDateForm"
@@ -142,6 +139,34 @@
                         </div>
                     </div>
                 </div>
+                @php
+                $encryptedTotalPrice = encrypt($total);
+                @endphp
+                <div class="modal fade" id="confirmationCompleteModal{{ $item->id }}" tabindex="-1"
+                    aria-labelledby="confirmationCompleteModalLabel{{ $item->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmationCompleteModalLabel{{ $item->id }}">Konfirmasi Pembatalan
+                                    Penyewaan
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah Anda yakin ingin menyelesaikan Penyewaan ini?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
+                                <form action="{{ route('complete-rent-transaction', $item->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="total_price" value="{{ $encryptedTotalPrice }}">
+                                    <button type="submit" class="btn btn-success">Ya</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal fade" id="confirmationModal{{ $item->id }}" tabindex="-1"
                     aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog">
@@ -160,7 +185,7 @@
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
                                 <form action="{{ route('force-cancel-transaction', $item->id) }}" method="POST">
                                     @csrf
-                                    <input type="hidden" name="total_price" value="{{ $total }}">
+                                    <input type="hidden" name="total_price" value="{{ $encryptedTotalPrice }}">
                                     @method('PUT')
                                     <button type="submit" class="btn btn-success">Ya</button>
                                 </form>
@@ -173,5 +198,4 @@
         </table>
     </div>
 </section>
-
 @endsection

@@ -47,7 +47,7 @@ class FormSewaAlat extends Controller
         
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');
-            // Check for overlapping appointments
+
         $overlappingAppointments = RentTransaction::where('product_id', $request->input('product_id'))
         ->where(function ($query) use ($rentDate, $returnDate) {
             $query->where(function ($q) use ($rentDate, $returnDate) {
@@ -86,6 +86,6 @@ class FormSewaAlat extends Controller
             'return_date' => $returnDate
         ]);
     
-        return redirect('HalPenyewaanPetani');
+        return redirect('HalPenyewaanPetani')->with('success', 'Penyewaan berhasil dibuat!');
     }
 }

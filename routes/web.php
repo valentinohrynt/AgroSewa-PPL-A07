@@ -4,6 +4,7 @@ use App\Http\Controllers\HomepageKT;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormSewaAlat;
 use App\Http\Controllers\HalDataAlatKT;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HalPenyewaanKT;
 use App\Http\Controllers\HomepagePetani;
@@ -19,6 +20,7 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\RentTransactionController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\ProductAndRentTransactionController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -71,7 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::get('HalPenyewaanKT', [HalPenyewaanKT::class, 'setHalPenyewaanKT'])->middleware('only_lender');
     Route::put('/force-cancel-transaction/{id}', [HalPenyewaanKT::class, 'forceCancelTransaction'])->name('force-cancel-transaction');
     Route::post('/update-rent-transaction/{id}', [FormEditSewaAlat::class, 'update'])->name('update-rent-transaction');
-    Route::post('HalPenyewaanKT', [HalPenyewaanKT::class, 'completeRent'])->middleware('only_lender');
+    Route::post('/complete-rent-transaction/{id}', [HalPenyewaanKT::class, 'completeRent'])->middleware('only_lender')->name('complete-rent-transaction');
 
     Route::get('HalDataAlatKT', [HalDataAlatKT::class, 'setHalDataAlatKT'])->middleware('only_lender')->name('HalDataAlatKT');
     Route::post('/update-product/{id}', [FormEditDataAlat::class, 'update'])->name('update-product');

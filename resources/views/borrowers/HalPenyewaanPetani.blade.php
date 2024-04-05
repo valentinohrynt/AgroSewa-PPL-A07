@@ -39,7 +39,7 @@
       @endif
       <div class="section-title">
         <h2>PENYEWAAN</h2>
-        <h6>Penyewaan yang sedang berjalan</h6>
+        <h6>DAFTAR PENYEWAAN ALAT PERTANIAN</h6>
       </div>
       <table class="table">
         <thead>

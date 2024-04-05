@@ -30,18 +30,24 @@ class HalPenyewaanKT extends Controller
         return view('lenders.HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
     }
 
-    public function completeRent(Request $request)
+    public function completeRent(Request $request, $id)
     {
+        $transaction = RentTransaction::findOrFail($id);
+        $currentTime = Carbon::now();
+
         $request->validate([
-            'rent_transaction_id' => 'required',
             'total_price' => 'required',
-            'actual_return_date' => 'required|date_format:Y-m-d',
         ]);
+
+        try {
+            $decryptedTotalPrice = Crypt::decrypt($request->total_price);
+        } catch (DecryptException $e) {
+            return back()->with('error', 'Terjadi kesalahan, silahkan coba kembali');
+        }
     
-        $rentTransactionId = $request->input('rent_transaction_id');
-        $totalPrice = $request->input('total_price');
-        $actualReturnDate = $request->input('actual_return_date');
-        $parsedActualReturnDate = Carbon::parse($actualReturnDate);
+        $rentTransactionId = $id;
+        $totalPrice = $decryptedTotalPrice;
+        $actualReturnDate = $currentTime;
     
         RentTransaction::where('id', $rentTransactionId)
             ->update(['is_completed' => 'yes']);
@@ -54,7 +60,7 @@ class HalPenyewaanKT extends Controller
         RentLog::create([
             'rent_transaction_id' => $rentTransactionId,
             'total_price' => $totalPrice,
-            'actual_return_date' => $parsedActualReturnDate,
+            'actual_return_date' => $actualReturnDate,
         ]);
         $request->session()->flash('success', 'Transaksi berhasil diselesaikan dan ditambahkan ke Riwayat');
         return redirect()->back();
@@ -93,7 +99,7 @@ class HalPenyewaanKT extends Controller
     
         RentLog::create([
             'rent_transaction_id' => $rentTransactionId,
-            'total_price' => $totalPrice,
+            'total_price' => $decryptedTotalPrice,
             'actual_return_date' => $actualReturnDate,
         ]);
         return redirect('HalPenyewaanKT')->with('success', 'Penyewaan berhasil dibatalkan!');

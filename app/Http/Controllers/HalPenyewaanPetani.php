@@ -37,7 +37,7 @@ class HalPenyewaanPetani extends Controller
         $currentTime = Carbon::now();
         $differenceInDays = $currentTime->diffInDays($rentDate, false);
         
-        if ($differenceInDays <= 1) {
+        if ($differenceInDays <= 0.000011574) {
             return back()->with('error', 'Mohon maaf, Anda hanya dapat membatalkan penyewaan paling lambat satu hari sebelum hari awal peminjaman');
         }
 

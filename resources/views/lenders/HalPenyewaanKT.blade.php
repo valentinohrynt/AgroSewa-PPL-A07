@@ -42,7 +42,7 @@
         </div>
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Pencarian" id="searchInput">
-        </div>        
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -75,9 +75,9 @@
                             <i class="bi bi-pencil"></i>
                             <span>Ubah</span>
                         </button>
-                            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
                             data-bs-target="#confirmationCompleteModal{{ $item->id }}"><i class="bi-check-lg"></i>
-                                <span>Selesai</span></button>
+                            <span>Selesai</span></button>
                         <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal"
                             data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
                             <span>Batal</span>
@@ -130,11 +130,11 @@
                                         <input type="date" name="return_date" id="return_date" min="{{ date('Y-m-d') }}"
                                             class="form-control">
                                     </div>
-                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                                <button id="saveChangesButton" type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,8 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="confirmationCompleteModalLabel{{ $item->id }}">Konfirmasi Pembatalan
+                                <h5 class="modal-title" id="confirmationCompleteModalLabel{{ $item->id }}">Konfirmasi
+                                    Selesai
                                     Penyewaan
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"

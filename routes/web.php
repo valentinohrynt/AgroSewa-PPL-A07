@@ -1,21 +1,25 @@
 <?php
 
 use App\Http\Controllers\HomepageKT;
+use App\Http\Controllers\DashboardSA;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormSewaAlat;
 use App\Http\Controllers\HalDataAlatKT;
+use App\Http\Controllers\HalDataAlatSA;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HalPenyewaanKT;
+use App\Http\Controllers\HalPenyewaanSA;
 use App\Http\Controllers\HomepagePetani;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FormEditDataAlat;
 use App\Http\Controllers\FormEditSewaAlat;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RentLogController;
+use App\Http\Controllers\FormTambahDataAlat;
+use App\Http\Controllers\HalDataPenyewaanSA;
 use App\Http\Controllers\HalPenyewaanPetani;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\RentTransactionController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -57,14 +61,19 @@ Route::middleware('auth')->group(function () {
 
     Route::get('HalPenyewaanPetani', [HalPenyewaanPetani::class,'setHalPenyewaanPetani'])->middleware('only_borrower','verified');
     Route::put('/cancel-transaction/{id}', [HalPenyewaanPetani::class,'cancelTransaction'])->name('cancel-transaction');
-    // Route::get('penyewaan', [ProductAndRentTransactionController::class, 'showProductsAndRentTransactionstoPetani'])->middleware('only_borrower','verified');
 
     Route::get('FormSewaAlat', [FormSewaAlat::class, 'setFormSewaAlat'])->middleware('only_borrower','verified')->name('transaksi-penyewaan');
     Route::post('FormSewaAlat', [FormSewaAlat::class, 'store'])->middleware('only_borrower','verified');
     // PETANI / BORROWER END
 
-    Route::get('dashboard-superadmin', [DashboardController::class,'dashboardsuperadmin'])->middleware('only_superadmin');
-    Route::get('dashboard-pemerintah', [DashboardController::class,'dashboardpemerintah'])->middleware('only_government');
+    // SUPERADMIN START
+    Route::get('DashboardSA', [DashboardSA::class,'setDashboardSA'])->name('DashboardSA')->middleware('only_superadmin');
+    Route::get('HalPenyewaanSA', [HalPenyewaanSA::class,'setHalPenyewaanSA'])->name('HalPenyewaanSA')->middleware('only_superadmin');
+    Route::post('HalDataPenyewaanSA', [HalDataPenyewaanSA::class,'setHalDataPenyewaanSA'])->name('HalDataPenyewaanSA')->middleware('only_superadmin');
+    Route::post('HalDataAlatSA', [HalDataAlatSA::class,'setHalDataAlatSA'])->name('HalDataAlatSA')->middleware('only_superadmin');
+    // SUPERADMIN END
+
+    // Route::get('dashboard-pemerintah', [DashboardController::class,'dashboardpemerintah'])->middleware('only_government');
 
     // POKTAN / LENDER START
     Route::get('HomepageKT', [HomepageKT::class,'setHomepageKT'])->middleware('only_lender');
@@ -77,10 +86,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('HalDataAlatKT', [HalDataAlatKT::class, 'setHalDataAlatKT'])->middleware('only_lender')->name('HalDataAlatKT');
     Route::post('/update-product/{id}', [FormEditDataAlat::class, 'update'])->name('update-product');
-    Route::post('HalDataAlatKT', [ProductController::class, 'store'])->name('store-product');
+    Route::post('HalDataAlatKT', [FormTambahDataAlat::class, 'store'])->name('store-product');
     
-    // Route::get('pengajuan-poktan', [PageController::class,'apply'])->middleware('only_lender');
-    // Route::get('riwayat-poktan', [DashboardController::class,'homepoktan'])->middleware('only_lender');
     // POKTAN / LENDER END
 
     Route::get('logout', [AuthController::class,'logout']);

@@ -87,14 +87,13 @@
     </div>
 </section>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            events: {!! json_encode($events) !!},
-        });
-
-        calendar.render();
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        events: {!! json_encode($events) !!},
     });
+    calendar.render();
+});
 </script>
 @endsection

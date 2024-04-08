@@ -24,7 +24,7 @@ class OnlyGuest
                 return redirect("login");
             }
             elseif(Auth::user()->role_id == 1){
-                return redirect("dashboard-admin");
+                return redirect("DashboardSA");
             }elseif(Auth::user()->role_id == 2){
                 return redirect("dashboard-pemerintah");
             }elseif(Auth::user()->role_id == 4){

@@ -32,7 +32,7 @@ class AuthController extends Controller
  
         if (Auth::attempt($credentials)) {
             if (Auth::user()->role_id == 1){
-                return redirect('dashboard-superadmin');
+                return redirect('DashboardSA');
             }
             if (Auth::user()->role_id == 2){
                 return redirect('dashboard-pemerintah');

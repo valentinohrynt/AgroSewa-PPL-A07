@@ -104,4 +104,9 @@ class HalPenyewaanKT extends Controller
         ]);
         return redirect('HalPenyewaanKT')->with('success', 'Penyewaan berhasil dibatalkan!');
     }
+
+    public function HalDataAlatKT()
+    {
+        return redirect('HalDataAlatKT');
+    }
 }

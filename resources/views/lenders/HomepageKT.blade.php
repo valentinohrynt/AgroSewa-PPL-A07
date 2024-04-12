@@ -34,7 +34,7 @@
 <div class="col-xl-3 col-md-4">
     <div class="icon-box">
       <i class="ri-history-fill"></i>
-      <h3><a href="riwayat-poktan">History</a></h3>
+      <h3><a href="riwayat-poktan">Riwayat</a></h3>
     </div>
   </div>
 

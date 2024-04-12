@@ -19,8 +19,4 @@ class HalDataAlatKT extends Controller
     
         return view('lenders.HalDataAlatKT', ['products' => $products]);
     }
-      
-    public function DataAlat(){
-        return view('lenders.HalDataAlatKT');
-    }
 }

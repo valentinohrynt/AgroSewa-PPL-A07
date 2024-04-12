@@ -40,10 +40,18 @@ class FormSewaAlat extends Controller
     
     public function store(Request $request)
     {
+        $messages = [
+            'rent_date.required' => 'Tanggal awal harus diisi.',
+            'rent_date.date' => 'Tanggal awal harus berupa tanggal yang valid.',
+            'return_date.required' => 'Tanggal pengembalian harus diisi.',
+            'return_date.date' => 'Tanggal pengembalian harus berupa tanggal yang valid.',
+            'return_date.different' => 'Tanggal pengembalian harus berbeda dengan tanggal sewa.'
+        ];
+
         $request->validate([
             'rent_date' => 'required|date',
             'return_date' => 'required|date|different:rent_date'
-        ]);
+        ], $messages);
         
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');

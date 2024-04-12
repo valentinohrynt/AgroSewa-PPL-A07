@@ -17,7 +17,7 @@ class FormTambahDataAlat extends Controller
             'name' => 'required',
             'product_description' => 'max: 255',
             'price' => 'required|numeric',
-            'product_img' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image file types and size
+            'product_img' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     
         try {

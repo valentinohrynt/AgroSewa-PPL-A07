@@ -12,8 +12,8 @@ class HalPenyewaanSA extends Controller
         $lenders = Lender::all();
         return view('superadmin.HalPenyewaanSA',['lenders' => $lenders]);
     }
-    // public function HalDataPenyewaanSA()
-    // {
-    //     return view('superadmin.HalDataPenyewaanSA');
-    // }
+    public function HalDataPenyewaanSA()
+    {
+        return view('superadmin.HalDataPenyewaanSA');
+    }
 }

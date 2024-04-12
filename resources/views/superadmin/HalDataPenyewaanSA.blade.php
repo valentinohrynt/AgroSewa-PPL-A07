@@ -74,7 +74,8 @@
 <form id="form_{{ $lender->id }}" action="{{ route('HalDataAlatSA') }}" method="post">
     @csrf
     <input type="hidden" name="lender_id" value="{{ $lender->id }}">
-    <button type="submit" onclick="submitForm('{{ $lender->id }}')" class="btn-primary" style="width: 5rem;">Data Alat</button>
+    <button type="submit" onclick="submitForm('{{ $lender->id }}')" class="btn-primary" style="width: 5rem;">Data
+        Alat</button>
 </form>
 @endsection
 
@@ -102,7 +103,7 @@
         <tbody>
             @if ($rentTransactions -> isNotEmpty())
             @foreach ($rentTransactions as $item)
-            <tr>
+            <tr data-bs-toggle="modal" data-bs-target="#detailModal{{ $item->id }}">
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->transaction_number }}</td>
                 <td>{{ $item->product->name }}</td>
@@ -117,6 +118,39 @@
                     {{ $total }}
                 </td>
             </tr>
+            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog"
+                aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detailModalLabel{{ $item->id }}">Detail Penyewaan</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}"
+                                    class="img-fluid w-50 h-50" alt="Gambar Produk">
+                            </div>
+                            <h6><strong>Nama Alat:</strong></h6>
+                            {{ $item->product->name }}
+                            <br><br>
+                            <h6><strong>Nama Penyewa:</strong></h6>
+                            {{ $item->borrower->name }}
+                            <br><br>
+                            <h6><strong>Tanggal sewa:</strong></h6>
+                            {{ $item->rent_date }}
+                            <br><br>
+                            <h6><strong>Tanggal pengembalian:</strong></h6>
+                            {{ $item->return_date }}
+                            <br><br>
+                            <h6><strong>Total Harga:</strong></h6>
+                            Rp{{ $total }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @endforeach
             @endif
         </tbody>

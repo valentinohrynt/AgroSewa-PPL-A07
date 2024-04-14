@@ -46,11 +46,11 @@ class FormTambahDataAlat extends Controller
             ]);
             $product->save();
 
-            return redirect()->back()->with('success', 'Alat berhasil ditambahkan!');
+            return redirect()->back()->with('success', 'Sukses, data berhasil ditambah');
         } catch (\Exception $e) {
-            \Log::error($e->getMessage());
+            Log::error($e->getMessage());
     
-            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
+            return redirect()->back()->with('error', 'Gagal, data tidak valid');
         }
     }
 }

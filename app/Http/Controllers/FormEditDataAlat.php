@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class FormEditDataAlat extends Controller
 {
@@ -15,36 +16,37 @@ class FormEditDataAlat extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'product_description' => 'max:255',
+            'product_description' => 'max:100',
             'price' => 'required|numeric',
-            'product_img' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image file types and size
+            'product_img' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
         try {
             $product = Product::findOrFail($id);
-            $product->name = $request->name;
-            $product->product_description = $request->product_description;
-            $product->price = $request->price;
-
             $user = Auth::user();
             $lender = Lender::where('user_id', $user->id)->first();
-
+            
+            $data = [
+                'name' => $request->name,
+                'product_description' => $request->product_description,
+                'price' => $request->price,
+                'lender_id' => $lender->id,
+            ];
+            
             if ($request->hasFile('product_img')) {
                 $image = $request->file('product_img');
-                $extension = $request->file('product_img')->getClientOriginalExtension();
+                $extension = $image->getClientOriginalExtension();
                 $imageName = 'P' . str_pad($product->id, 3, '0', STR_PAD_LEFT) . '.' . $extension;
-                $request->file('product_img')->storeAs('product_img', $imageName);
-                $product->product_img = $imageName;
+                $image->storeAs('product_img', $imageName);
+                $data['product_img'] = $imageName;
             }
+            
+            $product->update($data);
 
-            $product->lender_id = $lender->id;
-            $product->save();
-
-            return redirect()->back()->with('success', 'Alat berhasil diperbarui!');
+            return redirect()->back()->with('success', 'Sukses, data berhasil diedit');
         } catch (\Exception $e) {
-            \Log::error($e->getMessage());
+            Log::error($e->getMessage());
 
-            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
+            return redirect()->back()->with('error', 'Gagal, data tidak valid');
         }
     }
 }

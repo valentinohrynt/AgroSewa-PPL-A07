@@ -19,12 +19,11 @@ class FormEditSewaAlat extends Controller
             $transaction = RentTransaction::findOrFail($id);
             $transaction->update($request->all());
     
-            return redirect()->back()->with('success', 'Transaksi berhasil di ubah!');
+            return redirect()->back()->with('success', 'Sukses, data berhasil diedit');
         } catch (\Exception $e) {
-            // Log the error for debugging
-            \Log::error($e->getMessage());
+            Log::error($e->getMessage());
     
-            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
+            return redirect()->back()->with('error', 'Gagal, data tidak valid');
         }
     }
 }

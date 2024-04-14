@@ -75,28 +75,13 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-2 col-md-6">
-          </div>
-          <div class="col-lg-3 col-md-6">
-          </div>
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Hubungi Kami</h4>
-            <p>Silahkan masukkan email Anda, dan kami akan menghubungi Anda secepatnya</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Kirim">
-            </form>
-
-          </div>
-
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="credits">
-        Designed by <a href="">AgroSewa</a>
+      <div class="container">
+        <div class="credits">
+          Designed by <a href="">AgroSewa</a>
+        </div>
       </div>
-    </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>

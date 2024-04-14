@@ -55,7 +55,7 @@
                     <th>Nama Alat</th>
                     <th>Deskripsi</th>
                     <th>Harga</th>
-                    <th>Ubah</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,7 +69,7 @@
                     <td>
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                             data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>
-                            <span>Ubah</span>
+                            <span>Edit</span>
                         </button>
                     </td>
                 </tr>
@@ -78,35 +78,35 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Ubah Data Alat</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Edit Data Alat</h5>
                             </div>
                             <div class="modal-body">
-                                <form id="editDateForm" action="{{ route('update-product', ['id' => $item->id]) }}"
+                                <form id="editProductForm" action="{{ route('update-product', ['id' => $item->id]) }}"
                                     method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group py-2">
                                         <label for="name">Nama</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $item->name) }}" required>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="description">Deskripsi</label>
                                         <textarea class="form-control" id="description" name="product_description"
-                                            rows="3"></textarea>
+                                            rows="3">{{ old('product_description', $item->product_description) }}</textarea>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="price">Harga sewa per hari</label>
-                                        <input type="number" class="form-control" id="price" name="price" required>
+                                        <input type="number" class="form-control" id="price" name="price" value="{{ old('price', $item->price) }}" required>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="image">Gambar</label>
                                         <input class="form-control" type="file" id="image" name="product_img">
                                     </div>
-                                </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                                <button id="saveChangesButton" type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,8 @@
                             </div>
                             <div class="modal-body">
                                 <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('storage/product_img/'.$item->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
+                                    <img src="{{ asset('storage/product_img/'.$item->product_img) }}"
+                                        class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
                                 <h6><strong>Nama:</strong><br> {{ $item->name }}</h6>
                                 <h6><strong>Kode Alat:</strong><br> {{ $item->product_code }}</h6>
@@ -165,7 +166,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                             <button type="submit" form="addProductForm" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ use App\Http\Controllers\ProductAndRentTransactionController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 })->middleware('auth');
 
 Route::middleware('only_guest')->group(function () {

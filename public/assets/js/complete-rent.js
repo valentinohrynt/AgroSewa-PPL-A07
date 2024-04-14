@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             let rentTransactionId = button.dataset.rentTransactionId;
             let totalPrice = button.dataset.totalPrice;
-            let actualReturnDate = new Date().toISOString(); // Current timestamp
+            let actualReturnDate = new Date().toISOString();
 
             fetch('penyewaan-poktan', {
                 method: 'POST',
@@ -21,12 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data.message); // Log the response from the server
-                // Optionally, you can perform other actions here, such as updating the UI
+                console.log(data.message);
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Handle errors here
             });
         });
     });

@@ -64,18 +64,19 @@
                                     <div class="form-group">
                                         <label for="rent_date" class="pb-2">Tanggal awal</label>
                                         <input type="date" name="rent_date" id="rent_date" min="{{ date('Y-m-d') }}"
+                                            value="{{ isset($rent_date) ? $rent_date : date('Y-m-d') }}"
                                             class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label for="return_date" class="pb-2">Tanggal pengembalian</label>
-                                        <input type="date" name="return_date" id="return_date" min="{{ date('Y-m-d') }}"
-                                            class="form-control">
-                                        <input name="product_id" value={{$product->id}} hidden>
+                                        <input type="date" name="return_date" id="return_date" class="form-control">
+                                        <input name="product_id" value="{{ $product->id }}" hidden>
                                     </div>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="form-control btn btn-success mt-5">Sewa</button>
+                                    <button type="button" class="form-control btn btn-danger mt-2" onclick="goBack()">Batal</button>
                                 </div>
                             </form>
                         </div>
@@ -89,11 +90,23 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-
     var calendar = new FullCalendar.Calendar(calendarEl, {
         events: {!! json_encode($events) !!},
     });
     calendar.render();
 });
+
+document.getElementById('rent_date').addEventListener('change', function() {
+    var rentDate = new Date(this.value);
+    var returnDateInput = document.getElementById('return_date');
+
+    var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
+    returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
+
+    if (returnDateInput.valueAsDate < minReturnDate) {
+        returnDateInput.value = minReturnDate.toISOString().split('T')[0];
+    }
+});
+
 </script>
 @endsection

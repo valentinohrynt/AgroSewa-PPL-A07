@@ -50,7 +50,7 @@ class FormSewaAlat extends Controller
 
         $request->validate([
             'rent_date' => 'required|date',
-            'return_date' => 'required|date|different:rent_date'
+            'return_date' => 'required|date|after_or_equal:rent_date'
         ], $messages);
         
         $rentDate = $request->input('rent_date');

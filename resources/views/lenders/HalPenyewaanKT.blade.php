@@ -73,7 +73,7 @@
                         <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal"
                             data-bs-target="#editModal{{ $item->id }}">
                             <i class="bi bi-pencil"></i>
-                            <span>Ubah</span>
+                            <span>Edit</span>
                         </button>
                         <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
                             data-bs-target="#confirmationCompleteModal{{ $item->id }}"><i class="bi-check-lg"></i>
@@ -113,7 +113,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Ubah Tanggal Penyewaan</h5>
+                                <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Edit Tanggal Penyewaan</h5>
                             </div>
                             <div class="modal-body">
                                 <form id="editDateForm"
@@ -134,8 +134,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                </form>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>

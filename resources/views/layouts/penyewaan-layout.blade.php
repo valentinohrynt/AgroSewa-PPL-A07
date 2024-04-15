@@ -104,11 +104,7 @@
                 });
             });
         });
-        function submitForm(productId) {
-            document.getElementById('form_' + productId).submit();
-        }
     </script>
-
 </body>
 
 </html>

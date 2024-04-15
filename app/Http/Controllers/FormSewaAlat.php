@@ -32,9 +32,7 @@ class FormSewaAlat extends Controller
                 'product_id' => $transaction->product_id,
             ];
         }
-        // if ($product->is_rented == 'yes') {
-        //     return back()->with('status', 'error')->with('message', 'Maaf, alat ini sedang disewa oleh pengguna lain.');
-        // }
+
         return view('borrowers.FormSewaAlat', compact('product', 'events'));
     }
     
@@ -75,12 +73,7 @@ class FormSewaAlat extends Controller
 
         $user = Auth::user();
         $borrower = Borrower::where('user_id', $user->id)->first();
-        // if ($borrower->hasOngoingTransaction()) {
-        //     return back()->with('status', 'error')->with('message', 'Maaf, Anda masih memiliki transaksi yang sedang berjalan.');
-        // }
-    
-    
-        // Check if rent_date is the current date
+
         if (Carbon::parse($rentDate)->isToday()) {
             $product = Product::find($request->input('product_id'));
             $product->is_rented = 'yes';

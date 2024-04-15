@@ -108,5 +108,9 @@ document.getElementById('rent_date').addEventListener('change', function() {
     }
 });
 
+function goBack() {
+    window.history.back();
+}
+
 </script>
 @endsection

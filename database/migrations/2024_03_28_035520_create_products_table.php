@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('product_code')->unique();
             $table->string('is_rented')->default('no');
-            $table->text('product_description');
+            $table->text('product_description')->nullable();
             $table->integer('price');
             $table->string('product_img')->nullable();
             $table->unsignedBigInteger('lender_id');

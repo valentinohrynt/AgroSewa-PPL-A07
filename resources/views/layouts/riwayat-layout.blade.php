@@ -86,17 +86,15 @@
 
     <script src="{{asset('/assets/js/main.js')}}"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     @yield('script')
-    <script>
+    <!-- <script>
         $(document).ready(function() {
-            $('#searchInput').on('keyup', function() {
-                var searchText = $(this).val().toLowerCase();
+            $('#dateFilterInput').on('change', function() {
+                var selectedDate = $(this).val();
                 $('.table tbody tr').each(function() {
-                    var transactionNumber = $(this).find('td:eq(1)').text().toLowerCase();
-                    var productName = $(this).find('td:eq(2)').text().toLowerCase();
-                    var borrowerName = $(this).find('td:eq(3)').text().toLowerCase();
-                    if (transactionNumber.includes(searchText) || productName.includes(
-                            searchText) || borrowerName.includes(searchText)) {
+                    var fifthColumnDate = $(this).find('td:eq(4)').text();
+                    if (selectedDate === fifthColumnDate) {
                         $(this).show();
                     } else {
                         $(this).hide();
@@ -104,7 +102,7 @@
                 });
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

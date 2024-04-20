@@ -70,13 +70,12 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="return_date" class="pb-2">Tanggal pengembalian</label>
-                                        <input type="date" name="return_date" id="return_date" class="form-control">
+                                        <input type="date" name="return_date" id="return_date" class="form-control" min="{{ date('Y-m-d') }}">
                                         <input name="product_id" value="{{ $product->id }}" hidden>
                                     </div>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="form-control btn btn-success mt-5">Sewa</button>
-                                    <button type="button" class="form-control btn btn-danger mt-2" onclick="goBack()">Batal</button>
                                 </div>
                             </form>
                         </div>
@@ -107,10 +106,5 @@ document.getElementById('rent_date').addEventListener('change', function() {
         returnDateInput.value = minReturnDate.toISOString().split('T')[0];
     }
 });
-
-function goBack() {
-    window.history.back();
-}
-
 </script>
 @endsection

@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apply_logs', function (Blueprint $table) {
+        Schema::create('equipment_requests', function (Blueprint $table) {
             $table->id();
-            $table->text('file');
+            $table->string('pdf_file_name');
+            $table->string('equipment_request_number')->unique();
             $table->unsignedBigInteger('lender_id');
-            $table->string('pdf_preview_path')->nullable();
             $table->foreign('lender_id')->references('id')->on('lenders');
-            $table->string('is_approved')->default('process');
+            $table->unsignedBigInteger('government_id');
+            $table->foreign('government_id')->references('id')->on('governments');
+            $table->string('is_approved')->default('no');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apply_logs');
+        Schema::dropIfExists('equipment_requests');
     }
 };

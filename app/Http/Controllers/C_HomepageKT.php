@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomepageKT extends Controller
+class C_HomepageKT extends Controller
 {
     public function setHomepageKT(){
-        return view("lenders.HomepageKT");
+        return view("lenders.V_HomepageKT");
     }
     public function HalPenyewaanKT(){
         return redirect("HalPenyewaanKT");

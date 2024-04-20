@@ -6,8 +6,8 @@
 
 <li><a class="nav-link" href="HomepageKT">Home</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
-<li><a class="nav-link" href="pengajuan-poktan">Pengajuan Bantuan</a></li>
-<li><a class="nav-link" href="riwayat-poktan">Riwayat</a></li>
+<li><a class="nav-link" href="{{route('HalBantuanKT')}}">Pengajuan Bantuan</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatKT')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
@@ -24,12 +24,6 @@
         @if(session('success'))
         <div class="alert alert-success mb-5">
             {{ session('success') }}
-        </div>
-        @endif
-
-        @if(session('error'))
-        <div class="alert alert-danger mb-5">
-            {{ session('error') }}
         </div>
         @endif
         <div class="section-title">
@@ -65,7 +59,7 @@
                     <td>{{ $item->product_code }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->product_description }}</td>
-                    <td>{{ $item->price }}</td>
+                    <td>Rp{{ $item->price }}</td>
                     <td>
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                             data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>
@@ -74,28 +68,35 @@
                     </td>
                 </tr>
                 <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true">
+                    aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true" data-item-id="{{ $item->id }}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="editModalLabel{{ $item->id }}">Edit Data Alat</h5>
                             </div>
                             <div class="modal-body">
+                                @if (session('editItemErrors'))
+                                <div class="alert alert-danger mb-5">
+                                    @foreach ($errors->all() as $error)
+                                    {{ $error }}<br>
+                                    @endforeach
+                                </div>
+                                @endif
                                 <form id="editProductForm" action="{{ route('update-product', ['id' => $item->id]) }}"
                                     method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group py-2">
                                         <label for="name">Nama</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $item->name) }}" required>
+                                        <input type="text" class="form-control" id="name" name="name">
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="description">Deskripsi</label>
                                         <textarea class="form-control" id="description" name="product_description"
-                                            rows="3">{{ old('product_description', $item->product_description) }}</textarea>
+                                            rows="3"></textarea>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="price">Harga sewa per hari</label>
-                                        <input type="number" class="form-control" id="price" name="price" value="{{ old('price', $item->price) }}" required>
+                                        <input type="number" class="form-control" id="price" name="price">
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="image">Gambar</label>
@@ -103,7 +104,7 @@
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                             </form>
@@ -125,7 +126,7 @@
                                 <h6><strong>Nama:</strong><br> {{ $item->name }}</h6>
                                 <h6><strong>Kode Alat:</strong><br> {{ $item->product_code }}</h6>
                                 <h6><strong>Deskripsi:</strong><br> {{ $item->product_description }}</h6>
-                                <h6><strong>Harga:</strong><br> {{ $item->price }}</h6>
+                                <h6><strong>Harga:</strong><br> Rp{{ $item->price }}</h6>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -140,15 +141,22 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="addProductModalLabel">Tambah Produk</h5>
+                            <h5 class="modal-title" id="addProductModalLabel">Tambah Data Alat</h5>
                         </div>
                         <div class="modal-body">
+                            @if (session('addItemErrors'))
+                            <div class="alert alert-danger mb-5">
+                                @foreach ($errors->all() as $error)
+                                {{ $error }}<br>
+                                @endforeach
+                            </div>
+                            @endif
                             <form id="addProductForm" action="{{ route('store-product') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group py-2">
                                     <label for="name">Nama</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+                                    <input type="text" class="form-control" id="name" name="name">
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="description">Deskripsi</label>
@@ -157,7 +165,7 @@
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="price">Harga sewa per hari</label>
-                                    <input type="number" class="form-control" id="price" name="price" required>
+                                    <input type="number" class="form-control" id="price" name="price">
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="image">Gambar</label>
@@ -166,7 +174,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             <button type="submit" form="addProductForm" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>
@@ -177,3 +185,28 @@
 </section>
 
 @endsection
+
+@if (session('editItemErrors'))
+@section('script')
+<script>
+    $(document).ready(function() {
+        @if(session('editItemId'))
+        var transactionId = {!! json_encode(session('editItemId')) !!};
+        $('#editModal' + transactionId).modal('show');
+        @endif
+    });
+</script>
+@endsection
+@endif
+
+@if(session('addItemErrors'))
+@section('script')
+<script>
+    $(document).ready(function() {
+        @if(session('addItemErrors'))
+        $('#addProductModal').modal('show');
+        @endif
+    });
+</script>
+@endsection
+@endif

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Contracts\Encryption\DecryptException;
 
-class HalPenyewaanKT extends Controller
+class C_HalPenyewaanKT extends Controller
 {
     public function setHalPenyewaanKT()
     {
@@ -27,7 +27,7 @@ class HalPenyewaanKT extends Controller
             ->where('is_completed', 'no')
             ->get();
     
-        return view('lenders.HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
+        return view('lenders.V_HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
     }
 
     public function completeRent(Request $request, $id)

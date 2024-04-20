@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class HalDataAlatKT extends Controller
+class C_HalDataAlatKT extends Controller
 {
     public function setHalDataAlatKT()
     {
@@ -17,6 +17,6 @@ class HalDataAlatKT extends Controller
         $lender = Lender::where('user_id', $user->id)->first();
         $products = Product::where('lender_id', $lender->id)->get();
     
-        return view('lenders.HalDataAlatKT', ['products' => $products]);
+        return view('lenders.V_HalDataAlatKT', ['products' => $products]);
     }
 }

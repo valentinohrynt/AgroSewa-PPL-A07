@@ -6,7 +6,6 @@ use Ramsey\Uuid\Uuid;
 use App\Models\Product;
 use App\Models\Borrower;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RentTransaction extends Model
 {
@@ -31,6 +30,12 @@ class RentTransaction extends Model
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
+
+    public function rentLog()
+    {
+        return $this->hasOne(RentLog::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

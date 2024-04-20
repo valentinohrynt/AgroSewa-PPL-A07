@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Encryption\DecryptException;
 
-class HalPenyewaanPetani extends Controller
+class C_HalPenyewaanPetani extends Controller
 {
     public function setHalPenyewaanPetani(){
         $userId = auth()->user()->id;
@@ -23,10 +23,10 @@ class HalPenyewaanPetani extends Controller
         $products = Product::where('lender_id', $borrowerLenderId)->get();
     
         $rentTransactions = RentTransaction::where('borrower_id', $borrower->id)
-                                             ->where('is_completed', 'no')
-                                             ->get();
+        ->where('is_completed', 'no')
+        ->get();
         Session::put('borrower_id', $borrower->id);
-        return view('borrowers.HalPenyewaanPetani', ['products' => $products, 'rentTransactions' => $rentTransactions]);
+        return view('borrowers.V_HalPenyewaanPetani', ['products' => $products, 'rentTransactions' => $rentTransactions]);
     }
 
     public function cancelTransaction(Request $request, $id)

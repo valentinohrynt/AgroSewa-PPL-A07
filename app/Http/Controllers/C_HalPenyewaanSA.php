@@ -6,14 +6,14 @@ use App\Models\Lender;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HalPenyewaanSA extends Controller
+class C_HalPenyewaanSA extends Controller
 {
     public function setHalPenyewaanSA(){
         $lenders = Lender::all();
-        return view('superadmin.HalPenyewaanSA',['lenders' => $lenders]);
+        return view('superadmin.V_HalPenyewaanSA',['lenders' => $lenders]);
     }
     public function HalDataPenyewaanSA()
     {
-        return view('superadmin.HalDataPenyewaanSA');
+        return view('superadmin.V_HalDataPenyewaanSA');
     }
 }

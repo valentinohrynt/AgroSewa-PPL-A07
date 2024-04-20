@@ -61,7 +61,7 @@
               $returnDate = Carbon\Carbon::parse($item->return_date);
               $rentDate = Carbon\Carbon::parse($item->rent_date);
               $price = floatval($item->product->price);
-              $daysDifference = $rentDate->diffInDays($returnDate);
+              $daysDifference = ($rentDate->diffInDays($returnDate))+1;
               $total = $price * $daysDifference;
               @endphp
               Rp{{ $total }}
@@ -71,7 +71,7 @@
                 <div class="col-12">
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                     data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
-                    <span>Batal</span>
+                    <span>Tutup</span>
                   </button>
                 </div>
               </div>

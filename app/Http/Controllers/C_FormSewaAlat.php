@@ -10,7 +10,7 @@ use App\Models\RentTransaction;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class FormSewaAlat extends Controller
+class C_FormSewaAlat extends Controller
 {
     public function setFormSewaAlat(Request $request)
     {
@@ -33,17 +33,15 @@ class FormSewaAlat extends Controller
             ];
         }
 
-        return view('borrowers.FormSewaAlat', compact('product', 'events'));
+        return view('borrowers.V_FormSewaAlat', compact('product', 'events'));
     }
     
     public function store(Request $request)
     {
         $messages = [
             'rent_date.required' => 'Tanggal awal harus diisi.',
-            'rent_date.date' => 'Tanggal awal harus berupa tanggal yang valid.',
             'return_date.required' => 'Tanggal pengembalian harus diisi.',
-            'return_date.date' => 'Tanggal pengembalian harus berupa tanggal yang valid.',
-            'return_date.different' => 'Tanggal pengembalian harus berbeda dengan tanggal sewa.'
+            'return_date.after_or_equal' => 'Tanggal pemgembalian hanya boleh sama dengan atau lebih dari tanggal awal.'
         ];
 
         $request->validate([

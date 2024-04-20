@@ -7,7 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HalDataAlatSA extends Controller
+class C_HalDataAlatSA extends Controller
 {
     public function setHalDataAlatSA(Request $request){
         
@@ -15,6 +15,6 @@ class HalDataAlatSA extends Controller
         $lender = Lender::findOrFail($lender_id);
         $products = Product::with("lender")
         ->where('lender_id',$lender_id )->get();
-        return view('superadmin.HalDataAlatSA', compact('products', 'lender'));
+        return view('superadmin.V_HalDataAlatSA', compact('products', 'lender'));
     }
 }

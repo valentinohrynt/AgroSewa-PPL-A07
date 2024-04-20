@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\RentTransaction;
 use App\Http\Controllers\Controller;
 
-class HalDataPenyewaanSA extends Controller
+class C_HalDataPenyewaanSA extends Controller
 {
     public function setHalDataPenyewaanSA(Request $request)
     {
@@ -23,6 +23,6 @@ class HalDataPenyewaanSA extends Controller
             ->where('is_completed', 'no')
             ->get();
     
-        return view('superadmin.HalDataPenyewaanSA', compact('rentTransactions', 'lender'));
+        return view('superadmin.V_HalDataPenyewaanSA', compact('rentTransactions', 'lender'));
     }
 }

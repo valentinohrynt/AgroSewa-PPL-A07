@@ -13,8 +13,7 @@
     />
 
     <!--css file-->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/assets/css/dashboard-style.css')}}" />
 
   </head>
@@ -38,68 +37,6 @@
         <div class="box-info">
           @yield('content-box-info')
         </div>
-        {{-- TABLE DISINI (KALAU PERLU) --}}
-        <!-- <div class="table-data">
-          <div class="order">
-            <div class="head">
-              <h3>Recent Orders</h3>
-              <i class="fas fa-search"></i>
-              <i class="fas fa-filter"></i>
-            </div>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Order Date</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <img src="profile.png" alt="" />
-                    <p>User Name</p>
-                  </td>
-                  <td>07-05-2023</td>
-                  <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="profile.png" alt="" />
-                    <p>User Name</p>
-                  </td>
-                  <td>07-05-2023</td>
-                  <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="profile.png" alt="" />
-                    <p>User Name</p>
-                  </td>
-                  <td>07-05-2023</td>
-                  <td><span class="status process">Process</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="profile.png" alt="" />
-                    <p>User Name</p>
-                  </td>
-                  <td>07-05-2023</td>
-                  <td><span class="status process">Process</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="profile.png" alt="" />
-                    <p>User Name</p>
-                  </td>
-                  <td>07-05-2023</td>
-                  <td><span class="status complete">Complete</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div> 
-        </div> -->
       </main>
     </section>
 

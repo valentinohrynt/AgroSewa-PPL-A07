@@ -6,6 +6,7 @@
     <title>AgroSewa - Register</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset("/assets/css/auth-style.css")}}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <body>
     <div class="container d-flex flex-row">
@@ -35,7 +36,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" value="{{old('name')}}" required>
+                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" value="{{old('name')}}" >
                         </div>
                         <div class="input-group col-lg-6 mb-4">
                             <div class="input-group-prepend">
@@ -43,7 +44,7 @@
                                     <i class="fa-regular fa-address-card text-muted"></i>
                                 </span>
                             </div>
-                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" value="{{old('nik')}}" required>
+                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" value="{{old('nik')}}" >
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -51,7 +52,7 @@
                                     <i class="fa-regular fa-envelope text-muted"></i>
                                 </span>
                             </div>
-                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" value="{{old('email')}}" required>
+                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" value="{{old('email')}}" >
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -59,7 +60,7 @@
                                     <i class="fa fa-phone text-muted"></i>
                                 </span>
                             </div>
-                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" value="{{old('phone')}}" required>
+                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" value="{{old('phone')}}" >
                         </div>
                         <div class="form-group col-lg-12 mx-auto d-flex align-items-center">
                             <div class="border-bottom w-100 ml-5"></div>
@@ -72,7 +73,7 @@
                                     <i class="fa fa-map-marker text-muted"></i>
                                 </span>
                             </div>
-                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" value="{{old('street')}}" required>
+                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" value="{{old('street')}}" >
                         </div>
                         <br>
                         <div class="kecamatan-desa d-flex flex-col">
@@ -82,7 +83,7 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('district_id')}}" required>
+                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('district_id')}}" >
                                     <option value="" >Kecamatan</option>
                                     @foreach($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -98,7 +99,7 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('village_id')}}" style="cursor: not-allowed" disabled required>
+                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('village_id')}}" style="cursor: not-allowed" disabled >
                                     <option value="">Desa</option>
                                     @foreach ($villages as $village)
                                     <option value="{{ $village->id }}" data-district="{{ $village->district_id }}">{{ $village->name }}</option>
@@ -115,7 +116,7 @@
                                     <i class="fa fa-house text-muted"></i>
                                 </span>
                             </div>
-                            <select name="lender_id" id="lender" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('lender_id')}}" style="cursor: not-allowed" disabled required>
+                            <select name="lender_id" id="lender" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('lender_id')}}" style="cursor: not-allowed" disabled >
                                 <option value="">Nama Kelompok Tani</option>
                                 @foreach ($lenders as $lender)
                                 <option value="{{ $lender->id }}" data-village="{{ $lender->village_id }}">{{ $lender->name }}</option>
@@ -136,7 +137,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" value="{{old('username')}}" required>
+                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" value="{{old('username')}}" >
                         </div>
                         <br>
                         <div class="input-group col-lg-6 mb-4">
@@ -145,7 +146,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md" >
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide('password','show_eye_pw','hide_eye_pw');">
                                     <i class="fas fa-eye" id="show_eye_pw"></i>

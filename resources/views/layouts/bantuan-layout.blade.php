@@ -83,28 +83,7 @@
     <script src="{{asset('/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
     <script src="{{asset('/assets/vendor/php-email-form/validate.js')}}"></script>
-
     <script src="{{asset('/assets/js/main.js')}}"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-    @yield('script')
-    <script>
-        $(document).ready(function() {
-            $('#searchInput').on('keyup', function() {
-                var searchText = $(this).val().toLowerCase();
-                $('.table tbody tr').each(function() {
-                    var transactionNumber = $(this).find('td:eq(1)').text().toLowerCase();
-                    var productName = $(this).find('td:eq(2)').text().toLowerCase();
-                    var borrowerName = $(this).find('td:eq(3)').text().toLowerCase();
-                    if (transactionNumber.includes(searchText) || productName.includes(
-                            searchText) || borrowerName.includes(searchText)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroSewa - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset("/assets/css/auth-style.css")}}">
+    <link rel="stylesheet" href="{{ asset("/assets/css/auth-style.css") }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <style>
     body{
@@ -43,7 +44,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md">
                         </div>
                         <br>
                         <div class="input-group col-lg-12 mb-4">
@@ -52,7 +53,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md" required>
+                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md">
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide('password','show_eye_pw','hide_eye_pw');">
                                     <i class="fas fa-eye" id="show_eye_pw"></i>
@@ -107,23 +108,6 @@
     $('input, select').on('blur', function () {
         $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
     });
-});
-
-document.getElementById('district').addEventListener('change', function() {
-    var selectedDistrictId = this.value;
-    var villageSelect = document.getElementById('village');
-    villageSelect.removeAttribute('style');
-    villageSelect.removeAttribute('disabled');
-    for (var i = 0; i < villageSelect.options.length; i++) {
-        var option = villageSelect.options[i];
-        if (option.value !== "" && option.getAttribute('data-district') !== selectedDistrictId) {
-            option.style.display = 'none';
-        } else {
-            option.style.display = '';
-        }
-    }
-    var defaultVillageId = villageSelect.querySelector('option[data-district="' + selectedDistrictId + '"]').value;
-    villageSelect.value = defaultVillageId;
 });
 </script>
 </body>

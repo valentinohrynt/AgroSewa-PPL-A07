@@ -136,7 +136,7 @@
                             <h6><strong>Nama Penyewa:</strong></h6>
                             {{ $item->borrower->name }}
                             <br><br>
-                            <h6><strong>Tanggal sewa:</strong></h6>
+                            <h6><strong>Tanggal peminjaman:</strong></h6>
                             {{ $item->rent_date }}
                             <br><br>
                             <h6><strong>Tanggal pengembalian:</strong></h6>

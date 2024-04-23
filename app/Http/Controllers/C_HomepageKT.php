@@ -12,4 +12,10 @@ class C_HomepageKT extends Controller
     public function HalPenyewaanKT(){
         return redirect("HalPenyewaanKT");
     }
+    public function HalPengajuanBantuanKT(){
+        return redirect("HalPengajuanBantuanKT");
+    }
+    public function HalRiwayatPenyewaanKT(){
+        return redirect("HalRiwayatPenyewaanKT");
+    }
 }

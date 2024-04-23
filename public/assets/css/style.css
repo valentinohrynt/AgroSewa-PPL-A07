@@ -1127,3 +1127,47 @@ section {
         font-size: 88%;
     }
 }
+
+.dropbox {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.dropbox-input {
+    display: none;
+}
+
+.dropbox-label {
+    display: block;
+    cursor: pointer;
+}
+
+.dropbox-icon {
+    font-size: 48px;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.red {
+    color: red;
+}
+
+.dropbox-text {
+    color: #888;
+}
+
+.dropbox:hover {
+    border-color: #999;
+}
+
+.dropbox.dragover {
+    border-color: green; /* Change border color when dragging over */
+}
+
+.dropbox-input {
+    display: none;
+}

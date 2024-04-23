@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lenders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('nik')->unique();
+            $table->string('nik')->unique()->nullable();
             $table->string('phone');
             $table->string('street');
             $table->unsignedBigInteger('village_id');

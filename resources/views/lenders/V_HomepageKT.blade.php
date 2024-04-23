@@ -6,8 +6,8 @@
 
 <li><a class="nav-link active" href="HomepageKT">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
-<li><a class="nav-link" href="{{route('HalBantuanKT')}}">Pengajuan Bantuan</a></li>
-<li><a class="nav-link" href="{{route('HalRiwayatKT')}}">Riwayat</a></li>
+<li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
   <ul>
     <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
@@ -20,22 +20,22 @@
 @section('hero-btn')
 
 <div class="col-xl-3 col-md-4">
-    <div class="icon-box">
-      <i class="ri-bar-chart-box-line"></i>
-      <h3><a href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></h3>
-    </div>
+  <div class="icon-box">
+    <i class="ri-bar-chart-box-line"></i>
+    <h3><a href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></h3>
   </div>
-<div class="col-xl-3 col-md-4">
-    <div class="icon-box">
-        <i class="ri-calendar-todo-line"></i>
-        <h3><a href="{{route('HalBantuanKT')}}">Bantuan</a></h3>
-    </div>
 </div>
 <div class="col-xl-3 col-md-4">
-    <div class="icon-box">
-      <i class="ri-history-fill"></i>
-      <h3><a href="{{route('HalRiwayatKT')}}">Riwayat</a></h3>
-    </div>
+  <div class="icon-box">
+    <i class="ri-calendar-todo-line"></i>
+    <h3><a href="{{route('HalPengajuanBantuanKT()')}}">Bantuan</a></h3>
   </div>
+</div>
+<div class="col-xl-3 col-md-4">
+  <div class="icon-box">
+    <i class="ri-history-fill"></i>
+    <h3><a href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></h3>
+  </div>
+</div>
 
 @endsection

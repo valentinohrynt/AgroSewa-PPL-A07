@@ -5,8 +5,8 @@
 @section('navbar-nav')
 
 <li><a class="nav-link" href="HomepagePetani">Home</a></li>
-<li><a class="nav-link active" href="HalPenyewaanPetani">Penyewaan</a></li>
-<li><a class="nav-link" href="riwayat">Riwayat</a></li>
+<li><a class="nav-link active" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
@@ -57,7 +57,7 @@
                         </div>
                         <br>
                         <div class="col">
-                            <form action="{{ route('transaksi-penyewaan') }}" method="post" role="form"
+                            <form action="{{ route('SewaAlat()') }}" method="post" role="form"
                                 class="transaction-form px-5 pb-5">
                                 @csrf
                                 <div class="col pt-5">

@@ -17,6 +17,11 @@ class Borrower extends Model
         'lender_id',
         'user_id'
     ];
+    public static function getDataBorrowerbyUserId($id)
+    {
+        $DataBorrowerbyUser = static::where('user_id', $id)->first();
+        return $DataBorrowerbyUser;
+    }
     public function rentTransactions()
     {
         return $this->hasMany(RentTransaction::class, 'borrower_id');
@@ -28,8 +33,8 @@ class Borrower extends Model
     public function hasOngoingTransaction()
     {
         return RentTransaction::whereHas('borrower', function ($query) {
-                $query->where('borrower_id', $this->id);
-            })
+            $query->where('borrower_id', $this->id);
+        })
             ->where('is_completed', 'no')
             ->exists();
     }

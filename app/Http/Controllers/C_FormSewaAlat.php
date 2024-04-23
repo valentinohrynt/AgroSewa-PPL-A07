@@ -15,13 +15,11 @@ class C_FormSewaAlat extends Controller
     public function setFormSewaAlat(Request $request)
     {
         $user = Auth::user();
-        $borrower = Borrower::where('user_id', $user->id)->first();
-    
+        $userId = $user->id;
+        $borrower = Borrower::getDataBorrowerbyUserId($userId);
         $productId = $request->query('product_id');
-        $product = Product::findOrFail($productId);
-    
-        $rentTransactions = RentTransaction::where('product_id', $productId)->where('is_completed', 'no')->get();
 
+        $rentTransactions = RentTransaction::getDataRentTransactionByProductId($productId);
         $events = [];
         foreach ($rentTransactions as $transaction) {
             $endDate = Carbon::createFromFormat('Y-m-d', $transaction->return_date)->addDay()->format('Y-m-d');
@@ -32,12 +30,18 @@ class C_FormSewaAlat extends Controller
                 'product_id' => $transaction->product_id,
             ];
         }
+        $product = Product::getDataProductsbyId($productId);
 
         return view('borrowers.V_FormSewaAlat', compact('product', 'events'));
     }
-    
-    public function store(Request $request)
+
+    public function SewaAlatPetani(Request $request)
     {
+        $user = Auth::user();
+        $userId = $user->id;
+        $borrower = Borrower::getDataBorrowerbyUserId($userId);
+        $borrowerId = $borrower->id;
+
         $messages = [
             'rent_date.required' => 'Tanggal awal harus diisi.',
             'return_date.required' => 'Tanggal pengembalian harus diisi.',
@@ -48,43 +52,36 @@ class C_FormSewaAlat extends Controller
             'rent_date' => 'required|date',
             'return_date' => 'required|date|after_or_equal:rent_date'
         ], $messages);
-        
+
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');
-
-        $overlappingAppointments = RentTransaction::where('product_id', $request->input('product_id'))
+        $productId = $request->input('product_id');
+        $overlappingAppointments = RentTransaction::getDataRentTransactionbyProductId($productId)
         ->where(function ($query) use ($rentDate, $returnDate) {
             $query->where(function ($q) use ($rentDate, $returnDate) {
-                $q->where('rent_date', '>=', $rentDate)
-                    ->where('rent_date', '<=', $returnDate);
+                $q->where('rent_date', '<=', $rentDate)
+                    ->where('return_date', '>=', $rentDate);
             })->orWhere(function ($q) use ($rentDate, $returnDate) {
-                $q->where('return_date', '>=', $rentDate)
+                $q->where('rent_date', '<=', $returnDate)
+                    ->where('return_date', '>=', $returnDate);
+            })->orWhere(function ($q) use ($rentDate, $returnDate) {
+                $q->where('rent_date', '>=', $rentDate)
                     ->where('return_date', '<=', $returnDate);
             });
-        })
-        ->where('is_completed', 'no')
-        ->get();
-
+        })->get();
+    
         if ($overlappingAppointments->count() > 0) {
             return back()->with('status', 'error')->with('message', 'Maaf, alat ini sudah dibooking oleh pengguna lain pada tanggal tersebut. Silahkan masukkan tanggal lainnya');
         }
-
-        $user = Auth::user();
-        $borrower = Borrower::where('user_id', $user->id)->first();
 
         if (Carbon::parse($rentDate)->isToday()) {
             $product = Product::find($request->input('product_id'));
             $product->is_rented = 'yes';
             $product->save();
         }
-    
-        RentTransaction::create([
-            'borrower_id' => $borrower->id,
-            'product_id' => $request->input('product_id'),
-            'rent_date' => $rentDate,
-            'return_date' => $returnDate
-        ]);
-    
+
+        RentTransaction::postDataRentTransaction($borrowerId, $productId, $rentDate, $returnDate);
+
         return redirect('HalPenyewaanPetani')->with('success', 'Penyewaan berhasil dibuat!');
     }
 }

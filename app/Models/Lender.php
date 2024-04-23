@@ -22,5 +22,14 @@ class Lender extends Model
     {
         return $this->hasMany(Borrower::class, 'lender_id');
     }
+    public function equipmentRequests()
+    {
+        return $this->hasMany(EquipmentRequest::class);
+    }
+    public static function getDataLenderbyUserId($id)
+    {
+        $DataLenderbyUserId = static::where('user_id', $id)->first();
+        return $DataLenderbyUserId;
+    }
     use HasFactory;
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('lender_id')->references('id')->on('lenders');
             $table->unsignedBigInteger('government_id');
             $table->foreign('government_id')->references('id')->on('governments');
-            $table->string('is_approved')->default('no');
+            $table->string('is_approved')->default('process');
             $table->rememberToken();
             $table->timestamps();
         });

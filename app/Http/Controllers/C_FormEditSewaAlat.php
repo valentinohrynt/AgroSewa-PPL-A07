@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class C_FormEditSewaAlat extends Controller
 {
-    public function update(Request $request, $id)
+    public function EditSewaAlat(Request $request, $id)
     {
         $messages = [
             'rent_date.required' => 'Tanggal awal harus diisi.',
@@ -29,7 +29,7 @@ class C_FormEditSewaAlat extends Controller
         }        
         
         try {
-            $transaction = RentTransaction::findOrFail($id);
+            $transaction = RentTransaction::getDataRentTransactionbyId($id);
             $transaction->update($request->all());
 
             return redirect()->back()->with('success', 'Sukses, data berhasil diedit');

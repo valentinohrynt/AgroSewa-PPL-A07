@@ -6,8 +6,8 @@
 
 <li><a class="nav-link" href="HomepageKT">Home</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
-<li><a class="nav-link" href="{{route('HalBantuanKT')}}">Pengajuan Bantuan</a></li>
-<li><a class="nav-link" href="{{route('HalRiwayatKT')}}">Riwayat</a></li>
+<li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
@@ -36,8 +36,7 @@
                     <a href="HalPenyewaanKT" class="btn btn-secondary"><i class="bi-arrow-left-square"></i> Kembali</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#addProductModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
                         Tambah <i class="bi-plus-circle"></i>
                     </button>
                 </div>
@@ -61,14 +60,12 @@
                     <td>{{ $item->product_description }}</td>
                     <td>Rp{{ $item->price }}</td>
                     <td>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>
                             <span>Edit</span>
                         </button>
                     </td>
                 </tr>
-                <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true" data-item-id="{{ $item->id }}">
+                <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true" data-item-id="{{ $item->id }}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -82,8 +79,7 @@
                                     @endforeach
                                 </div>
                                 @endif
-                                <form id="editProductForm" action="{{ route('update-product', ['id' => $item->id]) }}"
-                                    method="POST" enctype="multipart/form-data">
+                                <form id="editProductForm" action="{{ route('EditDataAlat()', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group py-2">
                                         <label for="name">Nama</label>
@@ -91,8 +87,7 @@
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="description">Deskripsi</label>
-                                        <textarea class="form-control" id="description" name="product_description"
-                                            rows="3"></textarea>
+                                        <textarea class="form-control" id="description" name="product_description" rows="3"></textarea>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="price">Harga sewa per hari</label>
@@ -111,8 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -120,8 +114,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('storage/product_img/'.$item->product_img) }}"
-                                        class="img-fluid w-50 h-50" alt="Gambar Produk">
+                                    <img src="{{ asset('storage/product_img/'.$item->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
                                 <h6><strong>Nama:</strong><br> {{ $item->name }}</h6>
                                 <h6><strong>Kode Alat:</strong><br> {{ $item->product_code }}</h6>
@@ -136,8 +129,7 @@
                 </div>
                 @endforeach
             </tbody>
-            <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog"
-                aria-labelledby="addProductModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -151,8 +143,7 @@
                                 @endforeach
                             </div>
                             @endif
-                            <form id="addProductForm" action="{{ route('store-product') }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form id="addProductForm" action="{{ route('TambahDataAlat()') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group py-2">
                                     <label for="name">Nama</label>
@@ -160,8 +151,7 @@
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="description">Deskripsi</label>
-                                    <textarea class="form-control" id="description" name="product_description"
-                                        rows="3"></textarea>
+                                    <textarea class="form-control" id="description" name="product_description" rows="3"></textarea>
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="price">Harga sewa per hari</label>
@@ -191,7 +181,9 @@
 <script>
     $(document).ready(function() {
         @if(session('editItemId'))
-        var transactionId = {!! json_encode(session('editItemId')) !!};
+        var transactionId = {
+            !!json_encode(session('editItemId')) !!
+        };
         $('#editModal' + transactionId).modal('show');
         @endif
     });

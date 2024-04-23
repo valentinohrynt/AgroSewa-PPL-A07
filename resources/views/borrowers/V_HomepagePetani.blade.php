@@ -6,7 +6,7 @@
 
 <li><a class="nav-link active" href="HomepagePetani">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
-<li><a class="nav-link" href="riwayat">Riwayat</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
   <ul>
     <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
@@ -27,7 +27,7 @@
 <div class="col-xl-3 col-md-4">
     <div class="icon-box">
       <i class="ri-history-fill"></i>
-      <h3><a href="riwayat">Riwayat</a></h3>
+      <h3><a href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></h3>
     </div>
   </div>
 

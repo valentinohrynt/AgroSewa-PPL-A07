@@ -12,4 +12,7 @@ class C_HomepagePetani extends Controller
     public function HalPenyewaanPetani(){
         return redirect("HalPenyewaanPetani");
     }
+    public function HalRiwayatPenyewaanPetani(){
+        return redirect("HalRiwayatPenyewaanPetani");
+    }
 }

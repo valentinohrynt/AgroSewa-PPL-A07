@@ -18,22 +18,25 @@ class C_HalPenyewaanKT extends Controller
     public function setHalPenyewaanKT()
     {
         $user = Auth::user();
-        $lender = Lender::where('user_id', $user->id)->first();
-      
-        $productIds = Product::where('lender_id', $lender->id)->pluck('id');
-    
+        $userId = $user->id;
+        $lender = Lender::getDataLenderbyUserId($userId);
+        $lenderId = $lender->id;
+        $product = Product::getDataProductsbyLenderId($lenderId);
+        $productIds = $product->pluck('id');
+
         $rentTransactions = RentTransaction::with('product', 'borrower')
             ->whereIn('product_id', $productIds)
             ->where('is_completed', 'no')
             ->get();
-    
+
         return view('lenders.V_HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
     }
 
-    public function completeRent(Request $request, $id)
+    public function SelesaiPenyewaan(Request $request, $id)
     {
-        $transaction = RentTransaction::findOrFail($id);
+        $rentTransactionId = $id;
         $currentTime = Carbon::now();
+        $rentTransaction = RentTransaction::getDataRentTransactionbyId($rentTransactionId);
 
         $request->validate([
             'total_price' => 'required',
@@ -44,32 +47,26 @@ class C_HalPenyewaanKT extends Controller
         } catch (DecryptException $e) {
             return back()->with('error', 'Terjadi kesalahan, silahkan coba kembali');
         }
-    
-        $rentTransactionId = $id;
+
         $totalPrice = $decryptedTotalPrice;
         $actualReturnDate = $currentTime;
-    
-        RentTransaction::where('id', $rentTransactionId)
-            ->update(['is_completed' => 'yes']);
 
-        $rentTransaction = RentTransaction::find($rentTransactionId);
-        $product = Product::find($rentTransaction->product_id);
-        $product->is_rented = 'no';
-        $product->save();
-    
-        RentLog::create([
-            'rent_transaction_id' => $rentTransactionId,
-            'total_price' => $totalPrice,
-            'actual_return_date' => $actualReturnDate,
-        ]);
-        $request->session()->flash('success', 'Transaksi berhasil diselesaikan dan ditambahkan ke Riwayat');
-        return redirect()->back();
+        RentTransaction::patchStatusRentTransactiontoYes($rentTransactionId);
+
+        $product = Product::getDataProductsbyRentTransaction($rentTransaction);
+        $productId = $product->id;
+        Product::patchStatusProductstoNo($productId);
+
+        RentLog::postDataRentLog($rentTransactionId, $totalPrice, $actualReturnDate);
+
+        return redirect('HalPenyewaanKT')->with('success', 'Transaksi berhasil diselesaikan dan ditambahkan ke Riwayat');
     }
 
-    public function forceCancelTransaction(Request $request, $id)
+    public function BatalPenyewaan(Request $request, $id)
     {
-        $transaction = RentTransaction::findOrFail($id);
+        $rentTransactionId = $id;
         $currentTime = Carbon::now();
+        $rentTransaction = RentTransaction::getDataRentTransactionbyId($rentTransactionId);
 
         $request->validate([
             'total_price' => 'required',
@@ -81,31 +78,21 @@ class C_HalPenyewaanKT extends Controller
             return back()->with('error', 'Terjadi kesalahan, silahkan coba kembali');
         }
 
-        $rentTransactionId = $id;
         $totalPrice = $decryptedTotalPrice;
         $actualReturnDate = $currentTime;
-    
-        $rentTransactionId = $id;
-        $totalPrice = $request->input('total_price');
-        $actualReturnDate = $currentTime;
-    
-        RentTransaction::where('id', $rentTransactionId)
-            ->update(['is_completed' => 'cancelled']);
 
-        $rentTransaction = RentTransaction::find($rentTransactionId);
-        $product = Product::find($rentTransaction->product_id);
-        $product->is_rented = 'no';
-        $product->save();
-    
-        RentLog::create([
-            'rent_transaction_id' => $rentTransactionId,
-            'total_price' => $decryptedTotalPrice,
-            'actual_return_date' => $actualReturnDate,
-        ]);
+        RentTransaction::patchStatusRentTransactiontoCancelled($rentTransactionId);
+
+        $product = Product::getDataProductsbyRentTransaction($rentTransaction);
+        $productId = $product->id;
+        Product::patchStatusProductstoNo($productId);
+
+        RentLog::postDataRentLog($rentTransactionId, $totalPrice, $actualReturnDate);
+
         return redirect('HalPenyewaanKT')->with('success', 'Penyewaan berhasil dibatalkan!');
     }
 
-    public function HalDataAlatKT()
+    public function DataAlatKT()
     {
         return redirect('HalDataAlatKT');
     }

@@ -26,21 +26,17 @@ menuBar.addEventListener("click", () => {
 // });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 576) {
-    searchIcon.classList.replace("fa-times", "fa-search");
-    searchFrom.classList.remove("show");
-  }
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 1280) {
     sideBar.classList.add("hide");
   }
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 1280) {
     sideBar.classList.remove("hide");
   }
 });
 
-if (window.innerWidth < 768) {
+if (window.innerWidth < 1280) {
   sideBar.classList.add("hide");
 }
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1280) {
   sideBar.classList.remove("hide");
 }

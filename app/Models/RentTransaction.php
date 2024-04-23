@@ -17,9 +17,6 @@ class RentTransaction extends Model
         'return_date',
         'is_completed'
     ];
-
-    protected $table = 'rent_transactions';
-    protected $dates = ['rent_date', 'return_date'];
     
     public function borrower()
     {
@@ -34,6 +31,49 @@ class RentTransaction extends Model
     public function rentLog()
     {
         return $this->hasOne(RentLog::class);
+    }
+
+    public static function postDataRentTransaction($borrower_id, $product_id, $rentDate, $returnDate)
+    {
+        return static::create([
+            'borrower_id' => $borrower_id,
+            'product_id' => $product_id,
+            'rent_date' => $rentDate,
+            'return_date' => $returnDate
+        ]);
+    }
+
+    public static function getDataRentTransactionbyId($id)
+    {
+        $DataRentTransactionbyId = static::findOrFail($id);
+        return $DataRentTransactionbyId;
+    }
+
+    public static function patchStatusRentTransactiontoCancelled($id)
+    {
+        return static::where('id', $id)->update(['is_completed' => 'cancelled']);
+    }
+
+    public static function patchStatusRentTransactiontoYes($id)
+    {
+        return static::where('id', $id)->update(['is_completed' => 'yes']);
+    }
+    
+    public static function patchStatusRentTransactiontoNo($id)
+    {
+        return static::where('id', $id)->update(['is_completed' => 'no']);
+    }
+
+    public static function getDataRentTransactionbyBorrower($borrower)
+    {
+        $DataRentTransactionbyBorrower = static::where('borrower_id', $borrower->id)->where('is_completed', 'no')->get();
+        return $DataRentTransactionbyBorrower;
+    }
+
+    public static function getDataRentTransactionbyProductId($id)
+    {
+        $DataRentTransactionbyProduct = static::where('product_id', $id)->where('is_completed', 'no');
+        return $DataRentTransactionbyProduct;
     }
 
     protected static function boot()

@@ -12,8 +12,15 @@ use Illuminate\Support\Facades\Validator;
 
 class C_FormTambahDataAlat extends Controller
 {
-    public function store(Request $request)
+    public function TambahDataAlat(Request $request)
     {
+        $user = Auth::user();
+        $userId = $user -> id;
+        $lender = Lender::getDataLenderbyUserId($userId);
+        $lenderId = $lender->id;
+        $productName = $request -> name;
+        $productDesc = $request -> product_description;
+        $productPrice = $request -> price;
         $messages = [
             'name.required' => 'Nama alat harus diisi.',
             'price.required' => 'Harga sewa alat harus diisi.',
@@ -39,8 +46,6 @@ class C_FormTambahDataAlat extends Controller
             $latestCode = $latestProduct ? $latestProduct->product_code : 'P000';
     
             $newCode = 'P' . str_pad(intval(substr($latestCode, 1)) + 1, 3, '0', STR_PAD_LEFT);
-            $user = Auth::user();
-            $lender = Lender::where('user_id', $user->id)->first();
             $imageName = '';
             if ($request->hasFile('product_img')) {
                 $image = $request->file('product_img');
@@ -50,15 +55,8 @@ class C_FormTambahDataAlat extends Controller
             }
             $request['product_img'] = $imageName;
 
-            $product = Product::create([
-                'name' => $request->name,
-                'product_code' => $newCode,
-                'product_description' => $request->product_description,
-                'product_img' => $imageName,
-                'price' => $request->price,
-                'lender_id' => $lender->id,
-            ]);
-            $product->save();
+            Product::postDataProducts($productName, $newCode, $productDesc, $imageName, $productPrice, $lenderId);
+            
             return redirect()->back()->with('success', 'Sukses, data berhasil ditambah');
         } catch (\Exception $e) {
             Log::error($e->getMessage());

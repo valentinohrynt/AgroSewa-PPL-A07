@@ -16,7 +16,7 @@
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link">
+    <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="nav-link">
       <i class="fas fa-chart-simple"></i>
       <span class="text">Pengajuan Bantuan</span>
     </a>

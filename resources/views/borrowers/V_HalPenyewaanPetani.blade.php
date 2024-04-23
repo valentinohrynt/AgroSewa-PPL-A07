@@ -4,15 +4,14 @@
 
 @section('navbar-nav')
 <li><a class="nav-link" href="HomepagePetani">Home</a></li>
-<li><a class="nav-link active" href="#">Penyewaan</a></li>
-<li><a class="nav-link" href="riwayat">Riwayat</a></li>
+<li><a class="nav-link active" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
+<li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
   <ul>
     <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
     <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
   </ul>
 </li>
-
 @endsection
 
 @section('content')
@@ -71,7 +70,7 @@
                 <div class="col-12">
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                     data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
-                    <span>Tutup</span>
+                    <span>Batal</span>
                   </button>
                 </div>
               </div>
@@ -90,8 +89,8 @@
                       class="img-fluid w-50 h-50" alt="Gambar Produk">
                   </div>
                   <h6><strong>Nama Alat:</strong><br> {{ $item->product->name }}</h6>
-                  <h6><strong>Tanggal sewa:</strong><br> {{ $item->rent_date }}</h6>
-                  <h6><strong>Tanggal pengembalian:</strong><br> {{ $item->return_date }}</h6>
+                  <h6><strong>Tanggal peminjaman:</strong><br> {{ \Carbon\Carbon::parse($item->rent_date)->translatedFormat('j F Y') }}</h6>
+                  <h6><strong>Tanggal pengembalian:</strong><br> {{ \Carbon\Carbon::parse($item->return_date)->translatedFormat('j F Y') }}</h6>
                   <h6><strong>Total Harga:</strong><br> Rp{{ $total }}</h6>
                 </div>
                 <div class="modal-footer">
@@ -116,7 +115,7 @@
                   @php
                   $encryptedTotalPrice = encrypt($total);
                   @endphp
-                  <form action="{{ route('cancel-transaction', $item->id) }}" method="POST">
+                  <form action="{{ route('BatalPenyewaanPetani()', $item->id) }}" method="POST">
                     @csrf
                     <input type="hidden" name="total_price" value="{{$encryptedTotalPrice}}">
                     @method('PUT')

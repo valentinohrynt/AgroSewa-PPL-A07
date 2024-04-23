@@ -17,10 +17,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
     <link href="{{asset('/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
@@ -77,32 +75,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="{{asset('/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
     <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
     <script src="{{asset('/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
     <script src="{{asset('/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('/assets/vendor/php-email-form/validate.js')}}"></script>
-
+    @yield('scripts')
+    <script src="{{asset('/assets/js/dropbox.js')}}"></script>
     <script src="{{asset('/assets/js/main.js')}}"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-    @yield('script')
-    <!-- <script>
-        $(document).ready(function() {
-            $('#dateFilterInput').on('change', function() {
-                var selectedDate = $(this).val();
-                $('.table tbody tr').each(function() {
-                    var fifthColumnDate = $(this).find('td:eq(4)').text();
-                    if (selectedDate === fifthColumnDate) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('dateFilterInput').addEventListener('change', function() {
+                let selectedDate = this.value;
+                let tableBody = document.querySelector('.table tbody'); // Select the tbody element directly
+
+                if (tableBody) {
+                    for (let row of tableBody.rows) {
+                        let dateColumn = row.cells[4].textContent.trim(); // Tanggal pengembalian berada di indeks 4
+                        let formattedDate = formatTableDate(dateColumn); // Ubah format tanggal pada tabel
+                        if (selectedDate === '' || formattedDate === selectedDate) {
+                            row.style.display = 'table-row'; // Munculkan baris jika tanggal cocok atau input kosong
+                        } else {
+                            row.style.display = 'none'; // Sembunyikan baris jika tanggal tidak cocok
+                        }
                     }
-                });
+                } else {
+                    console.error('Table body element not found.');
+                }
             });
+
+            function formatTableDate(dateString) {
+                const months = [
+                    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                ];
+                let parts = dateString.split(' ');
+                let day = parts[0];
+                let monthIndex = months.indexOf(parts[1]) + 1; // Tambahkan 1 karena indeks dimulai dari 0
+                let year = parts[2];
+                let formattedDate = year + '-' + (monthIndex < 10 ? '0' : '') + monthIndex + '-' + (day < 10 ? '0' : '') + day;
+                return formattedDate;
+            }
         });
-    </script> -->
+    </script>
+
+
 </body>
 
 </html>

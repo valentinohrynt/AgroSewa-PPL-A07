@@ -17,7 +17,12 @@ class C_DashboardSA extends Controller
 
         return view('superadmin.V_DashboardSA', compact('countofTRT', 'countofTNU', 'countofART','countofAU'));
     }
+
     public function HalPenyewaanSA(){
+        return redirect('HalPenyewaanSA');
+    }
+
+    public function HalRiwayatSA(){
         return redirect('HalPenyewaanSA');
     }
 }

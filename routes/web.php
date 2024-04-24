@@ -1,15 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\C_HomepageKT;
 use App\Http\Controllers\C_DashboardSA;
 use App\Http\Controllers\C_HalDataAlatKT;
 use App\Http\Controllers\C_HalDataAlatSA;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\C_DashboardPemerintah;
 use App\Http\Controllers\C_FormSewaAlat;
 use App\Http\Controllers\C_HalPenyewaanKT;
 use App\Http\Controllers\C_HalRiwayatPenyewaanKT;
+use App\Http\Controllers\C_HalRiwayatPemerintah;
+use App\Http\Controllers\C_HalRiwayatSA;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanKT;
 use App\Http\Controllers\C_HalPenyewaanSA;
 use App\Http\Controllers\C_FormEditSewaAlat;
@@ -19,7 +21,11 @@ use App\Http\Controllers\C_HalPengajuanBantuanKT;
 use App\Http\Controllers\C_HalPengajuanBantuanPemerintah;
 use App\Http\Controllers\C_HomepagePetani;
 use App\Http\Controllers\C_HalDataPenyewaanSA;
+use App\Http\Controllers\C_HalRiwayatPenyewaanSA;
+use App\Http\Controllers\C_HalRiwayatPengajuanBantuanSA;
 use App\Http\Controllers\C_HalPenyewaanPetani;
+use App\Http\Controllers\C_HalRiwayatPengajuanBantuanPemerintah;
+use App\Http\Controllers\C_HalRiwayatPenyewaanPemerintah;
 use App\Http\Controllers\C_HalRiwayatPenyewaanPetani;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -62,29 +68,45 @@ Route::middleware('auth')->group(function () {
         Route::put('/cancel-transaction/{id}', [C_HalPenyewaanPetani::class, 'BatalPenyewaanPetani'])->name('BatalPenyewaanPetani()');
         Route::get('/loading/FormSewaAlat', [C_HalPenyewaanPetani::class, 'SewaAlat'])->middleware('verified')->name('SewaAlat()');
 
-        Route::get('FormSewaAlat', [C_FormSewaAlat::class, 'setFormSewaAlat'])->middleware('verified');
-        Route::post('FormSewaAlat', [C_FormSewaAlat::class, 'SewaAlat'])->middleware('verified')->name('SewaAlatPetani()');
+        Route::get('FormSewaAlat/{product_id}', [C_FormSewaAlat::class, 'setFormSewaAlat'])->middleware('verified')->name('FormSewaAlat');
+        Route::post('FormSewaAlat', [C_FormSewaAlat::class, 'SewaAlatPetani'])->middleware('verified')->name('SewaAlatPetani()');
 
         Route::get('HalRiwayatPenyewaanPetani', [C_HalRiwayatPenyewaanPetani::class, 'setHalRiwayatPenyewaanPetani'])->middleware('verified');
         // PETANI / BORROWER END
     });
 
-    // SUPERADMIN START
-    Route::get('DashboardSA', [C_DashboardSA::class, 'setDashboardSA'])->name('DashboardSA')->middleware('only_superadmin');
-    Route::get('HalPenyewaanSA', [C_HalPenyewaanSA::class, 'setHalPenyewaanSA'])->name('HalPenyewaanSA')->middleware('only_superadmin');
-    Route::post('HalDataPenyewaanSA', [C_HalDataPenyewaanSA::class, 'setHalDataPenyewaanSA'])->name('HalDataPenyewaanSA')->middleware('only_superadmin');
-    Route::post('HalDataAlatSA', [C_HalDataAlatSA::class, 'setHalDataAlatSA'])->name('HalDataAlatSA')->middleware('only_superadmin');
-    // SUPERADMIN END
+    Route::middleware('only_superadmin')->group(function () {
+        // SUPERADMIN START
+        Route::get('DashboardSA', [C_DashboardSA::class, 'setDashboardSA'])->name('DashboardSA');
+        Route::get('/loading/HalPenyewaanSA', [C_DashboardSA::class, 'HalPenyewaanSA'])->name('HalPenyewaanSA()');
+        Route::get('/loading/HalRiwayatSA', [C_DashboardSA::class, 'HalRiwayatSA'])->name('HalRiwayatSA()');
+    
+        Route::get('HalPenyewaanSA', [C_HalPenyewaanSA::class, 'setHalPenyewaanSA']);
+        Route::post('HalDataPenyewaanSA', [C_HalDataPenyewaanSA::class, 'setHalDataPenyewaanSA'])->name('HalDataPenyewaanSA');
+        Route::post('HalDataAlatSA', [C_HalDataAlatSA::class, 'setHalDataAlatSA'])->name('HalDataAlatSA');
+        
+        
+        Route::get('HalRiwayatSA', [C_HalRiwayatSA::class, 'setHalRiwayatSA']);
+        Route::post('HalRiwayatPenyewaanSA', [C_HalRiwayatPenyewaanSA::class, 'setHalRiwayatPenyewaanSA'])->name('HalRiwayatPenyewaanSA()');
+        Route::post('HalRiwayatPengajuanBantuanSA', [C_HalRiwayatPengajuanBantuanSA::class, 'setHalRiwayatPengajuanBantuanSA'])->name('HalRiwayatPengajuanBantuanSA()');
+        // SUPERADMIN END
+    });
 
-    // GOVERNMENT START
-    Route::get('DashboardPemerintah', [C_DashboardPemerintah::class, 'setDashboardPemerintah'])->middleware('only_government');
-    Route::get('/loading/HalPengajuanBantuanPemerintah', [C_DashboardPemerintah::class, 'HalPengajuanBantuanPemerintah'])->middleware('only_government')->name('HalPengajuanBantuanPemerintah()');
-
-
-    Route::patch('/accept-equipment-request/{id}', [C_HalPengajuanBantuanPemerintah::class, 'SetujuiPengajuanBantuan'])->name('SetujuiPengajuanBantuan()');
-    Route::patch('/reject-equipment-request/{id}', [C_HalPengajuanBantuanPemerintah::class, 'TolakPengajuanBantuan'])->name('TolakPengajuanBantuan()');
-    Route::get('HalPengajuanBantuanPemerintah', [C_HalPengajuanBantuanPemerintah::class, 'setHalPengajuanBantuanPemerintah'])->middleware('only_government');
-    // GOVERNMENT END
+    Route::middleware('only_government')->group(function () {
+        // GOVERNMENT START
+        Route::get('DashboardPemerintah', [C_DashboardPemerintah::class, 'setDashboardPemerintah']);
+        Route::get('/loading/HalPengajuanBantuanPemerintah', [C_DashboardPemerintah::class, 'HalPengajuanBantuanPemerintah'])->name('HalPengajuanBantuanPemerintah()');
+        
+        
+        Route::get('HalPengajuanBantuanPemerintah', [C_HalPengajuanBantuanPemerintah::class, 'setHalPengajuanBantuanPemerintah']);
+        Route::patch('/accept-equipment-request/{id}', [C_HalPengajuanBantuanPemerintah::class, 'SetujuiPengajuanBantuan'])->name('SetujuiPengajuanBantuan()');
+        Route::patch('/reject-equipment-request/{id}', [C_HalPengajuanBantuanPemerintah::class, 'TolakPengajuanBantuan'])->name('TolakPengajuanBantuan()');
+        
+        Route::get('HalRiwayatPemerintah', [C_HalRiwayatPemerintah::class, 'setHalRiwayatPemerintah']);
+        Route::post('HalRiwayatPenyewaanPemerintah', [C_HalRiwayatPenyewaanPemerintah::class, 'setHalRiwayatPenyewaanPemerintah'])->name('HalRiwayatPenyewaanPemerintah()');
+        Route::post('HalRiwayatPengajuanBantuanPemerintah', [C_HalRiwayatPengajuanBantuanPemerintah::class, 'setHalRiwayatPengajuanBantuanPemerintah'])->name('HalRiwayatPengajuanBantuanPemerintah()');
+        // GOVERNMENT END
+    });
 
     Route::middleware('only_lender')->group(function () {
         // POKTAN / LENDER START
@@ -113,5 +135,5 @@ Route::middleware('auth')->group(function () {
         // POKTAN / LENDER END
     });
 
-    Route::get('logout', [AuthController::class, 'logout']);
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="{{ route ('HalPenyewaanSA') }}">Daftar Kelompok Tani</a>
+            <a href="{{ route ('HalPenyewaanSA()') }}">Daftar Kelompok Tani</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -49,15 +49,9 @@
         </a>
     </li>
     <li class="active">
-        <a href="HalPenyewaanSA" class="nav-link">
+        <a href="{{ route('HalPenyewaanSA()')}}" class="nav-link">
             <i class="fas fa-shopping-cart"></i>
             <span class="text">Penyewaan</span>
-        </a>
-    </li>
-    <li>
-        <a href="#" class="nav-link">
-            <i class="fas fa-chart-simple"></i>
-            <span class="text">Pengajuan Bantuan</span>
         </a>
     </li>
     <li>
@@ -70,7 +64,7 @@
 
 <ul class="side-menu">
     <li>
-        <a href="logout" class="logout">
+        <a href="{{ route('logout') }}" class="logout">
             <i class="fas fa-right-from-bracket"></i>
             <span class="text">Logout</span>
         </a>
@@ -78,10 +72,20 @@
 </ul>
 @endsection
 
+@section('content-box-info')
+<div class="box-info" style="display:flex; justify-content: flex-start;">
+    <form id="form_{{ $lender->id }}" action="{{ route('HalDataPenyewaanSA') }}" method="post">
+        @csrf
+        <input type="hidden" name="lender_id" value="{{ $lender->id }}">
+        <button class="btn btn-info" onclick="submitForm('{{ $lender->id }}')" style="width: 10rem;"><i class="fa fa-arrow-left"></i> Kembali</button>
+    </form>
+</div>
+@endsection
+
 @section('content-table-data')
 <div class="order">
     <div class="head">
-        <h3>Penyewaan Poktan {{$lender->name}}</h3>
+        <h3>Data Alat {{$lender->name}}</h3>
         <div class="form-input">
             <input type="text" id="searchInput" placeholder="Pencarian" />
             <button type="button" id="searchBtn" class="search-btn">

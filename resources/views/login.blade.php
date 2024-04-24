@@ -35,7 +35,7 @@
                         Berhasil mengubah sandi, silahkan login!
                     </div>
                 @endif
-                <form action="#" method="post">
+                <form action="" method="post">
                     @csrf
                     <div class="row pt-5">
                         <div class="input-group col-lg-12 mb-4">

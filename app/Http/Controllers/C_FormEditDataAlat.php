@@ -22,6 +22,7 @@ class C_FormEditDataAlat extends Controller
         $productName = $request->name;
         $productDesc = $request->product_description;
         $productPrice = $request->price;
+        $product = Product::getDataProductsbyId($id);
         $messages = [
             'name.required' => 'Nama alat harus diisi.',
             'price.required' => 'Harga sewa alat harus diisi.',
@@ -44,13 +45,13 @@ class C_FormEditDataAlat extends Controller
 
         try {
             if ($request->hasFile('product_img')) {
-                $image = $request->file('product_img');
+                $image = $request->product_img;
                 $extension = $image->getClientOriginalExtension();
-                $imageName = 'P' . str_pad($id, 3, '0', STR_PAD_LEFT) . '.' . $extension;
+                $imageName = $product->product_code. '.' . $extension;
                 $image->storeAs('product_img', $imageName);
-                Product::pacthDataProducts($id, $productName, $productDesc, $productPrice, $lenderId, $imageName);
+                Product::patchDataProducts($id, $productName, $productDesc, $productPrice, $lenderId, $imageName);
             } else {
-                Product::pacthDataProducts($id, $productName, $productDesc, $productPrice, $lenderId, null);
+                Product::patchDataProducts($id, $productName, $productDesc, $productPrice, $lenderId, null);
             }
             return redirect()->back()->with('success', 'Sukses, data berhasil diedit');
         } catch (\Exception $e) {

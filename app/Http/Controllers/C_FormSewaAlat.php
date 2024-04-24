@@ -9,17 +9,18 @@ use Illuminate\Http\Request;
 use App\Models\RentTransaction;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class C_FormSewaAlat extends Controller
 {
-    public function setFormSewaAlat(Request $request)
+    public function setFormSewaAlat(Request $request, $product_id)
     {
         $user = Auth::user();
         $userId = $user->id;
         $borrower = Borrower::getDataBorrowerbyUserId($userId);
-        $productId = $request->query('product_id');
+        $productId = Crypt::decrypt($product_id);
 
-        $rentTransactions = RentTransaction::getDataRentTransactionByProductId($productId);
+        $rentTransactions = RentTransaction::getDataRentTransactionByProductId($productId)->get();
         $events = [];
         foreach ($rentTransactions as $transaction) {
             $endDate = Carbon::createFromFormat('Y-m-d', $transaction->return_date)->addDay()->format('Y-m-d');
@@ -56,6 +57,7 @@ class C_FormSewaAlat extends Controller
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');
         $productId = $request->input('product_id');
+        
         $overlappingAppointments = RentTransaction::getDataRentTransactionbyProductId($productId)
         ->where(function ($query) use ($rentDate, $returnDate) {
             $query->where(function ($q) use ($rentDate, $returnDate) {

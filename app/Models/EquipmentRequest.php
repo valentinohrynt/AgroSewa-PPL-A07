@@ -26,17 +26,13 @@ class EquipmentRequest extends Model
         return $DataEquipmentRequest;
     }
 
-    public static function postDataEquipmentRequest($pdf_file_name, $equipment_request_number, $lender_id)
+    public static function postDataEquipmentRequest($lender_id)
     {
         $equipmentRequest = static::create([
-            'pdf_file_name' => $pdf_file_name,
-            'equipment_request_number' => $equipment_request_number,
             'lender_id' => $lender_id
         ]);
 
-        $equipmentRequestId = $equipmentRequest -> id;
-
-        return $equipmentRequestId;
+        return $equipmentRequest;
     }
 
     public static function patchStatustoAccepted($id)
@@ -57,5 +53,17 @@ class EquipmentRequest extends Model
     public function lender()
     {
         return $this->belongsTo(Lender::class, 'lender_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($equipmentRequest) {
+            $latestRequest = static::latest()->first();
+            $latestNumber = $latestRequest ? intval(substr($latestRequest->equipment_request_number, 2)) : 0;
+            $newNumber = 'PB' . str_pad($latestNumber + 1, 4, '0', STR_PAD_LEFT);
+            $equipmentRequest->equipment_request_number = $newNumber;
+        });
     }
 }

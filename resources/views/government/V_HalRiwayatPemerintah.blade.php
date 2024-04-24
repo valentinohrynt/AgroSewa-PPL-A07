@@ -1,13 +1,13 @@
-@extends('layouts.dashboard-penyewaan-layout')
+@extends('layouts.dashboard-riwayat-layout')
 
-@section('title', 'Penyewaan')
+@section('title', 'Riwayat Pemerintah')
 
 @section('content-head-title')
 <div class="left">
-  <h1>Penyewaan</h1>
+  <h1>Riwayat</h1>
   <ul class="breadcrumb">
     <li>
-      <a href="#">Dashboard</a>
+      <a href="DashboardPemerintah">Dashboard</a>
     </li>
     <i class="fas fa-chevron-right"></i>
     <li>
@@ -18,32 +18,26 @@
 @endsection
 
 @section('sidebar')
-<a href="#" class="logo">
+<a href="DashboardPemerintah" class="logo">
   <i class="fa fa-user-tie"></i>
-  <span class="text">Admin Agrosewa</span>
+  <span class="text">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
-  <li>
-    <a href="DashboardSA" class="nav-link">
+  <li class="">
+    <a href="DashboardPemerintah" class="nav-link">
       <i class="fa fa-dashboard"></i>
       <span class="text">Dashboard</span>
     </a>
   </li>
-  <li>
-    <a href="#" class="nav-link">
-      <i class="fas fa-people-group"></i>
-      <span class="text">Akun</span>
+  <li class="">
+    <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="nav-link">
+      <i class="fas fa-chart-simple"></i>
+      <span class="text">Pengajuan Bantuan</span>
     </a>
   </li>
   <li class="active">
-    <a href="{{route('HalPenyewaanSA()')}}" class="nav-link">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="text">Penyewaan</span>
-    </a>
-  </li>
-  <li>
-    <a href="{{route('HalRiwayatSA()')}}" class="nav-link">
+    <a href="#" class="nav-link">
       <i class="fas fa-history"></i>
       <span class="text">Riwayat</span>
     </a>
@@ -84,7 +78,7 @@
       <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
         <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
         <td style="text-align:left; padding-left:0.8rem;"><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->name }}</a></td>
-        <form id="form_{{ $item->id }}" action="{{ route('HalDataPenyewaanSA') }}" method="post">
+        <form id="form_{{ $item->id }}" action="{{ route('HalRiwayatPenyewaanPemerintah()') }}" method="post">
           @csrf
           <input type="hidden" name="lender_id" value="{{ $item->id }}">
         </form>

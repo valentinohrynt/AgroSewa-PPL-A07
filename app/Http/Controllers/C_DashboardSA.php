@@ -10,8 +10,8 @@ class C_DashboardSA extends Controller
 {
     public function setDashboardSA(){
 
-        $countofTRT= RentTransaction::whereDate('rent_date',now()->toDateString())->where('is_completed', 'no')->count();
-        $countofTNU = User::whereDate('created_at', now()->toDateString())->where('email_verified_at', true)->count();
+        $countofTRT= RentTransaction::getDataNewRentTransaction()->count();
+        $countofTNU = User::getDataNewVerifiedUser()->count();
         $countofART= RentTransaction::all()->count();
         $countofAU = User::all()->count();
 
@@ -23,6 +23,6 @@ class C_DashboardSA extends Controller
     }
 
     public function HalRiwayatSA(){
-        return redirect('HalPenyewaanSA');
+        return redirect('HalRiwayatSA');
     }
 }

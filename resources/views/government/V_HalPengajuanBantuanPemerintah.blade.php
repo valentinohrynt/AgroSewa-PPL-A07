@@ -37,7 +37,7 @@
         </a>
     </li>
     <li>
-        <a href="#" class="nav-link">
+        <a href="HalRiwayatPemerintah" class="nav-link">
             <i class="fas fa-history"></i>
             <span class="text">Riwayat</span>
         </a>
@@ -46,7 +46,7 @@
 
 <ul class="side-menu">
     <li>
-        <a href="logout" class="logout">
+        <a href="{{ route('logout') }}" class="logout">
             <i class="fas fa-right-from-bracket"></i>
             <span class="text">Logout</span>
         </a>
@@ -83,7 +83,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->equipment_request_number }}</td>
                 <td>{{ $item->created_at }}</td>
-                <td>{{ $item->lender->name }}</td>
+                <td><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->lender->name }}</a></td>
                 <td>
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#pdfModal{{ $item->id }}">
                         <i class="fa fa-solid fa-file-pdf"></i>
@@ -107,6 +107,32 @@
                         </div>
                         <div class="modal-body" style="height: 80vh; overflow-y: hidden;">
                             <embed src="{{ asset('storage/pdf_files/'.$item->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%"></embed>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="lenderDetailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="lenderDetailModalLabel{{ $item->id }}">Detail Kelompok Tani</h6>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-img" style="display:flex; justify-content:center;">
+                                <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
+                            </div>
+                            <h6>Nama Kelompok Tani:</h6>
+                            <h3>{{ $item->lender->name }}</h3>
+                            <br>
+                            <h6><strong>Nomor Telepon:</strong></h6>
+                            <h3>{{ $item->lender->phone }}</h3>
+                            <br>
+                            <h6><strong>Alamat:</strong></h6>
+                            <h3>{{ $item->lender->street }}</h3>
+                            <br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

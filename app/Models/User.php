@@ -48,4 +48,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $attributes = [
         'role_id'=> 3,
     ];
+
+    public static function getDataNewVerifiedUser()
+    {
+        $DataNewVerifiedUser = static::whereDate('email_verified_at', now()->toDateString())->get();
+        return $DataNewVerifiedUser;
+    }
 }

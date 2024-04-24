@@ -24,10 +24,7 @@ class C_HalPenyewaanKT extends Controller
         $product = Product::getDataProductsbyLenderId($lenderId);
         $productIds = $product->pluck('id');
 
-        $rentTransactions = RentTransaction::with('product', 'borrower')
-            ->whereIn('product_id', $productIds)
-            ->where('is_completed', 'no')
-            ->get();
+        $rentTransactions = RentTransaction::getDataRentTransactionbyProductIds($productIds);
 
         return view('lenders.V_HalPenyewaanKT', ['rentTransactions' => $rentTransactions]);
     }

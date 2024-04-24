@@ -12,9 +12,8 @@ class C_HalDataAlatSA extends Controller
     public function setHalDataAlatSA(Request $request){
         
         $lender_id = $request->input('lender_id');
-        $lender = Lender::findOrFail($lender_id);
-        $products = Product::with("lender")
-        ->where('lender_id',$lender_id )->get();
+        $lender = Lender::getDataLenderbyId($lender_id);
+        $products = Product::getDataProductsbyLenderId($lender_id);
         return view('superadmin.V_HalDataAlatSA', compact('products', 'lender'));
     }
 }

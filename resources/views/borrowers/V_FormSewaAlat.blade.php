@@ -10,7 +10,7 @@
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 
@@ -57,7 +57,7 @@
                         </div>
                         <br>
                         <div class="col">
-                            <form action="{{ route('SewaAlat()') }}" method="post" role="form"
+                            <form action="{{ route('SewaAlatPetani()') }}" method="post" role="form"
                                 class="transaction-form px-5 pb-5">
                                 @csrf
                                 <div class="col pt-5">

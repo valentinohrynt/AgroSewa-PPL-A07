@@ -64,8 +64,9 @@ class C_HalPenyewaanPetani extends Controller
         return back()->with('success', 'Penyewaan berhasil dibatalkan!');
     }
 
-    public function SewaAlat()
+    public function SewaAlat(Request $request)
     {
-        return redirect('SewaAlat');
+        $id = Crypt::encrypt($request -> product_id);
+        return redirect()->route('FormSewaAlat',['product_id'=>$id]);
     }
 }

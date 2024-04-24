@@ -31,5 +31,14 @@ class Lender extends Model
         $DataLenderbyUserId = static::where('user_id', $id)->first();
         return $DataLenderbyUserId;
     }
+    public static function getDataLenderbyId($id)
+    {
+        $DataLenderbyId = static::findOrFail($id);
+        return $DataLenderbyId;
+    }
+    public function village()
+    {
+        return $this->belongsTo(Village::class);
+    }
     use HasFactory;
 }

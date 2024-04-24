@@ -42,20 +42,16 @@ class C_FormTambahDataAlat extends Controller
         }
 
         try {
-            $latestProduct = Product::latest()->first();
-            $latestCode = $latestProduct ? $latestProduct->product_code : 'P000';
-    
-            $newCode = 'P' . str_pad(intval(substr($latestCode, 1)) + 1, 3, '0', STR_PAD_LEFT);
-            $imageName = '';
-            if ($request->hasFile('product_img')) {
-                $image = $request->file('product_img');
-                $extension = $request->file('product_img')->getClientOriginalExtension();
-                $imageName = $newCode . '.' . $extension;
-                $request->file('product_img') -> storeAs('product_img', $imageName);
-            }
-            $request['product_img'] = $imageName;
+            $product = Product::postDataProducts($productName, $productDesc, $productPrice, $lenderId);
 
-            Product::postDataProducts($productName, $newCode, $productDesc, $imageName, $productPrice, $lenderId);
+            $image = $request->product_img;
+            if ($image) {
+                $extension = $image->getClientOriginalExtension();
+                $imageName = $product->product_code . '.' . $extension;
+                $image->storeAs('product_img', $imageName);
+                $product->product_img = $imageName;
+                $product->save();
+            }
             
             return redirect()->back()->with('success', 'Sukses, data berhasil ditambah');
         } catch (\Exception $e) {

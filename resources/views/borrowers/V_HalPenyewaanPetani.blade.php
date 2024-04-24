@@ -9,7 +9,7 @@
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
   <ul>
     <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
-    <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
+    <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
   </ul>
 </li>
 @endsection
@@ -174,11 +174,12 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                <form action="" method="post">
+                <form action="{{route('SewaAlat()')}}" method="get">
                   @csrf
                   <input type="hidden" name="product_id" value="{{ $product->id }}">
-                  <a class="btn btn-success"
-                    href="{{ route('transaksi-penyewaan', ['product_id' => $product->id]) }}">Sewa</a>
+                  <button type="submit" class="btn btn-success">
+                    Sewa
+                  </button>
                 </form>
               </div>
             </div>

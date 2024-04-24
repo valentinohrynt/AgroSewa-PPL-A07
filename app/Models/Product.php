@@ -41,33 +41,33 @@ class Product extends Model
         return $DataProductsbyId;
     }
 
-    public static function postDataProducts($name, $product_code, $product_description, $product_img, $price, $lender_id)
+    public static function postDataProducts($name, $product_description, $price, $lender_id)
     {
-        return static::create([
-            'name' => $name,
-            'product_code' => $product_code,
-            'product_description' => $product_description,
-            'product_img' => $product_img,
-            'price' => $price,
-            'lender_id' => $lender_id
-        ]);
+        $product = new static;
+        $product->name = $name;
+        $product->product_description = $product_description;
+        $product->price = $price;
+        $product->lender_id = $lender_id;
+        $product->save();
+
+        return $product;
     }
 
-    public static function pacthDataProducts($id, $name, $product_description, $price, $lender_id, $product_img)
+    public static function patchDataProducts($id, $name, $product_description, $price, $lender_id, $product_img)
     {
         $product = static::find($id);
-        
+    
         $data = [
             'name' => $name,
             'price' => $price,
             'lender_id' => $lender_id,
         ];
-
-        if ($product_description != null) {
+    
+        if ($product_description !== null) {
             $data['product_description'] = $product_description;
         }
         
-        if ($product_img != null) {
+        if ($product_img !== null) {
             $data['product_img'] = $product_img;
         }
     
@@ -92,5 +92,17 @@ class Product extends Model
     public function lender()
     {
         return $this->belongsTo(Lender::class, 'lender_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($product) {
+            $latestProduct = self::latest()->first();
+            $latestCode = $latestProduct ? $latestProduct->product_code : 'P000';
+            $newCode = 'P' . str_pad(intval(substr($latestCode, 1)) + 1, 4, '0', STR_PAD_LEFT);
+            $product->product_code = $newCode;
+        });
     }
 }

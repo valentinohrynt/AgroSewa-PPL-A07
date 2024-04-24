@@ -11,7 +11,7 @@
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 
@@ -46,7 +46,6 @@
                     <th>No.</th>
                     <th>Kode Alat</th>
                     <th>Nama Alat</th>
-                    <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Edit</th>
                 </tr>
@@ -57,7 +56,6 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->product_code }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->product_description }}</td>
                     <td>Rp{{ $item->price }}</td>
                     <td>
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}"><i class="bi-pencil"></i>

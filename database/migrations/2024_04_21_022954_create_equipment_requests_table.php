@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('equipment_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('pdf_file_name');
+            $table->string('pdf_file_name')->nullable();
             $table->string('equipment_request_number')->unique();
             $table->unsignedBigInteger('lender_id');
             $table->foreign('lender_id')->references('id')->on('lenders');
-            $table->unsignedBigInteger('government_id');
-            $table->foreign('government_id')->references('id')->on('governments');
             $table->string('is_approved')->default('process');
             $table->rememberToken();
             $table->timestamps();

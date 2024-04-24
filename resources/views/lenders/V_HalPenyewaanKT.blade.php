@@ -11,7 +11,7 @@
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="logout">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 

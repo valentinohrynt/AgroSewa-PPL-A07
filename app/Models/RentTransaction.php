@@ -43,6 +43,12 @@ class RentTransaction extends Model
         ]);
     }
 
+    public static function getDataNewRentTransaction()
+    {
+        $DataRentTransaction = static::where('is_completed', 'no')->whereDate('rent_date',now()->toDateString())->get();
+        return $DataRentTransaction;
+    }
+
     public static function getDataRentTransactionbyId($id)
     {
         $DataRentTransactionbyId = static::findOrFail($id);
@@ -74,6 +80,12 @@ class RentTransaction extends Model
     {
         $DataRentTransactionbyProduct = static::where('product_id', $id)->where('is_completed', 'no');
         return $DataRentTransactionbyProduct;
+    }
+
+    public static function getDataRentTransactionbyProductIds($ids)
+    {
+        $DataRentTransactionbyProductIds = static::with('product', 'borrower')->whereIn('product_id', $ids)->where('is_completed', 'no')->get();
+        return $DataRentTransactionbyProductIds;
     }
 
     protected static function boot()

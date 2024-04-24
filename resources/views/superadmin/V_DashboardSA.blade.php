@@ -22,19 +22,13 @@
     </a>
   </li>
   <li>
-    <a href="HalPenyewaanSA" class="nav-link">
+    <a href="{{ route('HalPenyewaanSA()')}}" class="nav-link">
       <i class="fas fa-shopping-cart"></i>
       <span class="text">Penyewaan</span>
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link">
-      <i class="fas fa-chart-simple"></i>
-      <span class="text">Pengajuan Bantuan</span>
-    </a>
-  </li>
-  <li>
-    <a href="#" class="nav-link">
+    <a href="{{ route('HalRiwayatSA()')}}" class="nav-link">
       <i class="fas fa-history"></i>
       <span class="text">Riwayat</span>
     </a>
@@ -43,7 +37,7 @@
 
 <ul class="side-menu">
   <li>
-    <a href="logout" class="logout">
+    <a href="{{ route('logout') }}" class="logout">
       <i class="fas fa-right-from-bracket"></i>
       <span class="text">Logout</span>
     </a>

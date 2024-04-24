@@ -22,7 +22,7 @@
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link">
+    <a href="HalRiwayatPemerintah" class="nav-link">
       <i class="fas fa-history"></i>
       <span class="text">Riwayat</span>
     </a>
@@ -31,7 +31,7 @@
 
 <ul class="side-menu">
   <li>
-    <a href="logout" class="logout">
+    <a href="{{ route('logout') }}" class="logout">
       <i class="fas fa-right-from-bracket"></i>
       <span class="text">Logout</span>
     </a>

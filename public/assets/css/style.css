@@ -45,7 +45,7 @@ h6 {
         font-size: 90%;
     }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
     h1,
     h2,
     h3,
@@ -821,7 +821,7 @@ section {
         font-size: 90%;
     }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
     .table {
         font-size: 85%;
     }
@@ -1044,7 +1044,7 @@ section {
 }
 
 #footer .footer-top .footer-info p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
@@ -1069,25 +1069,19 @@ section {
     max-height: fit-content;
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+/* @media (min-width: 576px) and (max-width: 767px) {
     #footer,
     #footer .footer-top .footer-info h3,
     #footer .footer-top .footer-info p,
-    #footer .footer-top h4,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-newsletter form input[type="submit"],
     #footer .credits {
         font-size: 98%;
     }
-}
+} */
 
 @media (min-width: 425px) and (max-width: 575px) {
     #footer,
     #footer .footer-top .footer-info h3,
     #footer .footer-top .footer-info p,
-    #footer .footer-top h4,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-newsletter form input[type="submit"],
     #footer .credits {
         font-size: 95%;
     }
@@ -1097,9 +1091,6 @@ section {
     #footer,
     #footer .footer-top .footer-info h3,
     #footer .footer-top .footer-info p,
-    #footer .footer-top h4,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-newsletter form input[type="submit"],
     #footer .credits {
         font-size: 92%;
     }
@@ -1109,9 +1100,6 @@ section {
     #footer,
     #footer .footer-top .footer-info h3,
     #footer .footer-top .footer-info p,
-    #footer .footer-top h4,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-newsletter form input[type="submit"],
     #footer .credits {
         font-size: 90%;
     }
@@ -1120,9 +1108,6 @@ section {
     #footer,
     #footer .footer-top .footer-info h3,
     #footer .footer-top .footer-info p,
-    #footer .footer-top h4,
-    #footer .footer-top .footer-links ul i,
-    #footer .footer-top .footer-newsletter form input[type="submit"],
     #footer .credits {
         font-size: 88%;
     }
@@ -1170,4 +1155,36 @@ section {
 
 .dropbox-input {
     display: none;
+}
+
+.logo-jemberkab{
+    width: 20rem;
+    height: 5rem;
+}
+
+@media (min-width: 425px) and (max-width: 575px) {
+    .logo-jemberkab{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 424px) {
+    .logo-jemberkab{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+    .logo-jemberkab{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media (min-width: 240px) and (max-width: 319px) {
+    .logo-jemberkab{
+        width: 50%;
+        height: 50%;
+    }
 }

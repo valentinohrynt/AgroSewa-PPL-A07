@@ -52,6 +52,11 @@ class Product extends Model
 
         return $product;
     }
+    
+    public function lender()
+    {
+        return $this->belongsTo(Lender::class);
+    }
 
     public static function patchDataProducts($id, $name, $product_description, $price, $lender_id, $product_img)
     {
@@ -89,10 +94,6 @@ class Product extends Model
         return $this->hasMany(RentTransaction::class, 'product_id');
     }
 
-    public function lender()
-    {
-        return $this->belongsTo(Lender::class, 'lender_id');
-    }
 
     protected static function boot()
     {

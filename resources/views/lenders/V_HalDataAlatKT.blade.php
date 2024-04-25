@@ -114,10 +114,10 @@
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('storage/product_img/'.$item->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
-                                <h6><strong>Nama:</strong><br> {{ $item->name }}</h6>
-                                <h6><strong>Kode Alat:</strong><br> {{ $item->product_code }}</h6>
-                                <h6><strong>Deskripsi:</strong><br> {{ $item->product_description }}</h6>
-                                <h6><strong>Harga:</strong><br> Rp{{ $item->price }}</h6>
+                                <p>Nama Alat:<br>{{ $item->name }}</p>
+                                <p>Kode Alat:<br>{{ $item->product_code }}</p>
+                                <p>Deskripsi:<br>{{ $item->product_description }}</p>
+                                <p>Harga sewa per hari:<br>Rp{{ $item->price }}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

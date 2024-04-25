@@ -6,6 +6,7 @@ body {
 a {
     color: #3a6351;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
@@ -128,10 +129,17 @@ h6 {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #151515;
+    background: #ffffff2b;
 }
 
-#preloader:before {
+#preloader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#preloader:before img {
     content: "";
     position: fixed;
     top: calc(50% - 0px);
@@ -880,6 +888,14 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Slightly transparent black */
 }
 
+.table td a{
+    color:#3a6351;
+    font-weight: 700;
+}
+.table td a:hover{
+    color:#2ecc71;
+}
+
 .table tr {
     width: auto;
     cursor: pointer;
@@ -1157,34 +1173,78 @@ section {
     display: none;
 }
 
-.logo-jemberkab{
+.logo-jemberkab {
     width: 20rem;
     height: 5rem;
 }
 
 @media (min-width: 425px) and (max-width: 575px) {
-    .logo-jemberkab{
+    .logo-jemberkab {
         width: 50%;
         height: 50%;
     }
 }
 
 @media (min-width: 360px) and (max-width: 424px) {
-    .logo-jemberkab{
+    .logo-jemberkab {
         width: 50%;
         height: 50%;
     }
 }
 
 @media (min-width: 320px) and (max-width: 359px) {
-    .logo-jemberkab{
+    .logo-jemberkab {
         width: 50%;
         height: 50%;
     }
 }
 @media (min-width: 240px) and (max-width: 319px) {
-    .logo-jemberkab{
+    .logo-jemberkab {
         width: 50%;
         height: 50%;
     }
+}
+
+/* Custom styles for the modal */
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    color: #666;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Custom close button */
+.modal-header .btn-close {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+/* Custom modal overlay */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
 }

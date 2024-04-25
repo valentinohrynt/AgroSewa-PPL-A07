@@ -70,9 +70,9 @@ class RentTransaction extends Model
         return static::where('id', $id)->update(['is_completed' => 'no']);
     }
 
-    public static function getDataRentTransactionbyBorrower($borrower)
+    public static function getDataRentTransactionbyBorrowerId($id)
     {
-        $DataRentTransactionbyBorrower = static::where('borrower_id', $borrower->id)->where('is_completed', 'no')->get();
+        $DataRentTransactionbyBorrower = static::where('borrower_id', $id)->where('is_completed', 'no')->get();
         return $DataRentTransactionbyBorrower;
     }
 

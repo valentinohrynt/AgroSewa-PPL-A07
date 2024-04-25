@@ -55,17 +55,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->rentTransaction->transaction_number }}</td>
                     <td>{{ $item->rentTransaction->product->name }}</td>
-                    <td>{{ $item->rentTransaction->borrower->name }}</td>
+                    <td><a href onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#borrowerDetailModal{{ $item->rentTransaction->borrower->id }}">{{ $item->rentTransaction->borrower->name }}</a></td>
                     <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
-                    <td hidden> @php
-                        $returnDate = Carbon\Carbon::parse($item->rentTransaction->return_date);
-                        $rentDate = Carbon\Carbon::parse($item->rentTransaction->rent_date);
-                        $price = floatval($item->rentTransaction->product->price);
-                        $daysDifference = ($rentDate->diffInDays($returnDate))+1;
-                        $total = $price * $daysDifference;
-                        @endphp
-                        {{ $total }}
-                    </td>
                     <td>
                         @if($item->rentTransaction->is_completed == 'yes')
                         <p>
@@ -89,19 +80,38 @@
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('storage/product_img/'.$item->rentTransaction->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
-                                <h6><strong>Nama Alat:</strong><br> {{ $item->rentTransaction->product->name }}</h6>
-                                <h6><strong>Nama Penyewa:</strong><br> {{ $item->rentTransaction->borrower->name }}</h6>
-                                <h6><strong>Tanggal peminjaman:</strong><br> {{ \Carbon\Carbon::parse($item->rentTransaction->rent_date)->translatedFormat('j F Y') }}</h6>
-                                <h6><strong>Tanggal pengembalian:</strong><br> {{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</h6>
-                                <h6><strong>Total Harga:</strong><br> Rp{{ $total }}</h6>
-                                <h6><strong>Status:</strong><br>
-                                    @if($item->rentTransaction->is_completed == 'yes')
+                                <p>Nama Alat:<br>{{ $item->rentTransaction->product->name }}</p>
+                                <p>Nama Penyewa:<br>{{ $item->rentTransaction->borrower->name }}</p>
+                                <p>Tanggal peminjaman:<br>{{ \Carbon\Carbon::parse($item->rentTransaction->rent_date)->translatedFormat('j F Y') }}</p>
+                                <p>Tanggal pengembalian:<br>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</p>
+                                <p>Total Harga:<br>Rp{{ $item->total_price }}</p>
+                                <p>Status:<br>@if($item->rentTransaction->is_completed == 'yes')
                                     <font style="color: green;">Selesai</font>
                                     @endif
                                     @if($item->rentTransaction->is_completed == 'cancelled')
                                     <font style="color: red">Dibatalkan</font>
                                     @endif
-                                </h6>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="borrowerDetailModal{{ $item->rentTransaction->borrower->id }}" tabindex="-1" role="dialog" aria-labelledby="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}">Detail Petani Penyewa</h6>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-img" style="display:flex; justify-content:center;">
+                                    <img src="{{asset('assets\img\user\default-img-user.png')}}" style="width: 10rem; height: 10rem;">
+                                </div>
+                                <p>Nama Petani:<br>{{ $item->rentTransaction->borrower->name }}</p>
+                                <p>Nomor Telepon:<br>{{ $item->rentTransaction->borrower->phone }}</p>
+                                <p>Alamat:<br>{{ $item->rentTransaction->borrower->street }}, {{ $item->rentTransaction->borrower->village->name }}, {{ $item->rentTransaction->borrower->village->district->name }}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

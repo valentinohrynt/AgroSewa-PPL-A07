@@ -3,14 +3,14 @@
 @section('title', 'Riwayat Penyewaan Petani')
 
 @section('navbar-nav')
-<li><a class="nav-link" href="HomepagePetani">Home</a></li>
+<li><a class="nav-link" href="{{route('HomepagePetani()')}}">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link active" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
-  <ul>
-    <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
-    <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
-  </ul>
+    <ul>
+        <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
+    </ul>
 </li>
 @endsection
 
@@ -48,26 +48,20 @@
                     <td>{{ $item->rentTransaction->transaction_number }}</td>
                     <td>{{ $item->rentTransaction->product->name }}</td>
                     <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
-                    <td hidden> @php
-                        $returnDate = Carbon\Carbon::parse($item->rentTransaction->return_date);
-                        $rentDate = Carbon\Carbon::parse($item->rentTransaction->rent_date);
-                        $price = floatval($item->rentTransaction->product->price);
-                        $daysDifference = ($rentDate->diffInDays($returnDate))+1;
-                        $total = $price * $daysDifference;
-                        @endphp
-                        {{ $total }}
-                    </td>
                     <td>
-                    @if($item->rentTransaction->is_completed == 'yes')
-                        <p><font style="color: green;">Selesai</font></p>
-                    @endif
-                    @if($item->rentTransaction->is_completed == 'cancelled')
-                        <p><font style="color: red">Dibatalkan</font></p>
-                    @endif
+                        @if($item->rentTransaction->is_completed == 'yes')
+                        <p>
+                            <font style="color: green;">Selesai</font>
+                        </p>
+                        @endif
+                        @if($item->rentTransaction->is_completed == 'cancelled')
+                        <p>
+                            <font style="color: red">Dibatalkan</font>
+                        </p>
+                        @endif
                     </td>
                 </tr>
-                <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -75,21 +69,21 @@
                             </div>
                             <div class="modal-body">
                                 <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('storage/product_img/'.$item->rentTransaction->product->product_img) }}"
-                                        class="img-fluid w-50 h-50" alt="Gambar Produk">
+                                    <img src="{{ asset('storage/product_img/'.$item->rentTransaction->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
-                                <h6><strong>Nama Alat:</strong><br> {{ $item->rentTransaction->product->name }}</h6>
-                                <h6><strong>Tanggal peminjaman:</strong><br> {{ \Carbon\Carbon::parse($item->rentTransaction->rent_date)->translatedFormat('j F Y') }}</h6>
-                                <h6><strong>Tanggal pengembalian:</strong><br> {{ \Carbon\Carbon::parse($item->rentTransaction->return_date)->translatedFormat('j F Y') }}</h6>
-                                <h6><strong>Total Harga:</strong><br> Rp{{ $total }}</h6>
-                                <h6><strong>Status:</strong><br> 
-                                @if($item->rentTransaction->is_completed == 'yes')
+                                <p>Nama Alat:<br>{{ $item->rentTransaction->product->name }}</p>
+                                <p>Tanggal peminjaman:<br>{{ \Carbon\Carbon::parse($item->rentTransaction->rent_date)->translatedFormat('j F Y') }}</p>
+                                <p>Tanggal pengembalian:<br>{{ \Carbon\Carbon::parse($item->rentTransaction->return_date)->translatedFormat('j F Y') }}</p>
+                                <p>Total Harga:<br>Rp{{ $item->total_price }}</p>
+                                <p>
+                                    Status:<br>
+                                    @if($item->rentTransaction->is_completed == 'yes')
                                     <font style="color: green;">Selesai</font>
-                                @endif
-                                @if($item->rentTransaction->is_completed == 'cancelled')
+                                    @endif
+                                    @if($item->rentTransaction->is_completed == 'cancelled')
                                     <font style="color: red">Dibatalkan</font>
-                                @endif
-                                </h6>
+                                    @endif
+                                </p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -103,17 +97,17 @@
     </div>
 </section>
 <script>
-document.getElementById('rent_date').addEventListener('change', function() {
-    var rentDate = new Date(this.value);
-    var returnDateInput = document.getElementById('return_date');
+    document.getElementById('rent_date').addEventListener('change', function() {
+        var rentDate = new Date(this.value);
+        var returnDateInput = document.getElementById('return_date');
 
-    var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
-    returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
+        var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
+        returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
 
-    if (returnDateInput.valueAsDate < minReturnDate) {
-        returnDateInput.value = minReturnDate.toISOString().split('T')[0];
-    }
-});
+        if (returnDateInput.valueAsDate < minReturnDate) {
+            returnDateInput.value = minReturnDate.toISOString().split('T')[0];
+        }
+    });
 </script>
 @endsection
 
@@ -122,10 +116,12 @@ document.getElementById('rent_date').addEventListener('change', function() {
 <script>
     $(document).ready(function() {
         @if(session('editTransactionId'))
-        var transactionId = {!! json_encode(session('editTransactionId')) !!};
+        var transactionId = {
+            !!json_encode(session('editTransactionId')) !!
+        };
         $('#editModal' + transactionId).modal('show');
         @endif
     });
 </script>
 @endsection
-@endif    
+@endif

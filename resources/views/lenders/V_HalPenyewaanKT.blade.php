@@ -52,7 +52,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->transaction_number }}</td>
                     <td>{{ $item->product->name }}</td>
-                    <td>{{ $item->borrower->name }}</td>
+                    <td><a href onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#borrowerDetailModal{{ $item->borrower->id }}">{{ $item->borrower->name }}</a></td>
                     <td hidden> @php
                         $returnDate = Carbon\Carbon::parse($item->return_date);
                         $rentDate = Carbon\Carbon::parse($item->rent_date);
@@ -67,13 +67,34 @@
                             <i class="bi bi-pencil"></i>
                             <span>Edit</span>
                         </button>
-                        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#confirmationCompleteModal{{ $item->id }}"><i class="bi-check-lg"></i>
-                            <span>Selesai</span></button>
-                        <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
-                            <span>Batal</span>
+                        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}">
+                            <span>Konfirmasi</span>
                         </button>
+                        <!-- <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
+                            <span>Batal</span>
+                        </button> -->
                     </td>
                 </tr>
+                <div class="modal fade" id="borrowerDetailModal{{ $item->borrower->id }}" tabindex="-1" role="dialog" aria-labelledby="borrowerDetailModalLabel{{ $item->borrower->id }}" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="borrowerDetailModalLabel{{ $item->borrower->id }}">Detail Petani Penyewa</h6>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-img" style="display:flex; justify-content:center;">
+                                    <img src="{{asset('assets\img\user\default-img-user.png')}}" style="width: 10rem; height: 10rem;">
+                                </div>
+                                <p>Nama Petani:<br>{{ $item->borrower->name }}</p>
+                                <p>Nomor Telepon:<br>{{ $item->borrower->phone }}</p>
+                                <p>Alamat:<br>{{ $item->borrower->street }}, {{ $item->borrower->village->name }}, {{ $item->borrower->village->district->name }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -84,11 +105,11 @@
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                                 </div>
-                                <h6><strong>Nama Alat:</strong><br> {{ $item->product->name }}</h6>
-                                <h6><strong>Nama Penyewa:</strong><br> {{ $item->borrower->name }}</h6>
-                                <h6><strong>Tanggal peminjaman:</strong><br> {{ $item->rent_date }}</h6>
-                                <h6><strong>Tanggal pengembalian:</strong><br> {{ $item->return_date }}</h6>
-                                <h6><strong>Total Harga:</strong><br> Rp{{ $total }}</h6>
+                                <p>Nama Alat:<br>{{ $item->product->name }}</p>
+                                <p>Nama Penyewa:<br>{{ $item->borrower->name }}</p>
+                                <p>Tanggal peminjaman:<br>{{ $item->rent_date }}</p>
+                                <p>Tanggal pengembalian:<br>{{ $item->return_date }}</p>
+                                <p>Total Harga:<br>Rp{{ $total }}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -131,6 +152,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="confirmationModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Penyewaan</h5>
+                            </div>
+                            <div class="modal-body">
+                                Apakah Anda yakin ingin membatalkan Penyewaan ini?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#confirmationCancelModal{{ $item->id }}"><i class="bi-x-lg"></i> Batalkan Penyewaan</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#confirmationCompleteModal{{ $item->id }}"><i class="bi-check-lg"></i> Selesaikan Penyewaan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @php
                 $encryptedTotalPrice = encrypt($total);
                 @endphp
@@ -142,7 +179,6 @@
                                     Selesai
                                     Penyewaan
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 Apakah Anda yakin ingin menyelesaikan Penyewaan ini?
@@ -159,14 +195,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="confirmationModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal fade" id="confirmationCancelModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Pembatalan
-                                    Penyewaan
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Penyewaan</h5>
                             </div>
                             <div class="modal-body">
                                 Apakah Anda yakin ingin membatalkan Penyewaan ini?

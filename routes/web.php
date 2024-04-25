@@ -60,7 +60,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 Route::middleware('auth')->group(function () {
     Route::middleware('only_borrower')->group(function () {
         // PETANI / BORROWER START
-        Route::get('HomepagePetani', [C_HomepagePetani::class, 'setHomepagePetani'])->middleware('verified');
+        Route::get('HomepagePetani', [C_HomepagePetani::class, 'setHomepagePetani'])->middleware('verified')->name('HomepagePetani()');
         Route::get('/loading/HalPenyewaanPetani', [C_HomepagePetani::class, 'HalPenyewaanPetani'])->middleware('verified')->name('HalPenyewaanPetani()');
         Route::get('/loading/HalRiwayatPenyewaanPetani', [C_HomepagePetani::class, 'HalRiwayatPenyewaanPetani'])->middleware('verified')->name('HalRiwayatPenyewaanPetani()');
 

@@ -10,13 +10,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
+    <!-- cdn css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
+    <!-- local vendor css -->
+    <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
 
@@ -78,18 +78,20 @@
         </div>
     </footer><!-- End Footer -->
 
-    <div id="preloader"></div>
+    <div id="preloader">
+        <img src="{{asset('assets/img/preloader-128.gif')}}" alt="Loading">
+    </div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- local vendor js -->
+    <script src="{{asset('/assets/js/main.js')}}"></script>
+    <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('/assets/js/dropbox.js')}}"></script>
+    @yield('scripts')
 
+    <!-- cdn js -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-    <script src="{{asset('/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    @yield('scripts')
-    <script src="{{asset('/assets/js/dropbox.js')}}"></script>
-    <script src="{{asset('/assets/js/main.js')}}"></script>
 </body>
 
 </html>

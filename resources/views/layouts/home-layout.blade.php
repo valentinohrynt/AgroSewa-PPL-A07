@@ -10,13 +10,13 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
-  <link href="{{asset('/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
-  <link href="{{asset('/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-  <link href="{{asset('/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <!-- cdn css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
+  <!-- local vendor css -->
+  <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
 
@@ -55,55 +55,56 @@
   </section><!-- End Hero -->
 
   <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-8">
-                        <div class="footer-info">
-                            <h3 class="pt-4">Agro<span>Sewa</span></h3>
-                            <p>
-                                Jember <br>
-                                Indonesia<br><br>
-                                <strong>Telepon:</strong> +62 82143981626<br>
-                                <strong>Email:</strong> agrosewa.id@gmail.com<br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-8">
-                    </div>
-                    <div class="col-lg-3 col-md-8">
-                    </div>
-                    <div class="col-lg-3 col-md-8">
-                        <div class="footer-info">
-                            <img src="{{asset('assets\img\logo\jemberkab_logo.png')}}" class="logo-jemberkab">
-                            <p>
-                                <strong>Dinas Tanaman Pangan, Hortikultura, dan Perkebunan Kab. Jember</strong><br><br>
-                                <strong>Telepon:</strong> (0331) 482787<br>
-                                <strong>Email:</strong> jemberdiperta@yahoo.com<br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-8">
+            <div class="footer-info">
+              <h3 class="pt-4">Agro<span>Sewa</span></h3>
+              <p>
+                Jember <br>
+                Indonesia<br><br>
+                <strong>Telepon:</strong> +62 82143981626<br>
+                <strong>Email:</strong> agrosewa.id@gmail.com<br>
+              </p>
             </div>
-            <div class="container">
-                <div class="credits">
-                    Designed by <a href="">AgroSewa</a>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-8">
+          </div>
+          <div class="col-lg-3 col-md-8">
+          </div>
+          <div class="col-lg-3 col-md-8">
+            <div class="footer-info">
+              <img src="{{asset('assets\img\logo\jemberkab_logo.png')}}" class="logo-jemberkab">
+              <p>
+                <strong>Dinas Tanaman Pangan, Hortikultura, dan Perkebunan Kab. Jember</strong><br><br>
+                <strong>Telepon:</strong> (0331) 482787<br>
+                <strong>Email:</strong> jemberdiperta@yahoo.com<br>
+              </p>
             </div>
+          </div>
         </div>
-    </footer><!-- End Footer -->
-  <div id="preloader"></div>
+      </div>
+      <div class="container">
+        <div class="credits">
+          Designed by <a href="">AgroSewa</a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <div id="preloader">
+    <img src="{{asset('assets/img/preloader-128.gif')}}" alt="Loading">
+  </div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
-  <script src="{{asset('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-  <script src="{{asset('/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-
-  <!-- Template Main JS File -->
+  <!-- local vendor js -->
   <script src="{{asset('/assets/js/main.js')}}"></script>
+  <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
 
+  <!-- cdn js -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

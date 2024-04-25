@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Lender;
 use App\Models\Product;
 use App\Models\RentLog;
 use App\Models\Borrower;
@@ -21,13 +22,15 @@ class C_HalPenyewaanPetani extends Controller
         $user = Auth::user();
         $userId = $user->id;
         $borrower = Borrower::getDataBorrowerbyUserId($userId);
+        $borrowerId = $borrower->id;
         $borrowerLenderId = $borrower->lender_id;
 
+        $lender = Lender::getDataLenderbyId($borrowerLenderId);
         $products = Product::getDataProductsbyLenderId($borrowerLenderId);
-        $rentTransactions = RentTransaction::getDataRentTransactionbyBorrower($borrower);
+        $rentTransactions = RentTransaction::getDataRentTransactionbyBorrowerId($borrowerId);
 
-        Session::put('borrower_id', $borrower->id);
-        return view('borrowers.V_HalPenyewaanPetani', ['products' => $products, 'rentTransactions' => $rentTransactions]);
+        Session::put('borrower_id', $borrowerId);
+        return view('borrowers.V_HalPenyewaanPetani',compact('lender', 'products', 'rentTransactions') );
     }
 
     public function BatalPenyewaanPetani(Request $request, $id)

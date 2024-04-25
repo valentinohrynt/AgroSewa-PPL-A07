@@ -3,7 +3,7 @@
 @section('title', 'Penyewaan')
 
 @section('navbar-nav')
-<li><a class="nav-link" href="HomepagePetani">Home</a></li>
+<li><a class="nav-link" href="{{route('HomepagePetani()')}}">Home</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
@@ -68,30 +68,26 @@
             <td>
               <div class="row">
                 <div class="col-12">
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
                     <span>Batal</span>
                   </button>
                 </div>
               </div>
             </td>
           </tr>
-          <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+          <div class="modal fade" id="lenderDetailModal{{ $lender->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $lender->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="detailModalLabel{{ $item->id }}">Detail Penyewaan</h5>
+                  <p class="modal-title" id="lenderDetailModalLabel{{ $item->id }}">Detail Kelompok Tani</p>
                 </div>
                 <div class="modal-body">
-                  <div class="d-flex justify-content-center">
-                    <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}"
-                      class="img-fluid w-50 h-50" alt="Gambar Produk">
+                  <div class="modal-img" style="display:flex; justify-content:center;">
+                    <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
                   </div>
-                  <h6><strong>Nama Alat:</strong><br> {{ $item->product->name }}</h6>
-                  <h6><strong>Tanggal peminjaman:</strong><br> {{ \Carbon\Carbon::parse($item->rent_date)->translatedFormat('j F Y') }}</h6>
-                  <h6><strong>Tanggal pengembalian:</strong><br> {{ \Carbon\Carbon::parse($item->return_date)->translatedFormat('j F Y') }}</h6>
-                  <h6><strong>Total Harga:</strong><br> Rp{{ $total }}</h6>
+                  <p>Nama Kelompok Tani:<br>{{ $lender->name }}</p>
+                  <p>Nomor Telepon:<br>{{ $lender->phone }}</p>
+                  <p>Alamat Kelompok Tani:<br>{{ $lender->street }}, {{ $lender->village->name }}, {{ $lender->village->district->name }}</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -99,8 +95,28 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="confirmationModal{{ $item->id }}" tabindex="-1"
-            aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
+          <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="detailModalLabel{{ $item->id }}">Detail Penyewaan</h5>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex justify-content-center">
+                    <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
+                  </div>
+                  <p>Nama Alat:<br>{{ $item->product->name }}</p>
+                  <p>Tanggal peminjaman:<br>{{ \Carbon\Carbon::parse($item->rent_date)->translatedFormat('j F Y') }}</p>
+                  <p>Tanggal pengembalian:<br>{{ \Carbon\Carbon::parse($item->return_date)->translatedFormat('j F Y') }}</p>
+                  <p>Total Harga:<br>Rp{{ $total }}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="confirmationModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -135,14 +151,13 @@
     <div class="row-2">
       <div class="section-title">
         <h2>PENYEWAAN</h2>
-        <h6>Daftar Alat</h6>
+        <h6>Daftar Alat Kelompok Tani <a href=# data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $lender->id }}">{{$lender->name}}</a></h6>
       </div>
       <div class="row">
         @foreach($products as $product)
         <div class="col-lg-4 col-md-6 d-fix mt-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon-box h-100" data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}">
-            <img src="{{ asset('storage/product_img/'.$product->product_img) }}" class="card-img-top w-50 h-50"
-              alt="{{ $product->name }}">
+            <img src="{{ asset('storage/product_img/'.$product->product_img) }}" class="card-img-top w-50 h-50" alt="{{ $product->name }}">
             <h4>{{ $product->name }}</h4>
             <hr>
             <h6>{{ $product->product_description }}</h6>
@@ -156,8 +171,7 @@
             @endif
           </div>
         </div>
-        <div class="modal fade" id="productModal{{ $product->id }}" tabindex="-1" aria-labelledby="productModalLabel"
-          aria-hidden="true">
+        <div class="modal fade" id="productModal{{ $product->id }}" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
@@ -165,12 +179,11 @@
               </div>
               <div class="modal-body">
                 <div class="d-flex justify-content-center">
-                  <img src="{{ asset('storage/product_img/'.$product->product_img) }}" class="img-fluid w-50 h-50"
-                    alt="Gambar Produk">
+                  <img src="{{ asset('storage/product_img/'.$product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                 </div>
-                <h6><strong>Nama Alat:</strong><br> {{ $product->name }}</p>
-                  <h6><strong>Deskripsi:</strong><br> {{ $product->product_description }}</p>
-                    <h6><strong>Harga sewa per hari:</strong><br> Rp{{ $product->price }}</p>
+                <p>Nama Alat:<br>{{ $product->name }}</p>
+                <p>Deskripsi:<br>{{ $product->product_description }}</p>
+                <p>Harga sewa per hari:<br>Rp{{ $product->price }}</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

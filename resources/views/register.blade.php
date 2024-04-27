@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{asset('assets/icons/favicon.png')}}">
     <title>AgroSewa - Register</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset("/assets/css/auth-style.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
+
 <body>
     <div class="container d-flex flex-row">
         <div class="row py-5 mt-4 align-items-center">
             <div class="col-lg-6 mb-1 mb-lg-0" style="z-index: 999">
                 <h1 class="mt-5 mb-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                Selamat datang di <br>
-                <span style="color: hsl(132, 81%, 75%)">Registrasi AgroSewa</span>
+                    Selamat datang di <br>
+                    <span style="color: hsl(132, 81%, 75%)">Registrasi AgroSewa</span>
                 </h1>
             </div>
             <div class="card bg-glass col-md-7 col-lg-6 ml-auto">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="#" method="post">
                     @csrf
                     <div class="row pt-5">
@@ -36,7 +39,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" value="{{old('name')}}" >
+                            <input id="name" type="text" name="name" placeholder="Nama Lengkap" class="form-control bg-white border-left-0 border-md" value="{{old('name')}}">
                         </div>
                         <div class="input-group col-lg-6 mb-4">
                             <div class="input-group-prepend">
@@ -44,7 +47,7 @@
                                     <i class="fa-regular fa-address-card text-muted"></i>
                                 </span>
                             </div>
-                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" value="{{old('nik')}}" >
+                            <input id="nik" type="text" name="nik" placeholder="NIK" class="form-control bg-white border-left-0 border-md" value="{{old('nik')}}">
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -52,7 +55,7 @@
                                     <i class="fa-regular fa-envelope text-muted"></i>
                                 </span>
                             </div>
-                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" value="{{old('email')}}" >
+                            <input id="email" type="email" name="email" placeholder="Alamat Email" class="form-control bg-white border-left-0 border-md" value="{{old('email')}}">
                         </div>
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -60,7 +63,7 @@
                                     <i class="fa fa-phone text-muted"></i>
                                 </span>
                             </div>
-                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" value="{{old('phone')}}" >
+                            <input id="phone" type="tel" name="phone" placeholder="Nomor HP" class="form-control bg-white border-left-0 border-md" value="{{old('phone')}}">
                         </div>
                         <div class="form-group col-lg-12 mx-auto d-flex align-items-center">
                             <div class="border-bottom w-100 ml-5"></div>
@@ -73,7 +76,7 @@
                                     <i class="fa fa-map-marker text-muted"></i>
                                 </span>
                             </div>
-                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" value="{{old('street')}}" >
+                            <input id="street" type="text" name="street" placeholder="Jalan" class="form-control bg-white border-left-0 border-md" value="{{old('street')}}">
                         </div>
                         <br>
                         <div class="kecamatan-desa d-flex flex-col">
@@ -83,8 +86,8 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('district_id')}}" >
-                                    <option value="" >Kecamatan</option>
+                                <select name="district_id" id="district" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('district_id')}}">
+                                    <option value="">Kecamatan</option>
                                     @foreach($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
                                     @endforeach
@@ -99,7 +102,7 @@
                                         <i class="fa fa-map-marker text-muted"></i>
                                     </span>
                                 </div>
-                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('village_id')}}" style="cursor: not-allowed" disabled >
+                                <select name="village_id" id="village" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('village_id')}}" style="cursor: not-allowed" disabled>
                                     <option value="">Desa</option>
                                     @foreach ($villages as $village)
                                     <option value="{{ $village->id }}" data-district="{{ $village->district_id }}">{{ $village->name }}</option>
@@ -116,7 +119,7 @@
                                     <i class="fa fa-house text-muted"></i>
                                 </span>
                             </div>
-                            <select name="lender_id" id="lender" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('lender_id')}}" style="cursor: not-allowed" disabled >
+                            <select name="lender_id" id="lender" class="form-control bg-white border-left-0 border-right-0 border-md" value="{{old('lender_id')}}" style="cursor: not-allowed" disabled>
                                 <option value="">Nama Kelompok Tani</option>
                                 @foreach ($lenders as $lender)
                                 <option value="{{ $lender->id }}" data-village="{{ $lender->village_id }}">{{ $lender->name }}</option>
@@ -137,7 +140,7 @@
                                     <i class="fa-regular fa-user text-muted"></i>
                                 </span>
                             </div>
-                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" value="{{old('username')}}" >
+                            <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md" value="{{old('username')}}">
                         </div>
                         <br>
                         <div class="input-group col-lg-6 mb-4">
@@ -146,7 +149,7 @@
                                     <i class="fa fa-lock text-muted"></i>
                                 </span>
                             </div>
-                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md" >
+                            <input id="password" type="password" name="password" placeholder="Sandi" class="form-control bg-white border-left-0 border-md">
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide('password','show_eye_pw','hide_eye_pw');">
                                     <i class="fas fa-eye" id="show_eye_pw"></i>
@@ -186,9 +189,10 @@
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
-<script src="{{asset('/assets/js/register.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
+    <script src="{{asset('/assets/js/register.js')}}"></script>
 </body>
+
 </html>

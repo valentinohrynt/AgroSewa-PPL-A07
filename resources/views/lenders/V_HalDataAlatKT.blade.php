@@ -174,29 +174,21 @@
 
 @endsection
 
-@if (session('editItemErrors'))
 @section('script')
+@if (session('editItemErrors') && session('editItemId'))
 <script>
     $(document).ready(function() {
-        @if(session('editItemId'))
-        var transactionId = {
-            !!json_encode(session('editItemId')) !!
-        };
-        $('#editModal' + transactionId).modal('show');
-        @endif
+        var modalId = {!! (session('editItemId')) !!};
+        $('#editModal' + modalId).modal('show');
     });
 </script>
-@endsection
 @endif
 
 @if(session('addItemErrors'))
-@section('script')
 <script>
     $(document).ready(function() {
-        @if(session('addItemErrors'))
         $('#addProductModal').modal('show');
-        @endif
     });
 </script>
-@endsection
 @endif
+@endsection

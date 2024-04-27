@@ -156,10 +156,10 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Penyewaan</h5>
+                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Status Penyewaan</h5>
                             </div>
                             <div class="modal-body">
-                                Apakah Anda yakin ingin membatalkan Penyewaan ini?
+                                Silahkan tambahkan status konfirmasi penyewaan
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#confirmationCancelModal{{ $item->id }}"><i class="bi-x-lg"></i> Batalkan Penyewaan</button>
@@ -175,13 +175,10 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="confirmationCompleteModalLabel{{ $item->id }}">Konfirmasi
-                                    Selesai
-                                    Penyewaan
-                                </h5>
+                                <h5 class="modal-title" id="confirmationCompleteModalLabel{{ $item->id }}">Konfirmasi Selesai Penyewaan</h5>
                             </div>
                             <div class="modal-body">
-                                Apakah Anda yakin ingin menyelesaikan Penyewaan ini?
+                                Apakah Anda yakin ingin menyelesaikan penyewaan?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
@@ -195,14 +192,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="confirmationCancelModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal fade" id="confirmationCancelModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationCancelModalLabel{{ $item->id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="confirmationModalLabel{{ $item->id }}">Konfirmasi Penyewaan</h5>
+                                <h5 class="modal-title" id="confirmationCancelModalLabel{{ $item->id }}">Konfirmasi Pembatalan Penyewaan</h5>
                             </div>
                             <div class="modal-body">
-                                Apakah Anda yakin ingin membatalkan Penyewaan ini?
+                                Apakah Anda yakin ingin membatalkan penyewaan?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>

@@ -49,13 +49,13 @@
         </a>
     </li>
     <li class="active">
-        <a href="{{ route('HalPenyewaanSA()')}}" class="nav-link">
+        <a href="{{route('HalPenyewaanSA()')}}" class="nav-link">
             <i class="fas fa-shopping-cart"></i>
             <span class="text">Penyewaan</span>
         </a>
     </li>
     <li>
-        <a href="#" class="nav-link">
+        <a href="{{route('HalRiwayatSA()')}}" class="nav-link">
             <i class="fas fa-history"></i>
             <span class="text">Riwayat</span>
         </a>

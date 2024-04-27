@@ -85,7 +85,6 @@ Route::middleware('auth')->group(function () {
         Route::post('HalDataPenyewaanSA', [C_HalDataPenyewaanSA::class, 'setHalDataPenyewaanSA'])->name('HalDataPenyewaanSA');
         Route::post('HalDataAlatSA', [C_HalDataAlatSA::class, 'setHalDataAlatSA'])->name('HalDataAlatSA');
         
-        
         Route::get('HalRiwayatSA', [C_HalRiwayatSA::class, 'setHalRiwayatSA']);
         Route::post('HalRiwayatPenyewaanSA', [C_HalRiwayatPenyewaanSA::class, 'setHalRiwayatPenyewaanSA'])->name('HalRiwayatPenyewaanSA()');
         Route::post('HalRiwayatPengajuanBantuanSA', [C_HalRiwayatPengajuanBantuanSA::class, 'setHalRiwayatPengajuanBantuanSA'])->name('HalRiwayatPengajuanBantuanSA()');
@@ -96,7 +95,7 @@ Route::middleware('auth')->group(function () {
         // GOVERNMENT START
         Route::get('DashboardPemerintah', [C_DashboardPemerintah::class, 'setDashboardPemerintah']);
         Route::get('/loading/HalPengajuanBantuanPemerintah', [C_DashboardPemerintah::class, 'HalPengajuanBantuanPemerintah'])->name('HalPengajuanBantuanPemerintah()');
-        
+        Route::get('/loading/HalRiwayatPemerintah', [C_DashboardPemerintah::class, 'HalRiwayatPemerintah'])->name('HalRiwayatPemerintah()');
         
         Route::get('HalPengajuanBantuanPemerintah', [C_HalPengajuanBantuanPemerintah::class, 'setHalPengajuanBantuanPemerintah']);
         Route::patch('/accept-equipment-request/{id}', [C_HalPengajuanBantuanPemerintah::class, 'SetujuiPengajuanBantuan'])->name('SetujuiPengajuanBantuan()');

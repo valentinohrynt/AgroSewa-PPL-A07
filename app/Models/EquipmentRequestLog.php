@@ -17,7 +17,7 @@ class EquipmentRequestLog extends Model
     {
         $DataEquipmentRequestLogbyLenderId = static::with('equipmentRequest')->whereHas('equipmentRequest', function ($query) use ($id) {
             $query->where('lender_id', $id);
-        })->get();
+        })->orderByDesc('created_at')->get();
 
         return $DataEquipmentRequestLogbyLenderId;
     }
@@ -25,7 +25,7 @@ class EquipmentRequestLog extends Model
     {
         $DataEquipmentRequestLog = static::whereHas('equipmentRequest', function ($query) {
             $query->where('is_approved', 'accepted')->orWhere('is_approved', 'rejected');
-        })->with('equipmentRequest')->get();
+        })->with('equipmentRequest')->orderByDesc('created_at')->get();
         return $DataEquipmentRequestLog;
     }
 

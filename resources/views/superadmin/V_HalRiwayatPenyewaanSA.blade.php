@@ -77,18 +77,19 @@
 <div class="order">
     <div class="head">
         <h3>Penyewaan Poktan {{$lender->name}}</h3>
-            <div class="form-input">
-                <input type="text" id="searchInput" placeholder="Pencarian" />
-                <button type="button" id="searchBtn" class="search-btn">
-                    <i class="fas fa-search search-icon"></i>
-                </button>
-            </div>
+        <div class="form-input">
+            <input type="text" id="searchInput" placeholder="Pencarian" />
+            <button type="button" id="searchBtn" class="search-btn">
+                <i class="fas fa-search search-icon"></i>
+            </button>
+        </div>
     </div>
     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Nomor Transaksi</th>
+                <th>Tanggal peminjaman selesai</th>
                 <th>Alat</th>
                 <th>Nama Penyewa</th>
                 <th>Total</th>
@@ -100,6 +101,7 @@
             <tr data-bs-toggle="modal" data-bs-target="#detailModal{{ $item->id }}">
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->rentTransaction->transaction_number }}</td>
+                <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
                 <td>{{ $item->rentTransaction->product->name }}</td>
                 <td><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#borrowerDetailModal{{ $item->rentTransaction->borrower->id }}">{{ $item->rentTransaction->borrower->name }}</a></td>
                 <td> @php

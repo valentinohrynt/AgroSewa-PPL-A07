@@ -22,4 +22,8 @@ class C_DashboardPemerintah extends Controller
     {
         return redirect('HalPengajuanBantuanPemerintah');
     }
+    public function HalRiwayatPemerintah()
+    {
+        return redirect('HalRiwayatPemerintah');
+    }
 }

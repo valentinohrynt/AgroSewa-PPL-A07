@@ -22,7 +22,7 @@
     </a>
   </li>
   <li>
-    <a href="HalRiwayatPemerintah" class="nav-link">
+    <a href="{{route('HalRiwayatPemerintah()')}}" class="nav-link">
       <i class="fas fa-history"></i>
       <span class="text">Riwayat</span>
     </a>

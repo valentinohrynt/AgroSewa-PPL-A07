@@ -32,6 +32,7 @@ class RentLog extends Model
                         $query->where('lender_id', $id);
                     });
             })
+            ->orderByDesc('actual_return_date')
             ->get();
         return $DataRentLogbyLenderId;
     }

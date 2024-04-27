@@ -41,13 +41,13 @@
         </a>
     </li>
     <li class="active">
-        <a href="{{ route('HalPenyewaanSA()')}}" class="nav-link">
+        <a href="{{route('HalPenyewaanSA()')}}" class="nav-link">
             <i class="fas fa-shopping-cart"></i>
             <span class="text">Penyewaan</span>
         </a>
     </li>
     <li>
-        <a href="#" class="nav-link">
+        <a href="{{route('HalRiwayatSA()')}}" class="nav-link">
             <i class="fas fa-history"></i>
             <span class="text">Riwayat</span>
         </a>
@@ -113,8 +113,7 @@
                     {{ $total }}
                 </td>
             </tr>
-            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog"
-                aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -122,8 +121,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="d-flex justify-content-center">
-                                <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}"
-                                    class="img-fluid w-50 h-50" alt="Gambar Produk">
+                                <img src="{{ asset('storage/product_img/'.$item->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                             </div>
                             <h6>Nama Alat:</h6>
                             <h3>{{ $item->product->name }}</h3>

@@ -23,11 +23,8 @@
   </section>
 
   <section class="content">
-    <nav class="">
-      <i class="fas fa-bars menu-btn"></i>
-      <a href="#" class="profile">
-        <i class="fa fa-circle-user fa-xl"></i>
-      </a>
+    <nav class="d-flex">
+      @yield('nav')
     </nav>
 
     <main>

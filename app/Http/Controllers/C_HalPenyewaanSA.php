@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class C_HalPenyewaanSA extends Controller
 {
     public function setHalPenyewaanSA(){
-        $lenders = Lender::all();
+        $lenders = Lender::getAllDataLender();
         return view('superadmin.V_HalPenyewaanSA',['lenders' => $lenders]);
     }
     public function HalDataPenyewaanSA()

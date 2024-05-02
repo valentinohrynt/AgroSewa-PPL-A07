@@ -33,6 +33,12 @@ class RentTransaction extends Model
         return $this->hasOne(RentLog::class);
     }
 
+    public static function getAllDataRentTransaction()
+    {
+        $AllDataRentTransaction = static::all();
+        return $AllDataRentTransaction;
+    }
+
     public static function postDataRentTransaction($borrower_id, $product_id, $rentDate, $returnDate)
     {
         return static::create([
@@ -53,6 +59,16 @@ class RentTransaction extends Model
     {
         $DataRentTransactionbyId = static::findOrFail($id);
         return $DataRentTransactionbyId;
+    }
+
+    public static function patchRentDateandReturnDate($id, $rent_date, $return_date){
+        $transaction = static::findOrFail($id);
+        $transaction->update([
+            'rent_date' => $rent_date,
+            'return_date' => $return_date,
+        ]);
+        $DataRentDateandReturnDate = $transaction;
+        return $DataRentDateandReturnDate;
     }
 
     public static function patchStatusRentTransactiontoCancelled($id)

@@ -9,7 +9,7 @@ class C_HalRiwayatSA extends Controller
 {
     public function setHalRiwayatSA()
     {
-        $lenders = Lender::all();
+        $lenders = Lender::getAllDataLender();
         return view ('superadmin.V_HalRiwayatSA', ['lenders'=> $lenders]);
     }
 }

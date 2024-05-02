@@ -13,8 +13,8 @@ class C_DashboardPemerintah extends Controller
 
         $countofApply = EquipmentRequest::getDataEquipmentRequest()->count();
         $countofDoneApply = EquipmentRequestLog::getDataEquipmentRequestLog()->count();
-        $countofBorrowers = Borrower::all()->count();
-        $countofLenders = Lender::all()->count();
+        $countofBorrowers = Borrower::getAllDataBorrower()->count();
+        $countofLenders = Lender::getAllDataLender()->count();
 
         return view('government.V_DashboardPemerintah', compact('countofApply', 'countofDoneApply', 'countofBorrowers','countofLenders'));
     }

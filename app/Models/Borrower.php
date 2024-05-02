@@ -17,6 +17,11 @@ class Borrower extends Model
         'lender_id',
         'user_id'
     ];
+    public static function getAllDataBorrower()
+    {
+        $AllDataBorrower = static::all();
+        return $AllDataBorrower;
+    }
     public static function getDataBorrowerbyUserId($id)
     {
         $DataBorrowerbyUser = static::where('user_id', $id)->first();

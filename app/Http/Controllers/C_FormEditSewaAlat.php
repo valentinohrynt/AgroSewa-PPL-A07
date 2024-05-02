@@ -23,14 +23,16 @@ class C_FormEditSewaAlat extends Controller
             'return_date' => 'required|date|after_or_equal:rent_date',
         ], $messages);
 
+        $rentDate = $request->rent_date;
+        $returnDate = $request->return_date;
+
         if ($validator->fails()) {
             session(['editTransactionId' => $id]);
             return redirect()->back()->withErrors($validator)->withInput()->with('editTransactionErrors', true);
         }        
         
         try {
-            $transaction = RentTransaction::getDataRentTransactionbyId($id);
-            $transaction->update($request->all());
+            RentTransaction::patchRentDateandReturnDate($id, $rentDate, $returnDate);
 
             return redirect()->back()->with('success', 'Sukses, data berhasil diedit');
         } catch (\Exception $e) {

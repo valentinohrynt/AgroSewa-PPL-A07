@@ -71,7 +71,10 @@
                                     <div class="form-group">
                                         <label for="return_date" class="pb-2">Tanggal pengembalian</label>
                                         <input type="date" name="return_date" id="return_date" class="form-control" min="{{ date('Y-m-d') }}">
-                                        <input name="product_id" value="{{ $product->id }}" hidden>
+                                        @php
+                                        $encryptedProductId = encrypt($product->id);
+                                        @endphp
+                                        <input name="product_id" value="{{ $encryptedProductId }}" hidden>
                                     </div>
                                 </div>
                                 <div class="text-center">

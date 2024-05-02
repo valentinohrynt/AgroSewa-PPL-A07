@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Government extends Model
 {
     use HasFactory;
+    public function village()
+    {
+        return $this->belongsTo(Village::class);
+    }
 }

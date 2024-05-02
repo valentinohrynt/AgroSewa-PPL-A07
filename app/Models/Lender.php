@@ -40,5 +40,10 @@ class Lender extends Model
     {
         return $this->belongsTo(Village::class);
     }
+    public static function getAllDataLender()
+    {
+        $AllDataLender = static::all();
+        return $AllDataLender;
+    }
     use HasFactory;
 }

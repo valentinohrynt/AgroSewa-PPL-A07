@@ -69,7 +69,7 @@ class C_HalPenyewaanPetani extends Controller
 
     public function SewaAlat(Request $request)
     {
-        $id = Crypt::encrypt($request -> product_id);
-        return redirect()->route('FormSewaAlat',['product_id'=>$id]);
+        $encryptedProductId = $request-> product_id;
+        return redirect()->route('FormSewaAlat',['product_id'=>$encryptedProductId]);
     }
 }

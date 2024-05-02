@@ -24,11 +24,9 @@
 
   <section class="content">
     <nav class="d-flex">
-      <i class="fas fa-bars menu-btn"></i>
-      <a href="#" class="profile">
-        <i class="fa fa-circle-user fa-xl"></i>
-      </a>
+      @yield('nav')
     </nav>
+
     <main>
       @if(session('success'))
       <div class="alert alert-success mb-5">

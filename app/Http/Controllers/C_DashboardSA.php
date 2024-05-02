@@ -8,21 +8,28 @@ use App\Http\Controllers\Controller;
 
 class C_DashboardSA extends Controller
 {
-    public function setDashboardSA(){
+    public function setDashboardSA()
+    {
 
-        $countofTRT= RentTransaction::getDataNewRentTransaction()->count();
+        $countofTRT = RentTransaction::getDataNewRentTransaction()->count();
         $countofTNU = User::getDataNewVerifiedUser()->count();
-        $countofART= RentTransaction::all()->count();
-        $countofAU = User::all()->count();
+        $countofART = RentTransaction::getAllDataRentTransaction()->count();
+        $countofAU = User::getAllDataUser()->count();
 
-        return view('superadmin.V_DashboardSA', compact('countofTRT', 'countofTNU', 'countofART','countofAU'));
+        return view('superadmin.V_DashboardSA', compact('countofTRT', 'countofTNU', 'countofART', 'countofAU'));
     }
 
-    public function HalPenyewaanSA(){
+    public function HalPenyewaanSA()
+    {
         return redirect('HalPenyewaanSA');
     }
 
-    public function HalRiwayatSA(){
+    public function HalRiwayatSA()
+    {
         return redirect('HalRiwayatSA');
+    }
+    public function HalProfilSA()
+    {
+        return redirect('HalProfilSA');
     }
 }

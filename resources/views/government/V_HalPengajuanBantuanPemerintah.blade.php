@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="active">Daftar Pengajuan Bantuan</a>
+            <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="active">Daftar Kelompok Tani</a>
         </li>
     </ul>
 </div>
@@ -43,22 +43,13 @@
         </a>
     </li>
 </ul>
-
-<ul class="side-menu">
-    <li>
-        <a href="{{ route('logout') }}" class="logout">
-            <i class="fas fa-right-from-bracket"></i>
-            <span class="text">Logout</span>
-        </a>
-    </li>
-</ul>
 @endsection
 
 @section('content-table-data')
 
 <div class="order">
     <div class="head">
-        <h3>Daftar Pengajuan Bantuan</h3>
+        <h3>Daftar Kelompok Tani</h3>
         <div class="form-input">
             <input type="text" id="searchInput" placeholder="Pencarian" />
             <button type="button" id="searchBtn" class="search-btn">
@@ -69,51 +60,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>No. Pengajuan</th>
-                <th>Tanggal Pengajuan</th>
-                <th>Nama Poktan</th>
-                <th>Proposal Pengajuan</th>
-                <th>Aksi</th>
+                <th style="text-align:left; padding-left:1rem;">No.</th>
+                <th style="text-align:left; padding-left:0.8rem;">Nama Poktan</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($equipmentRequest as $item)
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $item->equipment_request_number }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->lender->name }}</a></td>
-                <td>
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#pdfModal{{ $item->id }}">
-                        <i class="fa fa-solid fa-file-pdf"></i>
-                        <span>PDF</span>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $item->id }}"><i class="fa fa-check"></i>
-                        <span>Setujui</span></button>
-                    <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#rejectModal{{ $item->id }}"><i class="fa fa-close"></i>
-                        <span>Tolak</span>
-                    </button>
-                </td>
+            @foreach ($lenders as $item)
+            @php
+            $encryptedLenderId = encrypt($item->id)
+            @endphp
+            <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
+                <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
+                <td style="text-align:left; padding-left:0.8rem;"><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->name }}</a></td>
+                <form id="form_{{ $item->id }}" action="{{ route('HalDataPengajuanBantuanPemerintah()', ['lender_id'=>$encryptedLenderId]) }}" method="get">
+                    @csrf
+                    <input type="hidden" name="lender_id" value="{{ $encryptedLenderId }}">
+                </form>
             </tr>
-            <div class="modal fade" id="pdfModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" style="max-width: 100%; width: 90vh !important;" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="pdfModalLabel{{ $item->id }}">PROPOSAL PENGAJUAN BANTUAN
-                            </h5>
-                        </div>
-                        <div class="modal-body" style="height: 80vh; overflow-y: hidden;">
-                            <embed src="{{ asset('storage/pdf_files/'.$item->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%"></embed>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="modal fade" id="lenderDetailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $item->id }}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -125,57 +88,17 @@
                                 <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
                             </div>
                             <h6>Nama Kelompok Tani:</h6>
-                            <h3>{{ $item->lender->name }}</h3>
+                            <h3>{{ $item->name }}</h3>
                             <br>
                             <h6><strong>Nomor Telepon:</strong></h6>
-                            <h3>{{ $item->lender->phone }}</h3>
+                            <h3>{{ $item->phone }}</h3>
                             <br>
                             <h6><strong>Alamat:</strong></h6>
-                            <h3>{{ $item->lender->street }}</h3>
+                            <h3>{{ $item->street }}, {{ $item->village->name }}, {{ $item->village->district->name }}</h3>
                             <br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="acceptModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="acceptModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="acceptModalLabel{{ $item->id }}">Konfirmasi Setuju</h5>
-                        </div>
-                        <div class="modal-body">
-                            Apakah Anda yakin akan menyetujui pengajuan bantuan ini?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
-                            <form action="{{ route('SetujuiPengajuanBantuan()', $item->id) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button type="submit" class="btn btn-success">Ya</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="rejectModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="rejectModalLabel{{ $item->id }}">Konfirmasi Tolak</h5>
-                        </div>
-                        <div class="modal-body">
-                            Apakah Anda yakin akan menolak pengajuan bantuan ini?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
-                            <form action="{{ route('TolakPengajuanBantuan()', $item->id) }}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button type="submit" class="btn btn-success">Ya</button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -187,11 +110,12 @@
 @endsection
 
 @section('scripts')
+
 <script>
     $(document).ready(function() {
         function filterRows(searchText) {
             $('.table tbody tr').each(function() {
-                var lenderName = $(this).find('td:eq(3)').text().toLowerCase();
+                var lenderName = $(this).find('td:eq(1)').text().toLowerCase();
                 if (searchText === '' || lenderName.includes(searchText)) {
                     $(this).show();
                 } else {
@@ -211,4 +135,5 @@
         });
     });
 </script>
+
 @endsection

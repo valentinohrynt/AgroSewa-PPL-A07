@@ -34,15 +34,18 @@
     </a>
   </li>
 </ul>
+@endsection
 
-<ul class="side-menu">
-  <li>
-    <a href="{{ route('logout') }}" class="logout">
-      <i class="fas fa-right-from-bracket"></i>
-      <span class="text">Logout</span>
-    </a>
-  </li>
-</ul>
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+  <ul>
+    <li><a href="{{route('HalProfilSA()')}}">Profil <i class="fas fa-user"></i></a></li>
+    <li><a href="{{ route('logout') }}">
+        <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+      </a></li>
+  </ul>
+</li>
 @endsection
 
 @section('content-head-title')

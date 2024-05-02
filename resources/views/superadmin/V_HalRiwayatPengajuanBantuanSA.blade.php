@@ -30,6 +30,10 @@
 @endsection
 
 @section('sidebar')
+<a href="#" class="logo">
+    <i class="fa fa-user-tie"></i>
+    <span class="text">Admin Agrosewa</span>
+</a>
 <ul class="side-menu top">
     <li class="">
         <a href="DashboardSA" class="nav-link">
@@ -53,15 +57,6 @@
         <a href="{{ route('HalRiwayatSA()')}}" class="nav-link">
             <i class="fas fa-history"></i>
             <span class="text">Riwayat</span>
-        </a>
-    </li>
-</ul>
-
-<ul class="side-menu">
-    <li>
-        <a href="{{ route('logout') }}" class="logout">
-            <i class="fas fa-right-from-bracket"></i>
-            <span class="text">Logout</span>
         </a>
     </li>
 </ul>

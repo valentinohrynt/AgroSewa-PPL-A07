@@ -51,15 +51,6 @@
         </a>
     </li>
 </ul>
-
-<ul class="side-menu">
-    <li>
-        <a href="{{ route('logout') }}" class="logout">
-            <i class="fas fa-right-from-bracket"></i>
-            <span class="text">Logout</span>
-        </a>
-    </li>
-</ul>
 @endsection
 
 @section('content-box-info')

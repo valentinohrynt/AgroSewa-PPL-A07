@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EquipmentRequest;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
-
+use App\Models\Lender;
+use Illuminate\Http\Request;
 
 class C_HalPengajuanBantuanPemerintah extends Controller
 {
     public function setHalPengajuanBantuanPemerintah()
     {
-        $equipmentRequest = EquipmentRequest::getDataEquipmentRequest();
-        return view('government.V_HalPengajuanBantuanPemerintah', ['equipmentRequest' => $equipmentRequest]);
+        $lenders = Lender::getAllDataLender();
+        return view('government.V_HalPengajuanBantuanPemerintah', ['lenders' => $lenders]);
     }
 
-    public function SetujuiPengajuanBantuan(Request $request, $id)
+    public function HalDataPengajuanBantuanPemerintah(Request $request, $lender_id)
     {
-        EquipmentRequest::patchStatustoAccepted($id);
-        return redirect('HalPengajuanBantuanPemerintah')->with('success', 'Pengajuan bantuan berhasil disetujui!');
-    }
-
-    public function TolakPengajuanBantuan(Request $request, $id)
-    {
-        EquipmentRequest::patchStatustoRejected($id);
-        return redirect('HalPengajuanBantuanPemerintah')->with('success', 'Pengajuan bantuan berhasil ditolak!');
+        return redirect()->route('HalDataPengajuanBantuanPemerintah', ['lender_id' => $lender_id]);
     }
 }

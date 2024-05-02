@@ -10,6 +10,7 @@ use App\Models\RentTransaction;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Validator;
 
 class C_FormSewaAlat extends Controller
 {
@@ -41,6 +42,7 @@ class C_FormSewaAlat extends Controller
         $user = Auth::user();
         $userId = $user->id;
         $borrower = Borrower::getDataBorrowerbyUserId($userId);
+        $productId = Crypt::decrypt($request->input('product_id'));
         $borrowerId = $borrower->id;
 
         $messages = [
@@ -49,35 +51,53 @@ class C_FormSewaAlat extends Controller
             'return_date.after_or_equal' => 'Tanggal pemgembalian hanya boleh sama dengan atau lebih dari tanggal awal.'
         ];
 
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'rent_date' => 'required|date',
-            'return_date' => 'required|date|after_or_equal:rent_date'
+            'return_date' => [
+                'required',
+                'date',
+                'after_or_equal:rent_date',
+                function ($attribute, $value, $fail) use ($request) {
+                    $maxDiff = 2;
+                    $rentDate = \Carbon\Carbon::parse($request->input('rent_date'));
+                    $returnDate = \Carbon\Carbon::parse($value);
+                    $diffInDays = $rentDate->diffInDays($returnDate);
+
+                    if ($diffInDays > $maxDiff) {
+                        $fail("Maaf, maksimal lama penyewaan atau peminjaman adalah 3 hari.");
+                    }
+                },
+            ],
         ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
 
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');
-        $productId = $request->input('product_id');
-        
+
         $overlappingAppointments = RentTransaction::getDataRentTransactionbyProductId($productId)
-        ->where(function ($query) use ($rentDate, $returnDate) {
-            $query->where(function ($q) use ($rentDate, $returnDate) {
-                $q->where('rent_date', '<=', $rentDate)
-                    ->where('return_date', '>=', $rentDate);
-            })->orWhere(function ($q) use ($rentDate, $returnDate) {
-                $q->where('rent_date', '<=', $returnDate)
-                    ->where('return_date', '>=', $returnDate);
-            })->orWhere(function ($q) use ($rentDate, $returnDate) {
-                $q->where('rent_date', '>=', $rentDate)
-                    ->where('return_date', '<=', $returnDate);
-            });
-        })->get();
-    
+            ->where(function ($query) use ($rentDate, $returnDate) {
+                $query->where(function ($q) use ($rentDate, $returnDate) {
+                    $q->where('rent_date', '<=', $rentDate)
+                        ->where('return_date', '>=', $rentDate);
+                })->orWhere(function ($q) use ($rentDate, $returnDate) {
+                    $q->where('rent_date', '<=', $returnDate)
+                        ->where('return_date', '>=', $returnDate);
+                })->orWhere(function ($q) use ($rentDate, $returnDate) {
+                    $q->where('rent_date', '>=', $rentDate)
+                        ->where('return_date', '<=', $returnDate);
+                });
+            })->get();
+
         if ($overlappingAppointments->count() > 0) {
             return back()->with('status', 'error')->with('message', 'Maaf, alat ini sudah dibooking oleh pengguna lain pada tanggal tersebut. Silahkan masukkan tanggal lainnya');
         }
 
         if (Carbon::parse($rentDate)->isToday()) {
-            $product = Product::find($request->input('product_id'));
+            $product = Product::findOrFail($productId);
             $product->is_rented = 'yes';
             $product->save();
         }

@@ -189,7 +189,10 @@
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                 <form action="{{route('SewaAlat()')}}" method="get">
                   @csrf
-                  <input type="hidden" name="product_id" value="{{ $product->id }}">
+                  @php
+                  $encryptedProductId = encrypt($product->id);
+                  @endphp
+                  <input type="hidden" name="product_id" value="{{ $encryptedProductId }}">
                   <button type="submit" class="btn btn-success">
                     Sewa
                   </button>

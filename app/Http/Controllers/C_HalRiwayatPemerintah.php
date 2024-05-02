@@ -9,7 +9,7 @@ class C_HalRiwayatPemerintah extends Controller
 {
     public function setHalRiwayatPemerintah()
     {
-        $lenders = Lender::all();
+        $lenders = Lender::getAllDataLender();
         return view ('government.V_HalRiwayatPemerintah', ['lenders'=> $lenders]);
     }
 }

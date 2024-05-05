@@ -17,6 +17,20 @@ class Borrower extends Model
         'lender_id',
         'user_id'
     ];
+    public static function getDataBorrowerbyId($id)
+    {
+        $DataBorrowerbyId = static::findOrFail($id);
+        return $DataBorrowerbyId;
+    }
+    public static function putDataBorrower($id, $phone, $street, $village_id)
+    {
+        $borrower = static::find($id);
+        $borrower->update([
+            'phone' => $phone,
+            'street' => $street,
+            'village_id' => $village_id
+        ]);
+    }
     public static function getAllDataBorrower()
     {
         $AllDataBorrower = static::all();

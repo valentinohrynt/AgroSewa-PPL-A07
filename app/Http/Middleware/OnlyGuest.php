@@ -16,18 +16,14 @@ class OnlyGuest
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()) {
-            if(Auth::user()->role_id ==3 && Auth::user()->email_verified_at != null) {
+        if (Auth::user()) {
+            if (Auth::user()->role_id == 3) {
                 return redirect("HomepagePetani");
-            }elseif(Auth::user()->role_id ==3 && Auth::user()->email_verified_at == null){
-                Auth::logout();
-                return redirect("login");
-            }
-            elseif(Auth::user()->role_id == 1){
+            } elseif (Auth::user()->role_id == 1) {
                 return redirect("DashboardSA");
-            }elseif(Auth::user()->role_id == 2){
+            } elseif (Auth::user()->role_id == 2) {
                 return redirect("DashboardPemerintah");
-            }elseif(Auth::user()->role_id == 4){
+            } elseif (Auth::user()->role_id == 4) {
                 return redirect("HomepageKT");
             }
         }

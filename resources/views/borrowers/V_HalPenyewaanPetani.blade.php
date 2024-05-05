@@ -6,9 +6,9 @@
 <li><a class="nav-link" href="{{route('HomepagePetani()')}}">Home</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
-<li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
   <ul>
-    <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+    <li><a href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
     <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
   </ul>
 </li>
@@ -75,26 +75,6 @@
               </div>
             </td>
           </tr>
-          <div class="modal fade" id="lenderDetailModal{{ $lender->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $lender->id }}" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <p class="modal-title" id="lenderDetailModalLabel{{ $item->id }}">Detail Kelompok Tani</p>
-                </div>
-                <div class="modal-body">
-                  <div class="modal-img" style="display:flex; justify-content:center;">
-                    <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
-                  </div>
-                  <p>Nama Kelompok Tani:<br>{{ $lender->name }}</p>
-                  <p>Nomor Telepon:<br>{{ $lender->phone }}</p>
-                  <p>Alamat Kelompok Tani:<br>{{ $lender->street }}, {{ $lender->village->name }}, {{ $lender->village->district->name }}</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -151,7 +131,7 @@
     <div class="row-2">
       <div class="section-title">
         <h2>PENYEWAAN</h2>
-        <h6>Daftar Alat Kelompok Tani <a href=# data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $lender->id }}">{{$lender->name}}</a></h6>
+        <h6>Daftar Alat Kelompok Tani <a href='#' data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $lender->id }}">{{$lender->name}}</a></h6>
       </div>
       <div class="row">
         @foreach($products as $product)
@@ -186,7 +166,7 @@
                 <p>Harga sewa per hari:<br>Rp{{ $product->price }}</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button> -->
                 <form action="{{route('SewaAlat()')}}" method="get">
                   @csrf
                   @php
@@ -202,6 +182,26 @@
           </div>
         </div>
         @endforeach
+        <div class="modal fade" id="lenderDetailModal{{ $lender->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $lender->id }}" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <p class="modal-title" id="lenderDetailModalLabel{{ $lender->id }}">Detail Kelompok Tani</p>
+              </div>
+              <div class="modal-body">
+                <div class="modal-img" style="display:flex; justify-content:center;">
+                  <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
+                </div>
+                <p>Nama Kelompok Tani:<br>{{ $lender->name }}</p>
+                <p>Nomor Telepon:<br>{{ $lender->phone }}</p>
+                <p>Alamat Kelompok Tani:<br>{{ $lender->street }}, {{ $lender->village->name }}, {{ $lender->village->district->name }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

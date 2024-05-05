@@ -7,11 +7,11 @@
     <h1>Riwayat</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="DashboardPemerintah">Dashboard</a>
+            <a href="{{route('DashboardPemerintah()')}}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="HalRiwayatPemerintah">Daftar Kelompok Tani</a>
+            <a href="{{route('HalRiwayatPemerintah()')}}">Daftar Kelompok Tani</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -25,17 +25,35 @@
 </div>
 @endsection
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+    <ul>
+        <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a href="{{ route('logout') }}">
+                <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+            </a></li>
+    </ul>
+</li>
+@endsection
+
 @section('sidebar')
-<a href="DashboardPemerintah" class="logo">
+<a href="{{route('DashboardPemerintah()')}}" class="logo">
     <i class="fa fa-user-tie"></i>
     <span class="text">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
     <li class="">
-        <a href="DashboardPemerintah" class="nav-link">
+        <a href="{{route('DashboardPemerintah()')}}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('HalAkunKelompokTaniPemerintah()')}}" class="nav-link">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Akun Kelompok Tani</span>
         </a>
     </li>
     <li class="">
@@ -93,7 +111,7 @@
                 <td>{{ $item->rentTransaction->transaction_number }}</td>
                 <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
                 <td>{{ $item->rentTransaction->product->name }}</td>
-                <td><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#borrowerDetailModal{{ $item->rentTransaction->borrower->id }}">{{ $item->rentTransaction->borrower->name }}</a></td>
+                <td>{{ $item->rentTransaction->borrower->name }}</td>
                 <td> @php
                     $returnDate = Carbon\Carbon::parse($item->rentTransaction->return_date);
                     $rentDate = Carbon\Carbon::parse($item->rentTransaction->rent_date);
@@ -104,7 +122,7 @@
                     {{ $total }}
                 </td>
             </tr>
-            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+            <div class="modal fade " id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -115,46 +133,20 @@
                                 <img src="{{ asset('storage/product_img/'.$item->rentTransaction->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
                             </div>
                             <h6>Nama Alat:</h6>
-                            <h3>{{ $item->rentTransaction->product->name }}</h3>
-                            <br>
+                            {{ $item->rentTransaction->product->name }}
+                            <br><br>
                             <h6>Nama Penyewa:</h6>
-                            <h3>{{ $item->rentTransaction->borrower->name }}</h3>
-                            <br>
+                            {{ $item->rentTransaction->borrower->name }}
+                            <br><br>
                             <h6>Tanggal peminjaman:</h6>
-                            <h3>{{ $item->rentTransaction->rent_date }}</h3>
-                            <br>
+                            {{ $item->rentTransaction->rent_date }}
+                            <br><br>
                             <h6>Tanggal pengembalian:</h6>
-                            <h3>{{ $item->rentTransaction->return_date }}</h3>
-                            <br>
+                            {{ $item->rentTransaction->return_date }}
+                            <br><br>
                             <h6>Total Harga:</h6>
-                            <h3>Rp{{ $total }}</h3>
-                            <br>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="borrowerDetailModal{{ $item->rentTransaction->borrower->id }}" tabindex="-1" role="dialog" aria-labelledby="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title" id="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}">Detail Petani Penyewa</h6>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-img" style="display:flex; justify-content:center;">
-                                <img src="{{asset('assets\img\user\default-img-user.png')}}" style="width: 10rem; height: 10rem;">
-                            </div>
-                            <h6>Nama Petani:</h6>
-                            <h3>{{ $item->rentTransaction->borrower->name }}</h3>
-                            <br>
-                            <h6>Nomor Telepon:</h6>
-                            <h3>{{ $item->rentTransaction->borrower->phone }}</h3>
-                            <br>
-                            <h6>Alamat:</h6>
-                            <h3>{{ $item->rentTransaction->borrower->street }}, {{ $item->rentTransaction->borrower->village->name }}, {{ $item->rentTransaction->borrower->village->district->name }}</h3>
-                            <br>
+                            Rp{{ $total }}
+                            <br><br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

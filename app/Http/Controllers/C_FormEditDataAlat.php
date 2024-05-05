@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class C_FormEditDataAlat extends Controller
@@ -40,7 +39,7 @@ class C_FormEditDataAlat extends Controller
 
         if ($validator->fails()) {
             session(['editItemId' => $id]);
-            return redirect()->back()->withErrors($validator)->withInput()->with('editItemErrors', true);
+            return redirect()->back()->withErrors($validator)->with('editItemErrors', true);
         }
 
         try {

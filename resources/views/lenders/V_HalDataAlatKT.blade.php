@@ -4,13 +4,13 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link" href="HomepageKT">Home</a></li>
+<li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
-<li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
-        <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="{{ route('HalProfilKT()') }}">Profil <i class="bi-person-circle"></i></a></li>
         <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
@@ -33,7 +33,7 @@
         <table class="table">
             <div class="row pb-2 justify-content-between">
                 <div class="col-4">
-                    <a href="HalPenyewaanKT" class="btn btn-secondary"><i class="bi-arrow-left-square"></i> Kembali</a>
+                    <a href="{{route('HalPenyewaanKT()')}}" class="btn btn-secondary"><i class="bi-arrow-left-square"></i> Kembali</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
@@ -81,15 +81,15 @@
                                     @csrf
                                     <div class="form-group py-2">
                                         <label for="name">Nama</label>
-                                        <input type="text" class="form-control" id="name" name="name">
+                                        <input type="text" class="form-control" id="name" name="name" value="{{old('name', $item->name)}}">
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="description">Deskripsi</label>
-                                        <textarea class="form-control" id="description" name="product_description" rows="3"></textarea>
+                                        <textarea class="form-control" id="description" name="product_description" rows="3">{{old('product_description', $item->product_description)}}</textarea>
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="price">Harga sewa per hari</label>
-                                        <input type="number" class="form-control" id="price" name="price">
+                                        <input type="number" class="form-control" id="price" name="price" value="{{old('price', $item->price)}}">
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="image">Gambar</label>
@@ -178,7 +178,9 @@
 @if (session('editItemErrors') && session('editItemId'))
 <script>
     $(document).ready(function() {
-        var modalId = {!! (session('editItemId')) !!};
+        var modalId = {
+            !!(session('editItemId')) !!
+        };
         $('#editModal' + modalId).modal('show');
     });
 </script>

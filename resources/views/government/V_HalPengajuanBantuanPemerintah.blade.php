@@ -7,7 +7,7 @@
     <h1>Pengajuan Bantuan</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="DashboardPemerintah">Dashboard</a>
+            <a href="{{route('DashboardPemerintah()')}}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -17,17 +17,35 @@
 </div>
 @endsection
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+    <ul>
+        <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a href="{{ route('logout') }}">
+                <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+            </a></li>
+    </ul>
+</li>
+@endsection
+
 @section('sidebar')
-<a href="DashboardPemerintah" class="logo">
+<a href="{{route('DashboardPemerintah()')}}" class="logo">
     <i class="fa fa-user-tie"></i>
     <span class="text">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
     <li class="">
-        <a href="DashboardPemerintah" class="nav-link">
+        <a href="{{route('DashboardPemerintah()')}}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('HalAkunKelompokTaniPemerintah()')}}" class="nav-link">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Akun Kelompok Tani</span>
         </a>
     </li>
     <li class="active">
@@ -72,7 +90,7 @@
             <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
                 <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
                 <td style="text-align:left; padding-left:0.8rem;"><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->name }}</a></td>
-                <form id="form_{{ $item->id }}" action="{{ route('HalDataPengajuanBantuanPemerintah()', ['lender_id'=>$encryptedLenderId]) }}" method="get">
+                <form id="form_{{ $item->id }}" action="{{ route('HalDataPengajuanBantuanPemerintah()', ['lender_id'=>$encryptedLenderId]) }}">
                     @csrf
                     <input type="hidden" name="lender_id" value="{{ $encryptedLenderId }}">
                 </form>
@@ -88,14 +106,14 @@
                                 <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
                             </div>
                             <h6>Nama Kelompok Tani:</h6>
-                            <h3>{{ $item->name }}</h3>
-                            <br>
-                            <h6><strong>Nomor Telepon:</strong></h6>
-                            <h3>{{ $item->phone }}</h3>
-                            <br>
-                            <h6><strong>Alamat:</strong></h6>
-                            <h3>{{ $item->street }}, {{ $item->village->name }}, {{ $item->village->district->name }}</h3>
-                            <br>
+                            {{ $item->name }}
+                            <br><br>
+                            <h6>Nomor Telepon:</h6>
+                            {{ $item->phone }}
+                            <br><br>
+                            <h6>Alamat:</h6>
+                            {{ $item->street }}, {{ $item->village->name }}, {{ $item->village->district->name }}
+                            <br><br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

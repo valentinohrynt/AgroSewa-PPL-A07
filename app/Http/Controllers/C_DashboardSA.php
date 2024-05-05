@@ -12,7 +12,7 @@ class C_DashboardSA extends Controller
     {
 
         $countofTRT = RentTransaction::getDataNewRentTransaction()->count();
-        $countofTNU = User::getDataNewVerifiedUser()->count();
+        $countofTNU = User::getDataNewUser()->count();
         $countofART = RentTransaction::getAllDataRentTransaction()->count();
         $countofAU = User::getAllDataUser()->count();
 
@@ -31,5 +31,9 @@ class C_DashboardSA extends Controller
     public function HalProfilSA()
     {
         return redirect('HalProfilSA');
+    }
+    public function HalAkunPenggunaSA()
+    {
+        return redirect('HalAkunPenggunaSA');
     }
 }

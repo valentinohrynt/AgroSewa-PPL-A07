@@ -7,11 +7,11 @@
     <h1>Riwayat</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="DashboardPemerintah">Dashboard</a>
+            <a href="{{route('DashboardPemerintah()')}}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="HalRiwayatPemerintah">Daftar Kelompok Tani</a>
+            <a href="{{route('HalRiwayatPemerintah()')}}">Daftar Kelompok Tani</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -30,16 +30,22 @@
 @endsection
 
 @section('sidebar')
-<a href="DashboardPemerintah" class="logo">
+<a href="{{route('DashboardPemerintah()')}}" class="logo">
     <i class="fa fa-user-tie"></i>
     <span class="text">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
     <li class="">
-        <a href="DashboardPemerintah" class="nav-link">
+        <a href="{{route('DashboardPemerintah()')}}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('HalAkunKelompokTaniPemerintah()')}}" class="nav-link">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Akun Kelompok Tani</span>
         </a>
     </li>
     <li class="">
@@ -57,6 +63,17 @@
 </ul>
 @endsection
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+    <ul>
+        <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a href="{{ route('logout') }}">
+                <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+            </a></li>
+    </ul>
+</li>
+@endsection
 
 @section('content-box-info')
 <div class="box-info" style="display:flex; justify-content: flex-start;">
@@ -85,7 +102,6 @@
                 <th>No.</th>
                 <th>No. Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
-                <th>Proposal Pengajuan</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -101,11 +117,6 @@
                 $timestamp_converted = \Carbon\Carbon::createFromTimestamp($unix_timestamp)->toDateString();
                 @endphp
                 <td>{{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}</td>
-                <td>
-                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#pdfModal{{ $item->id }}">
-                        <i class="bi bi-file-earmark-pdf-fill"></i> PDF
-                    </button>
-                </td>
                 <td>
                     @if($item->equipmentRequest->is_approved == 'accepted')
                     <p>
@@ -124,14 +135,34 @@
                     @endif
                 </td>
             </tr>
-            <div class="modal fade" id="pdfModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" style="max-width: 100%; width: 90vh !important;" role="document">
+            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal-dialog" style="max-width: 80%; width: 90vh !important;" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="pdfModalLabel{{ $item->id }}">PROPOSAL PENGAJUAN BANTUAN
+                            <h5 class="modal-title" style="font-size: larger;" id="detailModalLabel{{ $item->id }}">Detail Pengajuan Bantuan
                             </h5>
                         </div>
                         <div class="modal-body" style="height: 80vh; overflow-y: hidden;">
+                            <h6>Nomor Pengajuan:</h6>
+                            {{ $item->equipmentRequest->equipment_request_number }}
+                            <br><br>
+                            <h6>Tanggal Pengajuan:</h6>
+                            {{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}
+                            <br><br>
+                            <h6>Nama Kelompok Tani:</h6>
+                            {{ $item->equipmentRequest->lender->name }}
+                            <br><br>
+                            <h6>Status:</h6>
+                            @if($item->equipmentRequest->is_approved == 'accepted')
+                            <font style="color: green;">Disetujui</font>
+                            @endif
+                            @if($item->equipmentRequest->is_approved == 'process')
+                            <font style="color: orange;">Sedang diproses</font>
+                            @endif
+                            @if($item->equipmentRequest->is_approved == 'rejected')
+                            <font style="color: red">Ditolak</font>
+                            @endif
+                            <br><br>
                             <embed src="{{ asset('storage/pdf_files/'.$item->equipmentRequest->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%"></embed>
                         </div>
                         <div class="modal-footer">

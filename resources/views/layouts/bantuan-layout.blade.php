@@ -70,6 +70,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="container">
                 <div class="credits">
                     Designed by <a href="">AgroSewa</a>

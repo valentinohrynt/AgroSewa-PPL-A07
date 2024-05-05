@@ -2,6 +2,18 @@
 
 @section('title', 'Dashboard Pemerintah')
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+  <ul>
+    <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+    <li><a href="{{ route('logout') }}">
+        <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+      </a></li>
+  </ul>
+</li>
+@endsection
+
 @section('sidebar')
 <a href="#" class="logo">
   <i class="fa fa-user-tie"></i>
@@ -13,6 +25,12 @@
     <a href="#" class="nav-link">
       <i class="fa fa-dashboard"></i>
       <span class="text">Dashboard</span>
+    </a>
+  </li>
+  <li>
+    <a href="{{route('HalAkunKelompokTaniPemerintah()')}}" class="nav-link">
+      <i class="fas fa-people-group"></i>
+      <span class="text">Akun Kelompok Tani</span>
     </a>
   </li>
   <li>

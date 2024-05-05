@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{asset('assets/icons/favicon.ico')}}">
     <title>AgroSewa - Lupa Sandi</title>
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset("/assets/css/auth-style.css")}}">
 </head>
 <style>
-    body{
-        width:min(100%);
-        display:flex;
-        align-items:center;
-        justify-content:center;
+    body {
+        width: min(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .alert-danger{
-        position:relative;
+
+    .alert-danger {
+        position: relative;
         top: -2%;
     }
 </style>
+
 <body>
     <div class="container d-flex flex-row">
         <div class="col align-items-center">
@@ -29,7 +31,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -66,50 +68,51 @@
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
-<script>
-    function password_show_hide(id, showEyeId, hideEyeId) {
-    var x = document.getElementById(id);
-    var show_eye = document.getElementById(showEyeId);
-    var hide_eye = document.getElementById(hideEyeId);
-    hide_eye.classList.remove("d-none");
-    if (x.type === "password") {
-        x.type = "text";
-        show_eye.style.display = "none";
-        hide_eye.style.display = "block";
-    } else {
-        x.type = "password";
-        show_eye.style.display = "block";
-        hide_eye.style.display = "none";
-    }
-}
-    $(function () {
-    $('input, select').on('focus', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
-    });
-    $('input, select').on('blur', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
-    });
-});
-
-document.getElementById('district').addEventListener('change', function() {
-    var selectedDistrictId = this.value;
-    var villageSelect = document.getElementById('village');
-    villageSelect.removeAttribute('style');
-    villageSelect.removeAttribute('disabled');
-    for (var i = 0; i < villageSelect.options.length; i++) {
-        var option = villageSelect.options[i];
-        if (option.value !== "" && option.getAttribute('data-district') !== selectedDistrictId) {
-            option.style.display = 'none';
-        } else {
-            option.style.display = '';
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
+    <script>
+        function password_show_hide(id, showEyeId, hideEyeId) {
+            var x = document.getElementById(id);
+            var show_eye = document.getElementById(showEyeId);
+            var hide_eye = document.getElementById(hideEyeId);
+            hide_eye.classList.remove("d-none");
+            if (x.type === "password") {
+                x.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                x.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+            }
         }
-    }
-    var defaultVillageId = villageSelect.querySelector('option[data-district="' + selectedDistrictId + '"]').value;
-    villageSelect.value = defaultVillageId;
-});
-</script>
+        $(function() {
+            $('input, select').on('focus', function() {
+                $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+            });
+            $('input, select').on('blur', function() {
+                $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+            });
+        });
+
+        document.getElementById('district').addEventListener('change', function() {
+            var selectedDistrictId = this.value;
+            var villageSelect = document.getElementById('village');
+            villageSelect.removeAttribute('style');
+            villageSelect.removeAttribute('disabled');
+            for (var i = 0; i < villageSelect.options.length; i++) {
+                var option = villageSelect.options[i];
+                if (option.value !== "" && option.getAttribute('data-district') !== selectedDistrictId) {
+                    option.style.display = 'none';
+                } else {
+                    option.style.display = '';
+                }
+            }
+            var defaultVillageId = villageSelect.querySelector('option[data-district="' + selectedDistrictId + '"]').value;
+            villageSelect.value = defaultVillageId;
+        });
+    </script>
 </body>
+
 </html>

@@ -7,7 +7,7 @@
     <h1>Riwayat</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="DashboardSA">Dashboard</a>
+            <a href="{{ route ('DashboardSA()') }}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -17,23 +17,35 @@
 </div>
 @endsection
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+    <ul>
+        <li><a href="{{route('HalProfilSA()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a href="{{ route('logout') }}">
+                <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+            </a></li>
+    </ul>
+</li>
+@endsection
+
 @section('sidebar')
-<a href="DashboardSA" class="logo">
+<a href="#" class="logo">
     <i class="fa fa-user-tie"></i>
     <span class="text">Admin Agrosewa</span>
 </a>
 
 <ul class="side-menu top">
     <li class="">
-        <a href="DashboardSA" class="nav-link">
+        <a href="{{ route ('DashboardSA()') }}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
         </a>
     </li>
     <li>
-        <a href="#" class="nav-link">
+        <a href="{{ route ('HalAkunPenggunaSA()') }}" class="nav-link">
             <i class="fas fa-people-group"></i>
-            <span class="text">Akun</span>
+            <span class="text">Akun Pengguna</span>
         </a>
     </li>
     <li class="">
@@ -74,38 +86,12 @@
             @foreach ($lenders as $item)
             <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
                 <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
-                <td style="text-align:left; padding-left:0.8rem;"><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->name }}</a></td>
+                <td style="text-align:left; padding-left:0.8rem;">{{ $item->name }}</td>
                 <form id="form_{{ $item->id }}" action="{{ route('HalRiwayatPenyewaanSA()') }}" method="post">
                     @csrf
                     <input type="hidden" name="lender_id" value="{{ $item->id }}">
                 </form>
             </tr>
-            <div class="modal fade" id="lenderDetailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title" id="lenderDetailModalLabel{{ $item->id }}">Detail Kelompok Tani</h6>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-img" style="display:flex; justify-content:center;">
-                                <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
-                            </div>
-                            <h6>Nama Kelompok Tani:</h6>
-                            <h3>{{ $item->name }}</h3>
-                            <br>
-                            <h6><strong>Nomor Telepon:</strong></h6>
-                            <h3>{{ $item->phone }}</h3>
-                            <br>
-                            <h6><strong>Alamat:</strong></h6>
-                            <h3>{{ $item->street }}, {{ $item->village->name }}, {{ $item->village->district->name }}</h3>
-                            <br>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             @endforeach
         </tbody>
     </table>

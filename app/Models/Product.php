@@ -94,7 +94,6 @@ class Product extends Model
         return $this->hasMany(RentTransaction::class, 'product_id');
     }
 
-
     protected static function boot()
     {
         parent::boot();

@@ -21,12 +21,10 @@
   <section id="sidebar" class="sidebar">
     @yield('sidebar')
   </section>
-
   <section class="content">
     <nav class="d-flex">
       @yield('nav')
     </nav>
-
     <main>
       @if(session('success'))
       <div class="alert alert-success mb-5">
@@ -41,6 +39,9 @@
       </div>
       <div class="table-data">
         @yield('content-table-data')
+      </div>
+      <div class="keterangan">
+        @yield('keterangan')
       </div>
     </main>
   </section>

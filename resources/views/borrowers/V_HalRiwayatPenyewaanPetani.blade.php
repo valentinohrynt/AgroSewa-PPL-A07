@@ -6,9 +6,9 @@
 <li><a class="nav-link" href="{{route('HomepagePetani()')}}">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link active" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
-<li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
-        <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
         <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
@@ -22,15 +22,6 @@
             <h2>Riwayat</h2>
             <h6>DAFTAR RIWAYAT PENYEWAAN ALAT PERTANIAN</h6>
         </div>
-        <!-- <div class="input-group mb-3 flex-column">
-            <label for="dateFilterInput">Saring berdasarkan tanggal</label>
-            <div class="input-group-prepend">
-                <span class="input-group-text bg-white border-md border-right-0" style="width: 50%">
-                    <i class="bi bi-filter"></i>
-                    <input type="date" class="form-control" name="dateFilterInput" id="dateFilterInput" style="width: 100%; border:none;" pattern="\d{4}-\d{2}-\d{2}">
-                </span>
-            </div>
-        </div> -->
         <table class="table">
             <thead>
                 <tr>

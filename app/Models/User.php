@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'username',
         'password',
         'email',
+        'role_id',
     ];
 
     /**
@@ -49,14 +51,48 @@ class User extends Authenticatable implements MustVerifyEmail
         'role_id' => 3,
     ];
 
-    public static function getDataNewVerifiedUser()
+    public static function getDataUserbyId($id)
     {
-        $DataNewVerifiedUser = static::whereDate('email_verified_at', now()->toDateString())->get();
+        $DataUserbyId = static::findOrFail($id);
+        return $DataUserbyId;
+    }
+
+    public static function getDataNewUser()
+    {
+        $DataNewVerifiedUser = static::whereDate('created_at', now()->toDateString())->get();
         return $DataNewVerifiedUser;
     }
+
     public static function getAllDataUser()
     {
         $AllDataUser = static::all();
         return $AllDataUser;
+    }
+
+    public static function putDataUser($id, $newUsername, $newPassword, $newEmail)
+    {
+        $user = static::where('id', $id)->first();
+        $data = [
+            'username' => $newUsername,
+            'email' => $newEmail
+        ];
+
+        if (!empty($newPassword)) {
+            $data['password'] = Hash::make($newPassword);
+        }
+
+        $user->update($data);
+    }
+    public static function postDataUser($username, $password, $email, $role_id)
+    {
+        $user = static::create(
+            [
+                'username' => $username,
+                'password'=> Hash::make($password),
+                'email'=> $email,
+                'role_id' => $role_id
+            ]
+        );
+        return $user->id; 
     }
 }

@@ -36,7 +36,14 @@
       </div>
     </main>
   </section>
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('.clickable').click(function() {
+        window.location.href = $(this).data('url');
+      });
+    });
+  </script>
   <script src="{{asset('/assets/js/dashboard.js')}}"></script>
 </body>
 

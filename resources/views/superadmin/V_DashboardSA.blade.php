@@ -16,9 +16,9 @@
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link">
+    <a href="{{ route ('HalAkunPenggunaSA()') }}" class="nav-link">
       <i class="fas fa-people-group"></i>
-      <span class="text">Akun</span>
+      <span class="text">Akun Pengguna</span>
     </a>
   </li>
   <li>

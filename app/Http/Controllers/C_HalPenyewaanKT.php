@@ -56,7 +56,7 @@ class C_HalPenyewaanKT extends Controller
 
         RentLog::postDataRentLog($rentTransactionId, $totalPrice, $actualReturnDate);
 
-        return redirect('HalPenyewaanKT')->with('success', 'Transaksi berhasil diselesaikan dan ditambahkan ke Riwayat');
+        return redirect('HalPenyewaanKT')->with('success', 'Penyewaan berhasil diselesaikan!');
     }
 
     public function BatalPenyewaan(Request $request, $id)
@@ -91,6 +91,6 @@ class C_HalPenyewaanKT extends Controller
 
     public function DataAlatKT()
     {
-        return redirect('HalDataAlatKT');
+        return redirect('HalPenyewaanKT/HalDataAlatKT');
     }
 }

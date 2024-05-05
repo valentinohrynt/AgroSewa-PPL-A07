@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{{asset('assets/icons/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('assets/icons/favicon.ico')}}">
     <title>AgroSewa - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/auth-style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <style>
-    body{
-        width:min(100%);
-        display:flex;
-        align-items:center;
-        justify-content:center;
+    body {
+        width: min(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
+
 <body>
     <div class="container d-flex flex-row">
         <div class="row py-5 mt-4 align-items-center">
             <div class="col-lg-6 mb-1 mb-md-0 mb-lg-0" style="z-index: 999">
                 <h1 class="mt-5 mb-5 display-5 fw-bold ls-tight ml-md-5" style="color: hsl(218, 81%, 95%)">
-                Selamat datang di <br>
-                <span style="color: hsl(132, 81%, 75%)">Login AgroSewa</span>
+                    Selamat datang di <br>
+                    <span style="color: hsl(132, 81%, 75%)">Login AgroSewa</span>
                 </h1>
             </div>
             <div class="card bg-glass col-md col-lg-6 ml-auto ml-md-auto">
                 @if (session('status')=='failed')
-                    <div class="alert alert-danger">
-                        {{session('message')}}
-                    </div>
-                @elseif (session('status')==true)
-                    <div class="alert alert-success">
-                        Berhasil mengubah sandi, silahkan login!
-                    </div>
+                <div class="alert alert-danger text-center">
+                    {{session('message')}}
+                </div>
+                @elseif (session('status')=='success')
+                <div class="alert alert-success text-center">
+                    {{session('message')}}
+                </div>
+                @elseif (session('status') == true)
+                <div class="alert alert-success text-center">
+                    Berhasil mengubah sandi, silahkan login!
+                </div>
                 @endif
                 <form action="" method="post">
                     @csrf
@@ -83,33 +89,34 @@
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
-<script>
-    function password_show_hide(id, showEyeId, hideEyeId) {
-    var x = document.getElementById(id);
-    var show_eye = document.getElementById(showEyeId);
-    var hide_eye = document.getElementById(hideEyeId);
-    hide_eye.classList.remove("d-none");
-    if (x.type === "password") {
-        x.type = "text";
-        show_eye.style.display = "none";
-        hide_eye.style.display = "block";
-    } else {
-        x.type = "password";
-        show_eye.style.display = "block";
-        hide_eye.style.display = "none";
-    }
-}
-    $(function () {
-    $('input, select').on('focus', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
-    });
-    $('input, select').on('blur', function () {
-        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
-    });
-});
-</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
+    <script>
+        function password_show_hide(id, showEyeId, hideEyeId) {
+            var x = document.getElementById(id);
+            var show_eye = document.getElementById(showEyeId);
+            var hide_eye = document.getElementById(hideEyeId);
+            hide_eye.classList.remove("d-none");
+            if (x.type === "password") {
+                x.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                x.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+            }
+        }
+        $(function() {
+            $('input, select').on('focus', function() {
+                $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+            });
+            $('input, select').on('blur', function() {
+                $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+            });
+        });
+    </script>
 </body>
+
 </html>

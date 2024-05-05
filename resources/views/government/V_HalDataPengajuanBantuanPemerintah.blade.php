@@ -7,7 +7,7 @@
     <h1>Pengajuan Bantuan</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="DashboardPemerintah">Dashboard</a>
+            <a href="{{route('DashboardPemerintah()')}}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -24,17 +24,35 @@
 </div>
 @endsection
 
+@section('nav')
+<i class="fas fa-bars menu-btn"></i>
+<li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
+    <ul>
+        <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a href="{{ route('logout') }}">
+                <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
+            </a></li>
+    </ul>
+</li>
+@endsection
+
 @section('sidebar')
-<a href="DashboardPemerintah" class="logo">
+<a href="{{route('DashboardPemerintah()')}}" class="logo">
     <i class="fa fa-user-tie"></i>
     <span class="text">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
     <li class="">
-        <a href="DashboardPemerintah" class="nav-link">
+        <a href="{{route('DashboardPemerintah()')}}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('HalAkunKelompokTaniPemerintah()')}}" class="nav-link">
+            <i class="fas fa-people-group"></i>
+            <span class="text">Akun Kelompok Tani</span>
         </a>
     </li>
     <li class="active">
@@ -53,7 +71,6 @@
 @endsection
 
 @section('content-table-data')
-
 <div class="order">
     <div class="head">
         <h3>Daftar Pengajuan Bantuan</h3>
@@ -71,23 +88,21 @@
                 <th>No. Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
                 <th>Nama Poktan</th>
-                <th>Proposal Pengajuan</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($equipmentRequest as $item)
-            <tr>
+            <tr data-bs-toggle="modal" data-bs-target="#detailModal{{ $item->id }}">
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->equipment_request_number }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td><a onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#lenderDetailModal{{ $item->id }}">{{ $item->lender->name }}</a></td>
-                <td>
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#pdfModal{{ $item->id }}">
-                        <i class="fa fa-solid fa-file-pdf"></i>
-                        <span>PDF</span>
-                    </button>
-                </td>
+                @php
+                $timestamp_created_at = $item->created_at;
+                $unix_timestamp = \Carbon\Carbon::parse($timestamp_created_at)->timestamp;
+                $timestamp_converted = \Carbon\Carbon::createFromTimestamp($unix_timestamp)->toDateString();
+                @endphp
+                <td>{{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}</td>
+                <td>{{ $item->lender->name }}</td>
                 <td>
                     <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $item->id }}"><i class="fa fa-check"></i>
                         <span>Setujui</span></button>
@@ -96,41 +111,24 @@
                     </button>
                 </td>
             </tr>
-            <div class="modal fade" id="pdfModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" style="max-width: 100%; width: 90vh !important;" role="document">
+            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
+                <div class="modal-dialog" style="max-width: 80%; width: 90vh !important;" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="pdfModalLabel{{ $item->id }}">PROPOSAL PENGAJUAN BANTUAN
+                            <h5 class="modal-title" style="font-size: larger;" id="detailModalLabel{{ $item->id }}">Detail Pengajuan Bantuan
                             </h5>
                         </div>
                         <div class="modal-body" style="height: 80vh; overflow-y: hidden;">
-                            <embed src="{{ asset('storage/pdf_files/'.$item->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%"></embed>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="lenderDetailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="lenderDetailModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title" id="lenderDetailModalLabel{{ $lender->id }}">Detail Kelompok Tani</h6>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-img" style="display:flex; justify-content:center;">
-                                <img src="{{asset('assets\img\user\default-img-kt.png')}}" style="width: 10rem; height: 10rem;">
-                            </div>
+                            <h6>Nomor Pengajuan:</h6>
+                            {{ $item->equipment_request_number }}
+                            <br><br>
+                            <h6>Tanggal Pengajuan:</h6>
+                            {{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}
+                            <br><br>
                             <h6>Nama Kelompok Tani:</h6>
-                            <h3>{{ $lender->name }}</h3>
-                            <br>
-                            <h6><strong>Nomor Telepon:</strong></h6>
-                            <h3>{{ $lender->phone }}</h3>
-                            <br>
-                            <h6><strong>Alamat:</strong></h6>
-                            <h3>{{ $lender->street }}</h3>
-                            <br>
+                            {{ $item->lender->name }}
+                            <br><br>
+                            <embed src="{{ asset('storage/pdf_files/'.$item->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="100%" width="100%"></embed>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -184,29 +182,33 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        function filterRows(searchText) {
-            $('.table tbody tr').each(function() {
-                var lenderName = $(this).find('td:eq(3)').text().toLowerCase();
-                if (searchText === '' || lenderName.includes(searchText)) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
+@section('keterangan')
+<p style="font-size: smaller; color: gray;">Keterangan: <br>Klik atau Tekan salah satu baris Daftar Pengajuan Bantuan untuk melihat detail dan dokumen pengajuan.
+    @endsection
+
+    @section('scripts')
+    <script>
+        $(document).ready(function() {
+            function filterRows(searchText) {
+                $('.table tbody tr').each(function() {
+                    var lenderName = $(this).find('td:eq(3)').text().toLowerCase();
+                    if (searchText === '' || lenderName.includes(searchText)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+            $('#searchBtn').on('click', function() {
+                var searchText = $('#searchInput').val().toLowerCase();
+                filterRows(searchText);
+            });
+            $('#searchInput').on('input', function() {
+                var searchText = $(this).val().toLowerCase();
+                if (searchText === '') {
+                    $('.table tbody tr').show();
                 }
             });
-        }
-        $('#searchBtn').on('click', function() {
-            var searchText = $('#searchInput').val().toLowerCase();
-            filterRows(searchText);
         });
-        $('#searchInput').on('input', function() {
-            var searchText = $(this).val().toLowerCase();
-            if (searchText === '') {
-                $('.table tbody tr').show();
-            }
-        });
-    });
-</script>
-@endsection
+    </script>
+    @endsection

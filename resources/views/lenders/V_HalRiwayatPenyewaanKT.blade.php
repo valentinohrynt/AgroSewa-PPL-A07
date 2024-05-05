@@ -4,13 +4,13 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link" href="HomepageKT">Home</a></li>
+<li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link active" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
-<li class="dropdown"><a href="#"><span>Akun </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
-        <li><a href="#">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="{{ route('HalProfilKT()') }}">Profil <i class="bi-person-circle"></i></a></li>
         <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
@@ -55,7 +55,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->rentTransaction->transaction_number }}</td>
                     <td>{{ $item->rentTransaction->product->name }}</td>
-                    <td><a href onclick="event.stopPropagation();" data-bs-toggle="modal" data-bs-target="#borrowerDetailModal{{ $item->rentTransaction->borrower->id }}">{{ $item->rentTransaction->borrower->name }}</a></td>
+                    <td>{{ $item->rentTransaction->borrower->name }}</td>
                     <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
                     <td>
                         @if($item->rentTransaction->is_completed == 'yes')
@@ -92,26 +92,6 @@
                                     <font style="color: red">Dibatalkan</font>
                                     @endif
                                 </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="borrowerDetailModal{{ $item->rentTransaction->borrower->id }}" tabindex="-1" role="dialog" aria-labelledby="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title" id="borrowerDetailModalLabel{{ $item->rentTransaction->borrower->id }}">Detail Petani Penyewa</h6>
-                            </div>
-                            <div class="modal-body">
-                                <div class="modal-img" style="display:flex; justify-content:center;">
-                                    <img src="{{asset('assets\img\user\default-img-user.png')}}" style="width: 10rem; height: 10rem;">
-                                </div>
-                                <p>Nama Petani:<br>{{ $item->rentTransaction->borrower->name }}</p>
-                                <p>Nomor Telepon:<br>{{ $item->rentTransaction->borrower->phone }}</p>
-                                <p>Alamat:<br>{{ $item->rentTransaction->borrower->street }}, {{ $item->rentTransaction->borrower->village->name }}, {{ $item->rentTransaction->borrower->village->district->name }}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

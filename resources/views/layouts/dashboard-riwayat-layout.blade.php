@@ -26,7 +26,6 @@
     <nav class="d-flex">
       @yield('nav')
     </nav>
-
     <main>
       <div class="head-title">
         @yield('content-head-title')

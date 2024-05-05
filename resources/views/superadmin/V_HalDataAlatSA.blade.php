@@ -7,7 +7,7 @@
     <h1>Penyewaan</h1>
     <ul class="breadcrumb">
         <li>
-            <a href="{{ route ('DashboardSA') }}">Dashboard</a>
+            <a href="{{ route ('DashboardSA()') }}">Dashboard</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -49,15 +49,15 @@
 
 <ul class="side-menu top">
     <li>
-        <a href="DashboardSA" class="nav-link">
+        <a href="{{ route ('DashboardSA()') }}" class="nav-link">
             <i class="fa fa-dashboard"></i>
             <span class="text">Dashboard</span>
         </a>
     </li>
     <li>
-        <a href="#" class="nav-link">
+        <a href="{{ route ('HalAkunPenggunaSA()') }}" class="nav-link">
             <i class="fas fa-people-group"></i>
-            <span class="text">Akun</span>
+            <span class="text">Akun Pengguna</span>
         </a>
     </li>
     <li class="active">

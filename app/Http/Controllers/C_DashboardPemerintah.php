@@ -9,14 +9,15 @@ use App\Models\EquipmentRequestLog;
 
 class C_DashboardPemerintah extends Controller
 {
-    public function setDashboardPemerintah(){
+    public function setDashboardPemerintah()
+    {
 
         $countofApply = EquipmentRequest::getDataEquipmentRequest()->count();
         $countofDoneApply = EquipmentRequestLog::getDataEquipmentRequestLog()->count();
         $countofBorrowers = Borrower::getAllDataBorrower()->count();
         $countofLenders = Lender::getAllDataLender()->count();
 
-        return view('government.V_DashboardPemerintah', compact('countofApply', 'countofDoneApply', 'countofBorrowers','countofLenders'));
+        return view('government.V_DashboardPemerintah', compact('countofApply', 'countofDoneApply', 'countofBorrowers', 'countofLenders'));
     }
     public function HalPengajuanBantuanPemerintah()
     {
@@ -25,5 +26,13 @@ class C_DashboardPemerintah extends Controller
     public function HalRiwayatPemerintah()
     {
         return redirect('HalRiwayatPemerintah');
+    }
+    public function HalProfilPemerintah()
+    {
+        return redirect('HalProfilPemerintah');
+    }
+    public function HalAkunKelompokTaniPemerintah()
+    {
+        return redirect('HalAkunKelompokTaniPemerintah');
     }
 }

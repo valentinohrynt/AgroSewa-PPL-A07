@@ -6,16 +6,24 @@ use Illuminate\Http\Request;
 
 class C_HomepageKT extends Controller
 {
-    public function setHomepageKT(){
+    public function setHomepageKT()
+    {
         return view("lenders.V_HomepageKT");
     }
-    public function HalPenyewaanKT(){
+    public function HalPenyewaanKT()
+    {
         return redirect("HalPenyewaanKT");
     }
-    public function HalPengajuanBantuanKT(){
+    public function HalPengajuanBantuanKT()
+    {
         return redirect("HalPengajuanBantuanKT");
     }
-    public function HalRiwayatPenyewaanKT(){
+    public function HalRiwayatPenyewaanKT()
+    {
         return redirect("HalRiwayatPenyewaanKT");
+    }
+    public function HalProfilKT()
+    {
+        return redirect("HalProfilKT");
     }
 }

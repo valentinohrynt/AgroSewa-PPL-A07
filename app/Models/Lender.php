@@ -9,6 +9,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Lender extends Model
 {
+    protected $fillable = [
+        'name',
+        'nik',
+        'phone',
+        'street',
+        'village_id',
+        'user_id'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -35,6 +44,29 @@ class Lender extends Model
     {
         $DataLenderbyId = static::findOrFail($id);
         return $DataLenderbyId;
+    }
+    public static function putDataLender($id, $phone, $street, $village_id)
+    {
+        $lender = static::find($id);
+        $lender->update([
+            'phone' => $phone,
+            'street' => $street,
+            'village_id' => $village_id
+        ]);
+    }
+    public static function postDataLender($name, $nik, $phone, $street, $village_id, $user_id)
+    {
+        $DataLender = static::create(
+            [
+                'name' => $name,
+                'nik' => $nik,
+                'phone' => $phone,
+                'street' => $street,
+                'village_id' => $village_id,
+                'user_id' => $user_id
+            ]
+        );
+        return $DataLender;
     }
     public function village()
     {

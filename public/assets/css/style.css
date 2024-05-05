@@ -669,16 +669,16 @@ section {
     margin-top: 40px;
 }
 
-.product-display .transaction-form {
+.product-display .profile-form {
     width: 100%;
 }
 
-.product-display .transaction-form .form-group {
+.product-display .profile-form .form-group {
     padding-bottom: 8px;
     font-size: 1.2rem;
 }
 
-.product-display .transaction-form .error-message {
+.product-display .profile-form .error-message {
     display: none;
     color: #fff;
     background: #ed3c0d;
@@ -687,11 +687,11 @@ section {
     font-weight: 600;
 }
 
-.product-display .transaction-form .error-message br + br {
+.product-display .profile-form .error-message br + br {
     margin-top: 25px;
 }
 
-.product-display .transaction-form .sent-message {
+.product-display .profile-form .sent-message {
     display: none;
     color: #fff;
     background: #18d26e;
@@ -700,14 +700,14 @@ section {
     font-weight: 600;
 }
 
-.product-display .transaction-form .loading {
+.product-display .profile-form .loading {
     display: none;
     background: #fff;
     text-align: center;
     padding: 15px;
 }
 
-.product-display .transaction-form .loading:before {
+.product-display .profile-form .loading:before {
     content: "";
     display: inline-block;
     border-radius: 50%;
@@ -719,28 +719,28 @@ section {
     animation: animate-loading 1s linear infinite;
 }
 
-.product-display .transaction-form input,
-.product-display .transaction-form textarea {
+.product-display .profile-form input,
+.product-display .profile-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 1rem;
     border-radius: 10px;
 }
 
-.product-display .transaction-form input:focus,
-.product-display .transaction-form textarea:focus {
+.product-display .profile-form input:focus,
+.product-display .profile-form textarea:focus {
     border-color: #ffc451;
 }
 
-.product-display .transaction-form input {
+.product-display .profile-form input {
     height: 44px;
 }
 
-.product-display .transaction-form textarea {
+.product-display .profile-form textarea {
     padding: 10px 12px;
 }
 
-.product-display .transaction-form button[type="submit"] {
+.product-display .profile-form button[type="submit"] {
     border: 0;
     padding: 10px 24px;
     transition: 0.4s;
@@ -888,12 +888,12 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Slightly transparent black */
 }
 
-.table td a{
-    color:#3a6351;
+.table td a {
+    color: #3a6351;
     font-weight: 700;
 }
-.table td a:hover{
-    color:#2ecc71;
+.table td a:hover {
+    color: #2ecc71;
 }
 
 .table tr {
@@ -1038,7 +1038,6 @@ section {
 
 #footer .footer-top {
     background: #ffffff;
-    border-bottom: 1px solid #3a6351;
     padding: 60px 0 30px 0;
 }
 
@@ -1247,4 +1246,90 @@ section {
 /* Custom modal overlay */
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.4);
+}
+.profile-container {
+    position: flex;
+    margin-bottom: 50px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    z-index: 1;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+    box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+}
+.profile-container .petani_thumb {
+    position: relative;
+    z-index: 1;
+    border-radius: 15px 15px 0 0;
+    margin: 0 auto;
+    padding: 30px 30px 0 30px;
+    background-color: #3a6351;
+    overflow: hidden;
+}
+.profile-container .petani_thumb img {
+    max-width: 315px;
+    max-height: 315px;
+}
+.profile-container .petani_thumb::after {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    position: absolute;
+    width: 200%;
+    height: 100px;
+    bottom: -45px;
+    left: -25%;
+    content: "";
+    background-color: #ffffff;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+@media only screen and (max-width: 575px) {
+    .profile-container .petani_thumb::after {
+        height: 160px;
+        bottom: -90px;
+    }
+}
+
+.profile-container .petani_info {
+    position: flex;
+    margin-top: -1rem;
+    z-index: 1;
+    padding: 30px;
+    text-align: right;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+}
+.profile-container .petani_input{
+    position: flex;
+    margin-top: -1rem;
+    z-index: 1;
+    padding: 30px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+    height: fit-content;
+}
+.profile-container .petani_info h6 {
+    margin-bottom: 0.25rem;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .profile-container .petani_info h6 {
+        font-size: 14px;
+    }
+}
+.profile-container .petani_info p {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .profile-container .petani_info p {
+        font-size: 12px;
+    }
 }

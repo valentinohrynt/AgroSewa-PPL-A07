@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Superadmin;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class C_HalProfilSA extends Controller
@@ -15,4 +14,7 @@ class C_HalProfilSA extends Controller
         $superadmin = Superadmin::getDataSuperadminbyUserId($userId);
         return view('superadmin.V_HalProfilSA', compact('superadmin', 'user'));
     } 
+    public function FormEditProfilSA(){
+        return redirect('HalProfilSA/FormEditProfilSA');
+    }
 }

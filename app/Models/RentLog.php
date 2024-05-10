@@ -14,28 +14,43 @@ class RentLog extends Model
 
     public static function getDataRentLogbyBorrowerId($id)
     {
+        $hasRentLog = RentLog::whereHas('rentTransaction', function ($query) use ($id) {
+            $query->where('borrower_id', $id);
+        })->exists();
+
+        if (!$hasRentLog) {
+            return collect();
+        }
+
         $DataRentLogbyBorrowerId = static::with(['rentTransaction.product'])
-            ->join('rent_transactions', 'rent_logs.rent_transaction_id', '=', 'rent_transactions.id')
-            ->where(function ($query) use ($id) {
-                $query->where('is_completed', 'yes')->orWhere('is_completed', 'cancelled')->where('borrower_id', $id);
-            })
-            ->orderByDesc('actual_return_date')
-            ->get();
-        return $DataRentLogbyBorrowerId;
-    }
-    public static function getDataRentLogbyLenderId($id)
-    {
-        $DataRentLogbyLenderId = static::with(['rentTransaction.product', 'rentTransaction.borrower'])
             ->whereHas('rentTransaction', function ($query) use ($id) {
-                $query->where('is_completed', 'yes')->orWhere('is_completed', 'cancelled')
-                    ->whereHas('product', function ($query) use ($id) {
-                        $query->where('lender_id', $id);
+                $query->where('borrower_id', $id)
+                    ->where(function ($query) {
+                        $query->where('is_completed', 'yes')
+                            ->orWhere('is_completed', 'cancelled');
                     });
             })
             ->orderByDesc('actual_return_date')
             ->get();
+
+        return $DataRentLogbyBorrowerId;
+    }
+
+    public static function getDataRentLogbyLenderId($id)
+    {
+        $DataRentLogbyLenderId = static::with(['rentTransaction.product', 'rentTransaction.borrower'])
+            ->whereHas('rentTransaction.product', function ($query) use ($id) {
+                $query->where('lender_id', $id);
+            })
+            ->whereHas('rentTransaction', function ($query) {
+                $query->where('is_completed', 'yes')->orWhere('is_completed', 'cancelled');
+            })
+            ->orderByDesc('actual_return_date')
+            ->get();
+
         return $DataRentLogbyLenderId;
     }
+
     public static function postDataRentLog($id, $totalPrice, $actualReturnDate)
     {
         RentLog::create([

@@ -17,7 +17,7 @@ class RentTransaction extends Model
         'return_date',
         'is_completed'
     ];
-    
+
     public function borrower()
     {
         return $this->belongsTo(Borrower::class, 'borrower_id');
@@ -27,6 +27,7 @@ class RentTransaction extends Model
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
+
 
     public function rentLog()
     {
@@ -51,7 +52,7 @@ class RentTransaction extends Model
 
     public static function getDataNewRentTransaction()
     {
-        $DataRentTransaction = static::where('is_completed', 'no')->whereDate('rent_date',now()->toDateString())->get();
+        $DataRentTransaction = static::where('is_completed', 'no')->whereDate('rent_date', now()->toDateString())->get();
         return $DataRentTransaction;
     }
 
@@ -61,7 +62,8 @@ class RentTransaction extends Model
         return $DataRentTransactionbyId;
     }
 
-    public static function patchRentDateandReturnDate($id, $rent_date, $return_date){
+    public static function patchRentDateandReturnDate($id, $rent_date, $return_date)
+    {
         $transaction = static::findOrFail($id);
         $transaction->update([
             'rent_date' => $rent_date,
@@ -80,7 +82,7 @@ class RentTransaction extends Model
     {
         return static::where('id', $id)->update(['is_completed' => 'yes']);
     }
-    
+
     public static function patchStatusRentTransactiontoNo($id)
     {
         return static::where('id', $id)->update(['is_completed' => 'no']);
@@ -107,7 +109,7 @@ class RentTransaction extends Model
     protected static function boot()
     {
         parent::boot();
-    
+
         static::creating(function ($transaction) {
             $transaction->transaction_number = Uuid::uuid4()->toString();
         });

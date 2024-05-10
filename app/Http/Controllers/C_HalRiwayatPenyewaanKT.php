@@ -14,7 +14,6 @@ class C_HalRiwayatPenyewaanKT extends Controller
         $userId = $user->id;
         $lender = Lender::getDataLenderbyUserId($userId);
         $lenderId = $lender->id;
-
         $rentLogs = RentLog::getDataRentLogbyLenderId($lenderId);
 
         return view('lenders.V_HalRiwayatPenyewaanKT', ['rentLogs' => $rentLogs]);

@@ -21,8 +21,8 @@
 <i class="fas fa-bars menu-btn"></i>
 <li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
     <ul>
-        <li><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
-        <li><a href="{{ route('logout') }}">
+        <li class="active"><a href="{{route('HalProfilPemerintah()')}}">Profil <i class="fas fa-user"></i></a></li>
+        <li><a data-bs-toggle="modal" data-bs-target="#logoutModal">
                 <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
             </a></li>
     </ul>
@@ -48,7 +48,7 @@
             <span class="text">Akun Kelompok Tani</span>
         </a>
     </li>
-    <li class="active">
+    <li>
         <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="nav-link">
             <i class="fas fa-chart-simple"></i>
             <span class="text">Pengajuan Bantuan</span>

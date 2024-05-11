@@ -30,7 +30,7 @@
 <li class="dropdown"><a href="#"><i class="fas fa-user"></i></a>
     <ul>
         <li><a href="{{route('HalProfilSA()')}}">Profil <i class="fas fa-user"></i></a></li>
-        <li><a href="{{ route('logout') }}">
+        <li><a data-bs-toggle="modal" data-bs-target="#logoutModal">
                 <font style="color: red;">Logout <i class="fas fa-sign-out"></i></font>
             </a></li>
     </ul>
@@ -115,7 +115,7 @@
                     $returnDate = Carbon\Carbon::parse($item->rentTransaction->return_date);
                     $rentDate = Carbon\Carbon::parse($item->rentTransaction->rent_date);
                     $price = floatval($item->rentTransaction->product->price);
-                    $daysDifference = $rentDate->diffInDays($returnDate);
+                    $daysDifference = ($rentDate->diffInDays($returnDate))+1;
                     $total = $price * $daysDifference;
                     @endphp
                     {{ $total }}

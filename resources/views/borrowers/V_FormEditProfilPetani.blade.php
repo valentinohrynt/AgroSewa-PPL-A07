@@ -4,13 +4,13 @@
 
 @section('navbar-nav')
 
-<li><a class="nav-link active" href="{{route('HomepagePetani()')}}">Home</a></li>
+<li><a class="nav-link" href="{{route('HomepagePetani()')}}">Home</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanPetani()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanPetani()')}}">Riwayat</a></li>
-<li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a class="active" href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
-        <li><a href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a class="active" href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
+        <li><a href="" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 

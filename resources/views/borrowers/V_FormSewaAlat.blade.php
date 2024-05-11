@@ -10,7 +10,7 @@
 <li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a href="" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 
@@ -44,8 +44,7 @@
                     <div class="row px-5 py-5">
                         <div class="col">
                             <div class="row-2 d-flex justify-content-center">
-                                <img src="{{ asset('storage/product_img/'.$product->product_img) }}"
-                                    class="card-img-top w-50 h-50" alt="{{ $product->name }}">
+                                <img src="{{ asset('storage/product_img/'.$product->product_img) }}" class="card-img-top w-50 h-50" alt="{{ $product->name }}">
                             </div>
                             <div class="row-2 pt-5 px-5">
                                 <div class="d-flex justify-content-center pb-5">
@@ -57,15 +56,12 @@
                         </div>
                         <br>
                         <div class="col">
-                            <form action="{{ route('SewaAlatPetani()') }}" method="post" role="form"
-                                class="transaction-form px-5 pb-5">
+                            <form action="{{ route('SewaAlatPetani()') }}" method="post" role="form" class="transaction-form px-5 pb-5">
                                 @csrf
                                 <div class="col pt-5">
                                     <div class="form-group">
                                         <label for="rent_date" class="pb-2">Tanggal awal</label>
-                                        <input type="date" name="rent_date" id="rent_date" min="{{ date('Y-m-d') }}"
-                                            value="{{ isset($rent_date) ? $rent_date : date('Y-m-d') }}"
-                                            class="form-control">
+                                        <input type="date" name="rent_date" id="rent_date" min="{{ date('Y-m-d') }}" value="{{ isset($rent_date) ? $rent_date : date('Y-m-d') }}" class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -90,24 +86,26 @@
     </div>
 </section>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        events: {!! json_encode($events) !!},
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            events: {
+                !!json_encode($events) !!
+            },
+        });
+        calendar.render();
     });
-    calendar.render();
-});
 
-document.getElementById('rent_date').addEventListener('change', function() {
-    var rentDate = new Date(this.value);
-    var returnDateInput = document.getElementById('return_date');
+    document.getElementById('rent_date').addEventListener('change', function() {
+        var rentDate = new Date(this.value);
+        var returnDateInput = document.getElementById('return_date');
 
-    var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
-    returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
+        var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
+        returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
 
-    if (returnDateInput.valueAsDate < minReturnDate) {
-        returnDateInput.value = minReturnDate.toISOString().split('T')[0];
-    }
-});
+        if (returnDateInput.valueAsDate < minReturnDate) {
+            returnDateInput.value = minReturnDate.toISOString().split('T')[0];
+        }
+    });
 </script>
 @endsection

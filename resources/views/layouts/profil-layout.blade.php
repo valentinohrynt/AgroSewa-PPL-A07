@@ -35,8 +35,24 @@
             </nav><!-- .navbar -->
         </div>
     </header><!-- End Header -->
-    <main id="main" style="background-color:aliceblue; ">
-        @yield('content')
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Apakah anda yakin ingin logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
+                    <a href="{{ route('logout') }}" class="btn btn-success">Ya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @yield('content')
     </main><!-- End #main -->
     <footer id="footer">
         <div class="footer-top">

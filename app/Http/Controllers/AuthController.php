@@ -12,22 +12,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
-use Symfony\Component\Routing\Annotation\Route;
 
 class AuthController extends Controller
 {
     public function login()
     {
-        return view("login");
+        return view("V_Login");
     }
 
     public function register()
     {
-        return view("register");
+        return view("V_Register");
     }
 
     public function authenticating(Request $request)
@@ -53,7 +51,7 @@ class AuthController extends Controller
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'Username atau Password salah, silahkan ulangi kembali');
-        return redirect('/login');
+        return redirect('login');
     }
 
     public function logout(Request $request)
@@ -70,7 +68,7 @@ class AuthController extends Controller
         $villages = Village::orderBy('name')->get();
         $lenders = Lender::orderBy('name')->get();
 
-        return view("register", compact("districts", "villages", "lenders"));
+        return view("V_Register", compact("districts", "villages", "lenders"));
     }
 
     public function registerProcess(Request $request)
@@ -80,7 +78,7 @@ class AuthController extends Controller
             'password.required' => 'Kata Sandi harus diisi.',
             'phone.required' => 'Nomor telepon harus diisi.',
             'street.required' => 'Nama Jalan harus diisi.',
-            'lender_id.required' => 'Kecamatan harus diisi',
+            'lender_id.required' => 'Nama Kelompok Tani harus diisi',
             'village_id.required' => 'Desa harus diisi'
         ];
 
@@ -117,7 +115,7 @@ class AuthController extends Controller
         );
         Session::flash('status', 'success');
         Session::flash('message', 'Registrasi berhasil, silahkan login.');
-        return redirect('/login');
+        return redirect('login');
     }
 
     public function forgotPassword()

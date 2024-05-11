@@ -8,10 +8,10 @@
 <li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
-<li class="dropdown active"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
+<li class="dropdown"><a class="active" href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
     <ul>
         <li><a class="active" href="{{ route('HalProfilKT()') }}">Profil <i class="bi-person-circle"></i></a></li>
-        <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
+        <li><a href="" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="bi-box-arrow-right"></i></a></li>
     </ul>
 </li>
 

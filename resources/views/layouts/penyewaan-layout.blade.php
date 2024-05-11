@@ -36,6 +36,23 @@
         </div>
     </header><!-- End Header -->
     <main id="main" style="background-color:aliceblue; ">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah anda yakin ingin logout?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tidak</button>
+                        <a href="{{ route('logout') }}" class="btn btn-success">Ya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         @yield('content')
     </main><!-- End #main -->
     <footer id="footer">
@@ -82,12 +99,12 @@
         <img src="{{asset('assets/img/preloader-128.gif')}}" alt="Loading">
     </div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
+
     <!-- cdn js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-    
+
     <!-- local vendor js -->
     <script src="{{asset('/assets/js/main.js')}}"></script>
     <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>

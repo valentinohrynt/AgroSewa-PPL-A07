@@ -9,7 +9,7 @@
 <li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>
   <ul>
     <li><a href="{{ route('HalProfilPetani()') }}">Profil <i class="bi-person-circle"></i></a></li>
-    <li><a href="{{ route('logout') }}">Logout <i class="bi-box-arrow-right"></i></a></li>
+    <li><a data-bs-toggle="modal" data-bs-target="#logoutModal">Logout <i class="bi-box-arrow-right"></i></a></li>
   </ul>
 </li>
 @endsection

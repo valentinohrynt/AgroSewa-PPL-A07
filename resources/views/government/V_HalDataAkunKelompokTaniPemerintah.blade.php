@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="{{route('HalAkunKelompokTaniPemerintah()')}}">Daftar Kelompok Tani</a>
+            <a href="{{route('HalAkunKelompokTaniPemerintah()')}}">Akun Kelompok Tani</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>

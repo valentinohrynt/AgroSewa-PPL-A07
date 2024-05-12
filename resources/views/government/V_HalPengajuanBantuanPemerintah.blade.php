@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="active">Daftar Kelompok Tani</a>
+            <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="active">Pengajuan Bantuan</a>
         </li>
     </ul>
 </div>

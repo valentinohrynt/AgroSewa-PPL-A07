@@ -23,14 +23,16 @@ class C_FormSewaAlat extends Controller
 
         $rentTransactions = RentTransaction::getDataRentTransactionByProductId($productId)->get();
         $events = [];
-        foreach ($rentTransactions as $transaction) {
-            $endDate = Carbon::createFromFormat('Y-m-d', $transaction->return_date)->addDay()->format('Y-m-d');
-            $events[] = [
-                'title' => 'Disewa',
-                'start' => $transaction->rent_date,
-                'end' => $endDate,
-                'product_id' => $transaction->product_id,
-            ];
+        if (!$rentTransactions->isEmpty()) {
+            foreach ($rentTransactions as $transaction) {
+                $endDate = Carbon::createFromFormat('Y-m-d', $transaction->return_date)->addDay()->format('Y-m-d');
+                $events[] = [
+                    'title' => 'Disewa',
+                    'start' => $transaction->rent_date,
+                    'end' => $endDate,
+                    'product_id' => $transaction->product_id,
+                ];
+            }
         }
         $product = Product::getDataProductsbyId($productId);
 

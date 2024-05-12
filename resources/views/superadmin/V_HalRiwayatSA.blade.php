@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="#" class="active">Daftar Kelompok Tani</a>
+            <a href="#" class="active">Riwayat</a>
         </li>
     </ul>
 </div>

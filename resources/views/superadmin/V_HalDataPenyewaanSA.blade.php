@@ -11,7 +11,7 @@
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
-            <a href="{{ route ('HalPenyewaanSA()') }}">Daftar Kelompok Tani</a>
+            <a href="{{ route ('HalPenyewaanSA()') }}">Penyewaan</a>
         </li>
         <i class="fas fa-chevron-right"></i>
         <li>
@@ -110,7 +110,7 @@
                     $returnDate = Carbon\Carbon::parse($item->return_date);
                     $rentDate = Carbon\Carbon::parse($item->rent_date);
                     $price = floatval($item->product->price);
-                    $daysDifference = $rentDate->diffInDays($returnDate);
+                    $daysDifference = ($rentDate->diffInDays($returnDate))+1;
                     $total = $price * $daysDifference;
                     @endphp
                     {{ $total }}

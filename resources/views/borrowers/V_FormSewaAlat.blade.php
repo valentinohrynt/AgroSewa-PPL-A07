@@ -88,14 +88,14 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+        var events = @json($events);
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            events: {
-                !!json_encode($events) !!
-            },
+            events: events,
         });
         calendar.render();
     });
-
+</script>
+<script>
     document.getElementById('rent_date').addEventListener('change', function() {
         var rentDate = new Date(this.value);
         var returnDateInput = document.getElementById('return_date');

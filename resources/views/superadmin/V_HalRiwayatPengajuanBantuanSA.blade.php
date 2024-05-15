@@ -120,19 +120,13 @@
                 <td>{{ $item->equipmentRequest->productCategory->name }}</td>
                 <td>
                     @if($item->equipmentRequest->is_approved == 'accepted')
-                    <p>
-                        <font style="color: green;">Disetujui</font>
-                    </p>
+                    <p class="approval-status approved">Disetujui</p>
                     @endif
                     @if($item->equipmentRequest->is_approved == 'process')
-                    <p>
-                        <font style="color: orange;">Sedang diproses</font>
-                    </p>
+                    <p class="approval-status in-process">Sedang diproses</p>
                     @endif
                     @if($item->equipmentRequest->is_approved == 'rejected')
-                    <p>
-                        <font style="color: red">Ditolak</font>
-                    </p>
+                    <p class="approval-status rejected">Ditolak</p>
                     @endif
                 </td>
             </tr>

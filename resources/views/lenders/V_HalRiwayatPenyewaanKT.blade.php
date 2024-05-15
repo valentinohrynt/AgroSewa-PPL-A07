@@ -120,18 +120,3 @@
     });
 </script>
 @endsection
-<!-- 
-@if (session('editTransactionErrors'))
-@section('script')
-<script>
-    $(document).ready(function() {
-        @if(session('editTransactionId'))
-        var transactionId = {
-            !!json_encode(session('editTransactionId')) !!
-        };
-        $('#editModal' + transactionId).modal('show');
-        @endif
-    });
-</script>
-@endsection
-@endif -->

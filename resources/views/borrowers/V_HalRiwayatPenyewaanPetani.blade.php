@@ -41,14 +41,10 @@
                     <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
                     <td>
                         @if($item->rentTransaction->is_completed == 'yes')
-                        <p>
-                            <font style="color: green;">Selesai</font>
-                        </p>
+                        <p class="approval-status approved">Disetujui</p>
                         @endif
                         @if($item->rentTransaction->is_completed == 'cancelled')
-                        <p>
-                            <font style="color: red">Dibatalkan</font>
-                        </p>
+                        <p class="approval-status rejected">Ditolak</p>
                         @endif
                     </td>
                 </tr>

@@ -14,7 +14,32 @@
   @yield('styles')
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('/assets/css/dashboard-style.css')}}" />
+  <style>
+    .approval-status {
+      border-radius: 10px;
+      padding: 3px 0;
+      text-align: center;
+      font-weight: 600;
+    }
 
+    .approved {
+      padding: 0.3rem;
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .in-process {
+      padding: 0.3rem;     
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .rejected {
+      padding: 0.3rem;  
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
 </head>
 
 <body>

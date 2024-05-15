@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('product_id')->references('id')->on('products');
             $table->date('rent_date');
             $table->date('return_date');
-            $table->string('is_completed')->default('no');
+            $table->enum('is_completed', ['yes', 'no', 'cancelled'])->default('no');
             $table->timestamps();
         });
     }

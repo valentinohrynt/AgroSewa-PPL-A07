@@ -30,6 +30,7 @@ class C_FormTambahAkunPenggunaSA_Pemerintah extends Controller
             'street.required' => 'Alamat harus diisi.',
             'village_id.required' => 'Desa harus diisi',
             'username.required' => 'Username harus diisi',
+            'username.unique' => 'Username sudah digunakan, silahkan gunakan username lainnya',
             'email.email' => 'Mohon masukkan alamat email yang valid!',
             'email.unique' => 'Mohon maaf, alamat email tersebut sudah digunakan. ',
             'phone.regex' => 'Mohon masukkan nomor telepon yang valid! ',
@@ -44,7 +45,7 @@ class C_FormTambahAkunPenggunaSA_Pemerintah extends Controller
             'street' => 'required',
             'village_id' => 'required',
             'password' => 'required|min:8',
-            'username' => 'required',
+            'username' => 'required|unique:users',
         ], $messages);
 
         if ($validator->fails()) {

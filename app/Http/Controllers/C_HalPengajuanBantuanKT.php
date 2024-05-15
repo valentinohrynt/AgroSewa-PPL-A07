@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lender;
 use setasign\Fpdi\Fpdi;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 use App\Models\EquipmentRequest;
 use App\Models\EquipmentRequestLog;
 use App\Http\Controllers\Controller;
@@ -18,9 +19,10 @@ class C_HalPengajuanBantuanKT extends Controller
         $userId = $user -> id;
         $lender = Lender::getDataLenderbyUserId($userId);
         $lenderId = $lender->id;
+        $productCategories = ProductCategory::getAllDataProductCategory();
 
         $equipmentRequest = EquipmentRequest::getDataEquipmentRequestbyLenderId($lenderId);
-        return view("lenders.V_HalPengajuanBantuanKT", ['equipmentRequest'=>$equipmentRequest]);
+        return view("lenders.V_HalPengajuanBantuanKT", compact('equipmentRequest', 'productCategories'));
     }
 
     public function store(Request $request)
@@ -32,13 +34,15 @@ class C_HalPengajuanBantuanKT extends Controller
         $messages = [
             'pdf_file.required' => 'File proposal tidak boleh kosong.',
             'pdf_file.mimes' => 'Hanya menerima file pdf.',
+            'product_category_id.required' => 'Jenis alat yang diajukan tidak boleh kosong.',
         ];
         
         $request->validate([
             'pdf_file' => 'required|mimes:pdf',
+            'product_category_id' => 'required',
         ], $messages);
         
-        $equipmentRequest = EquipmentRequest::postDataEquipmentRequest($lenderId);
+        $equipmentRequest = EquipmentRequest::postDataEquipmentRequest($lenderId, $request->product_category_id);
         $equipmentRequestNumber = $equipmentRequest->equipment_request_number;
         $equipmentRequestId = $equipmentRequest -> id;
 

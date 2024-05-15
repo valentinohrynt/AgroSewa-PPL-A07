@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_HomepageKT;
 use App\Http\Controllers\C_DashboardSA;
@@ -39,14 +40,15 @@ use App\Http\Controllers\C_HalAkunPenggunaSA_Petani;
 use App\Http\Controllers\C_HalDataAkunPenggunaSA_KT;
 use App\Http\Controllers\C_HalRiwayatPenyewaanPetani;
 use App\Http\Controllers\C_HalAkunPenggunaSA_Pemerintah;
+use App\Http\Controllers\C_HalAkunPetaniKT;
 use App\Http\Controllers\C_HalDataAkunKelompokTaniPemerintah;
 use App\Http\Controllers\C_HalDataAkunPenggunaSA_Petani;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanKT;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanSA;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\C_HalPengajuanBantuanPemerintah;
 use App\Http\Controllers\C_HalRiwayatPenyewaanPemerintah;
 use App\Http\Controllers\C_HalDataAkunPenggunaSA_Pemerintah;
+use App\Http\Controllers\C_HalDataAkunPetaniKT;
 use App\Http\Controllers\C_HalDataPengajuanBantuanPemerintah;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanPemerintah;
 
@@ -189,6 +191,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/loading/HalPengajuanBantuanKT', [C_HomepageKT::class, 'HalPengajuanBantuanKT'])->name('HalPengajuanBantuanKT()');
         Route::get('/loading/HalRiwayatPenyewaanKT', [C_HomepageKT::class, 'HalRiwayatPenyewaanKT'])->name('HalRiwayatPenyewaanKT()');
         Route::get('/loading/HalProfilKT', [C_HomepageKT::class, 'HalProfilKT'])->name('HalProfilKT()');
+        Route::get('/loading/HalAkunPetaniKT', [C_HomepageKT::class, 'HalAkunPetaniKT'])->name('HalAkunPetaniKT()');
 
         Route::get('HalPenyewaanKT', [C_HalPenyewaanKT::class, 'setHalPenyewaanKT']);
         Route::patch('HalPenyewaanKT/force-cancel-transaction/{id}', [C_HalPenyewaanKT::class, 'BatalPenyewaan'])->name('BatalPenyewaan()');
@@ -213,6 +216,10 @@ Route::middleware('auth')->group(function () {
         Route::get('HalProfilKT/FormEditProfilKT', [C_FormEditProfilKT::class, 'setFormEditProfilKT']);
         Route::put('HalProfilKT/FormEditProfilKT/EditProfilKT', [C_FormEditProfilKT::class, 'EditProfilKT'])->name('SimpanEditProfilKT()');
 
+        Route::get('HalAkunPetaniKT', [C_HalAkunPetaniKT::class, 'setHalAkunPetaniKT']);
+        Route::patch('HalAkunPetaniKT/{borrower_id}', [C_HalAkunPetaniKT::class, 'BlokirAkunPetani'])->name('BlokirAkunPetani()');
+        Route::get('loading/HalAkunPetaniKT/HalDataAkunPetaniKT/{borrower_id}', [C_HalAkunPetaniKT::class, 'HalDataAkunPetaniKT'])->name('HalDataAkunPetaniKT()');
+        Route::get('HalAkunPetaniKT/HalDataAkunPetaniKT/{borrower_id}', [C_HalDataAkunPetaniKT::class, 'setHalDataAkunPetaniKT'])->name('HalDataAkunPetaniKT');
         // POKTAN / LENDER END
     });
 

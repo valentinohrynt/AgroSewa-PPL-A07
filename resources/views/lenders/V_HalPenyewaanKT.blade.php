@@ -5,6 +5,7 @@
 @section('navbar-nav')
 
 <li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
+<li><a class="nav-link" href="{{route('HalAkunPetaniKT()')}}">Akun Petani</a></li>
 <li><a class="nav-link active" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>

@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Role;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SuperadminSeeder::class,
             GovernmentSeeder::class,
-            LenderSeeder::class
+            LenderSeeder::class,
+            ProductCategorySeeder::class
         ]);
     }
 }

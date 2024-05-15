@@ -5,6 +5,7 @@
 @section('navbar-nav')
 
 <li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
+<li><a class="nav-link" href="{{route('HalAkunPetaniKT()')}}">Akun Petani</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link active" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
@@ -28,13 +29,14 @@
         <div class="d-flex justify-content-end button-data-alat pb-2">
             <a href="{{ route('RiwayatPengajuanBantuanKT()') }}" class="btn btn-primary pb-2">Pengajuan Bantuan</a>
         </div>
-        <div class="input-group mb-3 flex-column">
-            <label for="dateFilterInput">Saring berdasarkan tanggal</label>
-            <div class="input-group-prepend">
-                <span class="input-group-text bg-white border-md border-right-0" style="width: 50%">
-                    <i class="bi bi-filter"></i>
-                    <input type="date" class="form-control" name="dateFilterInput" id="dateFilterInput" style="width: 100%; border:none;" pattern="\d{4}-\d{2}-\d{2}">
-                </span>
+        <div class="row my-2">
+            <div class="col-8">
+                <label for="dateFilterInput">Saring berdasarkan tanggal</label>
+                <input type="date" class="form-control" name="dateFilterInput" id="dateFilterInput" style="width: 100%; border:none;" pattern="\d{4}-\d{2}-\d{2}">
+            </div>
+            <div class="col-4 d-flex flex-column align-items-end">
+                <label for="total_pendapatan">Pendapatan bulan ini</label>
+                <input type="text" class="form-control" name="total_pendapatan" value="Rp{{$income}}" disabled>
             </div>
         </div>
         <table class="table">
@@ -118,7 +120,7 @@
     });
 </script>
 @endsection
-
+<!-- 
 @if (session('editTransactionErrors'))
 @section('script')
 <script>
@@ -132,4 +134,4 @@
     });
 </script>
 @endsection
-@endif
+@endif -->

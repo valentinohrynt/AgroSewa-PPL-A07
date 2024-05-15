@@ -11,7 +11,8 @@ class EquipmentRequest extends Model
         'pdf_file_name',
         'equipment_request_number',
         'lender_id',
-        'is_approved'
+        'is_approved',
+        'product_category_id'
     ];
 
     public static function getDataEquipmentRequestbyLenderId($id)
@@ -26,10 +27,11 @@ class EquipmentRequest extends Model
         return $DataEquipmentRequest;
     }
 
-    public static function postDataEquipmentRequest($lender_id)
+    public static function postDataEquipmentRequest($lender_id, $product_category_id)
     {
         $equipmentRequest = static::create([
-            'lender_id' => $lender_id
+            'lender_id' => $lender_id,
+            'product_category_id' => $product_category_id
         ]);
 
         return $equipmentRequest;

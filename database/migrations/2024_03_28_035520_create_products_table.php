@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('product_code')->unique();
-            $table->string('is_rented')->default('no');
+            $table->enum('is_rented', ['yes', 'no'])->default('no');
             $table->text('product_description')->nullable();
             $table->integer('price');
             $table->string('product_img')->nullable();

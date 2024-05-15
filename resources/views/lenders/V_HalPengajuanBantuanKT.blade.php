@@ -5,6 +5,7 @@
 @section('navbar-nav')
 
 <li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
+<li><a class="nav-link" href="{{route('HalAkunPetaniKT()')}}">Akun Petani</a></li>
 <li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
 <li><a class="nav-link active" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
@@ -59,6 +60,17 @@
                             <form action="{{ route('send-equipment-request-document') }}" method="post" role="form" class="px-5 pb-5" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col pt-5">
+                                    <div class="form-group">
+                                        <label for="product_category_id" class="mb-2">Jenis alat</label>
+                                        <select name="product_category_id" id="" class="form-select">
+                                            @foreach ($productCategories as $productCategory)
+                                            <option value="{{$productCategory->id}}">{{$productCategory->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col pt-5">
+                                    <label for="pdf_file" class="mb-2">Proposal</label>
                                     <div class="dropbox" id="dropbox">
                                         <input type="file" name="pdf_file" id="pdf_file" class="dropbox-input" accept=".pdf" />
                                         <label for="pdf_file" class="dropbox-label">

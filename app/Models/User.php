@@ -23,6 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'email',
         'role_id',
+        'status'
     ];
 
     /**
@@ -88,11 +89,26 @@ class User extends Authenticatable implements MustVerifyEmail
         $user = static::create(
             [
                 'username' => $username,
-                'password'=> Hash::make($password),
-                'email'=> $email,
+                'password' => Hash::make($password),
+                'email' => $email,
                 'role_id' => $role_id
             ]
         );
-        return $user->id; 
+        return $user->id;
+    }
+
+    public static function patchStatustoInactive($id)
+    {
+        $user = static::findOrFail($id);
+        $user->update(
+            [
+                'status' => 'inactive'
+            ]
+        );
+    }
+
+    public function borrowers()
+    {
+        return $this->hasMany(Borrower::class, 'user_id');
     }
 }

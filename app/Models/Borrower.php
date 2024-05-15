@@ -36,6 +36,17 @@ class Borrower extends Model
         $AllDataBorrower = static::all();
         return $AllDataBorrower;
     }
+    public static function getAllActiveDataBorrowerbyLenderId($lender_id)
+    {
+        $status = 'active';
+        $AllActiveDataBorrowerbyLenderId = static::where('lender_id', $lender_id)
+            ->whereHas('user', function ($query) use ($status) {
+                $query->where('status', $status);
+            })
+            ->get();
+        return $AllActiveDataBorrowerbyLenderId;
+    }
+
     public static function getDataBorrowerbyUserId($id)
     {
         $DataBorrowerbyUser = static::where('user_id', $id)->first();

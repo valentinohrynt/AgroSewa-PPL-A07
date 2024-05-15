@@ -10,6 +10,10 @@ class C_HomepageKT extends Controller
     {
         return view("lenders.V_HomepageKT");
     }
+    public function HalAkunPetaniKT()
+    {
+        return redirect("HalAkunPetaniKT");
+    }
     public function HalPenyewaanKT()
     {
         return redirect("HalPenyewaanKT");

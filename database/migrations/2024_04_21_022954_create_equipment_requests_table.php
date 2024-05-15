@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('equipment_request_number')->unique();
             $table->unsignedBigInteger('lender_id');
             $table->foreign('lender_id')->references('id')->on('lenders');
-            $table->string('is_approved')->default('process');
+            $table->enum('is_approved', ['process', 'accepted', 'rejected'])->default('process');
             $table->rememberToken();
             $table->timestamps();
         });

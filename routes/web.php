@@ -53,7 +53,7 @@ use App\Http\Controllers\C_HalDataPengajuanBantuanPemerintah;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanPemerintah;
 
 Route::get('/', function () {
-    return view('login');
+    return redirect()->route('login');
 })->middleware('auth');
 
 Route::middleware('only_guest')->group(function () {
@@ -224,4 +224,5 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/blocked', [AuthController::class, 'blocked'])->name('blocked');
 });

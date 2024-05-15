@@ -12,5 +12,9 @@ class ProductCategory extends Model
         $AllDataProductCategory = static::all();
         return $AllDataProductCategory;
     }
+    public function equipmentRequest()
+    {
+        return $this->hasMany(EquipmentRequest::class, 'product_category_id');
+    }
     use HasFactory;
 }

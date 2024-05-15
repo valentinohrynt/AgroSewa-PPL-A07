@@ -88,6 +88,7 @@
                 <th>No. Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
                 <th>Nama Poktan</th>
+                <th>Kategori Alat</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -103,6 +104,7 @@
                 @endphp
                 <td>{{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}</td>
                 <td>{{ $item->lender->name }}</td>
+                <td>{{ $item->productCategory->name }}</td>
                 <td>
                     <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $item->id }}"><i class="fa fa-check"></i>
                         <span>Setujui</span></button>
@@ -192,7 +194,8 @@
             function filterRows(searchText) {
                 $('.table tbody tr').each(function() {
                     var lenderName = $(this).find('td:eq(3)').text().toLowerCase();
-                    if (searchText === '' || lenderName.includes(searchText)) {
+                    var productCategory = $(this).find('td:eq(4)').text().toLowerCase();
+                    if (searchText === '' || lenderName.includes(searchText) || productCategory.includes(searchText)) {
                         $(this).show();
                     } else {
                         $(this).hide();

@@ -33,6 +33,16 @@
                 <div class="alert alert-danger text-center">
                     {{session('message')}}
                 </div>
+                @elseif(session('error'))
+                <div class="alert alert-danger text-center">
+                    {{ session('error') }}
+                </div>
+                @elseif ($errors->any())
+                <div class="alert alert-danger text-center">
+                    @foreach ($errors->all() as $error)
+                    {{ $error }}<br>
+                    @endforeach
+                </div>
                 @elseif (session('status')=='success')
                 <div class="alert alert-success text-center">
                     {{session('message')}}

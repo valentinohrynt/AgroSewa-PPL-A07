@@ -36,17 +36,21 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->role_id == 1) {
-                return redirect('DashboardSA');
-            }
-            if (Auth::user()->role_id == 2) {
-                return redirect('DashboardPemerintah');
-            }
-            if (Auth::user()->role_id == 3) {
-                return redirect('HomepagePetani');
-            }
-            if (Auth::user()->role_id == 4) {
-                return redirect('HomepageKT');
+            if (Auth::user()->status == 'inactive') {
+                return redirect('blocked');
+            } else {
+                if (Auth::user()->role_id == 1) {
+                    return redirect('DashboardSA');
+                }
+                if (Auth::user()->role_id == 2) {
+                    return redirect('DashboardPemerintah');
+                }
+                if (Auth::user()->role_id == 3) {
+                    return redirect('HomepagePetani');
+                }
+                if (Auth::user()->role_id == 4) {
+                    return redirect('HomepageKT');
+                }
             }
         }
         Session::flash('status', 'failed');
@@ -58,8 +62,15 @@ class AuthController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
-        $request->session()->regenerateToken();;
+        $request->session()->regenerateToken();
         return redirect('login');
+    }
+    public function blocked(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('login')->with('error', 'Akun anda sedang di nonaktifkan, silahkan hubungi admin');
     }
 
     public function showDistrictsandVillages()

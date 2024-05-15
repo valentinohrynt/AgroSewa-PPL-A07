@@ -51,6 +51,10 @@ class EquipmentRequest extends Model
     {
         return $this->hasOne(EquipmentRequestLog::class);
     }
+    public function productCategory()
+    {
+        return $this->belongsTo(ProductCategory::class, 'product_category_id');
+    }
 
     public function lender()
     {

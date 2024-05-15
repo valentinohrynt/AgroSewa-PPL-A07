@@ -32,7 +32,7 @@
             <h6>DAFTAR AKUN PETANI</h6>
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Cari berdasarkan Nama Penyewa" id="searchInput">
+            <input type="text" class="form-control" placeholder="Cari berdasarkan Nama Petani" id="searchInput">
         </div>
         <table class="table">
             <thead>
@@ -86,6 +86,21 @@
         </table>
     </div>
 </section>
+<script>
+    $(document).ready(function() {
+        $('#searchInput').on('keyup', function() {
+            var searchText = $(this).val().toLowerCase();
+            $('.table tbody tr').each(function() {
+                var borrowerName = $(this).find('td:eq(1)').text().toLowerCase();
+                if (borrowerName.includes(searchText)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+</script>
 <script>
     function submitForm(id) {
         document.getElementById('form_' + id).submit();

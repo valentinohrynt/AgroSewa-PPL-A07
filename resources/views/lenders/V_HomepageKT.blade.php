@@ -28,6 +28,12 @@
 </div>
 <div class="col-xl-3 col-md-4">
   <div class="icon-box">
+    <i class="ri-team-line"></i>
+    <h3><a href="{{route('HalAkunPetaniKT()')}}">Akun Petani</a></h3>
+  </div>
+</div>
+<div class="col-xl-3 col-md-4">
+  <div class="icon-box">
     <i class="ri-calendar-todo-line"></i>
     <h3><a href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></h3>
   </div>

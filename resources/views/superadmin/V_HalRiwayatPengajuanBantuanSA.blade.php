@@ -101,6 +101,7 @@
                 <th>No.</th>
                 <th>No. Pengajuan</th>
                 <th>Tanggal Pengajuan</th>
+                <th>Kategori Alat</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -116,6 +117,7 @@
                 $timestamp_converted = \Carbon\Carbon::createFromTimestamp($unix_timestamp)->toDateString();
                 @endphp
                 <td>{{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}</td>
+                <td>{{ $item->equipmentRequest->productCategory->name }}</td>
                 <td>
                     @if($item->equipmentRequest->is_approved == 'accepted')
                     <p>
@@ -181,10 +183,8 @@
         function filterRows(searchText) {
             $('.table tbody tr').each(function() {
                 var transactionNumber = $(this).find('td:eq(1)').text().toLowerCase();
-                var productName = $(this).find('td:eq(2)').text().toLowerCase();
-                var borrowerName = $(this).find('td:eq(3)').text().toLowerCase();
-                if (searchText === '' || transactionNumber.includes(searchText) || productName.includes(
-                        searchText) || borrowerName.includes(searchText)) {
+                var productCategory = $(this).find('td:eq(3)').text().toLowerCase();
+                if (searchText === '' || transactionNumber.includes(searchText) || borrowerName.includes(searchText)) {
                     $(this).show();
                 } else {
                     $(this).hide();

@@ -29,6 +29,7 @@
                     <th>No.</th>
                     <th>No. Pengajuan</th>
                     <th>Tanggal Pengajuan</th>
+                    <th>Kategori Alat</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -43,6 +44,7 @@
                     $timestamp_converted = \Carbon\Carbon::createFromTimestamp($unix_timestamp)->toDateString();
                     @endphp
                     <td>{{ \Carbon\Carbon::parse($timestamp_converted)->translatedFormat('j F Y') }}</td>
+                    <td>{{ $item->equipmentRequest->productCategory->name }}</td>
                     <td>
                         @if($item->equipmentRequest->is_approved == 'accepted')
                         <p>

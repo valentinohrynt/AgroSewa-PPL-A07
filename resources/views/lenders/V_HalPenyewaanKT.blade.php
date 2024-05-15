@@ -69,6 +69,7 @@
                             <span>Edit</span>
                         </button>
                         <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}">
+                            <i class="bi bi-exclamation-circle"></i>
                             <span>Konfirmasi</span>
                         </button>
                         <!-- <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>

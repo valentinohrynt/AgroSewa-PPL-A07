@@ -16,10 +16,12 @@ class C_HalRiwayatPenyewaanKT extends Controller
         $lender = Lender::getDataLenderbyUserId($userId);
         $lenderId = $lender->id;
         $rentLogs = RentLog::getDataRentLogbyLenderId($lenderId);
-        
+
         $currentMonth = Carbon::now()->month;
         $currentYear = Carbon::now()->year;
-        $income = RentLog::whereMonth('created_at', $currentMonth)
+        $income = RentLog::whereHas('rentTransaction', function ($query) {
+            $query->where('is_completed', 'yes');
+        })->whereMonth('created_at', $currentMonth)
             ->whereYear('created_at', $currentYear)
             ->sum('total_price');
         return view('lenders.V_HalRiwayatPenyewaanKT', compact('rentLogs', 'income'));

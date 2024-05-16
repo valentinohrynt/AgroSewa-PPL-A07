@@ -118,5 +118,6 @@
             returnDateInput.value = minReturnDate.toISOString().split('T')[0];
         }
     });
+
 </script>
 @endsection

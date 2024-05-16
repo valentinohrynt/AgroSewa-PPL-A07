@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use TCPDF;
+use setasign\Fpdi\Tcpdf\Fpdi;
+use Setasign\Fpdi\PdfParser;
 use App\Models\Lender;
-use setasign\Fpdi\Fpdi;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\EquipmentRequest;
@@ -45,24 +47,24 @@ class C_HalPengajuanBantuanKT extends Controller
         $equipmentRequest = EquipmentRequest::postDataEquipmentRequest($lenderId, $request->product_category_id);
         $equipmentRequestNumber = $equipmentRequest->equipment_request_number;
         $equipmentRequestId = $equipmentRequest -> id;
-
         $fileName = '';
         if ($request->hasFile('pdf_file')) {
             $pdfFile = $request->file('pdf_file');
             $extension = $request->file('pdf_file')->getClientOriginalExtension();
-            $fileName =  $equipmentRequestNumber . '_' . $lender->name . '_pengajuanke' . ($lender->equipmentRequests()->count()) . '.' . $extension;
+            $fileName = $equipmentRequestNumber . '_' . $lender->name . '_pengajuanke' . ($lender->equipmentRequests()->count()) . '.' . $extension;
             $request->file('pdf_file')->storeAs('pdf_files', $fileName);
-            $filePath = public_path('storage/pdf_files/' . $fileName);
+            $filePath = storage_path('app/public/pdf_files/' . $fileName);
             $pdf = new Fpdi();
-            $pdf->setSourceFile($filePath);
-            $pageId = $pdf->importPage(1);
-            $pdf->AddPage();
-            $pdf->useTemplate($pageId);
+            $pageCount = $pdf->setSourceFile($filePath);
+            for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+                $tplId = $pdf->importPage($pageNo);
+                $pdf->AddPage();
+                $pdf->useTemplate($tplId);
+            }
             $pdf->SetTitle($fileName);
             $pdf->SetAuthor($lender->name);
             $pdf->SetSubject('Pengajuan Bantuan');
-            $pdf->Output('F', $filePath);
-            $pdf->Close();
+            $pdf->Output($filePath, 'F');
         }
         
         $equipmentRequest->pdf_file_name = $fileName;

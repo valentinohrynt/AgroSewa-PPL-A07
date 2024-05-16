@@ -51,6 +51,7 @@ use App\Http\Controllers\C_HalDataAkunPenggunaSA_Pemerintah;
 use App\Http\Controllers\C_HalDataAkunPetaniKT;
 use App\Http\Controllers\C_HalDataPengajuanBantuanPemerintah;
 use App\Http\Controllers\C_HalRiwayatPengajuanBantuanPemerintah;
+use App\Http\Controllers\C_CheckEquipmentRequest;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -226,3 +227,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/blocked', [AuthController::class, 'blocked'])->name('blocked');
 });
+
+Route::get('/checkEquipmentRequestData', [C_CheckEquipmentRequest::class, 'check'])->name('checkEquipmentRequest()');

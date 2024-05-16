@@ -43,7 +43,7 @@
 
 @section('sidebar')
 <a href="#" class="logo">
-    <i class="fa fa-user-tie"></i>
+    <img src="{{asset('assets/img/logo/agrosewa_logo.png')}}" id="logo-jemberkab" alt="">
     <span class="text">Admin Agrosewa</span>
 </a>
 
@@ -148,7 +148,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@section('script')
 
 <script>
     $(document).ready(function() {
@@ -168,6 +168,12 @@
             var searchText = $('#searchInput').val().toLowerCase();
             filterRows(searchText);
         });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                var searchText = $(this).val().toLowerCase();
+                filterRows(searchText);
+            }
+        });
         $('#searchInput').on('input', function() {
             var searchText = $(this).val().toLowerCase();
             if (searchText === '') {
@@ -175,6 +181,7 @@
             }
         });
     });
+
 </script>
 
 @endsection

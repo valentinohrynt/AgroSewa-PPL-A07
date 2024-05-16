@@ -1,0 +1,1746 @@
+name,street,village_id,user_id
+HARAPAN JAYA,Lingk. Gendir RT/RW 003/001 Kel Banjarsengon Patrang,248,1
+HARAPAN MAKMUR,Lingk. Krajan RT 2 RW 3 Banjar Sengon,248,2
+KARYA GATI,Lingkungan Krajan RT 1 RW 1 Banjar Sengon,248,3
+KARYA GUNA,Kebon Lor RT 02 Rw 06 Banjar Sengon,248,4
+KARYA MAKMUR,Jl. Sriti Lingk. Kebon Kidul RT 002 / RW 004 Banjar Sengon,248,5
+MARGO MULYO,Lingk. Kebon Lor RT 1 RW 7 Banjar Sengon,248,6
+RUKUN TANI,Jl. Sriti Lingk. Kebun Kidul RT/RW 001/005 Kel Banjarsengon Patrang,248,7
+SUMBER TANI,Jl. Sriti Lingk. Gendir RT/RW 003/008 Kel Banjarsengon Patrang,248,8
+BARATAN JAYA,Lingkungan Gumuk Sanggar Baratan,244,9
+KARYA GUNA,Jl. Wringin Kembar Lingkungan Cupu Baratan,244,10
+MAJU JAYA,Lingkungan Baratan Timur Baratan,244,11
+PACUL MAS,Darungan lingkungan Cupu Baratan,244,12
+SANGGAR MAS,Jl. Rembangan Gumuk Sanggar Baratan,244,13
+SUBUR MAKMUR,Jl. Semangka Lingkungan Glisat Baratan,244,14
+SUKA MAJU,Lingkungan Baratan Kecil Baratan,244,15
+ARGOPURO I,Link.Krajan,245,16
+ARJUNO,Link.Semenggu,245,17
+BINTORO JAYA,Link.Plalangan,245,18
+RUKUN JAYA,Link. Perbal,245,19
+RUKUN MAKMUR,Link. Mojan - Bintoro,245,20
+Rukun Makmur I (bun),Lingk. Mojan RT/RW. 006/001,245,21
+Rukun Makmur II (Bun),Lingk. Mojan RT/RW 003/003,245,22
+TUNAS MUDA,Link. Plalangan,245,23
+KEDAWUNG LOR,Jl. Kasuari VIII/27 Lingk. Kedawung Lor RT/RW. 001/006,241,24
+"Kelompok Usaha Bersama ""Mitra 88 Jember""",Jalan merak 64 Lingkungan Kedawung Kidul RT 01 RW 01 kelurahan Gebang Kecamatan Patrang Jember,241,25
+SEDULUR,Jl. Nusa Indah V/165 Krajan Jember Lor RT/RW.001/007,241,26
+SUBUR,Gebang Patrang,241,27
+SUMBER AGUNG,Jl. Kasuari gg. Silogati Ling Kedawung RT/RW. 002/008,241,28
+TUNGGUL,Jl. Kaca Piring III Block 12 No. 443,241,29
+RAMBAAN I,Jl. Merpati Kel Jember LOr Patrang,242,30
+RAMBAAN II,Jl. DR. Subandi Kel Jember LOr Patrang,242,31
+TEGAL REJO,Jl. Manggar Kel Jember Lor Patrang,242,32
+ABADI,Link. Mojan,247,33
+JUMERTO LOR,Mojan,247,34
+RUKUN KARYA,LINGK JUMERTO LOR,247,35
+SUMBER MAKMUR,Jumerto Lor,247,36
+TUNAS KARYA,Link.Krajan,247,37
+CANGKRING,Jl. Merpati Lingk. Cangkring Kel Patrang Patrangf,243,38
+LUMBUNG MAKMUR,Jl. Dr Subandi Patrang Patrang,243,39
+RUKUN SETIA,Link. Darungan Kel Patrang Patrang,243,40
+RUKUN MAKMUR,Link. Krajan,246,41
+SUMBERLANGON,Sbrlangon,246,42
+HARAPAN JAYA,Lingk. Gendir RT/RW 003/001 Kel Banjarsengon Patrang,248,43
+HARAPAN MAKMUR,Lingk. Krajan RT 2 RW 3 Banjar Sengon,248,44
+KARYA GATI,Lingkungan Krajan RT 1 RW 1 Banjar Sengon,248,45
+KARYA GUNA,Kebon Lor RT 02 Rw 06 Banjar Sengon,248,46
+KARYA MAKMUR,Jl. Sriti Lingk. Kebon Kidul RT 002 / RW 004 Banjar Sengon,248,47
+MARGO MULYO,Lingk. Kebon Lor RT 1 RW 7 Banjar Sengon,248,48
+RUKUN TANI,Jl. Sriti Lingk. Kebun Kidul RT/RW 001/005 Kel Banjarsengon Patrang,248,49
+SUMBER TANI,Jl. Sriti Lingk. Gendir RT/RW 003/008 Kel Banjarsengon Patrang,248,50
+BARATAN JAYA,Lingkungan Gumuk Sanggar Baratan,244,51
+KARYA GUNA,Jl. Wringin Kembar Lingkungan Cupu Baratan,244,52
+MAJU JAYA,Lingkungan Baratan Timur Baratan,244,53
+PACUL MAS,Darungan lingkungan Cupu Baratan,244,54
+SANGGAR MAS,Jl. Rembangan Gumuk Sanggar Baratan,244,55
+SUBUR MAKMUR,Jl. Semangka Lingkungan Glisat Baratan,244,56
+SUKA MAJU,Lingkungan Baratan Kecil Baratan,244,57
+ARGOPURO I,Link.Krajan,245,58
+ARJUNO,Link.Semenggu,245,59
+BINTORO JAYA,Link.Plalangan,245,60
+RUKUN JAYA,Link. Perbal,245,61
+RUKUN MAKMUR,Link. Mojan - Bintoro,245,62
+Rukun Makmur I (bun),Lingk. Mojan RT/RW. 006/001,245,63
+Rukun Makmur II (Bun),Lingk. Mojan RT/RW 003/003,245,64
+TUNAS MUDA,Link. Plalangan,245,65
+KEDAWUNG LOR,Jl. Kasuari VIII/27 Lingk. Kedawung Lor RT/RW. 001/006,241,66
+"Kelompok Usaha Bersama ""Mitra 88 Jember""",Jalan merak 64 Lingkungan Kedawung Kidul RT 01 RW 01 kelurahan Gebang Kecamatan Patrang Jember,241,67
+SEDULUR,Jl. Nusa Indah V/165 Krajan Jember Lor RT/RW.001/007,241,68
+SUBUR,Gebang Patrang,241,69
+SUMBER AGUNG,Jl. Kasuari gg. Silogati Ling Kedawung RT/RW. 002/008,241,70
+TUNGGUL,Jl. Kaca Piring III Block 12 No. 443,241,71
+RAMBAAN I,Jl. Merpati Kel Jember LOr Patrang,242,72
+RAMBAAN II,Jl. DR. Subandi Kel Jember LOr Patrang,242,73
+TEGAL REJO,Jl. Manggar Kel Jember Lor Patrang,242,74
+ABADI,Link. Mojan,247,75
+JUMERTO LOR,Mojan,247,76
+RUKUN KARYA,LINGK JUMERTO LOR,247,77
+SUMBER MAKMUR,Jumerto Lor,247,78
+TUNAS KARYA,Link.Krajan,247,79
+CANGKRING,Jl. Merpati Lingk. Cangkring Kel Patrang Patrangf,243,80
+LUMBUNG MAKMUR,Jl. Dr Subandi Patrang Patrang,243,81
+RUKUN SETIA,Link. Darungan Kel Patrang Patrang,243,82
+RUKUN MAKMUR,Link. Krajan,246,83
+SUMBERLANGON,Sbrlangon,246,84
+,,231,85
+BAROKAH,Lingk.Kaliwates Kidul RT001RW001 Kaliwates Kec.Kaliwates Kab.Jember,229,86
+BERKAH TANI,JL.AROWANA XV LINGK.GEBANG TAMAN RT 001 RW 010 KEBONAGUNG KEC.KALIWATES,233,87
+GOTONG ROYONG,"JLAROWANA No,21 RT/RW. 001/001 KEBONAGUNG KEC.KALIWATES",233,88
+HASIL GUNA,JL.IKAN KAKAP RT 001 RW 009 KEBONAGUNG KEC.KALIWATES,233,89
+KARYA BAKTI,JL.AROWANA Gg.KUD RT/RW.004/006 KEBONAGUNG KEC.KALIWATES,233,90
+RUKUN TANI,JL.IKAN KAKAP RT/RW 001/008 KEBONAGUNG KEC.KALIWATES,233,91
+TANI MAKMUR,JL.IKAN KAKAP RT/RW. 02/009 KEBONAGUNG KEC.KALIWATES,233,92
+,,232,93
+BAROKAH I,JL.TANJUNG NO 10 LINGK.KRAJAN RT 04 RW 011 MANGLI KEC.KALIWATES,227,94
+BAROKAH II,JL.KAUMAN NO 8 LINGK. WONOSARI RT 001 RW 003 KELURAHAN MANGLI KEC.KALIWATES,227,95
+KELOMPOK WANITA TANI ASRI,PERUM BUMI MANGLI PERMAI BLOK ID -7 RT 001 RW 015 MANGLI KEC.KALIWATES,227,96
+TANJUNG I,JL.UDANG WINDU VII LINGK.KRAJAN RT 003 RW 011 MANGLI KEC.KALIWATES,227,97
+TANJUNG II,LINGK.TANJUNG RT 002 RW 016 MANGLI KEC.KALIWATES,227,98
+AL HIDAYAH,Jl. Candika Lingk Krajan RT 003 RW 004 Sempusari,228,99
+ADIL MAKMUR,Lingk. Krajan Timur Kelurahan Tegalbesar Kec. Kaliwates,230,100
+HARAPAN TANI,Lingk.Gumuk Bago Kelurahan Tegalbesar Kec. Kaliwates,230,101
+HARAPAN TANI I,Lingk.Muktisari Kelurahan Tegalbesar Kec. Kaliwates,230,102
+KARYA GUNA,Lingk. Karang Anyar Kelurahan Tegalbesar Kecamatan Kaliwates,230,103
+Baru Muncul,Dusun Krajan Timur RT 02 RW 02 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,104
+Darma Tani,Dusun Tenggir Timur RT 03 RW 01 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,105
+Karya Baru,Dusun Krajan Barat RT 01 RW 01Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,106
+Lohjinawi,Dsn Tenggir Barat RT 1 RW 3 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,107
+Sari Tani,Dusun Tenggir Barat RT 02 RW 04 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,108
+Sumber Makmur I,Dusun Krajan Timur II RT 01 RW 07 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,109
+Sumber Makmur II,Dusun Tenggir Timur RT 01 RW 06 Desa Jelbuk Kecamatan Jelbuk Kabupaten Jember,222,110
+Dharma Tani,Dsn. Sumber Tengah RT 4 RW 2 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,111
+Gentapurba,Dusun Siwan Kidul RT 02 RW 01 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,112
+Jati Tumang,Dusun Krajan II Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,113
+Jaya Makmur,Dusun Siwan Lor RT 02 RW 01 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,114
+Kertanegara,Dusun Lamparan RT 02 RW 01 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,115
+Sri Murni 3,Dusun Sumbercandik RT 06 RW 02 Desa Panduman,221,116
+Sri Murni I,Dusun Bacem RT 03 RW 02 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,117
+Sri Murni II,Dusun Sumbercandik RT 3 RW 1 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,118
+Sumbertani,Dsn Krajan I RT 1 RW 1 Desa Panduman Kecamatan Jelbuk Kabupaten Jember,221,119
+Bangkalan,Dusun Arjasa RT 01 RW 05 Desa Suco Pangepok Kecamatan Jelbuk Kabupaten Jember,226,120
+Baru Muncul,Dusun Krajan Desa Suco Pangepok Kecamatan Jelbuk Kabupaten Jember,226,121
+Dewi Sri,Dusun Pangepok RT 2 RW 6 Desa Sucopangepok Kecamatan Jelbuk Kabupaten Jember,226,122
+Hasil Karya,Dusun Pakel RT 3 RW 2 Desa Sucopangepok Kecamatan Jelbuk Kabupaten Jember,226,123
+Karya Makmur,Dusun Gujuran RT 01 RW 10 Desa Suco Pangepok Kecamatan Jelbuk Kabupaten Jember,226,124
+Kebun Kentang,DSn Lengkong RT 1 RW 3 Sucopangepok Kecamatan Jelbuk Kabupaten Jember,226,125
+Pangolakan,Dusun Tenap RT 1 RW 1 Desa Sucopangepok Kecamatan Jelbuk Kabupaten Jember,226,126
+Tunas Muda,Dusun Cangkring RT 01 RW 09 Desa Suco Pangepok Kecamatan Jelbuk Kabupaten Jember,226,127
+Kramat Jaya,Dusun Krajan Timur RT 04 RW 02 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,128
+Rumpun Tani,Dusun Lojejer RT 01 RW 05 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,129
+Semangat Baru,Jl Kenitu Dusun Lojejer RT 02 RW 02 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,130
+Sumber Rahmat,Dusun Kebun RT 01 RW 01 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,131
+Sumber Urip,Dusun Kebun RT 04 FW 08 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,132
+Terampil Karya,Dusun Krajan Timur RT 04 RW 03 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,133
+Tunas Harapan I,Dusun Krajan Barat RT 04 RW 02 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,134
+Tunas Harapan II,Dusun Krajan Barat RT 06 RW 02 Desa Suger Kidul Kecamatan Jelbuk Kabupaten Jember,224,135
+Harapan Baru,Dusun Krajan Barat RT 03 RW 06 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,136
+Harapan Jaya,Dusun Leces RT 02 RW 16 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,137
+Lestari,Dusun Cangkring RT 03 RW 02 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,138
+Mufakat,Dsn. Leces RT 1 RW 14 Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,139
+Pelita,Dusun Tegal Batu RT 08 RW 01 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,140
+Senasip,Dusun Tegal Batu RT 01 RW 20 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,141
+Sudi Makmur,Dsn. Krajan Timur RT 5 RW 6 Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,142
+Sumber Makmur,Dusun Cangkring RT 02 RW 01 Desa Suko Jember Kecamatan Jelbuk Kabupaten Jember,225,143
+Harapan Jaya,Dusun Rejeb II Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,144
+Hidayah Tani,Dusun Sudung Barat I RT 04 RW 06 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,145
+Karya Tani,Dusun Rejeb I RT 06 RW 03 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,146
+Makmur I,Dusun Krajan RT 02 RW 01 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,147
+Makmur II,Dusun Krajan II RT 2 RW 2 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,148
+Mardi Tani,Dsn. Sudung Timur RT 4 RW 9 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,149
+Sumber Tani I,Dusun Sudung Timur RT 01 RW 08 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,150
+Sumber Tani II,Dusun Sudung Barat II RT 03 RW 07 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,151
+Surya Tani,Dusun Sudung Barat RT 1 RW 5 Desa Sukowiryo Kecamatan Jelbuk Kabupaten Jember,223,152
+Among Tani,Desa arjasa kec. Sukowono kab. Jember,218,153
+Ngudi Ilmu,Desa arjasa kec. Sukowono kab. Jember,218,154
+Ngudi Rejeki,Desa arjasa kec. Sukowono kab. Jember,218,155
+Tani Jaya,Desa arjasa kec. Sukowono kab. Jember,218,156
+Tani Mulya,Desa Arjasa kec. Sukowono kab. Jember,218,157
+Wadung Jaya,Desa arjasa kec. Sukowono kab. Jember,218,158
+Eka Prasetya,Desa balet baru kec. Sukowono kab. Jember,212,159
+Handayani,Desa balet baru kec. Sukowono kab. Jember,212,160
+Krajan Jaya,Desa balet baru kec. Sukowono kab. Jember,212,161
+Panca Karya,Desa balet baru kec. Sukowono kab. Jember,212,162
+Rumpun Tani,Desa balet baru kec. Sukowono kab. Jember,212,163
+Sri Rejeki,Desa balet baru kec. Sukowono kab. Jember,212,164
+KESAMBI JAYA,DUSUN SUMBER WADUNG RT. 003 RW. 008 DESA DAWUHAN MANGLI KECAMATAN SUKOWONO KABUPATEN JEMBER,217,165
+Tani Agung,Desa dawuhan Mangli kec. Sukowono kab. Jember,217,166
+Tani Makmur,Desa dawuhan Mangli kec. Sukowono lkab. Jember,217,167
+Tani Murni,Desa dawuhan mangli kec. Sukowono kab. Jember,217,168
+Tani Subur,Desa dawuhan Mangli kec. Sukowono kab. Jember,217,169
+Baru Muncul,Desa mojogemi kec. Sukowono kab. Jember,214,170
+Karang Tani,Desa mojogemi kec. Sukowono kab. Jember,214,171
+Mojosari,Desa mojogemi kec. Sukowono kab. Jember,214,172
+Tani Maju,Desa mojogemi kec.sukowono kab. Jember,214,173
+Tegal Mojo,Desa mojogemi kec. Sukowono kab. Jember,214,174
+Karya Bakti,Dusun Krajan RT 012 RW 004 Pocangan kec. Sukowono kab. Jember,220,175
+Karya Jaya,Dusun Krajan RT 006 RW 002 Desa Pocangan kec. Sukowono kab. Jember,220,176
+Karya Mulya,Dusun Sumber Tengah RT 016 RW 005 Desa pocangan kec. Sukowono kab. Jember,220,177
+Karya Murni,Dusun Sumber Tengah RT 015 RW 005 Pocangan kec. Sukowono kab.jember,220,178
+Karya Utama,Sumebr Tengan RT 017 RW 006 Pocangan kec. Sukowono kab. Jember,220,179
+Karya Abadi,Dsn. Krajan RT 02 RW 05,215,180
+Karya Bhakti,Desa sukokerto kec. Sukowono kab. Jember,215,181
+Karya Laksana,Desa sukokerto kec. Sukowono kab. Jember,215,182
+Karya Mulya,Desa sukokerto kec. Sukowono kab. Jember,215,183
+Karya Tani,Desa sukokerto kec. Sukowono kab. Jember,215,184
+Gemah Ripah,Desa sukorejo kec. Sukowono kab. Jember,210,185
+KARYA ABADI,TAMAN REJO RT 001 RW 0015,210,186
+Krueng Aceh,Desa sukorejo kec. Sukowono kab. Jember,210,187
+Rame Ing Gawe,Desa sukorejo kec. Sukowono kab. Jember,210,188
+Sukorejo,Desa sukorejo kec. Sukowono kab. Jember,210,189
+bhinneka,Desa Sukosari kec. Sukowono kab. Jember,211,190
+Karya Tani,Desa Sukosari kec. Sukowono kab. Jember,211,191
+Ngudi Tentrem,Desa Sukosari kec. Sukowono kab. Jember,211,192
+Sido Mukti,Desa Sukosari kec. Sukowono kab. Jember,211,193
+Sri Sedono I,Desa sukosari kec. Sukowono kab. Jember,211,194
+Sri Sedono II,Desa Sukosari kec. Sukowono kab. Jember,211,195
+Harapan Tani,Desa Sukowono kec. Sukowono kab. Jember,216,196
+makmur tani,Desa Sukowono kec. Sukowono kab. Jember,216,197
+Nur Tani,Desa Sukowono kec. Sukowono kab. Jember,216,198
+Sidodadi,Dusun Krajan Desa Sukowono,216,199
+tani makmur,Desa Sukowono kab. Jember,216,200
+Taruna Tani,Desa Sukowono kec. Sukowono kab. Jember,216,201
+Agung Tani,Desa sumberwringin kec. Sukowono kab. Jember,213,202
+Berkah Tani,Desa sumberwringin kec. Sukowono kab. Jember,213,203
+Lengkong,Desa sumberwringin kec. Sukowono kab. Jember,213,204
+Sumber Tani,Dusun Krajan RT 002 RW 010 Desa sumberwringin kec. Sukowono kab. Jember,213,205
+Tirto Tani,Desa sumberwringin kec. Sukowono kab. Jember,213,206
+Sido Maju,Dusun Krajan RT 001 RW 005 Sumberdanti kec. Sukowono kab. Jember,219,207
+Sido Makmur,Dusun Gumuk Jajar RT 001 RW 001 Desa Sumberdanti Kec. Sukowono,219,208
+Sido Mulyo,Dusun Krajan RT 002 RW 008 Desa Sumberdanti Kec. Sukowono Kab. Jember,219,209
+Sumber Hasil,Dusun Krajan Utara RT 002 RW 002 - Sumberdanti,219,210
+Tunas Muda,Dusun Gumuk Jajar RT 001 RW 006 Desa sumberdanti kec. Sukowono kab. Jember,219,211
+Tunas Mulya,Dusun Gumuk Jajar RT 001 RW 007 - Sumberdanti,219,212
+Baru Muncul,Desa Sumberwaru Kemc. Sukowono kab. Jember,209,213
+Rukun Tani,Desa sumberwaru kec. Sukowono kab. Jember,209,214
+Sumber Rejeki,Desa sumberwaru kec. Sukowono kab. Jember,209,215
+Surya Tani,Desa Sumberwaru kec. Sukowono kab. Jember,209,216
+Taruna Tani,Desa sumberwaru kec. Sukowono kab. Jember,209,217
+Adil,Dusun sumber balin timur desa cumedak kec. Sumberjambe,201,218
+Gotong Royong,Dusun sumber balin timur desa cumedak kec. Sumberjambe,201,219
+Jung Mangli,Dusun sumber canting desa cumedak kec. Sumberjambe,201,220
+Kondang Jaya,Dusun krajan barat desa cumedak kec. Sumberjambe,201,221
+Paleran Jaya,Dusun paleran desa cumedak kec.sumberjambe,201,222
+Rukun Makmur,Dusun sumber balin barat desa cumedak kec. Sumberjambe,201,223
+Setia Tani,Dusun krajan desa cumedak kec. Sumberjambe,201,224
+Tani Makmur,Dusun plampang desa cumedak kec. Sumberjambe,201,225
+Karya Bakti,Dusun krajan II desa gunung malang kec. Sumberjambe,202,226
+Sejahtera,Dusun krajan desa gunung malang kec. Sumberjambe,202,227
+Sejati,Dusun krajan desa gunung malang kec. Sumberjambe,202,228
+Setya Tani,Dusun ajung babi desa gunung malang kec. Sumberjambe,202,229
+Sumber Makmur,Dusun gayasan desa gunung malang kec. Sumberjambe,202,230
+Tani Indah,Dusun karang kebun desa gunung malang kec. Sumberjambe,202,231
+Tani Mulya,Dusun krajan desa gunung malang kec. Sumberjambe,202,232
+Tani Unggul,Dusun paleran desa gunung malang kec. Sumberjambe,202,233
+KARYA TANI,"Dsn Sumber kokap Desa Jambearum,sumberjambe",208,234
+REJEKI,"Dsn Bearum,Desa Jambearum,Sumberjambe",208,235
+TANI KARYA,"Dsn sumberkokap timur,desa jambearum kec sumberjambe,jember",208,236
+TANI MAKMUR,"dsn sumberkokap timur,desa jambearum,sumberjambe",208,237
+TANI SEJAHTERA,"Dsn Pace desa jambearum,sumberjambe",208,238
+TANI SETIA,Dsn krajan desa jambearum.,208,239
+DAUN MAS,Dusun ragang Desa plerean Kecamatan sumberjambe,206,240
+RUKUN MAKMUR,Dusun Plenggian Desa Plerean Kecamatan Sumberjambe,206,241
+SINAR TANI,Dusun Krajan Desa Plerean Kecamatan Sumberjambe,206,242
+SUMBER JAYA,Dusun panggung pinang Desa Plerean Kecamatan sumberjambe,206,243
+TANI MAKMUR,Dusun panggung pinang Desa Plerean Kecamatan Sumberjambe,206,244
+Harapan Tani,Dusun taman burnih desa pringgondani kec. Sumberjambe,207,245
+Jaya Abadi,Dusun taman burnih desa pringgondani kec. Sumberjambe,207,246
+Makmur Abadi,Dusun taman burnih desa pringgondani kec. Sumberjambe,207,247
+Rukun Tani,Dusun krajan desa pringgondani kec. Sumberjambe,207,248
+Sumber Abadi,Dusun Tol Tol desa pringgondani kec. Sumberjambe,207,249
+MITRA TANI,DUSUN SUMBER TENGAH RT/RW. 019/006 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,250
+PELITA TANI,DUSUN PANDIAN RT/RW. 015/005 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,251
+SUMBER AGUNG,DUSUN SUMBER MALANG RT/RW. 001/001 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,252
+SUMBER ASIH,DUSUN SUMBER MALANG RT/RW. 039/003 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,253
+SUMBER REJEKI,DUSUN MUMBUL RT/RW.025/008 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,254
+SUMBER TANI,DUSUN SUMBER KOKAP RT/RW. 031/010 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,255
+TANI ABADI,DUSUN SUMBER MALANG RT/RW. 004/002 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,256
+WIRA TANI,DUSUN SUMBER KOKAP RT/RW.032/011 - RANDUAGUNG - SUMBERJAMBE - JEMBER - JAWA TIMUR,200,257
+BINTANG TANI,"Dusun Gardu Tengah, Desa Rowosari, Kec. Sumberjambe",203,258
+GIAT TANI,"Dusun Lumbung, Desa Rowosari, Kec. Sumberjambe",203,259
+MEKARSARI,"Dusun Barat Sawah, Desa Rowosari, Kec. Sumberjambe",203,260
+ROWOJAYA 01,"Dusun Gardu, Desa Rowosari, Kec. Sumberjambe",203,261
+ROWOJAYA II,"Dusun Lumbung, Desa Rowosari, Kec. Sumberjambe",203,262
+TANI JAYA,"Dusun Barat Sawah, Desa Rowosari, Kec. Sumberjambe",203,263
+TANI JAYA II,"Dusun Gardu Timur, Desa Rowosari, Kec. Sumberjambe",203,264
+Tani Maju,Dsn. Preing Padduh Ds. Rowosari,203,265
+TANI SUBUR,"Dusun Barat Sawah, Desa Rowosari, Kec. Sumberjambe",203,266
+Budidaya,Dusun karang suno desa sumberpakem kec. Sumberjambe,205,267
+Giat Tani,Dusun karang suno desa sumberpakem kec. Sumberjambe,205,268
+Karya Tani,Dusun krajan I desa sumberpakem kec.Sumberjambe,205,269
+Sari Tani,Dusun karang tengah desa sumberpakem kec. Sumberjambe,205,270
+Sembada Tani,Dusun krajan desa sumberpakem kec. Sumberjambe,205,271
+Sentosa,Dusun krajan II desa sumberpakem kec. Sumberjambe,205,272
+Sinar Tani,Dusun krajan desa sumberpakem kec. Sumberjambe,205,273
+Tani Mandiri,Dusun pandian desa sumberpakem kec. Sumberjambe,205,274
+DEWI SRI,"Dusun Krajan, Desa Sumberjambe, Kec. Sumberjambe",204,275
+HARAPAN MAKMUR,"Dusun Semek, Desa Sumberjambe, Kec. Sumberjambe",204,276
+MAJU,"Dusun Pasar, Desa Sumberjambe, Kec. Sumberjambe",204,277
+MAKMUR,"Dusun Krajan, Desa Sumberjambe, Kec. Sumberjambe",204,278
+MARGI TANI,"Dusun Gladak Langsep, Desa Sumberjambe, Kec. Sumberjambe",204,279
+SADAR TANI,"Dusun Pasar, Desa Sumberjambe, Kec. Sumberjambe",204,280
+SETIA TANI,"Dusun Gundang, Desa Sumberjambe, Kec. Sumberjambe",204,281
+TELADAN,"Dusun Slangak, Desa Sumberjambe, Kec. Sumberjambe",204,282
+Karya Tani,,199,283
+Manunggal I,,199,284
+Manunggal VII,,199,285
+Sumber Hidup,,199,286
+Tani Makmur,,199,287
+Manunggal IV,,196,288
+Manunggal V,,196,289
+Manunggal VI,,196,290
+Sido Rukun,,196,291
+Tani Subur,,196,292
+Jaya Abadi,,194,293
+Klonceng Jaya,,194,294
+Krajan Jaya,,194,295
+Lembengan II,,194,296
+Podo Rukun,,194,297
+Tani Jaya,,194,298
+Harapan,Dusun Tegalan I Desa Slateng Kec. Ledokombo,197,299
+Karya Bakti,,197,300
+Medali,,197,301
+Rahayu,Dusun Sumber Lucu Desa Slateng Kec. Ledokombo,197,302
+Rukun Makmur,Dusun Rowo desa Slateng Kec. Ledokombo,197,303
+Sejahtera,,197,304
+Soponyono,,197,305
+Sumber Karyo,Dusun Tegalan II desa Slateng Kec. Ledokombo,197,306
+Manunggal III,,198,307
+Manungggal 2,,198,308
+Sido Kumpul,,198,309
+Sumber Rejeki I,,198,310
+Sumber Rejeki II,,198,311
+Sumber Rejeki III,,198,312
+Harapan Jaya,,195,313
+Hidup Baru,,195,314
+Manunggal,,195,315
+Manunggl II,,195,316
+HARAPAN JAYA,DUSUN SUMBERBULUS I DESA SUMBERBULUS,192,317
+JAYA MAKMUR,SUMBERBULUS III DESA SUMBERBULUS,192,318
+LESTARI,DUSUN SUMBERBULUS I DESA SUMBERBULUS,192,319
+MANDALA,DUSUN SUMBERBULUS III DESA SUMBERBULUS,192,320
+MAYASARI,DUSUN SUMBERBULUS III DESA SUMBERBULUS,192,321
+PUTRI RAUNG,DUSUN SUMBERBULUS II DESASUMBERBULUS,192,322
+SARI MULYO,DUSUN SUMBERBULUS III DESA SUMBERBULUS,192,323
+SUMBER TANI,DUSUN SUMBERBULUS II DESA SUMBERBULUS,192,324
+Among Mitro,,193,325
+Margi Tani,Dsn krg kebun RT 02 RW 07 desa sumberlesung kec Ledokombo,193,326
+Mitra Tani,,193,327
+Subur Tani,,193,328
+Tani Jaya,,193,329
+Tani Maju Jaya,,193,330
+Tani Makmur,,193,331
+Tani Mulyo,,193,332
+Karya Makmur 01,,191,333
+Karya Makmur 02,DSN PALUOMBORT 003 RW 005 DS SUMBERSALAK,191,334
+Karya Makmur 04,,191,335
+Karya Makmur 06,,191,336
+Karya Makmur 07,,191,337
+Karya Tani 02,,191,338
+Karya Tani 03,,191,339
+Karya Tani 05,,191,340
+Sekar wangi,Dsn karanganyar ds sumbersalak,191,341
+Damai,,190,342
+Mekar Jaya,,190,343
+Suren Jaya Abadi,,190,344
+Suren Jaya I,,190,345
+Suren Jaya II,,190,346
+Suren Jaya III,,190,347
+Abadi,Desa ajung kec. Kalisat,180,348
+Harapan,Desa ajung kec. Kalisat,180,349
+karya Tani,Desa ajung kec. Kalisat,180,350
+Semangat,Desa ajung kec. Kalisat,180,351
+Sido Muncul,Desa ajung kec. Kalisat,180,352
+Sumber Rejeki,Desa ajung kec. Kalisat,180,353
+Adil,Dusun rowo RT 018 RW 007 desa Gambiran kec. Kalisat Kab Jember,178,354
+Karya Bakti,Dusun Rowo RT 019 RW 008 Desa Gambiran Kec. Kalisat Kab. Jember,178,355
+Krajan Jaya,Dusun krajan II RT 011 RW 004 desa Gambiran kec. Kalisat Kab. Jember,178,356
+Rukun Makmur,Dusun krajan I RT 007 RW 002 desa Gambiran kec. Kalisat Kab Jember,178,357
+Tani Mulya,Dusun krajan I RT 001 RW 001desa Gambiran kec. Kalisat,178,358
+Al Mubaroq,Desa glagahwero kec. Kalisat,181,359
+Karya Makmur,Desa glagahwero kec. Kalisat,181,360
+Murni,Desa glagahwero kec. Kalisat,181,361
+Taman Tani,Desa glagahwero kec. Kalisat,181,362
+Wiro Makmur,Desa glagahwero kec. Kalisat,181,363
+Karya Subur,Desa gumuksari kec. Kalisat,183,364
+Makmur,Desa gumuksari kec. Kalisat,183,365
+Mulya Jaya,Desa gumuksari kec. Kalisat,183,366
+Tani Subur,Desa gumuksari kec. Kalisat,183,367
+Cipta Makmur,Desa kalisat kec. Kalisat,185,368
+Karya Makmur,dusun utara 1 Desa kalisat kec. Kalisat,185,369
+Maju Makmur,Desa kalisatkec. Kalisat,185,370
+Sedia Makmur,dusun barat Desa kalisat kec. Kalisat,185,371
+Tani Makmur,Desa kalisat kec. Kalisat,185,372
+Tukul Makmur,Desa kalisat kec. Kalisat,185,373
+Budi Makmur,Dusun junggrang desa patempuran kec. Kalisat,184,374
+Rukun Makmur,Dusun krajan desa patempuran kec. Kalisat,184,375
+Swadaya Makmur,Dusun junggrang desa patempuran kec. Kalisat,184,376
+Tekad Makmur,Dusun krajan desa patempuran kec. Kalisat,184,377
+Usaha Makmur,Dusun krajan desa patempuran kec. Kalisat,184,378
+Gotong Royong,Dusun jambuan desa plalangan kec. Kalisat,179,379
+Rukun Makmur,Dusun krajan desa plalangan kec. Kalisat,179,380
+Suka Makmur,Desa plalangan kec. Kalisat,179,381
+Sumber Abadi,Dusun krajan desa plalangan kec. Kalisat,179,382
+Tani Maju,Dusun jambuan desa plalangan kec. Kalisat,179,383
+Tani Makmur,Dusun curah lembu desa plalangan kec. Kalisat,179,384
+Harapan Jaya,Desa Sebanen kec. Kalisat,189,385
+Jaya Abadi,Desa Sebanen kec. Kalisat,189,386
+Kramat Jaya,Desa Sebanen kec. Kalisat,189,387
+Tani Maju,Desa Sebanen kec. Kalisat,189,388
+Tirto Sari,Dusun Kramat Desa sebanen kec. Kalisat,189,389
+Bahagia,Dusun Gumuk Baung desa sukoreno kec. Kalisat,187,390
+Gumuk Tani,Dusun Grugul Desa Sukoreno Kec. Kalisat,187,391
+Mulya,Dusun Krajan II Desa Sukoreno Kec. Kalisat,187,392
+Sejahtera,Dusun Gumuk Baung Desa Sukoreno Kec. Kalisat,187,393
+Tani Makmur,Dusun Grugul Desa Sukoreno Kec. Kalisat,187,394
+Tani Mulyo,Dusun Krajan Desa Sukoreno Kec. Kalisat,187,395
+Harapan,Dusun karang pring desa sumber jeruk kec. Kalisat,182,396
+Karya Tani,Dusun karang pring desa sumbercjeruk kec. Kalisat,182,397
+Maradah,Dusun krajan desa sumber jeruk kec. Kalisat,182,398
+Sejahtera,Dusun plalangan desa sumber jeruk kec. Kalisat,182,399
+Sumber Jaya,Dusun krajan desa sumber jeruk kec. Kalisat,182,400
+Budi Mulyo,Dusun Curahmas Desa Sumber kalong Kec. Kalisat,188,401
+Karya Bakti,Dusun Krajan Desa Sumber kalong Kec. Kalisat,188,402
+Rukun Tani,Dusun Sumberwaru Desa Sumberkalong Kec. Kalisat,188,403
+Suka Bakti,Dusun plalangan desa sumber kalong kec. Kalisat,188,404
+Swadaya,Dusun krajan desa sumber kalong kec. Kalisat,188,405
+Barokah,Desa sumber ketempah kec. Kalisat,186,406
+Makmur Jaya,Desa sumber ketempah kec. Kalisat,186,407
+MUTIARA BARU,Desa sumber ketempah kec. Kalisat,186,408
+Suka Maju,Desa sumber ketempah kec. Kalisat,186,409
+Tani Mulyo,Desa sumber ketempah kec. Kalisat,186,410
+Rukun Tani I,Dusun Krajan Lama RT 02 RW 05 Desa Bedadung Kecamatan Pakusari Kabupaten Jember,176,411
+Rukun Tani II,Dusun Krajan Lama RT 02 RW 09 Desa Bedadung Kecamatan Pakusari Kabupaten Jember,176,412
+Rukun Tani III,Dusun Krajan Baru Desa Bedadung Kecamatan Pakusari Kabupaten Jember,176,413
+Rukun Tani IV,Dusun Gumuk Suda RT 03 RW 08 Desa Bedadung Kecamatan Pakusari Kabupaten Jember,176,414
+Rukun Tani V,Dsn Gumuk Suda RT 3 Rw 6 Desa Bedadung Kecamatan Pakusari Kabupaten Jember,176,415
+Karya Makmur,Dusun Plalangan RT 01 RW 10 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,416
+Karya Tani 05,Dusun Prasian RT 01 RW 02 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,417
+Karya Tani I,Dusun Plalangan RT 01 RW 08 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,418
+Karya Tani II,Dusun Plalangan RT 01 RW 11 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,419
+Karya Tani III,Dusun Krajan RT 03 RW 06 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,420
+Karya Tani IV,Dusun Krajan RT 02 Rw 08 Desa Jatian Kecamatan Pakusari Kabupaten Jember,173,421
+Karya Tani I,Dusun Lamparan RT 1 RW 14 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,422
+Karya Tani II,Dusun Lamparan RT 02 RW 14 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,423
+Rukun Tani 02,JL Prambanan No 79 Dusun Sumberdandang Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,424
+Rukun Tani I,Dusun Sumberdandang RT 2 RW 9 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,425
+Sari Tani,Dusun Gempal RT 3 RW 7 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,426
+Sri Rejeki,Dusun Gempal RT 3 RW 8 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,427
+Sumber Rejeki,Dusun Gempal RT 1 RW 8 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,428
+Tri Bhakti,Dusun Krajan RT 3 RW 1 Desa Kertosari Kecamatan Pakusari Kabupaten Jember,171,429
+Gempal II,Jl PB Sudirman Dusun GempalI RT 2 RW 8 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,430
+Harapan,Dusun Krajan RT 3 RW 1 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,431
+Karya Tani,Dusun Rowo RT 3 RW 14 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,432
+Sejahtera 01,Dusun Sumbersuko RT 002 RW 018 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,433
+Sejahtera II,Dusun Sumbersuko Timur RT 001 rw 018 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,434
+Tegal Ajung I,Dusun Krajan RT 001 RW 005 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,435
+Tegal Ajung II,Dusun GempalI RT 001 RW 008 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,436
+Tegal Ajung III,Dusun Gempal I RT 002 RW 007 Desa Pakusari Kecamatan Pakusari Kabupaten Jember,172,437
+Karya Subur I,Dsn Krajan Selatan RT 2 RW 9 Desa Patemon Kecamatan Pakusari Kabupaten Jember,177,438
+Karya Subur II,Dsn Krajan Selatan RT 1 RW 4 Desa Patemon Kecamatan Pakusari Kabupaten Jember,177,439
+Karya Subur III,Dsn Kloncing RT 3 RW 13 Patemon Kecamatan Pakusari Kabupaten Jember,177,440
+Karya Subur IV,Dsn Duk Lengkong RT 3 RW 15 Patemon Kecamatan Pakusari Kabupaten Jember,177,441
+Nur Tani I,Dusun Sanggar RT 01 RW 01 Desa Subo Kecamatan Pakusari Kabupaten Jember,174,442
+Nur Tani II,Dusun Karang Sadang RT 01 RW 04 Desa Subo Kecamatan Pakusari Kabupaten Jember,174,443
+Nur Tani III,Dusun Gudang Duren Desa Subo Kecamatan Pakusari Kabupaten Jember,174,444
+Nur Tani IV,Dusun Gudang Duren RT 02 RW 09 Desa Subo Kecamatan Pakusari Kabupaten Jember,174,445
+Nur Tani V,Dusun Sanggar RT 03 RW 02 Desa Subo Kecamatan Pakusari Kabupaten Jember,174,446
+Nur Tani VI,Dusun Kaliwining RT 01 RW 07 Desa Subo Kecamatan Pakusari Kabupaten Jember,174,447
+Cahaya Tani,Dsn Krajan RT 3 RW 4 Sumberpinang,175,448
+Jati Tani I,Dusun Jatian RT 02 RW 08 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,449
+Jati Tani II,Dusun Jatian RT 02 RW 07 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,450
+Rumpun Tani,Dusun Jedding RT 02 RW 09 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,451
+Sinar Tani,Dusun Jeding RT 01 RW 12 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,452
+Surya Tani,Dusun Krajan RT 01 RW 01 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,453
+Tani Mulyo I,Dusun Bunder RT 03 RW 14 Desa Sumber Pinang Kecamatan Pakusari Kabupaten Jember,175,454
+Tani Mulyo II,RT 02 RW 14 Bunder Desa Sumber Pinang,175,455
+Barokah Tani,Dusun Tegal Bago RT 03 RW 02 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,456
+Budi Utomo,Dusun Gumitir RT 02 RW 02 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,457
+Hisbul Waton,Dusun Tegal Bago RT 1 RW 7 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,458
+Sumber Jaya,Dusun Gumitir RT 03 RW 14 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,459
+Sumber Kangkung,Dusun Calok RT 3 RW 2 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,460
+Sumber Salak,Dusun Calok RT 02 RW 01 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,461
+Sumber Tani,Dsn Tegal Bago RT 1 RW 2 Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,462
+Tani Makmur,Jl. Irian No. 35 RT 1 RW 3 Dsn Krajan Desa Arjasa Kecamatan Arjasa Kabupaten Jember,167,463
+Dana Tani,Dusun Mojo RT 003 RW 002 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,464
+Pasir Mas,Jl. Mawar No. 103 Dsn Tegallo RT 2 RW 6 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,465
+Rejeki,Jl. Mawar Dsn Tegallo RT 2 RW 6 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,466
+Sentani,Jl. Oleng Sibutong RT 002 RW 003 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,467
+Sri Rejeki,Jl. Melati Dsn Biting pinggir RT 1 RW 1 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,468
+Suka Makmur,Dusun Krajan RT 002 RW 012 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,469
+Sumber Rejeki 01,Jl. Flamboyan Dsn Tegallo RT 2 RW 8 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,470
+Sumber Rejeki II,Jl. Flamboyan dsn Tegallo RT 2 RW 7 Desa Biting Kecamatan Arjasa Kabupaten Jember,168,471
+Candisari,Ds. Krajan Barat RT 004/RW 009 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,472
+Hasil Bumi,Dusun Krajan Barat RT 05 RW 02 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,473
+Jaya Karya,Dusun Krajan Timur RT 04 RW 01 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,474
+Karya Tani,Dusun Sumberjati RT 01 RW 01 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,475
+Mekar Tani,Dusun Bataan RT 1 RW 1 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,476
+Pendengar Tani,Jl. Cempaka Dsn Krajan Barat RT 6 RW 2 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,477
+Rintis Tani,Dusun Krajan Timur RT 2 RW 2 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,478
+Subur Makmur,Dusun Krajan RT 04 RW 01 Desa Candijati Kecamatan Arjasa Kabupaten Jember,169,479
+Ciptodadi,Dusun Kopang Krajan RT 03 RW 01 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,480
+Jaya Makmur,Dusun Kopang Krajan RT 07 RW 10 Desa Darsono Kecamatan Arjasa Kabupaten JemberKr,166,481
+Rengganis,Dusun Padasan RT 06 RW 03 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,482
+Sari Gading I,Dusun Teratai RT 05 RW 02 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,483
+Sari Gading II,Dusun Padasan RT 01 RW 03 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,484
+Sari Manggis,Dusun Gading RT 1 RW 4 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,485
+Tani Makmur 3,Dusun Taratai RT 2 RW 2 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,486
+Tani Subur,Dusun Gading RT 03 RW 04 Desa Darsono Kecamatan Arjasa Kabupaten Jember,166,487
+Bina Tani,Dusun Klanceng RT 01 RW 02 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,488
+Gumitir Jaya,Dusun Gumitir RT 05 RW 10 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,489
+Jaya Makmur,Dusun Duplang RT 04 RW 06 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,490
+Kopang Jaya,Dusun Kopang RT 3 RW 7 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,491
+Margo Mulyo,Dusun Krajan RT 005 RW 004 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,492
+Serba Usaha,Dusun Klanceng RT 04 RW 01 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,493
+Usaha Tani,Dusun Duplang RT 03 RW 06 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,494
+Wirabuana,Dusun Krajan RT 04 RW 03 Desa Kamal Kecamatan Arjasa Kabupaten Jember,170,495
+Adil Makmur,Dusun Kopang Kebun Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,496
+Bina Usaha,Dusun Darungan Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,497
+Harapan Baru,Dusun Rayap RT 2 RW 10 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,498
+Harapan Jaya,Dusun Darungan RT 4 RW 3 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,499
+Pelita Jaya,Dusun Rayap RT 4 RW 12 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,500
+Rembangan Jaya,Dusun Rayap RT 02 RW 12 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember R,165,501
+Tani Makmur I,Dusun Darungan RT 02 RW 08 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,502
+Tani Makmur II,Dusun Krajan RT 4 RW 2 Desa Kemuninglor Kecamatan Arjasa Kabupaten Jember,165,503
+ADIL MAKMUR,DUSUN KRAJAN DESA DUKUH MENCEK,161,504
+AMPO REJO,Dusun Ampo Desa Dukuh Mencek Kecamatan Sukorambi,161,505
+CAHAYA TANI,DUSUN BOTOSARI DESA DUKUH MENCEK,161,506
+KARYA BAKTI,DUSUN KRAJAN DESA DUKUH MENCEK KECAMATAN SUKORAMBI,161,507
+TANI SUBUR,DUSUN BOTOSARI DESA DUKUH MENCEK,161,508
+TANI REJO,DUSUN AMPO DESA DUKUH MENCEK KECAMATAN SUKORAMBI,161,509
+TUNAS MUDA,DUSUN BOTOSARI DESA DUKUH MENCEK,161,510
+ANGKATAN,Dusun Plalangan,160,511
+Makmur Tani,Dusun Krajan Timur,160,512
+PENDOWO,Dusun Krajan Barat,160,513
+Rande Koning,Dusun Jubung Lor,160,514
+RUKUN TANI,Dusun Jubung Lor,160,515
+SUMBER REJEKI,Dusun Darungan,160,516
+TANI MULYO,Dusun Jubung Lor,160,517
+JAYA LESTARI,dusun durjo desa karangpring,163,518
+jaya mulya,dusun gendir desa karangpring,163,519
+NAWASENA,Dusun Durjo RT 01 RW 06 Desa Karangpring,163,520
+puncak,dusun gendir desa karangpring,163,521
+sinar harapan,dusun krajan desa karangpring desa karangpring,163,522
+sri tanjung,dusun plalangan desa karangpring,163,523
+tani agung,dusun krajan desa karangpring,163,524
+BARU TERBIT,DUSUN GENDIR DESA KLUNGKUNG,164,525
+HARAPAN KITA,DUSUN GENDIR DESA KLUNGKUNG,164,526
+MARLENA,DUSUN MUJAN RT 002 RW 015 DESA KLUNGKUNG KECAMATAN SUKORAMBI,164,527
+PA ALAH,DUSUN GENDIR DESA KLUNGKUNG,164,528
+SANTOSO,DUSUN MOJAN DESA KLUNGKUNG,164,529
+CAHAYA TERANG,DUSUN CURAHDAMI DESA SUKORAMBI,162,530
+HASIL BUMI,DUSUN MANGGIS DESA SUKORAMBI,162,531
+NURUS SAADAH,DUSUN CURAHDAMI DESA SUKORAMBI,162,532
+SARI ALAM,DUSUN KRAJAN-KARANGWARU DESA SUKORAMBI,162,533
+SEJAHTERA,DUSUN KRAJAN,162,534
+SUKORAMBI JAYA,DUSUN MANGGIS DESA SUKORAMBI,162,535
+SUMBER REJEKI,Dusun Manggis Cempakaan,162,536
+TRISNO MAJU,DUSUN CURAHDAMI DESA SUKORAMBI,162,537
+HANDAYANI,DUSUN KARANG ASEM BARAT DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,538
+SARI MURNI I,DUSUN KRAJAN DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,539
+SARI MURNI II,DUSUN KEBUN DUREN DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,540
+SUKO TANI,DUSUN PLALANGAN DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,541
+SUMBER MAKMUR,DUSUN KARANG ASEM TIMUR DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,542
+TIRTO AGUNG,DUSUN KARANG ASEM TENGAH DESA GLAGAHWERO KECAMATAN PANTI KABUPATEN JEMBER,154,543
+BAROKAH TANI,DUSUN DELIMA DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,544
+DELIMA JAYA,DUSUN DELIMA DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,545
+KARYA TANI,DUSUN SODONG DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,546
+SEJAHTERA BERSAMA,DUSUN DANCI DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,547
+SIDO DADI,DUSUN KANTONG DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,548
+SIDO MUNCUL,DUSUN TENGGILING DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,549
+SINAR TANI,DUSUN KRAJAN DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,550
+SUMBER REJEKI,DUSUN KRAJAN DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,551
+TANI RAHAYU,DUSUN TENGGILING DESA KEMIRI KECAMATAN PANTI KABUPATEN JEMBER,159,552
+SUMBER REJEKI,DUSUN SUMBERSARI DESA KEMUNINGSARI LOR KECAMATAN PANTI KABUPATEN JEMBER,153,553
+TANI JAYA I,DUSUN KRAJAN DESA KEMUNINGSARILOR KECAMATAN PANTI KABUPATEN JEMBER,153,554
+TANI JAYA II,DUSUN KRAJAN DESA KEMUNINGSARILOR KECAMATAN PANTI KABUPATEN JEMBER,153,555
+TANI LESTARI,DUSUN SUMBERSARI DESA KEMUNINGSARILOR KECAMATAN PANTI KABUPATEN JEMBER,153,556
+TANI MAKMUR,DUSUN KEMUNINGLOR DESA KEMUNINGSARILOR KECAMATAN PANTI KABUPATEN JEMBER,153,557
+CEMPAKA I,DUSUN CEMPAKA DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,558
+CEMPAKA II,DUSUN TAJEK DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,559
+GLUDUG,DUSUN GLUDUG DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,560
+KEMUNDUNGAN,DUSUN KEMUNDUNGAN DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,561
+PAKIS JAYA,DUSUN PAKIS UTARA DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,562
+RENGGANIS,DUSUN KEMUNDUNGAN DESA PAKIS KECAMATAN PANTI,157,563
+SUMBER KEMBAR,DUSUN SUMBER KEMBAR DESA PAKIS KECAMATAN PANTI KABUPATEN JEMBER,157,564
+GEBANG SELATAN,DUSUN GEBANG LANGKAP DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,565
+GEBANG UTARA,DUSUN GEBANG DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,566
+KEMBANG SORE,DUSUN DARUNGAN DESA PANTI KECAMATAN PANTI,156,567
+LESTARI,DUSUN TAMINGAN DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,568
+MANGGIS,DUSUN DARUNGAN DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,569
+SEMBAH,DUSUN DARUNGAN DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,570
+SRI REJEKI,DUSUN KRAJAN DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,571
+SUMBER URIP,DUSUN WONOLANGU DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,572
+TUNJUNG,DUSUN PRAPAH DESA PANTI KECAMATAN PANTI KABUPATEN JEMBER,156,573
+ANTOKAN I,DUSUN KASIYAN DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,574
+ANTOKAN II,DUSUN KARANG ANOM DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,575
+KOLOR I,DUSUN BADEAN TIMUR DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,576
+KOLOR II,DUSUN BADEAN BARAT DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,577
+PONO I,DUSUN MENCEK TIMUR DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,578
+PONO II,DUSUN MENCEK BARAT DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,579
+RANDU I,DUSUN KRAJAN DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,580
+RANDU II,DUSUN KRAJAN DESA SERUT KECAMATAN PANTI KABUPATEN JEMBER,155,581
+Kelompok Tani Ternak Sido Mulyo,Dsn Glengseran RT 07 RW 05 Desa Suci. 68153,158,582
+LARAHAN MAKMUR,Dsn Gaplek Desa Suci Kecamatan Panti,158,583
+SIDO MAJU,DUSUN GLUNDENGAN DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,584
+SIDO RUKUN,DUSUN GLUNDENGAN DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,585
+SUMBER MULYO,DUSUN GAPLEK DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,586
+SUMBER REJEKI,DUSUN GLUNDENGAN DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,587
+SURYA TANI,DUSUN GAPLEK DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,588
+TANI HARAPAN,DUSUN GAPLEK DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,589
+TANI MAKMUR,DUSUN GLUNDENGAN DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,590
+TANI MULYO,DUSUN GLENGSERAN DESA SUCI KECAMATAN PANTI KABUPATEN JEMBER,158,591
+JIRO,JIRO BADEAN,152,592
+KARANG PAKEL,KARANG PAKEL BADEAN,152,593
+KRAJAN 01,KRAJAN BADEAN,152,594
+KRAJAN 02,KARAJAN BADEAN,152,595
+KRAJAN 03,KRAJAN BADEAN,152,596
+PUNCAK JAYA (PEMUDA TANI),DUSUN KARANGPAKEL DESA BADEAN,152,597
+TAMAN GLUGO,TAMAN GLUGU BADEAN,152,598
+BINA TANI,"RAMBUTAN, BANGSALSARI",147,599
+KALISATAN,KALISATAN BANGSALSARI,147,600
+KEDUNGSUKO 04,"Kedungsuko, Bangsalsari",147,601
+KEDUNGSUKO II,"KEDUNGSUKO, BANGSALSARI",147,602
+KEDUNGSUKO III,"KEDUNGSUKO, BANGSALSARI",147,603
+KEDUNGSUKO SATU,KEDUNGSUKO BANGSALSARI,147,604
+Kelompok Wanita Tani Kedungsuko Bangkit,Dsn Kedungsuko RT 02 RW 04 Desa Bangsalsari Kecamatan Bangsalsari,147,605
+KRAJAN II,KRAJAN BANGSALSARI,147,606
+KWT Dewi Makmur Jaya,Dusun Kedungsuko Desa Bangsalsari,147,607
+RAMBUTAN,RAMBUTAN BANGSALSARI,147,608
+RUKUN TANI,"RAMBUTAN, BANGSALSARI",147,609
+NGUDI MAKMUR I,DUKUH 2 BANJARSARI,151,610
+NGUDI MAKMUR V,KRAJAN BANJARSARI,151,611
+TIRTO WANGI III,DUKUH II BANJARSARI,151,612
+CURAHKALONG TENGAH I,CURAH KALONG TENGAH,149,613
+CURAHKALONG TENGAH II,CURAH KALONG TENGAH,149,614
+EMAK EMAK JAYA,Dusun Sumberklopo RT 002 RW 004 Desa Curahkalong Kecamatan Bangsalsari,149,615
+KRAJAN I,KRAJAN CURAH KALONG,149,616
+KRAJAN II,KRAJAN CURAH KALONG,149,617
+SUMBER KLOPO I,SUMBER KLOPO CURAHKALONG,149,618
+SUMBER KLOPO II,SUMBER KLOPO CURAH KALONG,149,619
+CURAH CABE,CURAH CABE GAMBIRONO,148,620
+KARYA BAKTI,CURAH CABE GAMBIRONO,148,621
+KARYA TANI,CURAH CABE GAMBIRONO,148,622
+KARYA UTAMA,KRAJAN GAMBIRONO,148,623
+KISMO KARYO,KRAJAN GAMBIRONO,148,624
+KRAJAN,KRAJAN GAMBIRONO,148,625
+MARGO MULYO,CURAH WARU GAMBIRONO,148,626
+NGUDI RAHAYU,CURAH WARU GAMBIRONO,148,627
+SUMBER REJEKI,GAMBIRONO KULON,148,628
+TANI JAYA,CURAH CABE GAMBIRONO,148,629
+EKA JAYA,GUMUK REJO KARANGSONO,142,630
+HARAPAN JAYA,BAGELENAN KARANGSONO,142,631
+Himpunan Petani Jeruk Anugrah,Desa Karangsono Kec.Bangsalsari,142,632
+KAMPUNG ANGON,desa karangsono kec bangsalsari,142,633
+MAKMUR,BAGELENAN KARANGSONO,142,634
+SIDO MAJU I,CURAH KETING KARANGSONO,142,635
+SIDO MAJU II,KRAJAN KARANGSONO,142,636
+SUKA TANI,BAGELENAN KARANGSONO,142,637
+SUKA TANI II,DSN BAGELENAN DESA KARANGSONO,142,638
+TANI MAKMUR,BAGELENAN KARANGSONO,142,639
+Barokah,krajan Langkap,146,640
+Sumber Gebang I,Sumber Gebang Langkap,146,641
+Sumber Gebang II,Dusun Sumber Gebang Desa Langkap,146,642
+Sumber Gebang III,Dusun Sumber Gebang Desa Langkap,146,643
+Sumber Gebang IV,Dusun Sumber Gebang Desa Langkap,146,644
+Tegalan I,Tegalan Langkap,146,645
+Tegalan II,Tegalan Langkap,146,646
+Tegalan III,Dusun Tegalan Desa Langkap,146,647
+Dawuhan,Dusun Paguan,144,648
+Kejingan,Dusun paguan petung,144,649
+KRAMAT CANDI,GLAGASAN PETUNG,144,650
+MOJOKERSO,GLAGASAN PETUNG,144,651
+Paguan,Paguan Petung,144,652
+Siraan,siraan petung,144,653
+BUDI LUHUR,KRAJAN SUKOREJO,143,654
+GEMAH RIPAH,KARANG SEMANDING SUKOREJO,143,655
+GUMUK GADING,KRAJAN SUKOREJO,143,656
+HARAPAN,GUMUK BAGO SUKOREJO,143,657
+KARTIKA,KLIMUSAN SUKOREJO,143,658
+SUKO TANI,KARANG SEMANDING SUKOREJO,143,659
+SUMBER REJEKI,KRAJAN SUKOREJO,143,660
+SUMBER TANI,TEGAL GEBANG SUKOREJO,143,661
+MAKIN MAKMUR,KRAJAN TISNOGAMBAR,145,662
+RUKUN TANI 0I,DUSUN JATISARI DESA TISNOGAMBAR,145,663
+RUKUN TANI II,KRAJAN TISNOGAMBAR,145,664
+SIDO HASIL,SIRAAN TISNOGAMBAR,145,665
+SUMBER MAKMUR,SIRAAN TISNOGAMBAR,145,666
+SUMBER REJEKI I,KRAJAN TISNOGAMBAR,145,667
+SUMBER REJEKI II,Dusun Siraan Desa Tisnogambar,145,668
+TANI MAKMUR,KRAJAN TISNOGAMBAR,145,669
+ANDONGSARI I,ANDONGSARI TUGUSARI,150,670
+ANDONGSARI II,ANDONGSARI TUGUSARI,150,671
+ANDONGSARI III,TUGUSARI,150,672
+KRAJAN I,KRAJAN TUGUSARI,150,673
+KRAJAN II,KRAJAN TUGUSARI,150,674
+KRAJAN III,KRAJAN TUGUSARI,150,675
+KWT DEWI ARGOPURO,Dusun sumber ketangi,150,676
+SIDO MAKMUR,DSN SUMBER CANTING DESA TUGUSARI,150,677
+SUMBER KETANGI JAYA,TUGUSARI,150,678
+Argopuro,Dsn.Jumbatan RT 008/ RW 012 Darungan Tanggul,138,679
+Darungan 01,Jumbatan,138,680
+Darungan 03,Krajan,138,681
+Darungan 04,Krajan,138,682
+Darungan 06,Karangjati,138,683
+Darungan 07,Karanganyar,138,684
+Darungan 13,Durenan,138,685
+Darungan 14,Sumberbulus,138,686
+Darungan 15,Pakeman,138,687
+Darungan 16,Krajan,138,688
+Robusta,Dsn. Jumbatan,138,689
+Tabah Berdayung,Dsn.Sumberbulus RT 004/ RW 008 Darungan Tanggul,138,690
+Bakti Tani,Dusun Gadungan Rt.02 Rw.13 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,691
+Budi Luhur,Dusun Penggungan Rt.01 Rw.16 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,692
+Bumi Rowo,Dusun Penggungan Rt.01 Rw.16 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,693
+Darma Bakti,Dusun Krajan Rt.01 Rw.03 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,694
+Ganjaran,Dusun Penggungan Rt.01 Rw.19 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,695
+Karya Mulya,Dusun Gadungan Rt.02 Rw.12 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,696
+Mardi Tani,Dusun Gadungan Rt.02 Rw.12 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,697
+Margo Rukun,Dusun Penggungan Rt.03 Rw.18 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,698
+Mulyo Basuki,Dusun Penggungan Rt.01 Rw.18 Desa Klatakan Kecamatan Tanggul Kabupatem Jember Jawa Timur,136,699
+Rukun Santoso,"Dusun Krajan, Rt.02 Rw.07 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur",136,700
+Rukun Tani,Dusun Krajan Rt.01 Rw.03 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,701
+S u b u r,Dusun Gadungan Rt.02 Rw.15 Desa Klatakan Kecamatan Tanggul Kabupaten Jember,136,702
+Sejahtera,Dusun Penggungan Rt.02 Rw.16 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,703
+Sri Rejeki,Dusun Penggungan Rt. 02 Rw. 17 Desa Klatakan Kecamatan Tanggul Kabupaten Jember,136,704
+Sumber Hasil,"Dusun Gadungan, Rt.01 Rw. 13 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur",136,705
+Tani Makmur,Dusun Penggungan Rt.02 Rw.16 Desa Klatakan Kecamatan Tanggul Kabupaten Jember Jawa Timur,136,706
+Krmt Sukoharjo 01,Suko Selatan,141,707
+Krmt Sukoharjo 02,Jerukan,141,708
+Krmt Sukoharjo 03,Jabaan,141,709
+Krmt Sukoharjo 04,Suko Timur,141,710
+Krmt Sukoharjo 05,Krajan,141,711
+Krmt Sukoharjo 06,Suko Barat,141,712
+Krmt Sukoharjo 07,Suko Barat,141,713
+Krmt Sukoharjo 08,Suko Timur,141,714
+Manggisan 02,Krajan,139,715
+Manggisan 03,Krajan,139,716
+Manggisan 04,Krajan,139,717
+Manggisan 05,Krajan,139,718
+Manggisan 06,Krajan,139,719
+Manggisan 07,Krajan,139,720
+Manggisan 08,Krajan,139,721
+Manggisan 09,Krajan,139,722
+Manggisan 10,Sungai Tengah,139,723
+Manggisan 11,Sungai Tengah,139,724
+Manggisan 12,Sungai Tengah,139,725
+Manggisan 13,Sung. Tengah,139,726
+Manggisan 14,Sung. Tengah,139,727
+Manggisan 15,Sung. Tengah,139,728
+Manggisan 16,Sung. Tengah,139,729
+Manggisan I,Krajan,139,730
+MANGGISAN I,KRAJAN MANGGISAN,139,731
+MANGGISAN III,KRAJAN MANGGISAN,139,732
+MANGGISAN IV,KRAJAN,139,733
+Patemon 01,Curahputih,140,734
+Patemon 02,Curahputih,140,735
+Patemon 03,Curahputih,140,736
+Patemon 04,Krajan,140,737
+Patemon 05,Krajan,140,738
+Patemon 06,Krajan,140,739
+Patemon 07,Krajan,140,740
+Patemon 08,Krajan,140,741
+Karya Indah,Tegalparon,137,742
+Karya Raya,Tegal Paron,137,743
+Sidomekar,Krajan Selodakon,137,744
+Sumber Alam,Krajan Selodakon,137,745
+Sumber Langon,Tegalparon,137,746
+Tani Lumayan,Jln Winoto Krajan Selodakon,137,747
+Wonogiri,Tegal Paron,137,748
+Delima Putih,Krajan,134,749
+Delima Ungu,Krajan,134,750
+Nusa Indah,Teko'an,134,751
+Sinar Mulia,Krajan,134,752
+Maskanul Zuruk I,Curah Bamban,135,753
+Maskanul Zuruk II,Krajan,135,754
+Maskanul Zuruk III,Krajan,135,755
+Maskanul Zuruk IV,Crh Bamban,135,756
+Maskanul Zuruk IX,Krajan,135,757
+Maskanul Zuruk V,Crh Bamban,135,758
+Maskanul Zuruk VI,Krajan,135,759
+Maskanul Zuruk VII,Crh Bamban,135,760
+Maskanul Zuruk VIII,Krajan,135,761
+Maskanul Zuruk X,Rowotapen,135,762
+Maskanul Zuruk XI,Crh Bamban,135,763
+Maskanul Zuruk XII,Crh Bamban,135,764
+Harapan Jaya,Tampingan,129,765
+Ngudi Lestari,Lanasan,129,766
+Ngudi Luhur,Krajan,129,767
+Ngudi Makmur,Krajan,129,768
+Ngudi Rukun,Dusun Pace,129,769
+Ngudi Sejati,Tampingan,129,770
+Bukit Barisan I,Krajan,133,771
+Bukit Barisan II,Krajan,133,772
+Kedung Jaya,Kedungiler,133,773
+Puring Jaya,Puring,133,774
+Gemah Ripah,Krajan,131,775
+Mekar Sari,Krajan,131,776
+Sagaran Makmur I,Sagaran,131,777
+Sagaran Makmur II,Sagaran,131,778
+Soponyono,Krajan,131,779
+Tempuran Jaya I,Tempuran,131,780
+Tempuran Jaya II,Tempuran,131,781
+Fajar Jaya,Krajan,130,782
+Ploti Jaya,Darungan,130,783
+Sido Dadi,Jatikoong,130,784
+Sido Makmur,Krajan,130,785
+Sukawati,Jatikoong,130,786
+Tani Makmur,Darungan,130,787
+Wonokoyo,Jatikoong,130,788
+Margo Makmur,Krajan,132,789
+Pakisan Makmur,Pakisan,132,790
+Pasirian Jaya I,Pasirian,132,791
+Pasirian Jaya II,Pasirian,132,792
+Sumber Mas,Krajan,132,793
+Manggungan Jaya,Manggungan,128,794
+Rukun Makmur,Krajan,128,795
+Rukun Santoso,Krajan,128,796
+Rukun Sejati,Krajan,128,797
+Tani Makmur,Karanganom,128,798
+Tani Rahayu,Karanganom,128,799
+Tani Sejati,Karanganom,128,800
+Tirto Bening,Karang Anom,128,801
+Tirto Manis,Krajan,128,802
+Tirto Wono,Congapan,128,803
+Margo Mulyo,Krajan,127,804
+Suka Damai,Sumberuling,127,805
+Suka Maju,Racekan,127,806
+Sumber Buah,Sumber Kijing,127,807
+Sumber Pele,Wedusan,127,808
+Tani Makmur,Pakeman,127,809
+Barokah,Gondosari,125,810
+Sido Mukti,Sadengan,125,811
+Sri Rejeki,Krajan,125,812
+Sumber Makmur,Krajan,125,813
+Tani Jaya I,Sadengan,125,814
+Tani Makmur,Gondosari,125,815
+Tani Murni,Gondosari,125,816
+Tani Subur,Krajan,125,817
+Umbul Kembar,Sadengan,125,818
+Ngudi Rejeki,Tambakrejo,124,819
+Sido Dadi,Banjarjo Barat,124,820
+Sido Makmur,Banjarjo Timur,124,821
+Sido Rukun,Banjarjo Timur,124,822
+Subur,Banjarjo Tengah,124,823
+Tani Abadi,Banjarjo Barat,124,824
+Tani Mulyo,Banjarjo Timur,124,825
+Baru Muncul,Tunggangan,126,826
+Harapan Jaya I,Krajan Lor,126,827
+Harapan Jaya II,Krajan Lor,126,828
+Ngudi Makmur I,Sumberejo,126,829
+Ngudi Makmur II,Sumberejo,126,830
+Suka Bangun I,Krajan Kidul,126,831
+Suka Bangun II,Tunggangan,126,832
+Sumber Rejeki,Krajan Kidul,126,833
+Tani Makmur,Sumberjo,126,834
+BAROKAH I,Dusun Krajan II RT/RW 001/030 Desa Jombang Kec. Jombang,119,835
+BAROKAH II,DESA JOMBANG,119,836
+BAROKAH III,JOMBANG,119,837
+GADING MAS 1,KRAJAN III JOMBANG,119,838
+GADING MAS 2,DESA JOMBANG,119,839
+MARGI RAHAYU 1,Dusun Krajan II Desa Jombang Kec. Jombang Kab. Jember,119,840
+MARGI RAHAYU 2,DESA JOMBANG,119,841
+MARGI RAHAYU 3,KRJ III 001/027 JOMBANG,119,842
+TANI ADIL 1,DESA JOMBANG,119,843
+TANI ADIL 2,KRAJAN III JOMBANG,119,844
+TANI MULYO 2,DESA JOMBANG,119,845
+TANI MULYO I,KRJAN I RT 03/ RW 010 DESA JOMBANG KECAMATAN JOMBANG JEMBER,119,846
+TANI SUBUR 2,DESA JOMBANG,119,847
+TANI SUBUR I,Dusun Krajan III Desa Jombang Kec. Jombang Kab. Jember,119,848
+TEKUN,KARAJAN 1 JOMBANG KEC. JOMBANG KAB. JEMBER,119,849
+NGUDI REJEKI,Dusun Krajan III Desa Keting Kec. Jombang,118,850
+SIDODADI DUA,Dusun Krajan I Desa Keting Kec. Jombang,118,851
+TANI RUKUN,Dusun Keting desa Keting Kec. Jombang,118,852
+BINA KARYA,DESA NGAMPELREJO KEC. JOMBANG KAB. JEMBER,121,853
+HANDAYANI,KRAJAN I DESA NGAMPELREJO KEC. JOMBANG KAB. JEMBER,121,854
+KARYA TANI,DESA NGAMPELREJO KEC. JOMBANG KAB. JEMBER,121,855
+NGUDI MAKMUR,DESA NGAMPELREJO KEC. JOMBANG KAB. JEMBER,121,856
+TANI RUKUN,DESA NGAMPELREJO KEC. JOMBANG KAB. JEMBER,121,857
+DEWI MURNI,KRAJAN I DESA PADOMASAN - JOMBANG - JEMBER,120,858
+DEWI SRI,WRINGINSARI DESA PADOMASAN - JOMBANG - JEMBER,120,859
+GEMAH RIPAH,WRINGINSARI DESA PADOMASAN - JOMBANG - JEMBER,120,860
+KARYA TANI,KRAJAN II DESA PADOMASAN - JOMBANG - JEMBER,120,861
+LOH JINAWI,KRAJAN II DESA PADOMASAN - JOMBANG - JEMBER,120,862
+SIDODADI I,wringinsari Desa Padomasan - JOMBANG - JEMBER,120,863
+SUMBER JAYA,KRAJAN II DESA PADOMASAN - JOMBANG - JEMBER,120,864
+SUMBER REJEKI,Dusun WRINGINSARI DESA PADOMASAN - JOMBANG - JEMBER,120,865
+TANI ADIL,KRAJAN I DESA PADOMASAN KEC JOMBANG - JEMBER,120,866
+SRI SEDONO,Dsn. SARIAGUNG DESA SARIMULYO,123,867
+SUMBER MAKMUR,SARIONO RT/RW 007/002 SARIMULYO JOMBANG,123,868
+SUMBER PANGAN,SARIONO RT/RW 010/003 SARIMULYO JOMBANG,123,869
+TANI MULYO,DUSUN SARIAGUNG -SARIMULYO - JOMBANG - JEMBER,123,870
+BHAKTI MAKMUR,Dsn.Krajan Rt 02 Rw 37 desa wringinagung,122,871
+BUMI MAKMUR,Jl.Jeruk Dsn Pondok Jeruk Rt 001 Rw 016 wringinagung,122,872
+HARAPAN MAKMUR,Dsn.Krajan Rt 02 Rw 29 WRINGINAGUNG,122,873
+KARYA MAKMUR,Dsn.Ponkdokwaluh Rt 01 Rw 08 WRINGINAGUNG,122,874
+LUHUR MAKMUR,Dsn.Krajan Rt 01 Rw 38 WRINGINAGUNG,122,875
+PUJI MAKMUR,Dsn.Krajan Rt 02 Rw 29 WRINGINAGUNG,122,876
+RUKUN MAKMUR,Dsn.Ponkdokjeruk Rt 02 Rw 27 WRINGINAGUNG,122,877
+SEKAR MAKMUR,Dsn.Ponkdokjeruk Rt 01 Rw 29 WRINGINAGUNG,122,878
+SIDO MAKMUR,Dsn.Ponkdokwaluh Rt 02 Rw 09 WRINGINAGUNG,122,879
+SUBUR MAKMUR,Jl.Apel Dsn.Pondok jeruk Rt 001 Rw 016 WRINGINAGUNG,122,880
+TANI MAKMUR,Dsn.Ponkdokwaluh Rt 02 Rw 13 WRINGINAGUNG,122,881
+Karya Makmur,Dusun Jatian,117,882
+Madu Ratna,Krajan,117,883
+Tani Rahayu,Jatian,117,884
+Harapan tani,Pdk Rampal,116,885
+Karya Tani,Songon,116,886
+Mardi Karyo,Songon,116,887
+Margo Rukun,Pdk Rampal,116,888
+Rukun Santoso,Pdk Rampal,116,889
+SETIA TANI,DUSUN PONDOKRAMPAL,116,890
+Sido Rukun,Songon,116,891
+Sidodadi,Songon,116,892
+Sumber Rejeki,Pdk Rampal,116,893
+TANI MAJU,DUSUN SONGON DESA PONDOKJOYO,116,894
+Tani Makmur,DUSUN PONDOKRAMPAL DESA PONDOKJOYO KEC. SEMBORO,116,895
+Bakti Agung,Krajan,112,896
+Dewi Agung,Wonosari,112,897
+Sari Agung I,Krajan,112,898
+Sari Agung II,Wonosari,112,899
+Sekar Agung,Wonosari,112,900
+Sri Agung,Krajan,112,901
+Karya Tani I,Semboro Pasar,113,902
+Karya Tani II,Semboro Pasar,113,903
+Marsudi Mulyo,Semboro Lor,113,904
+Marsudi Raharjo,Semboro Lor,113,905
+Pangudi Luhur I,Semboro Kidul,113,906
+Pangudi Luhur II,Semboro Kidul,113,907
+Pangudi Luhur III,Semboro Kidul,113,908
+Sido Makmur,Semboro Lor,113,909
+Suka Maju,Semboro Lor,113,910
+Babatan 1,Babatan,114,911
+Babatan 2,Babatan,114,912
+Babatan 3,Babatan,114,913
+Besuki Kidul 1,Besuki,114,914
+Besuki Kidul 2,Besuki,114,915
+Besuki Kidul 3,Besuki,114,916
+Besuki Lor 1,Besuki,114,917
+Besuki Lor 2,Besuki,114,918
+Beteng Kulon 1,Beteng,114,919
+Beteng Kulon 2,Beteng,114,920
+Beteng Kulon 3,Beteng,114,921
+Beteng Wetan 1,Beteng,114,922
+Beteng Wetan 2,Beteng,114,923
+Blok Gapuro 1,Besuki,114,924
+Blok Gapuro 2,Besuki,114,925
+Mutiara,beteng,114,926
+JAYA HARTA I,PUCUAN - SIDOMULYO,115,927
+JAYA HARTA II,ROWOTENGU - SIDOMULYO,115,928
+JAYA HARTA III,ROWOTENGU -SIDOMULYO,115,929
+JAYA HARTA IV,ROWOTENGU - SIDOMULYO,115,930
+PUCU AN JAYA I,PUCU'AN - SIDOMULYO,115,931
+PUCU AN JAYA II,PUCU'AN - SIDOMULYO,115,932
+PUCU AN JAYA III,PUCU'AN - SIDOMULYO,115,933
+PUCU AN JAYA IV,PUCU'AN - SIDOMULYO,115,934
+TANI JAYA I,ROWOTENGU - SIDOMULYO,115,935
+TANI JAYA II,ROWOTENGU - SIDOMULYO,115,936
+TANI JAYA III,ROWOTWNGU - SIDOMULYO,115,937
+TANI MAKMUR I,ROWOTENGU -SIDOMULYO,115,938
+TANI MAKMUR II,ROWOTENGU - SIDOMULYO,115,939
+TANI MAKMUR III,ROWOTENGU - SIDOMULYO,115,940
+UTAMA I,PUCU'AN - SIDOMULYO,115,941
+UTAMA II,ROWOTENGU - SIDOMULYO,115,942
+BAROKAH TANI,Dusun Padangrejo RT 003 RW 002 Desa Gadingrejo Kec. Umbulsari,108,943
+HASIL TANI,Dsn krajan utara RT 006 RW 003 gadingrejo,108,944
+NIKMAT TANI,Dusun Padangrejo RT 002 RW 002 Desa Gadingrejo Kec. Umbulsari,108,945
+RUKUN TANI,Dusun Krajan utara RT 001 RW 004 Desa Gadingrejo Kec. Umbulsari,108,946
+SUMBER TANI,Dusun Padangrejo RT 001 RW 001 Desa Gadingrejo Kec. Umbulsari,108,947
+TANI JAYA,Dusun Krajan utara RT 006 RW 003 Desa Gadingrejo Kec. Umbulsari,108,948
+TANI MAKMUR,Dusun Padangrejo RT 002 RW 001 Desa Gadingrejo Kec. Umbulsari,108,949
+WISMA TANI,Dusun Krajan selatan RT 004 RW 006 Desa Gadingrejo Kec. Umbulsari,108,950
+DARMA BHAKTI,Dusun Gununglincing RT 002 RW 004 Desa Gunungsari kec. Umbulsari,103,951
+KARYA BHAKTI,Dsn.Banjarrejo Rt 002 Rw 007 desa gunungsari kec. umbulsari,103,952
+SEJAHTERA I,Dusun Banjarsari RT 002 RW 012 Desa Gunungsari Kec. Umbulsari,103,953
+SEJAHTERA II,Dusun Banjarsari RT 002 RW 012 Desa Gunungsari Kec. Umbulsari,103,954
+SEJAHTERA III,Dusun Banjarsari RT 003 RW 012 Desa Gunungsari Kec. Umbulsari,103,955
+SETIA JAYA,Dusun Banjarejo RT 005 RW 007 Desa Gunungsari Kec. Umbulsari,103,956
+SETIA JAYA I,Dusun Gunglincing RT 001 RW 005 Desa Gunungsari Kec. Umbulsari,103,957
+TANI MAKMUR,Dusun Banjarejo RT 004 RW 004 Desa Gunungsari Kec. Umbulsari,103,958
+RUKUN MAKMUR I,DESA MUNDUREJO,111,959
+RUKUN MAKMUR II,DESA MUNDUREJO,111,960
+RUKUN MAKMUR III,DESA MUNDUREJO,111,961
+RUKUN MAKMUR IV,DESA MUNDUREJO,111,962
+RUKUN MAKMUR V,DESA MUNDUREJO,111,963
+RUKUN MAKMUR VI,DESA MUNDUREJO,111,964
+RUKUN MAKMUR VII,DESA MUNDUREJO,111,965
+RUKUN MAKMUR VIII,DESA MUNDUREJO,111,966
+BINA TANI,DUSUN TEGAL BARU RT 002 RW 025 DESA PALERAN KECAMATAN UMBULSARI,106,967
+KARYA TANI,KARANGREJO RT 003/020 DESA PALERAN KECAMATAN UMBULSARI KABUPATEN JEMBER,106,968
+KARYA UTAMA,DUSUN KARANGREJO RT 001 RW 021 PALERAN,106,969
+RAHARJO I,DUSUN KRAJAN WETAN RT 001 RW 004 PALERAN KEC. UMBULSARI,106,970
+RAHARJO III,DUSUN KRAJAN WETAN RT 003 RW 002 PALERAN KEC. UMBULSARI,106,971
+RAHARJO IV,DUSUN KRAJAN WETAN RT 003 RW 006 PALERAN KEC. UMBULSARI,106,972
+SERBA USAHA 2,DUSUN TEGAL BARU RT 001 RW 022 PALERAN KEC. UMBULSARI,106,973
+SERBA USAHA I,DUSUN TEGAL BARU RT 003 RW 025 PALERAN KEC. UMBULSARI,106,974
+SERBA USAHA III,DUSUN TEGAL BARU RT 001 RW 024 PALERAN KEC. UMBULSARI,106,975
+SUGIH WARAS,DUSUN KRAJAN KULON RT 003 RW 008 PALERAN,106,976
+SUMBER REJEKI I,DUSUN KARANGREJO RT 003 RW 019 PALERAN,106,977
+SUMBER REJEKI II,DUSUN KRAJAN KULON RT 002 RW 012 PALERAN,106,978
+SUMBER REJEKI III,DUSUN KRAJAN KULON RT 003 RW 009 PALERAN,106,979
+SUMBER REJEKI IV,DUSUN KRAJAN KULON RT 002 RW 016 PALERAN KEC. UMBULSARI,106,980
+SUMBER URIP,"DUSUN KRAJAN WETAN RT 002 RW 004 PALERAN KEC, UMBULSARI",106,981
+TANI MAKMUR,DUSUN KRAJAN KULON RT 002 RW 010 DESA PALERAN KECAMATAN UMBULSARI,106,982
+SIDOMULYO I,SIDOREJO,109,983
+SIDOMULYO II,SIDOREJO,109,984
+SIDOMULYO III,SIDOREJO,109,985
+SIDOMULYO IV,SIDOREJO,109,986
+SIDOMULYO V,SIDOREJO,109,987
+SIDOMULYO VI,SIDOREJO,109,988
+LESTARI I,SUKORENO,102,989
+LESTARI II,SUKORENO,102,990
+LESTARI III,SUKORENO,102,991
+LOH JINAWI I,DESA SUKORENO,102,992
+LOH JINAWI II,SUKORENO,102,993
+LOH JINAWI III,SUKORENO,102,994
+SUMBER MAKMUR I,DESA SUKORENO KEC UMBULSARI,102,995
+SUMBER MAKMUR II,DESA SUKORENO KEC UMBULSARI,102,996
+SIDOMUKTI,tanjungsari umbulsari,105,997
+SRI REJEKI,TANJUNGSARI KECAMATAN UMBULSARI,105,998
+SRI TANJUNG I,dUSUN PURWOSARI DESA TANJUNGSARI UMBULSARI,105,999
+SRI TANJUNG II,DUSUN PURWOSARI DESA TANJUNGSARI KECAMATAN UMBULSARI KBUPATEN JEMBER,105,1000
+SUMBER BUMI,DUSUN KEBONSARI DESA TANJUNGSARI KECAMATAN UMBULSARI KBUPATEN JEMBER,105,1001
+SUMBER MULYO,DUSUN PURWOSARI DESA TANJUNGSARI KECAMATAN UMBULSARI KBUPATEN JEMBER,105,1002
+TANI MAKMUR,DUSUN KEBONSARI DESA TANJUNGSARI KECAMATAN UMBULSARI KBUPATEN JEMBER,105,1003
+DEWI SRI,DUSUN KRANGKONGAN DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1004
+EKA JAYA,DUSUN JATILAWANG DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1005
+LESTARI,DUSUN KRANGKONGAN DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1006
+NGUDI MAKMUR,DUSUN KRANGKONGAN DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1007
+RAHAYU,DUSUN JATISONGO DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1008
+SRI GADING,DUSUN jATISONGO DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1009
+SRI TIRTO ASRI,DUSUN Jatisongo RT 02 RW 02 DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1010
+TANI RUKUN,DUSUN JATILAWANG DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1011
+TANI SUBUR,DUSUN JATILAWANG DESA TEGALWANGI KEC.UMBULSARI KAB.JEMBER,110,1012
+ARJUNA,Dsn.Krajan RT 08 RW 04,107,1013
+MUKTISARI,Dsn.Krajan RT 014 RW 07,107,1014
+SAHABAT TANI,Dsn.Krajan RT 01 RW 01,107,1015
+SUMBER URIP,Dusun Sidomulyo RT 001 RW 008 Umbulrejo,107,1016
+HARAPAN JAYA,UMBULSARI,104,1017
+LESTARI,UMBULSARI,104,1018
+RUKUN TANI,UMBULSARI,104,1019
+SUMBER MAKMUR,UMBULSARI,104,1020
+SUMBER REJEKI,DUSUN WONOROTO DESA UMBULSARI,104,1021
+TANI JAYA,UMBULSARI,104,1022
+BUDI LUHUR,Dusun Tempuran Desa Cakru Kec. Kencong Kab. Jember,2,1023
+KARYA BAKTI,Dusun Gondangrejo Desa Cakru Kec. Kencong Kab. Jember,2,1024
+KWT Budi Asih,RT 002 RW 002 Dusun Tempuran Desa Cakru Kec. Kencong Kab. Jember,2,1025
+MADU KISMO,Dusun Tempuran Desa Cakru Kec. Kencong Kab. Jember,2,1026
+MARGO UTOMO,Dusun Gondangrejo Desa Cakru Kec. Kencong Kab. Jember,2,1027
+SARI ASIH,Dusun Igir-Igir Desa Cakru Kec. Kencong Kab. Jember,2,1028
+SUMBER MAKMUR CAKRU,Dusun Krajan Desa Cakru Kec. Kencong Kab. Jember,2,1029
+TANI MAKMUR,Dusun Krajan Desa Cakru Kec. Kencong Kab. Jember,2,1030
+TANI SUBUR,Dusun Igir-Igir Desa Cakru Kec. Kencong kab. Jember,2,1031
+DEWI MURNI,DUSUN GUMUKBANJI DESA KENCONG KECAMATAN KENCONG KABUPATEN JEMBER,5,1032
+RUKUN JAYA,"DESA KENCONG, KECAMATAN KENCONG, KABUPATEN JEMBER",5,1033
+SIDODADI,"DUSUN PONDOKWALUH, DESA KENCONG, KECAMATAN KENCONG, KABUPATEN JEMBER",5,1034
+SUMBER HIDUP,"DESA KENCONG, KECAMATN KENCONG",5,1035
+SUMBER MAKMUR,"DESA KENCONG, KECAMATAN KENCONG",5,1036
+SUMBER REJEKI,"DESA KENCONG, KECAMATAN KENCONG, KABUPATEN JEMBER",5,1037
+TANI MAJU,"DUSUN PONJEN, DESA KENCONG, KECAMATAN KENCONG, KABUPATEN JEMBER",5,1038
+HARAPAN,DUSUN SIDONGANTI DESA KRATON,3,1039
+HARAPAN JAYA,DUSUN MUNENG DESA KARTON KEC. KENCONG KAB. JEMBER,3,1040
+KARYA MAKMUR,DUSUN SIDONGANTI DESA KRATON KEC. KENCONG KAB JEMBER,3,1041
+KWT SEKAR KEDATON,DESA KRATON KEC. KENCONG KAB. JEMBER JAWA TIMUR,3,1042
+LESTARI,DUSUN SIDONGANTI DESA KRATON KEC KENCONG KAB JEMBER,3,1043
+RUKUN TANI,DUSUN KEDNGLANGKAP DESA KRATON KEC KENCONG KAB. JEMBER,3,1044
+TANI SUBUR,DUSUN KRAJAN DESA KRATON KEC. KENCONG KAB JEMBER,3,1045
+HARAPAN JAYA,Dusun Bulurejo Desa Paseban Kec. Kencong Kab. Jember,1,1046
+KARYA MAKMUR,Dusun Paseban Desa Paseban Kec. Kencong Kab. Jember,1,1047
+KWT Margi Utami,Dusub Sidomulyo Desa Paseban Kec. Kencong Kab. Jember,1,1048
+MARGO UTOMO,Dusun Sidomulyo desa Paseban Kec. Kencong Kab. Jember,1,1049
+PASIR MAS,Dusun Paseban Desa Paseban Kec. Kencong kab. Jember,1,1050
+SARI ALAM,Dusun Balekambang Desa Paseban Kec. Kencong Kab. Jember,1,1051
+SEDERHANA,Dusun Sidomulyo Desa Paseban Kec. Kencong Kab. Jember,1,1052
+SIDODADI,Dusun Bulurejo Desa Paseban Kec. Kencong Kab. Jember,1,1053
+SRI LESTARI,Dusun Balekambang Desa Paseban Kec. Kencong Kab. Jember,1,1054
+DEWI SRI,DESA WONOREJO KEC. KENCONG,4,1055
+GEMAH RIPAH,DESA WONOREJO KEC. JOMBANG,4,1056
+HARAPAN TANI,DUSUN SIDORENO DESA WONOREJO KENCONG,4,1057
+KAYU MANIS,DESA WONOREJO KEC. JOMBANG,4,1058
+KWT SRIKANDI MANDIRI,DUSUN KRAJAN A RT 003 RW 005 WONOREJO KENCONG,4,1059
+MARDI TANI,DUSUN GUMUKBANJI DESA WONOREJO KECAMATAN KENCONG KAB. JEMBER,4,1060
+Ngudi Kaweruh,DUSUN KRAJAN B DESA WONOREJO KEC. KENCONG KAB. JEMBER,4,1061
+NGUDI MAKMUR,DUSUN KRAJAN B DESA WONOREJO KEC. KENCONG KAB. JEMBER,4,1062
+NGUDI MULYO,DUSUN GUMUKBANJI DESA WONOREJO KEC. KENCONG,4,1063
+NGUDI REJEKI,DESA WONOREJO KEC. KENCONG,4,1064
+RUKUN TANI,DUSUN PONJEN DESA WONOREJO KEC KENCONG KAB JEMBER,4,1065
+RUKUN TANI 2,DUSUN PONJEN DESA WONOREJO,4,1066
+SEGER WARAS,DESA WONOREJO KEC. KENCONG,4,1067
+SETIYO LUHUR,DUSUN SIDORNO DESA WONOREJO KEC. KENCONG KAB JEMBER,4,1068
+SIDO MAKMUR,DUSUN GUMUKBSNJI DESA WONOREJO KEC. KENCONG KAB. JEMBER,4,1069
+TANI MULYO,DUSUN PONJEN DESA WONOREJO KEC. KENCONG KAB JEMBER,4,1070
+TANI RAHAYU,DUSUN JATISARI DESA WONOREJO KEC. KENCONG KAB. JEMBER,4,1071
+TANI WIDODO,DUSUN JATISARI DESA WOMOREJO KEC. KENCONG KAB. JEMBER,4,1072
+TANI MULYO 1,DESA BAGOREJO KEC. GUMUKMAS,9,1073
+TANI MULYO 2,DESA BAGOREJO KEC. GUMUKMAS,9,1074
+TANI MULYO 3,DESA BAGOREJO KEC. GUMUKMAS,9,1075
+TANI MULYO 4,DESA BAGOREJO KEC. GUMUKMAS,9,1076
+TANI MULYO 5,DESA BAGOREJO KEC. GUMUKMAS,9,1077
+TANI MULYO 6,DESA BAGOREJO KEC. GUMUKMAS,9,1078
+DEWI SRI,dusun krebet Rt 002 Rw 015 desa gumukmas kec gumukmas kab jember,10,1079
+KARYA TANI,dusun jatiagung Rt 002 Rw 024 Desa gumukmas kec gumukmas kab jember,10,1080
+LANGGENG JAYA,Rt 002 Rw 022 dusun jatiagung desa gumukmas kec gumukmas,10,1081
+PULOREJO,Dusun jatiagung Rt 002 Rw 025 desa gumukmas kec gumukmas.,10,1082
+RAHARJO,dusun jatiagung Rt 001 Rw 029 desa Gumukmas Kec Gumukmas,10,1083
+RAHAYU,Dusun gumukmas Rt 002 Rw 005 desa gumukmas,10,1084
+RUKUN TANI,Dusun krebet Rt 001 Rw 013 desa gumukmas,10,1085
+SAHABAT TANI,dusun kebonan Rt 002 Rw 006 desa gumukmas.,10,1086
+SERBA USAHA,dusun krebet Rw 002 Rt 016 desa gumukmas,10,1087
+SIDO MAKMUR,dusun jatiagung Rt 004 Rw 022 desa gumukmas kec gumukmas kab jember,10,1088
+SUBUR MAKMUR,Dusun jatiagung Rt 003 Rw 024,10,1089
+SUMBER REJEKI,Dusun jatiagung Rt 001 Rw 022 desa gumukmas kec gumukmas,10,1090
+TANI MAKMUR,DUSUN JATIAGUNG DESA GUMUKMAS KEC. GMUKMAS,10,1091
+BAROKAH,DUSUN KARANGANYAR DESA KARANGREJO KEC. GUMUKMAS,236,1092
+SIDODADI,DESA KARANGREJO KEC. GUMUKMAS,236,1093
+TANI MEKAR,DESA KARANGREJO KEC. GUMUKMAS,236,1094
+TANI MULYO VI,DESA KARANGREJO KECAMATAN GUMUKMAS,236,1095
+TANI MULYO VII,DESA KARANGREJO KECAMATAN GUMUKMAS,236,1096
+Krajan Makmur I,Dusun Krajan Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1097
+Krajan Makmur II,Dusun Krajan Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1098
+KRAJAN MAKMUR III,Dusun Krajan Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1099
+NILA,Dusun Panggul Mlati Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1100
+RAWIT JAYA,Dusun Panggul Mlati Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1101
+TERATAI I,Dusun Jeni RW.008 Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1102
+TERATAI II,Dusun Jeni RW.010 Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1103
+WISMA TANI,Dusun Panggul Mlati Desa Kepanjen Kec. Gumukmas Kab. Jember,6,1104
+KALIMALANG I,dsn. Kalimalang desa Mayangan kec. Gumukmas,7,1105
+KALIMALANG II,dsn.Kali malang desa Mayangan kec. Gumukmas Kab. Jember,7,1106
+KALIMALANG III,dsn Kalimalang desa Mayangan Kec. Gumukmas Kab. Jember,7,1107
+Muneng Makmur I,dsn Muneng desa Mayangan Kec. Gumukmas Kab. Jember,7,1108
+Muneng Makmur II,dsn. Muneng Desa Mayangan Kec. Gumukmas Kab. Jember,7,1109
+Muneng Makmur III,dsn Muneng Desa Mayangan Kec. Gumukmas Kab Jember,7,1110
+SUMBER TANI I,dsn Sumbersari desa Mayangan Kec. Gumukmas Kab. Jember,7,1111
+SUMBER TANI II,dsn Sumbersari desa Mayangan Kec. Gumukmas Kab. Jember,7,1112
+LANGGENG I,"dusun pulorejo,Rt 001 Rw 023 desa menampu kecamatan gumukmas",8,1113
+LANGGENG II,Dusun Kedunglengkong Rt 001 Rw 001 Desa Menampu kec Gumukmas,8,1114
+SUMBER BONDO I,Dusun Krajan Rt 002 Rw 008 Desa Menampu kec Gumukmas,8,1115
+SUMBER BONDO II,Kedung Lengkong Rt 002 Rw 013 Desa Menampu Kec Gumukmas,8,1116
+TANI RUKUN I,Dusun kapitan Rt 001 Rw 020 Desa Menampu kec Gumukmas,8,1117
+TANI RUKUN II,Dusun Kapitan Rt 002 Rw 015 Desa Menampu kec Gumukmas,8,1118
+NGUDI MULYO,DESA PURWOASRI KEC. GUMUKMAS,11,1119
+SIDO AYEM,DESA PURWOASRI KEC. GUMUKMAS,11,1120
+SIDODADI,DESA PURWOASRI KEC. GUMUKMAS,11,1121
+TANI JAYA,DESA PURWOASRI KEC. GUMUKMAS,11,1122
+TANI MAJU,DESA PURWOASRI KEC. GUMUKMAS,11,1123
+TANI MAKMUR,DESA PURWOASRI KEC. GUMUKMAS,11,1124
+TANI MULYO I,DESA PURWOASRI KEC. GUMUKMAS,11,1125
+TANI MULYO II,DESA PURWOASRI KEC. GUMUKMAS,11,1126
+NGUDI MAKMUR I,DESA TEMBOKREJO KEC. GUMUKMAS,12,1127
+NGUDI MAKMUR II,DESA TEMBOKREJO KEC. GUMUKMAS,12,1128
+NGUDI MAKMUR III,DESA TEMBOKREJO KECAMATAN GUMUKMAS,12,1129
+NGUDI MAKMUR IV,DESA TEMBOKREJO KEC. GUMUKMAS,12,1130
+NGUDI MAKMUR V,DESA TEMBOKREJO KEC. GUMUKMAS,12,1131
+NGUDI MAKMUR VI,DESA TEMBOKREJO KEC. GUMUKMAS,12,1132
+NGUDI MAKMUR VII,DESA TEMBOKREJO KEC. GUMUKMAS,12,1133
+NGUDI MAKMUR VIII,DESA TEMBOKREJO KEC. GUMUKMAS,12,1134
+Tani Makmur Dua,Dusun suling,24,1135
+Tani Makmur Empat,Dusun Kedung sumur,24,1136
+Tani Makmur III,Dusun Krajan,24,1137
+Tani Makmur Lima,Dusun Suling,24,1138
+Tani Makmur Satu,Dusun Krajan,24,1139
+SUMBER REJEKI I,,18,1140
+SUMBER REJEKI II,,18,1141
+SUMBER REJEKI III,,18,1142
+SUMBER REJEKI IV,,18,1143
+SUMBER REJEKI IX,,18,1144
+SUMBER REJEKI V,DUSUN KUMITIR RT:003 RW:007 DESA GRENDEN KECAMATAN PUGER,18,1145
+SUMBER REJEKI VI,,18,1146
+SUMBER REJEKI VII,,18,1147
+SUMBER REJEKI VIII,,18,1148
+Setia Budi 01,Jambearum,23,1149
+Setia Budi 02,"Darungan, Jambearum",23,1150
+Setia Budi 04,"Kedungsumur, Jambearum",23,1151
+Setia Budi 05,"Krajan, Jambearum",23,1152
+Setia Budi 06,"Krajan, Jambearum",23,1153
+SETIA BUDI 7,DUSUN KEDUNGSUMUR DESA JAMBEARUM PUGER,23,1154
+Setia Budi Tiga,Jambearum,23,1155
+Tani Makmur VI,Krajan,20,1156
+Tani Makmur VII,Gadungan,20,1157
+Tani Makmur VIII,Gadungan,20,1158
+Tani Makmur 12,Krajan II,21,1159
+Tani Makmur 13,Krajan II,21,1160
+Tani Makmur 14,Krajan I,21,1161
+Tani Makmur 15,Krajan I,21,1162
+Tani Makmur 16,Krajan I,21,1163
+Tani Makmur 01,Krajan Barat,19,1164
+Tani Makmur 02,Sembungan,19,1165
+Tani Makmur 03,Krajan Barat,19,1166
+Tani Makmur 04,Krajan Barat,19,1167
+Tani Makmur V,Krajan Timur,19,1168
+Tani Makmur VI,Krajan Timur,19,1169
+Tani Makmur VII & VIII,Sembungan,19,1170
+Margo Mulyo I,Krajan,14,1171
+Margo Mulyo III,Krajan,14,1172
+Margo Mulyo IV,Kalimalang,14,1173
+Wargo Mulyo II,Krajan,14,1174
+Wargo Mulyo Lima,Kalimalang,14,1175
+Wargo Mulyo VI,Kalimalang,14,1176
+SUBUR JAYA 04,DUSUN KRAJAN,15,1177
+SUBUR JAYA I,DUSUN KRAJAN,15,1178
+SUBUR JAYA III,DUSUN JADUKAN,15,1179
+SUBUR JAYA VI,DUSUN JADUKAN,15,1180
+SEKAR TANI I,,16,1181
+SEKAR TANI II,,16,1182
+SEKAR TANI III,,16,1183
+agung rahayu 02,Krajan,17,1184
+agung rahayu 03,Krajan,17,1185
+agung rahayu IV,Krajan,17,1186
+agung rahayu Satu,Krajan,17,1187
+Bumi Asri,Krajan,22,1188
+Bumi Ayu,Dusun Krajan Rt.001 Rw.005 Desa Wonosari,22,1189
+Bumi Luhur,Lengkong,22,1190
+Setia Budi Dua Belas,Penitik,22,1191
+Setia Budi Sebelas,Dusun Penitik Rt.001 Rw.015 Desa Wonosari,22,1192
+Setia Budi Tiga Belas,Penitik,22,1193
+Sebelas Maret 03,Jln Banyu Urip,25,1194
+Sebelas Maret II,Jln A Yani,25,1195
+Sebelas Maret IV,Jln Gajah Mada,25,1196
+Sebelas Maret Satu,Jln A Yani,25,1197
+Subur Dua,Jln AB Sentot,25,1198
+Subur Satu,Jln Untung Suropati,25,1199
+Tani Rahayu I,Jln Hasanudin,25,1200
+Tani Rahayu II,Jln Tembakaan,25,1201
+Ampel Denta,,27,1202
+Bina Mitra,DSN KEPEL DESA AMPEL,27,1203
+Budidaya Tani,,27,1204
+Daun Mas,,27,1205
+Mekar Sari Dua,,27,1206
+Mulya Tani,,27,1207
+Ngudi Makmur Dua,,27,1208
+Ngudi Makmur Satu,DUSUN POMO DESA AMPEL,27,1209
+Podo Tentrem,,27,1210
+Podo Rukun,,27,1211
+Sido Rukun Dua,DUSUN KRAJAN,27,1212
+Sido Rukun Satu,,27,1213
+Sumber Rejeki Tiga,,27,1214
+Tani Jaya,,27,1215
+Aneka Maju,Dusun Gawok Desa Dukuh Dempok,30,1216
+Aneka Tani,Gawok-Dukuhdempok,30,1217
+Ikatan Petani Cabe/ IPC Gajah Mada,Desa Lojejer Kec. Wuluhan,30,1218
+Lumbung Tani,Dukuh,30,1219
+Margi Rahayu,Purwojati,30,1220
+Rukun Tani,Wuluhan-Dukuhdempok,30,1221
+Sinar Tani,Dusun Gawok Desa Dukuh Dempok,30,1222
+Sumber Makmur,Purwojati-Dukuhdempok,30,1223
+Tani Makmur,Dukuhdempok,30,1224
+Lebah Madu,Krajan-Glundengan,32,1225
+Padi Indah Dua,SUMBERJO GLUNDENGAN,32,1226
+Padi Indah Satu,DUSUN SUMBERJO DESA GLUNDENGAN,32,1227
+Rukun Tani,Tanjungsari-Glundengan,32,1228
+Sumber Rejeki,Krajan-Glundengan,32,1229
+Tanjung Harapan,Tanjungsari-Glundengan,32,1230
+Tanjung Jaya,TANJUNGSARI DESA GLUNDENGAN,32,1231
+Tebu Indah,Sumberjo-Glundengan,32,1232
+Budi Santoso,Dsn Krajan,29,1233
+Harapan Jaya,Dsn. Demangan,29,1234
+Margi Rahayu,Dsn. Krajan,29,1235
+Ngudi kaweruh,Dsn. Tegalbanteng,29,1236
+Rukun Tani,Dsn. Krajan,29,1237
+Rukun Wargo,Dsn. Demangan,29,1238
+Sido Makmur,Dsn. Tegalbanteng,29,1239
+Tani Makmur,Dsn. Tegalbanteng,29,1240
+KARYA TANI I,DUSUN KEPEL DESA LOJEJER,26,1241
+KARYA TANI II,DUSUN KEPEL DESA LOJEJER,26,1242
+maju makmur,,26,1243
+margi rahayu i,,26,1244
+margi rahayu ii,,26,1245
+sumber rejeki i,,26,1246
+sumber rejeki ii,DSN SULAKDORO DESA LOJEJER,26,1247
+SIDO HASIL I,Dusun Kebonsari Desa Tamansari Wuluhan Jember,31,1248
+SIDO HASIL II,DUSUN KEBONSARI DESA TAMANSARI KECAMATAN WULUHAN,31,1249
+SUMBER HASIL I,DUSUN GONDOSARI DESA TAMANSARI KECAMATAN WULUHAN,31,1250
+SUMBER HASIL II,DUSUN TAMANREJO DESA TAMANSARI KECAMATAN WULUHAN,31,1251
+SUMBER HASIL V,DUSUN KRAJAN DESA TAMANSARI KECAMATAN WULUHAN,31,1252
+TIRTO ASIH I,DUSUN KRAJAN DESA TAMANSARI KECAMATAN WULUHAN,31,1253
+TIRTO ASIH II,DUSUN KRAJAN DESA TAMANSARI KECAMATAN WULUHAN,31,1254
+TIRTO ASIH III,DUSUN GONDOSARI DESA TAMANSARI KECAMATAN WULUHAN,31,1255
+Maju Trisno Dua,Dsn.grobyok,28,1256
+Maju Trisno Satu,Dsn.grobyok,28,1257
+Margi Tani Dua,Dsn.krajan kulon,28,1258
+Margi Tani Satu,Dsn.krajan kulon,28,1259
+Margi Waluyo,Dsn.karangsono,28,1260
+Rukun Makmur Dua,Dsn.krajan wetan,28,1261
+Rukun Makmur Satu,Dsn.krajan wetan,28,1262
+Sumber Barokah,Dsn.karangsono,28,1263
+Langon Jaya,"Dusun langon,desa Ambulu",36,1264
+Muncul Makmur,"Dusun Lagon, desa Ambulu",36,1265
+Sumber Mulyo,"Dusun Sumberan, desa Ambulu",36,1266
+Tani Mulyo,"Dusun Sumberan,desa Ambulu",36,1267
+Tri Karya Bakti,"Dusu Krajan, desa Ambulu",36,1268
+Karya Bakti,"Karangtemplek, Andongsari",34,1269
+Karya Mulya,Tirtoasri Andongsari,34,1270
+Karya Tani,"Tirtoasri, Andongsari",34,1271
+Karya Utama,"Karangtemplek, Andongsari",34,1272
+Margi Utomo,"Karangtemplek, Andongsari",34,1273
+Margo Makmur I,Andongsari Krajan,34,1274
+Margo Makmur II,Andongsari Krajan,34,1275
+Margo Rahayu I,"Karangtemplek, Andongsari",34,1276
+Margo Rahayu II,"Watukebo, Andongsari",34,1277
+Margo Rahayu III,"Watukebo, Andongsari",34,1278
+JAYA MULYA,,38,1279
+MARGO MULYO,,38,1280
+NGUDI KARYO,,38,1281
+SUMBER HARAPAN,,38,1282
+SUMBER HASIL,,38,1283
+SUMBER MAKMUR,,38,1284
+SUMBER REJEKI,,38,1285
+BUDI MARGO MULYO DUA,Dusun Krajan PONTANG,37,1286
+BUDI MARGO MULYO SATU,"Dusun Krajan, desa Pontang",37,1287
+BUDI MULYO,DUSUN TENGAH PONTANG,37,1288
+Karya Tani,"Dusun Krajan, desa Pontang",37,1289
+Lestari,Dusun Pontang Tengah,37,1290
+LESTARI SATU,KRAJAN PONTANG,37,1291
+Margo Asri,DUSUN UTARA PONTANG,37,1292
+MARGO RAHAYU,PONTANG,37,1293
+Ngudi Rahayu,KRAJAN Pontang,37,1294
+BUDI MAKMUR,"Dusun Krajan, Sabrang",36,1295
+BUDI UTOMO,Dusun Kebonsari Sabrang,36,1296
+DEWI SARTIKA,"Dusun Krajan, Sabrang",36,1297
+KARYA TANI,"Dusun Krajan, Sabrang",36,1298
+KARYA UTAMA,,36,1299
+KEMBANG SORE,"Dusun Tegalrejo, Sabrang",36,1300
+MEKAR SARI,"Dusun Jatirejo, Sabrang",36,1301
+NGUDI BAROKAH,"Dusun Tegalrejo, Sabrang",36,1302
+NGUDI KAWERUH,"Dusun Tegalrejo, Sabrang",36,1303
+SIDO MAKMUR,"Dusun Kebonsari, Sabrang",36,1304
+HARAPAN JAYA,Bregoh Sumberejo,33,1305
+HARAPAN MAJU,Krajan Lor Sumberejo,33,1306
+KARYA MUDA,Curahrejo Sumberejo,33,1307
+KARYA TANI MAJU,Bregoh Sumberejo,33,1308
+KARYA TANI MAKMUR,Bregoh Sumberejo,33,1309
+KARYA UTAMA,Curahrejo Sumberejo,33,1310
+MARGI RAHAYU,Krajan Kidul Sumberejo,33,1311
+MEKAR SARI,Bregoh Sumberejo,33,1312
+SIDO MAKMUR,Dusun Sidomulyo Desa Sumberejo Kec. Ambulu,33,1313
+SIDO MEKAR,Dusun Watu Ulo Desa Sumberejo,33,1314
+SRI REJEKI,Bregoh Sumberejo,33,1315
+SUKA MAJU TERUS,Dusun Krajan Lor Sumberejo,33,1316
+TANI MAKMUR,Krajan Lor Sumberejo,33,1317
+Harapan Makmur,"Dusun Tutul, desa Tegalsari",39,1318
+Rukun Tani,"Dusun tegalsari, desa tegalsari",39,1319
+Setia Bakti,"Dusun Bedengan, desa Tegalsari",39,1320
+Sumber Makmur,"Dusun Tutul,desa Tegalsari",39,1321
+Karya Bakti,Krajan,40,1322
+Karya Makmur,Krajan,40,1323
+Lestari,Krajan,40,1324
+MEKAR SARI,Krajan,40,1325
+sumber rejeki,Krajan,40,1326
+TANI MAKMUR,Krajan,40,1327
+Bina Usaha,Krajan,41,1328
+Gemah Ripah,Krajan,41,1329
+HARAPAN MAJU,Krajan,41,1330
+Sejahtera,Krajan,41,1331
+Tani Subur,Krajan,41,1332
+Barokah,Punco curah takir,46,1333
+karya maju,Curahrejo curahtakir,46,1334
+MARGI RAHAYU,Dsn.krajan 2 ds.curahtakir,46,1335
+punco jaya,Punco curah takir,46,1336
+SUMBER TANI,Curahrejo curahtakir,46,1337
+TANI MAKMUR,Krajan 2 CURAHTAKIR,46,1338
+tunas jaya,Krajan 1 curahtakir,46,1339
+JOHAR MULYA,Dusun Sumberejo Desa Pondokrejo Kecamatan Tempurejo,45,1340
+Karya Utama,Dusun Sumberejo Desa Pondokrejo Kecamatan Tempurejo,45,1341
+Rembang Jaya,Dusun Kombongan Desa Pondokrejo Kecamatan Tempurejo,45,1342
+SANTOSO,Dusun Sumberejo Desa Pondokrejo Kecamatan Tempurejo,45,1343
+Sido bangun I,Dusun Pondokmiri Desa Pondokrejo Kecamatan Tempurejo,45,1344
+Sido Bangun II,Dusun Pondokmiri Desa Pondokrejo Kecamatan Tempurejo,45,1345
+SUMBER URIP,Dusun Sumberejo Desa Pondokrejo Kecamatan Tempurejo,45,1346
+adil makmur,Dsn.krajan Ds.sanenrejo kec.Tempurejo,42,1347
+Dewi Sri,Dsn.mandilis,42,1348
+Karya Rimba,Dsn.Mandili RT/RW: 02/02 ds.Sanenrejo kec.tempurejo,42,1349
+Karya utama,Dsn.Krajan Ds.sanenrejo kec.tempurejo,42,1350
+Mardi Rahayu,Dsn.Mandilis,42,1351
+Mardi Rukun,Dsn.mandilis ds.sanenrejo,42,1352
+Pojok Rimba,Dsn.mandilis ds.sanenrejo kec.tempurejo,42,1353
+Sumber Aren,Dsn.blok aren ds.sanenrejo kec.tempurejo,42,1354
+KARYA TANI,DUSUN KRAJAN DESA SIDODADI KECAMATAN TEMPUREJO,44,1355
+MARGO UTOMO,DUSUN KRAJAN DESA SIDODADI KECAMATAN TEMPUREJO,44,1356
+MORO SENENG,DUSUN KRAJAN DESA SIDODADI KECAMATAN TEMPUREJO,44,1357
+NGUDI RAHAYU,DUSUN JATIREJO DESA SIDODADI KECAMATAN TEMPUREJO,44,1358
+NGUDI REJEKI,DUSUN JATIREJO DESA SIDODADI KECAMATAN TEMPUREJO,44,1359
+SAKERA,DUSUN JATIREJO DESA SIDODADI KECAMATAN TEMPUREJO,44,1360
+SUMBER URIP,DUSUN MANDIKU DESA SIDODADI KECAMATAN TEMPUREJO,44,1361
+TANI MAKMUR,DUSUN KRAJAN DESA SIDODADI KECAMATAN TEMPUREJO,44,1362
+TARUNA TANI SIDO RUKUN,DUSUN MANDIKU DESA SIDODADI KECAMATAN TEMPUREJO,44,1363
+budi utomo,,47,1364
+Karya Bhakti lll,,47,1365
+Karya Tani,karanganyar tempurejo,47,1366
+ngudi rejeki,TEMPUREJO,47,1367
+sumber rejeki,TEMPUREJO,47,1368
+TANI MAKMUR,,47,1369
+tujuh bintang,,47,1370
+tunas harapan,TEMPUREJO,47,1371
+usaha sejahtera,,47,1372
+COBA NANDUR,DUSUN KRATON WONOASRI TEMPUREJO,43,1373
+HANDAYANI,kraton wonoasri tempurejo,43,1374
+HIDUP RUKUN,Kraton Wonoasri Tempurejo,43,1375
+KARYA LELE,curah lele wonoasr tempurejo,43,1376
+MARGO TANI,Kraton Wonoasri Tempurejo,43,1377
+RUKUN SANTOSO,Curah Lele Wonoasri Tempurejo,43,1378
+RUKUN TRISNO,Dusun Kraton Wonoasri Tempurejo,43,1379
+SIDO MAKMUR,Dusun Kraton Desa Wonoasri Kecamatan Tempurejo,43,1380
+SIDO MUNCUL,kraton wonoasri,43,1381
+Mardi Tani,,55,1382
+Muda Raya,,55,1383
+Pasar alas,,55,1384
+Ranggi,,55,1385
+Rumpun Tani,,55,1386
+Lestari,,50,1387
+Rukun Tani,,50,1388
+Sinar Tani,,50,1389
+Subur Makmur,,50,1390
+SuluhTani,,50,1391
+Sumber Tani,,50,1392
+Usaha Jaya,,50,1393
+Usaha Tani,,50,1394
+Baru Muncul,,52,1395
+Darungan,,52,1396
+Joko Tole,,52,1397
+Karya Abadi,,52,1398
+Karya Tani,,52,1399
+Mandiri,,52,1400
+Suluh Tani,,52,1401
+Tani Makmur,,52,1402
+Baban Barat,,48,1403
+Baban Tengah,,48,1404
+Baban Timur,,48,1405
+Batu Ampar,,48,1406
+Batu Ampar Atas,,48,1407
+Bedengan,,48,1408
+Komirian,,48,1409
+Abadi,,49,1410
+Batu Lawang,,49,1411
+Karya Bakti,,49,1412
+Karya Baru,,49,1413
+Karya Muncul,,49,1414
+Mandiri,,49,1415
+Srikandi,,49,1416
+Suka Makmur,,49,1417
+Taman Risqi,,49,1418
+Taman Tirto,,49,1419
+Dam D,Dusun Plalangan Sempolan,53,1420
+Kuncup,dusun krajan sempolan,53,1421
+Mumbul Jaya,Dusun Krajan Sempolan,53,1422
+Nyamplongan,Dusun Plalangan Sempolan,53,1423
+Onjur,Dusun Onjur Sempolan,53,1424
+Plalangan,Dusun Plalangan Sempolan,53,1425
+Rumpun Tani,Dusun Onjur sempolan,53,1426
+Tani Utun,Dusun Krajan sempolan,53,1427
+Curah Manis,,56,1428
+Sidomulyo 05,,56,1429
+Sidomulyo I,Dusun Krajan,56,1430
+Karya Tani,,52,1431
+Krajan,,52,1432
+Liu Simpang 3,,52,1433
+Loh Jinawi,,52,1434
+Manggung Tani Jaya,,52,1435
+Nuzul,,52,1436
+Subur Makmur,,52,1437
+Cahaya Tani,"Dusun Krajan Atas, Desa Sumberjati, Kec. Silo, Kab. Jember,",54,1438
+Dewi Sri,,54,1439
+Sepuran Manggung,,54,1440
+Sepuran Tani,,54,1441
+Sumber Budi,,54,1442
+Sumber Hidup,,54,1443
+Sumber Mas,,54,1444
+Sumber Rejeki,,54,1445
+Tani Jaya,,54,1446
+Ambarukmo,Dusun Klayu RT 002 RW 013 Desa Mayang Kecamatan Mayang,62,1447
+Ampel Jaya,Jln.Sunan Ampel RT 001/ RW 022 Desa Mayang,62,1448
+Rukun Usaha,Dusun Tegalgusi RT 001/ RW 005 Desa Mayang,62,1449
+Sinar Tani,Dusun Tegalgusi RT 001/ RW 006 Desa Mayang,62,1450
+Sumber Gesang,Dusun Klayu RT 001/ RW 015 Desa Mayang,62,1451
+Tegal Makmur,Dusun Tegalgusi RT 001/ RW 001 Desa Mayang,62,1452
+Aweh Hasil,DUSUN LENGKONG BARAT DESA MRAWAN,63,1453
+Gumuk Jaya,Dusun Gumuk Suda Desa Mrawan,63,1454
+Karya Bakti,DUSUN LENGKONG TOKO DESA MRAWAN,63,1455
+Lestari,DUSUN ROWO DESA MAYANG,63,1456
+Mrawan Sari,DUSUN PRINGTALI DESA MRAWAN,63,1457
+Rowo Makmur,DUSUN ROWO DESA MRAWAN,63,1458
+Sari Bumi,DUSUN LENGKONG TOKO DESA MRAWAN,63,1459
+Tunas Tani,,63,1460
+Dewi Sri,,57,1461
+Rukun Makmur,,57,1462
+Sido Rukun,,57,1463
+Sri Rejeki,,57,1464
+Sumber Hasil,,57,1465
+Sumber Karya,,57,1466
+Tani Mulyo,,57,1467
+Tunas Harapan,,57,1468
+Hasil Bumi,DESA SIDOMUKTI,58,1469
+Makmur,DESA SIDOMUKTI,58,1470
+Podho Rukun,DESA SIDOMUKTI,58,1471
+Sami Tani,DESA SIDOMUKTI,58,1472
+Sejahtera,DESA SIDOMUKTI,58,1473
+Subur,DESA SIDOMUKTI,58,1474
+Tani Makmur,DESA SIDOMUKTI,58,1475
+Tani Mulyo,DESA SIDOMUKTI,58,1476
+Fajar Mulia,RT 003 RW 010 Dsn. Tegalan Sumber Kejayan,59,1477
+Fajar Tani,RT 003 RW 014 dsn Mrapen DS SUMBERKEJAYAN,59,1478
+REJEKI,RT 003 RW 004 TEGALAN SUMBER KEJAYAN MAYANG,59,1479
+Sari Murni,Dsn. Mrapen RT.001/ RW.013 SUMBER KEJAYAN,59,1480
+Sekar Tani,RT 002 RW 010 dsn Mrapen DS SUMBERKEJAYAN,59,1481
+Sido Maju,RT 002 RW 003 dsn Tegalan DS SUMBERKEJAYAN,59,1482
+Sumber Urip,RT 001 RW 009 dsn. Mrapen DS. SUMBER KEJAYAN,59,1483
+Tunas Jaya,RT 001 RW 004 dsn Tegalan DS.SUMBERKEJAYAN,59,1484
+Dewi Sri,DUSUN DAMSAOLA RT 005/RW 003 DESA TEGALREJO KECAMATAN MAYANG KABUPATEN JEMBER,60,1485
+Rumpun Tani,dusun KEBUN GUNUNG RT 005 RW 005 DESA TEGALREJOKECAMATAN MAYANG KABUPATEN JEMBER,60,1486
+Tani Makmur,Dusun Damsaola RT 003 RW 003 Desa Tegalrejo Kecamatan Mayang,60,1487
+Karya Utama,Dusun Plalangan RT 002 Rw 009 Desa Tegalwaru Kecamatan mayang Kabupaten Jember,61,1488
+Ngudi Makmur,dusun Klayu RT 001 RW 003 Desa Tegalwaru Kecamatan Mayang,61,1489
+Ombul Jaya,dusun Plalangan RT 001 Rw 008 Desa tegalwaru Kecamatan Mayang kabupaten Jember,61,1490
+Rejo Agung,DUSUN SUMBER PINANG RT 004 RW 004 DESA TEGALWARU KECAMATAN MAYANG KABUPATEN JEMBER,61,1491
+Sumber Makmur,dusun Plalangan RT 003 RW 007 Desa Tegalwaru Kecamatan Mayang,61,1492
+Tani Jaya,DUSUN KLAYU RT 002 RW 002 DESA TEGALWARU KEC. MAYANG KAB. JEMBER,61,1493
+Cahaya Intan,Dsn. Krajan Desa Karang Kedawung,70,1494
+Karya Tani,Dsn. Peji Talang Desa Karang Kedawung,70,1495
+Makin Tani,Dsn. Peji Talang Desa Karang Kedawung,70,1496
+Moch. Seruji,Dsn. Krajan Desa Karang Kedawung,70,1497
+Rukun Tani,Dsn. Ngangkang Desa Karang Kedawung,70,1498
+Sri Rahayu,Dsn. Peji Talang Desa Karang Kedawung,70,1499
+Sumber Urip,Dsn. Krajan Desa Karang Kedawung,70,1500
+Tani Makmur,Dsn. Ngangkang Desa Karang Kenawung,70,1501
+MAKMUR,DUSUN KAWANGREJO DESA KAWANGREJO KECAMATAN MUMBULSARI,64,1502
+RUKUN TANI,DUSUN DAWUHAN DESA KAWANGREJO KECAMATAN MUMBULSARI,64,1503
+SANDANG PANGAN,DUSUN KAJAREJO DESA KAWANGREJO KECAMATAN MUMBULSARI,64,1504
+Giat Tani,Dsn. Kemiri Songo Desa Lampeji,67,1505
+Mulyo,Dsn. Kemiri Songo Desa Lampeji,67,1506
+Rukun Tani,Dsn. Sumber Agung RT 004 RW 005 Lampeji,67,1507
+Sido Mulyo,dsn. curah laos desa Lampeji,67,1508
+Subur,RT 001/RW 015 Dsn. Kemiri Songo Desa Lampeji,67,1509
+Sumber Tani,RT 004/RW 010 Dsn. Curah Laos Desa Lampeji,67,1510
+Tani Subur,RT 003/RW 005 Dsn. Sumber Agung Desa Lampeji,67,1511
+Tulus Setya,RT 001/RW 003 Dsn Peji Ngangkang Desa Lampeji,67,1512
+BINA TANI,DUSUN KRAJAN DESA LENGKONG KECAMATAN MUMBULSARI,69,1513
+BUMI SUBUR,DUSUN JAMBESARI DESA LENGKONG KECAMATAN MUMBULSARI,69,1514
+HARAPAN,DUSUN BULANGAN DESA LENGKONG KECAMATAN MUMBULSARI,69,1515
+PEDULI WIRAJAYA,PERUM PEDULI WIRAJAYA DESA LENGKONG,69,1516
+TANI MAKMUR,DUSUN PEJI DESA LENGKONG KECAMATAN MUMBULSARI,69,1517
+Gemah Ripah,"Dsn Sumber Tengah Rt/Rw 003/0014 Desa Mumbulsari,Kec.Mumbulsari",68,1518
+Karya Tani,Dsn Angsanah Rt/Rw 001/019 Desa Mumbulsari Kec.Mumbulsari,68,1519
+Sekar Arum,Dsn Sumber Tengah Rt/Rw 001/011 Desa Mumbulsari Kec.Mumbulsari,68,1520
+Sekar Mayang,"Dusun Krajan Rt/Rw 03/02 Desa Mumbulsari,Kec.Mumbulsari",68,1521
+Sekar Tani,"Dsn Sumber Tengah Rt/Rw 001/013 Desa Mumbulsari,Kec.Mumbulsari",68,1522
+Sido makmur,"Dsn Sumber Tengah Rt/Rw 002/002 Desa Mumbulsari,Kec.Mumbulsari",68,1523
+Sumber Makmur,Dsn Sumber Tengah Mumbulsari,68,1524
+Tani Mulyo,"Dusun Krajan RT/Rw 03/03 Desa MUmbulsari,Kecamatan Mumbulsari,Kabupaten Jember",68,1525
+AMOR,Dsn. Mandigu RT 01 RW 05,66,1526
+DEWI SRI,Dsn. Krajan RT 04 RW 09,66,1527
+JANUR KUNING,Dsn. Karang Sirih RT 07 RW 01,66,1528
+NGODI REJEKI,Dsn. Krajan RT 02 RW 07,66,1529
+RUKUN TANI,Dsn. Karang Sirih RT 02 RW 06,66,1530
+SAKERA,Dsn. Mandigu RT 03 RW 05,66,1531
+SARI BUMI,Dsn. Mandigu RT 04 RW 15,66,1532
+SIDO RUKUN,DUSUN KARANG SIRIH RT 001 RW 006 SUCO,66,1533
+HASIL TANI,Dsn. Gudang RT 04 RW 03,31,1534
+NIKMAT TANI,Dsn. Curah Pinang RT 04 RW 01,31,1535
+SARI TANI,Dsn. Gudang RT 05 RW 03,31,1536
+SENANG TANI,Dsn. Curah Pinang RT 02 RW 08,31,1537
+SUKA RAJA,Dsn. Curah Pinang RT 02 RW 07,31,1538
+TAMAN TANI,Dsn. Gudang RT 01 RW 04,31,1539
+TEGAL REJO,Dsn. Perbalan RT 03 RW 06,31,1540
+USAHA TANI,Dsn. Krajan RT 03 RW 02,31,1541
+AMAN MAJU,Dusun Cangkring Baru RT 02 RW 019 Cangkring,75,1542
+Sari Tani I,Dusun Darungan 001/004 Cangkring,75,1543
+Sari Tani II,Dusun Krajan 001/003 Cangkring,75,1544
+Sumber Rejeki I,Dusun Curahrejo RT 02 RW 24 Cangkring,75,1545
+Sumber Rejeki II,Dusun Curahrejo RT 004 RW 026 Cangkring,75,1546
+Tani Makmur I,Dusun Cangkring Baru RT 02 RW 21 Cangkring,75,1547
+Tani Makmur II,Dusun Jatirejo RT 02 RW 12 Cangkring,75,1548
+RUKUN MULYO,Dsn. Bringinsari RT 03 RW 03,78,1549
+RUKUN SANTOSO,Dsn. Bringinsari RT 12 RW 03,78,1550
+TANI MULYO I,Dusun Bringinsari 003/003,78,1551
+TANI MULYO II,Dsn. Darussalam RT 18 RW 02,78,1552
+GOTONG ROYONG,Dusun Grujukan 003/002,73,1553
+HARAPAN JAYA,Dsn. Grujugan RT05 RW 03,73,1554
+MARGO BHAKTI,Dsn. Krajan RT 03 RW 03,73,1555
+SEJAHTERA,Dsn. Krajan RT 04 RW 01,73,1556
+TIRTO KENCONO,Dsn. Sukosari RT 05 RW 03,73,1557
+KARYA TANI,"Dsn.Gayasan A, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1558
+KARYA TANI II,"Dsn.Gayasan B, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1559
+KWT Mawar Putih,Dusun Curah Buntu Rt 003 Rw 009,77,1560
+MAWAR PUTIH,"Dsn. Curah Buntu, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1561
+SAMPURNA,"Dsn.Langsepan, Rt 004 Rw 003 Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1562
+TANI MAKMUR,"Dsn.Curah Buntu, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1563
+TANI MULYO,"Dsn.Babatan Talang, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1564
+TANI RUKUN,"Dsn.Curah Buntu, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1565
+TANI SUBUR,"Dsn.Jatirejo, Desa Jenggawah, Kec.Jenggawah, Kab.Jember",77,1566
+AL BAROKAH,DUSUN GUMUK RASE RT 001 RW 005 DESA KEMUNINGSARI KIDUL,71,1567
+GEMAH RIPAH,DUSUN KEBON SADENG RT 007 RW 002 KEMUNINGSARI KIDUL,71,1568
+KARYA BAKTI,DUSUN GUMUK RASE RT 003 RW 003 KEMUNINGSARI KIDUL,71,1569
+MARGO MULYO,DUSUN GUMUK RASE RT 005 RW 005 KEMUNINGSARI KIDUL,71,1570
+RUKUN TANI,TEGAL KALONG RT 005 RW 007 KEMUNINGSARI KIDUL,71,1571
+TEGAL MAS,DUSUN TEGAL GAYAM RT 012 RW 001 KEMUNINGSARI KIDUL,71,1572
+TEGAL REJO,Dusun Tegal Kalong RT 023 RW 003 Kemuningsari Kidul,71,1573
+KERTO JOYO,DUSUN GUMUK JATI RT 001 RW 014 KERTONEGORO,72,1574
+KERTO MAKMUR,DUSUN KERTONEGORO SELATAN RT 003 RW 008 KERTONEGORO,72,1575
+KERTO REJEKI,DUSUN KERTONEGORO TENGAH RT 003 RW 008 KERTONEGORO,72,1576
+KERTO SANTOSO,DUSUN GUMUK JATI RT 003 RW 013 KERTONEGORO,72,1577
+KERTO SEJAHTERA,DUSUN KERTONEGORO UTARA RT 001 RW 007 KERTONEGORO,72,1578
+TIRTO INDAH,DUSUN KRAJAN SELATAN RT 003 RW 006 KERTONEGORO,72,1579
+TIRTO MAKMUR,DUSUN KRAJAN UTARA RT 005 RW 001 KERTONEGORO,72,1580
+TIRTO SEJAHTERA,DUSUN KRAJAN TENGAH RT 001 RW 003 KERTONEGORO,72,1581
+Budi Luhur,Dsn. Krajan RT 04 RW 02,74,1582
+Cempaka,Dusun Leces Desa Rt 002 Rw 006 Sruni,74,1583
+Putri Buana,Dusun Karangkokap Desa Sruni,74,1584
+Sumber Lancar,Dusun karangkokap Rt 004 Rw 003 Desa Sruni,74,1585
+Sumber Sejati,Dusun Krajan Rt 002 Rw 002 Desa Sruni,74,1586
+Wargo Indah,Dusun Darungan Desa Sruni,74,1587
+BAROKAH,Dsn. Pondok Lalang RT 06 RW 07,76,1588
+HARAPAN,Dsn. Krajan RT 04 RW 02,76,1589
+MAKMUR,Dsn. Wetan Gunung RT 02 RW 02,76,1590
+MANDIRI,Dsn. Bringin Lawang RT 03 RW 06,76,1591
+Arjuna 1,Dsn Kidul Besuk Rt 002 Rw 001,83,1592
+Arjuna 2,Dusun Kidul Besuk Ajung,83,1593
+Harapan 1,Dsn. Sumuran Rt 004 Rw 024,83,1594
+Harapan 2,Dsn Kidul Besuk Rt 001 Rw 020,83,1595
+Maju 1,Dsn Ajung Kulon Rt 002 Rw 010,83,1596
+Maju 2,Dusun Klanceng 002/002 Ajung,83,1597
+Makmur I,Dsn Krajan Rt 003 Rw 004,83,1598
+Makmur II,Dsn Curah Kates Rt 001 Rw 025,83,1599
+sri rejeki 1,ajung wetan,83,1600
+Sri Rejeki 2,Dsn Ajung Wetan Rt 002 Rw 002,83,1601
+Barokah,Pondok Labu,81,1602
+Daun Mas,Gumuk Kembar,81,1603
+DAun Mawar,Dsn. Curah Kates Rt 004 Rw 010 Ds. Klompangan Kec. Ajung,81,1604
+Karya Bakti,Curah Kates,81,1605
+Melati Putih,Krajan,81,1606
+Padi Emas,Dsn. Pondok Labu Rt 001 Rw 002,81,1607
+Rukun Makmur,Dsn Durenan Rt 003 Rw 008,81,1608
+Sejahtera,Dsn. Sumuran,81,1609
+Gemah Ripah,Dsn. Patemon Rt 011 Rw 005 Ds Mangaran Kec. Ajung,79,1610
+Harapan Jaya,Dsn. Loncatan Rt 003 Rw 003 Ds. MAngaran Kec. Ajung,79,1611
+HARAPAN MAKMUR,Curah Tepas,79,1612
+Rukun Santoso,Krajan,79,1613
+Rukun Wargo,Curah Tepas,79,1614
+Sido Rukun,Dsn. Patemon Rt 001 Rw 003 Ds. Mangaran Kec. Ajung,79,1615
+Sumber Rejeki,dsn Loncatan Rt 004 Rw 019,79,1616
+Tani Makmur,Krajan,79,1617
+Gumuk Segawe,Gumuk Segawe,82,1618
+Makmur 1,Dsn. Kresek Rt 002 Rw 010 Desa Pancakarya,82,1619
+Makmur 2,dsn Kresek RT.002 RW.006 ds Pancakarya,82,1620
+Pelita,Dsn. Krasak Rt 006 Rw 003,82,1621
+Sido Rukun I,Dsn. Curah Welut Rt 003 Rw 016,82,1622
+SIDO RUKUN II,Dusun Curah Welut RT.003 RW.018 Desa Pancakarya,82,1623
+Sumber Rejeki,Curah Renteng,82,1624
+Sumber Urip,Dsn. Krasak Rt 004 Rw 005,82,1625
+Karya Jaya,langsepan,85,1626
+Sidomakmur,Dsn. Rowo Rt 005 Rw 004 Ds Rowo Indah Kec. Ajung,85,1627
+Subur,Jl. Wolter Monginsidi Rt 002 Rw 010 Ds Rowo Indah Kec. Ajung,85,1628
+Harapan Jaya,Mangaran,80,1629
+KWT Tirto Wangi,Dusun Langsatan Rt 005 Rw 001,80,1630
+Rukun Tani,Dsn Curah Kendal Rt 004 Rw 001,80,1631
+Sinar Tani I,dusun Plalangan RT 001 RW 002,80,1632
+Sinar Tani II,dusun Plalangan RT 003 RW 004,80,1633
+Tirto Bakti I,Dsn. Langsatan,80,1634
+Tirto Bakti II,Dsn. Langsatan Rt 004 Rw 001,80,1635
+Tirto Mulyo I,Curah rejo,80,1636
+Tirto Mulyo II,Curah Rejo,80,1637
+Gemah Ripah,Besuk Wirowongso,84,1638
+Karya Tani,Dsn Besuk RT 003 RW 012,84,1639
+Tirto Ayu,Dsn Renes RT 03 RW 03,84,1640
+GUMAWANG ASRI,DUSUN GUMAWANG,86,1641
+SUMBER ALAM,DUSUN GEERENG,86,1642
+SUMBER KARYA,DUSUN GUMAWANG,86,1643
+SUMBER REJEKI 1,DUSUN GUMUKSARI,86,1644
+DUKUH TANI,Jereng Barat gugut,93,1645
+JERENG JAYA,JERNG TIMUR GUGUT,93,1646
+PARIKESIT,Krajan gugut,93,1647
+Bedadung Jaya,Bedadung Wetan,91,1648
+Joyoboyo,Curah arum,91,1649
+Kurnia,Curah Banteng,91,1650
+Makmur,Tugu Sari,91,1651
+Ngudi Rezeki,Bedadung Kulon,91,1652
+Ramayana,Krajan,91,1653
+Sido Marem,Loji Lor,91,1654
+Soponyono,Gayam,91,1655
+Sri Rejeki,Loji Kidul,91,1656
+Suko Mulyo,Curah suko,91,1657
+MEKAR SARI,DUSUN GUMUKLIMO,87,1658
+NGUDI REJEKI,DUSUN GUMUKSARI,87,1659
+RUKUN TANI,DUSUN GUMUKSARI,87,1660
+SUKA MAJU,DUSUN GUMUKBAGO,87,1661
+SUMBER MAKMUR I,DUSUN GUMUKGEBANG,87,1662
+TANI MAKMUR,DUSUN KRAJAN,87,1663
+TANI MUKTI,DUSUN GUMUKGEBANG,87,1664
+TUNAS HARAPAN,DUSUN GUMUKLIMO,87,1665
+KARYA MAKMUR,JL RAMBUTAN RT OO3 RW 013 dUSUN KANDANGAN DESA PECORO,89,1666
+Karya Tani,DUSUN BINDUNG DESA PECORO,89,1667
+Krajan Indah,krajan,89,1668
+Ngudi Rezeki,Dusun Kandangan Desa Pecoro,89,1669
+Rukun makmur,Krajan etan,89,1670
+SUMBER MAKMUR,Dsn.Krajan Rt 002/ Rw 002 Pecoro Rambipuji,89,1671
+Loh Merto,Dusun Gayam Desa Rambigundam Kecamatan Rambipuji,92,1672
+Sari Bumi 01,Dusun Krajan Lor Desa Rambigundam Kecamatan Rambipuji,92,1673
+Satria Muda,Dusun Krajan Kidul Desa Rambigundam Kecamatan Rambipuji,92,1674
+Satrian,Dusun Satrean Desa Rambigundam Kecamatan Rambipuji,92,1675
+Sentosa,Dusun Dukuhsia Desa Rambigundam Kecamatan Rambipuji,92,1676
+Budi Luhur,jL. WR. Supratman Dusun Kidul Pasar RT001/RW001 Desa Rambipuji,90,1677
+Karya Bakti,DUSUN CURAH ANCAR RT003/RW010 DESA RAMBIPUJI,90,1678
+MAKMUR 1,Jl. Airlangga III/3 RT003/RW007 Desa Rambipuji,90,1679
+Muktisari,Jl. Pemuda I/65 Dusun Gudang Karang Desa Rambipuji,90,1680
+Sidodadi,Dusun Curah Ancar RT001/RW001 Desa Rambipuji,90,1681
+Sumber Makmur,Curah ancar Kulon,90,1682
+Sumber Rejeki,Dusun Gudang Karang RT003/RW029 Desa Rambipuji,90,1683
+Margo Rukun,Glagasan - Rowotamtu,88,1684
+Sri Rejeki,Krajan - Rowotamtu,88,1685
+Suko Marem,Curahmeluwo - Rowotamtu,88,1686
+Sumber Makmur II,Paseban Rowotamtu,88,1687
+Sumber Rejeki 2,Karang Anyar Rowotamtu,88,1688
+PODO RUKUN 01,DUSUN SUMBER KADUT,98,1689
+PODO RUKUN 02,DUSUN GUMUK KACER,98,1690
+BINA INSAN,DUSUN KRAJAN KIDUL,97,1691
+SIDO HASIL,DUSUN KRAJAN LOR,97,1692
+SIDO MUNCUL,DUSUN KRAJAN LOR,97,1693
+SUBUR MAKMUR,DUSUN KRAJAN KIDUL,97,1694
+SUBUR MAKMUR II,DUSUN KRAJAN TENGAH RT/RW: 001/009 BALUNG KULON,97,1695
+TANI MAKMUR,DUSUN KARANG ANOM,97,1696
+GEMAH RIPAH 02,Dusun Kebonsari,99,1697
+GEMAH RIPAH SATU,Dsn.KEBONSARI,99,1698
+SUMBER REJEKI 01,DUSUN WETAN KALI,99,1699
+SUMBER REJEKI 02,DUSUN WETAN KALI,99,1700
+TANI MAKMUR,DUSUN KARANG ANYAR,99,1701
+TANI MULYA I,DUSUN KEBONSARI,99,1702
+TANI MULYA II,DUSUN KEBONSARI,99,1703
+TANI SUBUR,DUSUN KARANG ANYAR,99,1704
+BAROKAH 002,DUSUN KRAJAN KIDUL,101,1705
+BAROKAH 01,DUSUN KRAJAN TENGAH,101,1706
+KARYA JAYA,DUSUN KARANG PAKEM,101,1707
+KARYA TANI,DUSUN KRAJAN KIDUL,101,1708
+KARYA UTAMA,DUSUN KARANG PAKEM,101,1709
+KURNIA JAYA,DUSUN KRAJAN TENGAH,101,1710
+RUKUN TANI,DUSUN KRAJAN KIDUL,101,1711
+SUMBER REJEKI,DUSUN KRAJAN KIDUL,101,1712
+AL BAROKAH,DUSUN KRAJAN LOR,100,1713
+BEDADUNG INDAH 01,DUSUN JOGARAN,100,1714
+BEDADUNG INDAH II,DUSUN REJOSARI,100,1715
+LUMAYAN,DUSUN KRAJAN TENGAH,100,1716
+MAYANGSARI,DUSUN REJOSARI,100,1717
+SRI TANJUNG,DUSUN KRAJAN KIDUL,100,1718
+WAHYU ABADI,DUSUN JOGARAN,100,1719
+BUDIDAYA 01,DUSUN KRAJAN I,94,1720
+BUDIDAYA II,DUSUN KRAJAN I,94,1721
+BUDIDAYA III,DUSUN KRAJAN I,94,1722
+MARGO MULYO,DUSUN KRAJAN I REKESAN,94,1723
+MEKAR SARI,DUSUN KRAJAN I,94,1724
+SRI RAHAYU,DUSUN KRAJAN I,94,1725
+SUBUR 01,DUSUN KRAJAN II,94,1726
+SUBUR 02,DUSUN KRAJAN II,94,1727
+SAKTI JAYA I,DUSUN KEDUNG NILO,95,1728
+SAKTI JAYA II,DUSUN KEDUNG NILO,95,1729
+SIDO MAKMUR I,Lohong,95,1730
+SIDO MAKMUR II,Kedung Nilo,95,1731
+SUBUR JAYA I,Dusun Kedung Nilo,95,1732
+SUBUR JAYA II,DUSUN KEDUNG NILO,95,1733
+TANI RUKUN I,DUSUN KEDUNG NILO,95,1734
+TANI RUKUN II,DUSUN KEDUNG NILO,95,1735
+TANI SAKTI I,DUSUN PADUKUHAN LOR,95,1736
+TANI SAKTI II,DUSUN PADUKUHAN LOR,95,1737
+RUKUN MAKMUR I,DUSUN KRAJAN DESA TUTUL,96,1738
+RUKUN MAKMUR II,Dusun Krajan Desa Tutul,96,1739
+SUMBER MAKMUR,DUSUN KEBON DESA TUTUL,96,1740
+SUMBER MAKMUR II,Dusun Kebon Desa Tutul,96,1741
+TANI MAJU 2,DUSUN KARUK DESA TUTUL,96,1742
+TANI MAJU I,DUSUN KARUK DESA TUTUL KECAMATAN BALUNG,96,1743
+TANI SUBUR I,DUSUN MADURAN DESA TUTUL,96,1744
+TANI SUBUR II,DUSUN MADURAN DESA TUTUL,96,1745

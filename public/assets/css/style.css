@@ -1,3 +1,11 @@
+.red-dot {
+    width: 10px; 
+    height: 10px; 
+    background-color: red;
+    border-radius: 50%;
+}
+
+
 body {
     font-family: Poppins;
     background: aliceblue;
@@ -340,7 +348,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
     color: black;

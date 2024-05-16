@@ -60,6 +60,10 @@ class Borrower extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function lender()
+    {
+        return $this->belongsTo(Lender::class);
+    }
     public function village()
     {
         return $this->belongsTo(Village::class);

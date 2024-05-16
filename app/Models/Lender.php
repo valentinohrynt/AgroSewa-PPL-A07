@@ -45,6 +45,16 @@ class Lender extends Model
         $DataLenderbyId = static::findOrFail($id);
         return $DataLenderbyId;
     }
+
+    public static function getDataLenderbyEquipmentRequestData()
+    {
+        $DataLenderbyEquipmentRequestData = static::whereHas('equipmentRequests', function ($query) {
+            $query->where('is_approved', 'process');
+        })->get();
+        return $DataLenderbyEquipmentRequestData;
+        
+    }
+
     public static function putDataLender($id, $phone, $street, $village_id)
     {
         $lender = static::find($id);

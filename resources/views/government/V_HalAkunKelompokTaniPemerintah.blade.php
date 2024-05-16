@@ -19,8 +19,8 @@
 
 @section('sidebar')
 <a href="{{route('DashboardPemerintah()')}}" class="logo">
-    <i class="fa fa-user-tie"></i>
-    <span class="text">Dinas TPHP</span>
+    <img src="{{asset('assets/img/logo/jemberkab_logo_original.png')}}" id="logo-jemberkab" alt="">
+    <span id="text-logo">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
@@ -39,7 +39,7 @@
     <li class="">
         <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="nav-link">
             <i class="fas fa-chart-simple"></i>
-            <span class="text">Pengajuan Bantuan</span>
+            <span class="text">Pengajuan Bantuan <span id="penyewaan-dot" class="red-dot"></span></span>
         </a>
     </li>
     <li class="">
@@ -88,6 +88,7 @@
             <tr>
                 <th style="text-align:left; padding-left:1rem;">No.</th>
                 <th style="text-align:left; padding-left:0.8rem;">Nama Kelompok Tani</th>
+                <th style="text-align:left; padding-left:0.8rem;">Kecamatan</th>
                 <th style="text-align:left; padding-left:2.7rem;">Aksi</th>
             </tr>
         </thead>
@@ -99,6 +100,7 @@
             <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
                 <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
                 <td style="text-align:left; padding-left:0.8rem;">{{ $item->name }}</td>
+                <td style="text-align:left; padding-left:0.8rem;">{{ $item->village->district->name }}</td>
                 <form id="form_{{ $item->id }}" action="{{ route('HalDataAkunKelompokTaniPemerintah()', ['lender_id' => $encryptedLenderId])}}">
                     @csrf
                     <input type="hidden" name="lender_id" value="{{ $encryptedLenderId }}">
@@ -119,14 +121,15 @@
 </div>
 @endsection
 
-@section('scripts')
+@section('script')
 
 <script>
     $(document).ready(function() {
         function filterRows(searchText) {
             $('.table tbody tr').each(function() {
                 var lenderName = $(this).find('td:eq(1)').text().toLowerCase();
-                if (searchText === '' || lenderName.includes(searchText)) {
+                var districtName = $(this).find('td:eq(2)').text().toLowerCase();
+                if (searchText === '' || lenderName.includes(searchText) || districtName.includes(searchText)) {
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -137,6 +140,18 @@
             var searchText = $('#searchInput').val().toLowerCase();
             filterRows(searchText);
         });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                var searchText = $(this).val().toLowerCase();
+                filterRows(searchText);
+            }
+        });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                var searchText = $(this).val().toLowerCase();
+                filterRows(searchText);
+            }
+        });
         $('#searchInput').on('input', function() {
             var searchText = $(this).val().toLowerCase();
             if (searchText === '') {
@@ -144,6 +159,33 @@
             }
         });
     });
+    $(document).ready(function() {
+        function checkEquipmentRequest() {
+            $.ajax({
+                url: '{{ route('checkEquipmentRequest()') }}'
+                , method: 'GET'
+                , success: function(response) {
+                    
+                    if (response === true) {
+                        
+                        $('#penyewaan-dot').css('display', 'inline-block');
+                    } else {
+                        $('#penyewaan-dot').css('display', 'none');
+                    }
+                }
+                , error: function(xhr, status, error) {
+                    $('#penyewaan-dot').css('display', 'none');
+                    console.error('Error checking for new data:', error);
+                }
+            });
+        }
+        $('#penyewaan-dot').parent().click(function() {
+            $('#penyewaan-dot').css('display', 'none');
+        });
+        setInterval(checkEquipmentRequest, 15000);
+        checkEquipmentRequest();
+    });
+
 </script>
 
 @endsection

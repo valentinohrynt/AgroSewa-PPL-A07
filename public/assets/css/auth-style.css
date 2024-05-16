@@ -1,6 +1,14 @@
 * {
     font-family: Poppins;
 }
+
+.red-dot {
+    width: 10px; 
+    height: 10px; 
+    background-color: red;
+    border-radius: 50%;
+}
+
 body {
     background-color: hsl(500, 41%, 15%);
     background-image: radial-gradient(

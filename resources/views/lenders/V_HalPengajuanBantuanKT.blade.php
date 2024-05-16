@@ -6,7 +6,7 @@
 
 <li><a class="nav-link" href="{{route('HomepageKT()')}}">Home</a></li>
 <li><a class="nav-link" href="{{route('HalAkunPetaniKT()')}}">Akun Petani</a></li>
-<li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</a></li>
+<li><a class="nav-link" href="{{route('HalPenyewaanKT()')}}">Penyewaan</span></a></li>
 <li><a class="nav-link active" href="{{route('HalPengajuanBantuanKT()')}}">Pengajuan Bantuan</a></li>
 <li><a class="nav-link" href="{{route('HalRiwayatPenyewaanKT()')}}">Riwayat</a></li>
 <li class="dropdown"><a href="#"><span>Profil </span><i class="bi-person-circle"></i></a>

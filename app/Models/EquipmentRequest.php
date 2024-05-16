@@ -14,13 +14,11 @@ class EquipmentRequest extends Model
         'is_approved',
         'product_category_id'
     ];
-
     public static function getDataEquipmentRequestbyLenderId($id)
     {
         $DataEquipmentRequestbyLenderId = static::where('lender_id', $id)->where('is_approved', 'process')->get();
         return $DataEquipmentRequestbyLenderId;
     }
-
     public static function getDataEquipmentRequest()
     {
         $DataEquipmentRequest = static::where('is_approved', 'process')->get();

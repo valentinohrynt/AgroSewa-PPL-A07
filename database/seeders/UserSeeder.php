@@ -14,9 +14,21 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        Schema::disableForeignKeyConstraints();
-        User::truncate();
-        Schema::enableForeignKeyConstraints();
+        $csvFile = fopen(base_path("database/data/jember-kt-user.csv"), "r");
+      
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
+            if (!$firstline) {
+                User::create([
+                    "id" => $data['0'],
+                    "username" => $data['1'],
+                    "password" => $data['2'],
+                    "role_id" => $data['3']
+                ]);    
+            }
+            $firstline = false;
+        }
+        fclose($csvFile);
         $users = [
             [
                 'username' => 'superadmin@agrosewa',
@@ -29,18 +41,6 @@ class UserSeeder extends Seeder
                 'password' => '$2y$10$gtMTVHaSCJu9VwSefCCHmuH./7IWyt7t4N2qT6oSDDzinLjZ6h7PK',
                 'email' => 'jemberdiperta@yahoo.com',
                 'role_id' => '2'
-            ],
-            [
-                'username' => 'sukamaju_poktan',
-                'password' => '$2y$10$kwQuCfykV8dgCg/rsdPmweEenJ9ObgNUbpbj8.hGNxUfcZz5YSh9m',
-                'email' => 'sukamaju.jember@gmail.com',
-                'role_id' => '4'
-            ],
-            [
-                'username' => 'mukti_poktan',
-                'password' => '$2y$10$/5B5t.BKzohyza2DjOmgWuefoLlT7nczPPcvRl0p50W66XAIo2rTa',
-                'email' => 'mukti.jember@gmail.com',
-                'role_id' => '4'
             ]
         ];
         User::insert($users);

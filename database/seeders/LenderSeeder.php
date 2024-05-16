@@ -17,22 +17,20 @@ class LenderSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         Lender::truncate();
         Schema::enableForeignKeyConstraints();
-        $lenders=[
-            [
-                'name'=>'Sukamaju',
-                'phone'=>'081246697653',
-                'street'=>'DUSUN GUMUKBAGO',
-                'village_id'=>'87',
-                'user_id'=>'3'
-            ],
-            [
-                'name'=>'Mukti',
-                'phone'=>'082111196105',
-                'street'=>'Jl. MT Haryono 148 Lingk Sumber Ketangi RT 001 RW 001 Kel Wirolegi',
-                'village_id'=>'235',
-                'user_id'=>'4'
-            ]
-        ];
-        Lender::insert($lenders);
+        $csvFile = fopen(base_path("database/data/jember-kt.csv"), "r");
+  
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
+            if (!$firstline) {
+                Lender::create([
+                    "name" => $data['0'],
+                    "street" => $data['1'],
+                    "village_id" => $data['2'],
+                    "user_id" => $data['3']
+                ]);    
+            }
+            $firstline = false;
+        }
+        fclose($csvFile);
     }
 }

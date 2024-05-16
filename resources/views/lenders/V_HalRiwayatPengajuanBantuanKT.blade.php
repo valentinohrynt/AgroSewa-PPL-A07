@@ -77,9 +77,9 @@
                                     @if($item->equipmentRequest->is_approved == 'rejected')
                                     <font style="color: red">Ditolak</font>
                                     @endif
-                                <div class="pdf d-flex align-items-center justify-content-center">
-                                    <embed src="{{ asset('storage/pdf_files/'.$item->equipmentRequest->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="3000px" width="95%"></embed>
-                                </div>
+                                    <div class="pdf d-flex align-items-center justify-content-center">
+                                        <embed src="{{ asset('storage/pdf_files/'.$item->equipmentRequest->pdf_file_name) }}" type="application/pdf" frameBorder="0" scrolling="auto" height="3000px" width="95%"></embed>
+                                    </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

@@ -31,8 +31,8 @@
 
 @section('sidebar')
 <a href="{{route('DashboardPemerintah()')}}" class="logo">
-    <i class="fa fa-user-tie"></i>
-    <span class="text">Dinas TPHP</span>
+    <img src="{{asset('assets/img/logo/jemberkab_logo_original.png')}}" id="logo-jemberkab" alt="">
+    <span id="text-logo">Dinas TPHP</span>
 </a>
 
 <ul class="side-menu top">
@@ -51,7 +51,7 @@
     <li class="">
         <a href="{{route('HalPengajuanBantuanPemerintah()')}}" class="nav-link">
             <i class="fas fa-chart-simple"></i>
-            <span class="text">Pengajuan Bantuan</span>
+            <span class="text">Pengajuan Bantuan <span id="penyewaan-dot" class="red-dot"></span></span>
         </a>
     </li>
     <li class="active">
@@ -174,7 +174,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@section('script')
 
 <script>
     $(document).ready(function() {
@@ -195,6 +195,12 @@
             var searchText = $('#searchInput').val().toLowerCase();
             filterRows(searchText);
         });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                var searchText = $(this).val().toLowerCase();
+                filterRows(searchText);
+            }
+        });
         $('#searchInput').on('input', function() {
             var searchText = $(this).val().toLowerCase();
             if (searchText === '') {
@@ -202,6 +208,32 @@
             }
         });
     });
-</script>
+    $(document).ready(function() {
+        function checkEquipmentRequest() {
+            $.ajax({
+                url: '{{ route('checkEquipmentRequest()') }}'
+                , method: 'GET'
+                , success: function(response) {
+                    
+                    if (response === true) {
+                        
+                        $('#penyewaan-dot').css('display', 'inline-block');
+                    } else {
+                        $('#penyewaan-dot').css('display', 'none');
+                    }
+                }
+                , error: function(xhr, status, error) {
+                    $('#penyewaan-dot').css('display', 'none');
+                    console.error('Error checking for new data:', error);
+                }
+            });
+        }
+        $('#penyewaan-dot').parent().click(function() {
+            $('#penyewaan-dot').css('display', 'none');
+        });
+        setInterval(checkEquipmentRequest, 15000);
+        checkEquipmentRequest();
+    });
 
+</script>
 @endsection

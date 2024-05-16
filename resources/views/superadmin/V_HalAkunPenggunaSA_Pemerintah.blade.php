@@ -35,7 +35,7 @@
 
 @section('sidebar')
 <a href="#" class="logo">
-    <i class="fa fa-user-tie"></i>
+    <img src="{{asset('assets/img/logo/agrosewa_logo.png')}}" id="logo-jemberkab" alt="">
     <span class="text">Admin Agrosewa</span>
 </a>
 
@@ -92,6 +92,7 @@
             <tr>
                 <th style="text-align:left; padding-left:1rem;">No.</th>
                 <th style="text-align:left; padding-left:0.8rem;">Nama Poktan</th>
+                <th style="text-align:left; padding-left:0.8rem;">Kecamatan</th>
             </tr>
         </thead>
         <tbody>
@@ -102,6 +103,7 @@
             <tr onclick="submitForm('{{ $item->id }}')" style="cursor: pointer;">
                 <td style="text-align:left; padding-left:0.8rem;">{{ $loop->iteration }}</td>
                 <td style="text-align:left; padding-left:0.8rem;">{{ $item->name }}</td>
+                <td style="text-align:left; padding-left:0.8rem;">{{ $item->village->district->name }}</td>
                 <form id="form_{{ $item->id }}" action="{{route('HalDataAkunPenggunaSA_Pemerintah()',['government_id' => $encryptedGovernmentId])}}">
                     @csrf
                     <input type="hidden" name="government_id" value="{{ $encryptedGovernmentId }}">
@@ -113,14 +115,15 @@
 </div>
 @endsection
 
-@section('scripts')
+@section('script')
 
 <script>
     $(document).ready(function() {
         function filterRows(searchText) {
             $('.table tbody tr').each(function() {
                 var governmentName = $(this).find('td:eq(1)').text().toLowerCase();
-                if (searchText === '' || governmentName.includes(searchText)) {
+                var districtName = $(this).find('td:eq(2)').text().toLowerCase();
+                if (searchText === '' || governmentName.includes(searchText) || districtName.includes(searchText)) {
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -131,6 +134,12 @@
             var searchText = $('#searchInput').val().toLowerCase();
             filterRows(searchText);
         });
+        $('#searchInput').on('keydown', function(event) {
+            if (event.key === "Enter") {
+                var searchText = $(this).val().toLowerCase();
+                filterRows(searchText);
+            }
+        });
         $('#searchInput').on('input', function() {
             var searchText = $(this).val().toLowerCase();
             if (searchText === '') {
@@ -138,6 +147,7 @@
             }
         });
     });
+
 </script>
 
 @endsection

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nik')->unique()->nullable();
-            $table->string('phone');
-            $table->string('street');
+            $table->string('phone')->nullable();
+            $table->string('street')->nullable();
             $table->unsignedBigInteger('village_id');
             $table->foreign('village_id')->references('id')->on('villages');
             // $table->unsignedBigInteger('district_id');

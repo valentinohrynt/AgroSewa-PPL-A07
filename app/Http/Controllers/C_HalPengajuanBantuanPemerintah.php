@@ -9,7 +9,7 @@ class C_HalPengajuanBantuanPemerintah extends Controller
 {
     public function setHalPengajuanBantuanPemerintah()
     {
-        $lenders = Lender::getAllDataLender();
+        $lenders = Lender::getDataLenderbyEquipmentRequestData();
         return view('government.V_HalPengajuanBantuanPemerintah', ['lenders' => $lenders]);
     }
 

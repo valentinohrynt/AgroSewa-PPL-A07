@@ -40,6 +40,7 @@ class C_FormEditAkunKelompokTaniPemerintah extends Controller
             'street.required' => 'Alamat harus diisi.',
             'village_id.required' => 'Desa harus diisi',
             'username.required' => 'Username harus diisi',
+            'username.unique' => 'Username sudah digunakan, silahkan gunakan username lainnya',
             'email.email' => 'Mohon masukkan alamat email yang valid!',
             'email.unique' => 'Mohon maaf, alamat email tersebut sudah digunakan. ',
             'phone.regex' => 'Mohon masukkan nomor telepon yang valid! ',
@@ -54,7 +55,7 @@ class C_FormEditAkunKelompokTaniPemerintah extends Controller
             'village_id' => 'required',
             'password' => $request->filled('password') ? 'min:8' : '',
             'governmentPassword' => 'required',
-            'username' => 'required'
+            'username' => 'required|unique:users'
         ], $messages);
 
         if ($validator->fails()) {

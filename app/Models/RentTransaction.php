@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
 use App\Models\Product;
 use App\Models\Borrower;

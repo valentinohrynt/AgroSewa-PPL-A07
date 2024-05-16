@@ -102,13 +102,12 @@
 
     <!-- cdn js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
 
     <!-- local vendor js -->
     <script src="{{asset('/assets/js/main.js')}}"></script>
-    <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
-    </script>
+    <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script></script>
     @yield('script')
     <script>
         $(document).ready(function() {

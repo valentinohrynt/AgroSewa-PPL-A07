@@ -39,7 +39,7 @@
 
 @section('sidebar')
 <a href="#" class="logo">
-    <i class="fa fa-user-tie"></i>
+    <img src="{{asset('assets/img/logo/agrosewa_logo.png')}}" id="logo-jemberkab" alt="">
     <span class="text">Admin Agrosewa</span>
 </a>
 

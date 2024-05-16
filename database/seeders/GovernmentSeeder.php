@@ -23,7 +23,7 @@ class GovernmentSeeder extends Seeder
                 'phone'=>'0331482787',
                 'street'=>'Jl. Brawijaya No.71',
                 'village_id'=>'227',
-                'user_id'=>'2'
+                'user_id'=>'1550'
             ]
         ];
         Government::insert($government);

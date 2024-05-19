@@ -52,7 +52,7 @@ class C_FormEditDataAlat extends Controller {
                         imagewebp( $imageGD, storage_path( 'app/public/product_img/' . $imageName ), 40 );
                     } else {
                         $imageName = $product->product_code . '.' . $extension;
-                        $image->storeAs( 'product_img', $imageName );
+                        $image->storeAs('product_img', $imageName);
                     }
                     imagedestroy( $imageGD );
                     Product::patchDataProducts( $id, $productName, $productDesc, $productPrice, $lenderId, $imageName );

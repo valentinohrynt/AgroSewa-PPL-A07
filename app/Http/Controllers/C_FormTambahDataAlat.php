@@ -49,10 +49,10 @@ class C_FormTambahDataAlat extends Controller {
                 if ( imageistruecolor( $imageGD ) ) {
                     $imageName = $product->product_code . '.webp';
                     if ( function_exists( 'imagewebp' ) ) {
-                        imagewebp( $imageGD, storage_path( 'app/public/product_img/' . $imageName ), 85 );
+                        imagewebp( $imageGD, storage_path( 'app/public/product_img/' . $imageName ), 40 );
                     } else {
                         $imageName = $product->product_code . '.' . $extension;
-                        $image->storeAs( 'product_img', $imageName );
+                        $image->storeAs('product_img', $imageName);
                     }
                     $product->product_img = $imageName;
                 } else {

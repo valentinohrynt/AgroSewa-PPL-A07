@@ -12,7 +12,9 @@ class Superadmin extends Model
         'name',
         'phone',
         'street',
-        'village_id'
+        'village_id',
+        'created_at',
+        'updated_at'
     ];
     public static function getDataSuperadminbyUserId($id)
     {

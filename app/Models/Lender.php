@@ -15,7 +15,9 @@ class Lender extends Model
         'phone',
         'street',
         'village_id',
-        'user_id'
+        'user_id',
+        'created_at',
+        'updated_at'
     ];
 
     public function user(): BelongsTo

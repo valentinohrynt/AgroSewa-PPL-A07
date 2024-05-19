@@ -14,7 +14,9 @@ class Product extends Model
         'product_description',
         'price',
         'product_img',
-        'lender_id'
+        'lender_id',
+        'created_at',
+        'updated_at'
     ];
 
     public static function getDataProducts()

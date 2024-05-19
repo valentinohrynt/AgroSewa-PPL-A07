@@ -12,7 +12,9 @@ class EquipmentRequest extends Model
         'equipment_request_number',
         'lender_id',
         'is_approved',
-        'product_category_id'
+        'product_category_id',
+        'created_at',
+        'updated_at'
     ];
     public static function getDataEquipmentRequestbyLenderId($id)
     {

@@ -17,7 +17,9 @@ class RentTransaction extends Model
         'rent_date',
         'return_date',
         'utilization',
-        'is_completed'
+        'is_completed',
+        'created_at',
+        'updated_at'
     ];
 
     public function borrower()
@@ -50,6 +52,7 @@ class RentTransaction extends Model
             'rent_date' => $rentDate,
             'return_date' => $returnDate
         ]);
+        
     }
 
     public static function getDataNewRentTransaction()

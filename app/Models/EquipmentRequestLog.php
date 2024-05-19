@@ -11,6 +11,8 @@ class EquipmentRequestLog extends Model
     use HasFactory;
     protected $fillable = [
         'equipment_request_id',
+        'created_at',
+        'updated_at'
     ];
 
     public static function getDataEquipmentRequestLogbyLenderId($id)

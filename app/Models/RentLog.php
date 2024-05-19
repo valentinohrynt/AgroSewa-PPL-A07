@@ -10,6 +10,8 @@ class RentLog extends Model
         'rent_transaction_id',
         'total_price',
         'actual_return_date',
+        'created_at',
+        'updated_at'
     ];
 
     public static function getDataRentLogbyBorrowerId($id)

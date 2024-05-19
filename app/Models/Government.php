@@ -17,7 +17,9 @@ class Government extends Model
         'street',
         'village_id',
         'name',
-        'user_id'
+        'user_id',
+        'created_at',
+        'updated_at'
     ];
     public static function getAllDataGovernment()
     {

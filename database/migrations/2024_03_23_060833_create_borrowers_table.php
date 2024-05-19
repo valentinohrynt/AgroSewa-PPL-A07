@@ -20,11 +20,8 @@ return new class extends Migration
             $table->float('land_area', 8, 5);
             $table->unsignedBigInteger('village_id');
             $table->foreign('village_id')->references('id')->on('villages');
-            // $table->unsignedBigInteger('district_id');
-            // $table->foreign('district_id')->references('id')->on('districts');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            
+            $table->foreign('user_id')->references('id')->on('users');    
             $table->timestamps();
         });
     }

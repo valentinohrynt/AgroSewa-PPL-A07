@@ -16,7 +16,9 @@ class Borrower extends Model
         'land_area',
         'village_id',
         'lender_id',
-        'user_id'
+        'user_id',
+        'created_at',
+        'updated_at'
     ];
     public static function getDataBorrowerbyId($id)
     {

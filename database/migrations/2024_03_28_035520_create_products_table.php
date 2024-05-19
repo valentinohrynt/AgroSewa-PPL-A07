@@ -22,7 +22,6 @@ return new class extends Migration
             $table->float('utilization', 8, 5)->default(0.00);
             $table->unsignedBigInteger('lender_id');
             $table->foreign('lender_id')->references('id')->on('lenders');
-            
             $table->timestamps();
         });
     }

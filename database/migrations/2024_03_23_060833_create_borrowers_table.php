@@ -24,7 +24,7 @@ return new class extends Migration
             // $table->foreign('district_id')->references('id')->on('districts');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->rememberToken();
+            
             $table->timestamps();
         });
     }

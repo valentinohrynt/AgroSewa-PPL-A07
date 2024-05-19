@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('lender_id');
             $table->foreign('lender_id')->references('id')->on('lenders');
             $table->enum('is_approved', ['process', 'accepted', 'rejected'])->default('process');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -44,44 +44,25 @@ class C_FormTambahDataAlat extends Controller {
 
             $image = $request->product_img;
             if ( $image ) {
-                // Get the image extension
                 $extension = $image->getClientOriginalExtension();
-
-                // Load the image using GD library
                 $imageGD = imagecreatefromstring( file_get_contents( $image->getPathname() ) );
-
-                // Check if the image is palette-based ( e.g., GIF )
                 if ( imageistruecolor( $imageGD ) ) {
-                    // Generate the image name
                     $imageName = $product->product_code . '.webp';
-
-                    // Convert the image to WebP format if GD library supports it
                     if ( function_exists( 'imagewebp' ) ) {
                         imagewebp( $imageGD, storage_path( 'app/public/product_img/' . $imageName ), 85 );
                     } else {
-                        // If WebP conversion is not supported, store the image with its original extension
                         $imageName = $product->product_code . '.' . $extension;
                         $image->storeAs( 'product_img', $imageName );
                     }
-
-                    // Update the product with the WebP image name
                     $product->product_img = $imageName;
                 } else {
-                    // If the image is palette-based, store it with its original extension
                     $imageName = $product->product_code . '.' . $extension;
                     $image->storeAs( 'product_img', $imageName );
-
-                    // Update the product with the original image name
                     $product->product_img = $imageName;
                 }
-
-                // Save the product
                 $product->save();
-
-                // Free up memory
                 imagedestroy( $imageGD );
             }
-
             return redirect()->back()->with( 'success', 'Sukses, data berhasil ditambah' );
         } catch ( \Exception $e ) {
             Log::error( $e->getMessage() );

@@ -134,6 +134,9 @@
                             <h6><strong>Harga:</strong></h6>
                             {{ $item->price }}
                             <br><br>
+                            <h6><strong>Pemanfaatan:</strong></h6>
+                            {{ $item->utilization }} m2
+                            <br><br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

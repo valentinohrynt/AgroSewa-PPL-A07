@@ -1,6 +1,6 @@
 @extends('layouts.dashboard-riwayat-layout')
 
-@section('title', 'Riwayat Pengajuan Bantuan Superadmin')
+@section('title', 'Riwayat Penyewaan Superadmin')
 
 @section('content-head-title')
 <div class="left">
@@ -105,7 +105,7 @@
         <tbody>
             @if ($rentLogs -> isNotEmpty())
             @foreach ($rentLogs as $item)
-            <tr data-bs-toggle="modal" data-bs-target="#detailModal{{ $item->id }}">
+            <tr data-item-id = "{{ $item->id }}">
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->rentTransaction->transaction_number }}</td>
                 <td>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</td>
@@ -121,42 +121,45 @@
                     {{ $total }}
                 </td>
             </tr>
-            <div class="modal fade" id="detailModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel{{ $item->id }}" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" style="font-size:large;" id="detailModalLabel{{ $item->id }}">Detail Riwayat Penyewaan</h5>
-                        </div>
-                        <div class="modal-body">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{ asset('storage/product_img/'.$item->rentTransaction->product->product_img) }}" class="img-fluid w-50 h-50" alt="Gambar Produk">
-                            </div>
-                            <h6>Nama Alat:</h6>
-                            {{ $item->rentTransaction->product->name }}
-                            <br><br>
-                            <h6>Nama Penyewa:</h6>
-                            {{ $item->rentTransaction->borrower->name }}
-                            <br><br>
-                            <h6>Tanggal peminjaman:</h6>
-                            {{ $item->rentTransaction->rent_date }}
-                            <br><br>
-                            <h6>Tanggal pengembalian:</h6>
-                            {{ $item->rentTransaction->return_date }}
-                            <br><br>
-                            <h6>Total Harga:</h6>
-                            Rp{{ $total }}
-                            <br><br>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             @endforeach
             @endif
         </tbody>
     </table>
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-size:large;" id="detailModalLabel">Detail Riwayat Penyewaan</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <img id="productImage" class="img-fluid w-50 h-50" alt="Gambar Produk">
+                    </div>
+                    <h6>Nama Alat:</h6>
+                    <span id="productName"></span>
+                    <br><br>
+                    <h6>Nama Penyewa:</h6>
+                    <span id="borrowerName"></span>
+                    <br><br>
+                    <h6>Luas Lahan:</h6>
+                    <span id="landArea"></span>
+                    <br><br>
+                    <h6>Tanggal peminjaman:</h6>
+                    <span id="rentDate"></span>
+                    <br><br>
+                    <h6>Tanggal pengembalian:</h6>
+                    <span id="returnDate"></span>
+                    <br><br>
+                    <h6>Total Harga:</h6>
+                    <span id="totalPrice"></span>
+                    <br><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 
@@ -194,7 +197,47 @@
             }
         });
     });
+    $(document).ready(function() {
+        $('tbody tr').on('click', function() {
+            var itemId = $(this).data('item-id');
+            showModal(itemId);
+        });
 
+        $('#detailModal').on('hidden.bs.modal', function () {
+            clearModalContent();
+        });
+    });
+
+    function showModal(itemId) {
+        $.ajax({
+            url: '{{ route('getDynamicContent()') }}',
+            type: 'GET',
+            data: { itemId: itemId },
+            success: function(response) {
+                $('#detailModal #productName').text(response.productName);
+                $('#detailModal #borrowerName').text(response.borrowerName);
+                $('#detailModal #landArea').text((response.landArea)+" m2"); 
+                $('#detailModal #rentDate').text(response.rentDate);
+                $('#detailModal #returnDate').text(response.returnDate);
+                $('#detailModal #totalPrice').text(response.totalPrice);
+                $('#detailModal #productImage').attr('src', response.productImage);
+                $('#detailModal').modal('show');
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
+    function clearModalContent() {
+        $('#detailModal #productName').text('');
+        $('#detailModal #borrowerName').text('');
+        $('#detailModal #landArea').text('');
+        $('#detailModal #rentDate').text('');
+        $('#detailModal #returnDate').text('');
+        $('#detailModal #totalPrice').text('');
+        $('#detailModal #productImage').attr('src', '');
+    }
 </script>
 
 @endsection

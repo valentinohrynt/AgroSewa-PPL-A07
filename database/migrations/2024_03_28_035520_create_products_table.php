@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('product_description')->nullable();
             $table->integer('price');
             $table->string('product_img')->nullable();
+            $table->float('utilization', 8, 5)->default(0.00);
             $table->unsignedBigInteger('lender_id');
             $table->foreign('lender_id')->references('id')->on('lenders');
             $table->rememberToken();

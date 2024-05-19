@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="{{asset('assets/icons/favicon.ico')}}">
     <title>AgroSewa - Register</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{asset("/assets/css/auth-style.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
@@ -30,7 +31,7 @@
                     </ul>
                 </div>
                 @endif
-                <form action="#" method="post">
+                <form action="" method="post" id="registerForm">
                     @csrf
                     <div class="row pt-5">
                         <div class="input-group col-lg-6 mb-4">
@@ -116,6 +117,14 @@
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="bi-pin-map-fill text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="text" name="land_area" id="land_area" placeholder="Luas Tanah (meter persegi)" class="form-control bg-white border-left-0 border-md" value="{{old('land_area')}}">
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
                                     <i class="fa fa-house text-muted"></i>
                                 </span>
                             </div>
@@ -190,9 +199,117 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
     <script src="https://kit.fontawesome.com/ec747ffee3.js" crossorigin="anonymous"></script>
     <script src="{{asset('/assets/js/register.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#registerForm").validate({
+                ignore: ":disabled",
+                rules: {
+                    name: "required",
+                    nik: {
+                        required: true,
+                        minlength: 16,
+                        digits: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true,
+                        minlength: 10,
+                        digits: true
+                    },
+                    street: "required",
+                    district_id: "required",
+                    village_id: "required",
+                    land_area: {
+                        required: true,
+                        digits: true
+                    },
+                    lender_id: "required",
+                    username: "required",
+                    password: {
+                        required: true,
+                        minlength: 6
+                    },
+                    password_confirmation: {
+                        required: true,
+                        equalTo: "#password"
+                    }
+                },
+                messages: {
+                    name: "Harap masukkan nama lengkap Anda",
+                    nik: { 
+                        required: "Harap masukkan NIK Anda", 
+                        minlength: "Harap masukkan NIK yang valid", 
+                        digits: "Harap masukkan NIK yang valid" 
+                    },
+                    email: {
+                        required: "Harap masukkan alamat email Anda",
+                        email: "Harap masukkan alamat email yang valid"
+                    },
+                    phone: {
+                        required: "Harap masukkan nomor telepon Anda",
+                        minlength: "Harap masukkan nomor telepon yang valid",
+                        digits: "Harap masukkan nomor telepon yang valid"
+                    },
+                    street: "Harap masukkan alamat jalan Anda",
+                    district_id: "Harap pilih kecamatan",
+                    village_id: "Harap pilih desa",
+                    land_area: {
+                        required: "Harap masukkan luas tanah Anda",
+                        digits: "Harap masukkan luas tanah yang valid"
+                    },
+                    lender_id: "Harap pilih kelompok tani",
+                    username: "Harap masukkan username",
+                    password: {
+                        required: "Harap masukkan kata sandi",
+                        minlength: "Kata sandi harus terdiri dari minimal 6 karakter"
+                    },
+                    password_confirmation: {
+                        required: "Harap konfirmasi kata sandi Anda",
+                        equalTo: "Harap masukkan kata sandi yang sama seperti di atas"
+                    }
+                },
+                errorElement: 'div',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.input-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid').removeClass('is-valid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-valid').removeClass('is-invalid');
+                },
+                submitHandler: function(form) {
+                    $.ajax({
+                        method: "POST",
+                        dataType: "json",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        enctype: 'multipart/form-data',
+                        data: new FormData(form),
+                        url: "{{route('register')}}",
+                        success: function(response) {
+                            if (response.status == 'success') {
+                                window.location.href = "{{route('login')}}";
+                            } else {
+                                alert(response.message);
+                            }
+                        }
+                    });
+                }
+            });
+            $('select').on('change', function() {
+                $(this).prop('disabled', false).valid(); 
+            });
+        });
+    </script>             
 </body>
 
 </html>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nik')->unique();
             $table->string('phone');
             $table->string('street');
+            $table->float('land_area', 8, 5);
             $table->unsignedBigInteger('village_id');
             $table->foreign('village_id')->references('id')->on('villages');
             // $table->unsignedBigInteger('district_id');

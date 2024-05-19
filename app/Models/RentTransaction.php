@@ -16,6 +16,7 @@ class RentTransaction extends Model
         'transaction_number',
         'rent_date',
         'return_date',
+        'utilization',
         'is_completed'
     ];
 

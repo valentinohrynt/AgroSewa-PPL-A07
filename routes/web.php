@@ -145,6 +145,8 @@ Route::middleware('auth')->group(function () {
         Route::get('HalAkunPenggunaSA/AkunPemerintah/{government_id}', [C_HalDataAkunPenggunaSA_Pemerintah::class, 'setHalDataAkunPenggunaSA_Pemerintah'])->name('HalDataAkunPenggunaSA_Pemerintah');
         Route::get('HalAkunPenggunaSA/AkunKT/{lender_id}', [C_HalDataAkunPenggunaSA_KT::class, 'setHalDataAkunPenggunaSA_KT'])->name('HalDataAkunPenggunaSA_KT');
         Route::get('HalAkunPenggunaSA/AkunPetani/{borrower_id}', [C_HalDataAkunPenggunaSA_Petani::class, 'setHalDataAkunPenggunaSA_Petani'])->name('HalDataAkunPenggunaSA_Petani');
+
+        Route::get('/get_dynamic_content', [C_HalRiwayatPenyewaanSA::class, 'getDynamicContent'])->name('getDynamicContent()');
         // SUPERADMIN END
     });
 

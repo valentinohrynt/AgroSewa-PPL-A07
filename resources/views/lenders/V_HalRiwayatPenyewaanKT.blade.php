@@ -84,6 +84,7 @@
                                 </div>
                                 <p>Nama Alat:<br>{{ $item->rentTransaction->product->name }}</p>
                                 <p>Nama Penyewa:<br>{{ $item->rentTransaction->borrower->name }}</p>
+                                <p>Luas lahan:<br>{{ $item->rentTransaction->borrower->land_area }} m2</p>
                                 <p>Tanggal peminjaman:<br>{{ \Carbon\Carbon::parse($item->rentTransaction->rent_date)->translatedFormat('j F Y') }}</p>
                                 <p>Tanggal pengembalian:<br>{{ \Carbon\Carbon::parse($item->actual_return_date)->translatedFormat('j F Y') }}</p>
                                 <p>Total Harga:<br>Rp{{ $item->total_price }}</p>

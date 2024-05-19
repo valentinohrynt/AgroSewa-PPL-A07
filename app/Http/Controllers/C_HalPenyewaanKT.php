@@ -46,13 +46,15 @@ class C_HalPenyewaanKT extends Controller
         }
 
         $totalPrice = $decryptedTotalPrice;
+        $landArea = $request->input('land_area');
         $actualReturnDate = $currentTime;
 
         RentTransaction::patchStatusRentTransactiontoYes($rentTransactionId);
 
         $product = Product::getDataProductsbyRentTransaction($rentTransaction);
         $productId = $product->id;
-        Product::patchStatusProductstoNo($productId);
+        $utilization = $product->utilization + $landArea;
+        Product::patchStatusProductstoNo($productId, $utilization);
 
         RentLog::postDataRentLog($rentTransactionId, $totalPrice, $actualReturnDate);
 
@@ -82,7 +84,8 @@ class C_HalPenyewaanKT extends Controller
 
         $product = Product::getDataProductsbyRentTransaction($rentTransaction);
         $productId = $product->id;
-        Product::patchStatusProductstoNo($productId);
+        $utilization = $product->utilization + 0;
+        Product::patchStatusProductstoNo($productId, $utilization);
 
         RentLog::postDataRentLog($rentTransactionId, $totalPrice, $actualReturnDate);
 

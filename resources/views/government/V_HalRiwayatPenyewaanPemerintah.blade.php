@@ -143,6 +143,9 @@
                                         <h6>Nama Penyewa:</h6>
                                         {{ $item->rentTransaction->borrower->name }}
                                         <br><br>
+                                        <h6>Luas Lahan:</h6>
+                                        {{ $item->rentTransaction->borrower->land_area }} m2
+                                        <br><br>
                                         <h6>Tanggal peminjaman:</h6>
                                         {{ $item->rentTransaction->rent_date }}
                                         <br><br>

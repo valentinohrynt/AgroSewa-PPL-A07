@@ -36,7 +36,7 @@ class C_FormSewaAlat extends Controller
         }
         $product = Product::getDataProductsbyId($productId);
 
-        return view('borrowers.V_FormSewaAlat', compact('product', 'events'));
+        return view('borrowers.V_FormSewaAlat', compact('product', 'events', 'borrower'));
     }
 
     public function SewaAlatPetani(Request $request)
@@ -76,6 +76,7 @@ class C_FormSewaAlat extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        $product = Product::getDataProductsbyId($productId);
 
         $rentDate = $request->input('rent_date');
         $returnDate = $request->input('return_date');

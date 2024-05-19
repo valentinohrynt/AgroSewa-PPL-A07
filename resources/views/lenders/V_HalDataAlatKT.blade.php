@@ -119,6 +119,7 @@
                                 <p>Kode Alat:<br>{{ $item->product_code }}</p>
                                 <p>Deskripsi:<br>{{ $item->product_description }}</p>
                                 <p>Harga sewa per hari:<br>Rp{{ $item->price }}</p>
+                                <p>Pemanfaatan Alat:<br>{{ $item->utilization }} m2</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>

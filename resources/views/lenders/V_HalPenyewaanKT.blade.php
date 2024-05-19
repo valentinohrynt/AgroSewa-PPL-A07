@@ -72,9 +72,6 @@
                             <i class="bi bi-exclamation-circle"></i>
                             <span>Konfirmasi</span>
                         </button>
-                        <!-- <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $item->id }}"><i class="bi-x-lg"></i>
-                            <span>Batal</span>
-                        </button> -->
                     </td>
                 </tr>
                 <div class="modal fade" id="borrowerDetailModal{{ $item->borrower->id }}" tabindex="-1" role="dialog" aria-labelledby="borrowerDetailModalLabel{{ $item->borrower->id }}" aria-hidden="true">
@@ -90,6 +87,8 @@
                                 <p>Nama Petani:<br>{{ $item->borrower->name }}</p>
                                 <p>Nomor Telepon:<br>{{ $item->borrower->phone }}</p>
                                 <p>Alamat:<br>{{ $item->borrower->street }}, {{ $item->borrower->village->name }}, {{ $item->borrower->village->district->name }}</p>
+                                <p>Total Harga:<br>Rp{{ $total }}</p>
+                                <p>Luas lahan milik Petani:<br>{{ $item->borrower->land_area }} m2</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -112,6 +111,7 @@
                                 <p>Tanggal peminjaman:<br>{{ $item->rent_date }}</p>
                                 <p>Tanggal pengembalian:<br>{{ $item->return_date }}</p>
                                 <p>Total Harga:<br>Rp{{ $total }}</p>
+                                <p>Luas lahan milik Petani:<br>{{ $item->borrower->land_area }} m2</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
@@ -187,6 +187,7 @@
                                 <form action="{{ route('SelesaiPenyewaan()', $item->id) }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="total_price" value="{{ $encryptedTotalPrice }}">
+                                    <input type="hidden" name="land_area" value="{{ $item->borrower->land_area }}">
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-success">Ya</button>
                                 </form>
@@ -208,6 +209,7 @@
                                 <form action="{{ route('BatalPenyewaan()', $item->id) }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="total_price" value="{{ $encryptedTotalPrice }}">
+                                    <input type="hidden" name="land_area" value="">
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-success">Ya</button>
                                 </form>

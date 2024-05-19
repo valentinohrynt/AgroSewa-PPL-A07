@@ -80,6 +80,8 @@
                                     @endforeach
                                 </select>
                             </p>
+                            <h6>Luas Lahan</h6>
+                            <p class="designation"><input class="form-control" type="text" value="{{$borrower->land_area}} m2" disabled></p>
                         </div>
                     </div>
                 </div>

@@ -84,9 +84,9 @@ class Product extends Model
         return static::where('id', $id)->update(['is_rented' => 'yes']);
     }
 
-    public static function patchStatusProductstoNo($id)
+    public static function patchStatusProductstoNo($id, $utilization)
     {
-        return static::where('id', $id)->update(['is_rented' => 'no']);
+        return static::where('id', $id)->update(['is_rented' => 'no', 'utilization'=> $utilization]);
     }
 
     public function rentTransactions()

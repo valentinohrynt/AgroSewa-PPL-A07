@@ -33,8 +33,6 @@ return Application::configure(basePath: dirname(__DIR__))
             'only_lender' => OnlyLender::class,
             'only_guest' => OnlyGuest::class
         ]);
-
-  
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

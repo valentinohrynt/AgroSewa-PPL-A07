@@ -89,20 +89,30 @@ class AuthController extends Controller
             'password.required' => 'Kata Sandi harus diisi.',
             'phone.required' => 'Nomor telepon harus diisi.',
             'street.required' => 'Nama Jalan harus diisi.',
+            'nik.required' => 'NIK harus diisi',
             'lender_id.required' => 'Nama Kelompok Tani harus diisi',
-            'village_id.required' => 'Desa harus diisi'
+            'village_id.required' => 'Desa harus diisi',
+            'land_area.required' => 'Luas tanah harus diisi',
+            'land_area.numeric' => 'Luas tanah harus berupa angka',
+            'name.required' => 'Nama harus diisi',
+            'username.required' => 'Username harus diisi',
+            'email.required' => 'Email harus diisi',
+            'nik.unique' => 'NIK sudah terdaftar, silahkan gunakan NIK lain',
+            'username.unique' => 'Username sudah terdaftar, silahkan gunakan username lain',
+            'email.unique' => 'Email sudah terdaftar, silahkan gunakan email lain',
         ];
 
         $validated = $request->validate([
             'username' => 'required|unique:users|max:255',
             'password' => 'required|min:8|confirmed',
             'name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|numeric',
             'email' => 'required|unique:users|max:255',
             'nik' => 'required|unique:borrowers|max:255',
             'street' => 'required',
+            'land_area' => 'required|numeric',
             'lender_id' => 'required',
-            'village_id' => 'required'
+            'village_id' => 'required',
         ], $messages);
 
         $request->password = Hash::make($request->password);
@@ -119,9 +129,10 @@ class AuthController extends Controller
                 'phone' => $validated['phone'],
                 'nik' => $validated['nik'],
                 'street' => $validated['street'],
+                'land_area' => $validated['land_area'],
                 'village_id' => $validated['village_id'],
                 'user_id' => $user->id,
-                'lender_id' => $validated['lender_id']
+                'lender_id' => $validated['lender_id'],
             ]
         );
         Session::flash('status', 'success');

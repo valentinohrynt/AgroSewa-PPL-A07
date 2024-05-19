@@ -13,6 +13,7 @@ class Borrower extends Model
         'nik',
         'phone',
         'street',
+        'land_area',
         'village_id',
         'lender_id',
         'user_id'

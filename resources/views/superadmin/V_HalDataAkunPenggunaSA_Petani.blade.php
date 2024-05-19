@@ -97,6 +97,10 @@
                 <h4>Alamat</h4>
                 <input type="text" value="{{$borrower->street}}, {{$borrower->village->name}}, {{$borrower->village->district->name}}" disabled>
             </div>
+            <div class="profil">
+                <h4>Luas Lahan</h4>
+                <input type="text" value="{{$borrower->land_area}} m2" disabled>
+            </div>
         </span>
     </li>
     <li style="display: flex; flex-direction: column; align-items: start;">

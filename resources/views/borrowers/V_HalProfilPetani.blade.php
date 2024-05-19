@@ -42,6 +42,8 @@
                         <p class="designation"><input class="form-control" type="email" value="{{$user->email}}" disabled></p>
                         <h6>Alamat</h6>
                         <p class="designation"><input class="form-control" type="text" value="{{$borrower->street}}, {{$borrower->village->name}}, {{$borrower->village->district->name}}" disabled></p>
+                        <h6>Luas Lahan</h6>
+                        <p class="designation"><input class="form-control" type="text" value="{{$borrower->land_area}} m2" disabled></p>
                     </div>
                 </div>
             </div>

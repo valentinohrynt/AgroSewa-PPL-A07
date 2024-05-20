@@ -24,7 +24,17 @@
     <div class="container pt-5" data-aos="fade-up">
         @if(session('success'))
         <div class="alert alert-success mb-5">
-            {{ session('success') }}
+          {{ session('success') }}
+        </div>
+        @elseif(session('error'))
+        <div class="alert alert-danger mb-5">
+          {{ session('error') }}
+        </div>
+        @elseif ($errors->any())
+        <div class="alert alert-danger mb-5">
+          @foreach ($errors->all() as $error)
+          {{ $error }}<br>
+          @endforeach
         </div>
         @endif
         <div class="section-title">

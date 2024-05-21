@@ -52,7 +52,7 @@ class C_FormEditProfilSA extends Controller
             'street' => 'required',
             'village_id' => 'required',
             'oldPassword' => 'required',
-            'username' => 'required|unique:users',
+            'username' => ['required', Rule::unique('users')->ignore($userId)],
             'newPassword' => $request->filled('newPassword') ? 'min:8' : ''
         ], $messages);
 
@@ -69,7 +69,7 @@ class C_FormEditProfilSA extends Controller
             $village_id = $request->input('village_id');
             Superadmin::putDataSuperadmin($superadminId, $name, $phone, $street, $village_id);
             // Update kredensial login superadmin
-            if ($request->filled('newPassword') || $request->input('username') !== $user->username) {
+            if ($request->filled('newPassword') || $request->filled('email') || $request->input('username') !== $user->username) {
                 $newEmail = $request->input('email');
                 $newUsername = $request->input('username');
                 $newPassword = $request->input('newPassword');

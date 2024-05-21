@@ -34,23 +34,24 @@ class C_FormEditProfilKT extends Controller
             'email.required' => 'Alamat Email harus diisi.',
             'phone.required' => 'Nomor HP harus diisi.',
             'street.required' => 'Alamat harus diisi.',
-            'village_id.required' => 'Desa harus diisi',
             'username.required' => 'Username harus diisi',
-            'username.unique' => 'Username sudah digunakan, silahkan gunakan username lainnya',
+            'username.unique' => 'Mohon maaf, username tersebut sudah digunakan',
             'email.email' => 'Mohon masukkan alamat email yang valid!',
             'email.unique' => 'Mohon maaf, alamat email tersebut sudah digunakan. ',
             'phone.regex' => 'Mohon masukkan nomor telepon yang valid! ',
             'oldPassword.required' => 'Kata sandi lama wajib diisi.',
-            'newPassword.min' => 'Kata sandi baru minimal berisi 8 karakter.'
+            'newPassword.min' => 'Kata sandi baru minimal berisi 8 karakter.',
+            'nik.required' => 'NIK harus diisi.',
+            'nik.numeric' => 'NIK harus berupa angka.'
         ];
 
         $validator = Validator::make($request->all(), [
-            'email' => ['required', 'email', Rule::unique('users')->ignore($userId),],
+            'email' => ['required', 'email', Rule::unique('users')->ignore($userId)],
             'phone' => ['required', 'regex:/^(\+62|0)\d{9,12}$/'],
+            'nik' => 'required|numeric',
             'street' => 'required',
-            'village_id' => 'required',
             'oldPassword' => 'required',
-            'username' => 'required|unique:users',
+            'username' => ['required', Rule::unique('users')->ignore($userId)],
             'newPassword' => $request->filled('newPassword') ? 'min:8' : ''
         ], $messages);
 
@@ -64,9 +65,9 @@ class C_FormEditProfilKT extends Controller
             $phone = $request->input('phone');
             $street = $request->input('street');
             $village_id = $request->input('village_id');
-            Lender::putDataLender($lenderId, $phone, $street, $village_id);
-            // Update kredensial login lender
-            if ($request->filled('newPassword') || $request->input('username') !== $user->username) {
+            $nik = $request->input('nik');
+            Lender::putDataLender($lenderId, $nik, $phone, $street, $village_id);
+            if ($request->filled('newPassword') || $request->filled('email') || $request->input('username') !== $user->username) {
                 $newEmail = $request->input('email');
                 $newUsername = $request->input('username');
                 $newPassword = $request->input('newPassword');

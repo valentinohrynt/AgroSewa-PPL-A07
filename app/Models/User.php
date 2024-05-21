@@ -74,7 +74,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public static function putDataUser($id, $newUsername, $newPassword, $newEmail)
     {
-        $user = static::where('id', $id)->first();
+        $user = static::findOrFail($id);
         $data = [
             'username' => $newUsername,
             'email' => $newEmail
@@ -85,6 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         $user->update($data);
+        $user->save();
     }
     public static function postDataUser($username, $password, $email, $role_id)
     {

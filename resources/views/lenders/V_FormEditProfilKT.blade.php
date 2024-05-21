@@ -58,30 +58,15 @@
                             <h6>Nama</h6>
                             <p class="designation"><input class="form-control" type="text" value="{{$lender->name}}" disabled></p>
                             <h6>NIK</h6>
-                            <p class="designation"><input class="form-control" type="text" value="{{$lender->nik}}" disabled></p>
+                            <p class="designation"><input name="nik" class="form-control" type="number" value="{{old('nik',$lender->nik)}}"></p>
                             <h6>Nomor Telepon</h6>
                             <p class="designation"><input name="phone" class="form-control" type="tel" value="{{old('phone',$lender->phone)}}"></p>
                             <h6>Alamat Email</h6>
                             <p class="designation"><input name="email" class="form-control" type="email" value="{{old('email',$user->email)}}"></p>
                             <h6>Alamat</h6>
                             <p class="designation"><input name="street" class="form-control" type="text" value="{{old('street',$lender->street)}}"></p>
-                            <p class="designation">
-                                <select class="form-select form-control" name="district_id" id="district" class="">
-                                    @foreach($districts as $district)
-                                    <option value="{{ $district->id }}" @if(old('district_id', $lender->village->district->id) == $district->id) selected @endif>{{ $district->name }}</option>
-                                    @endforeach
-                                </select>
-                            </p>
-                            <p class="designation">
-                                @php
-                                $selectedVillageId = old('village_id', $lender->village_id);
-                                @endphp
-                                <select class="form-select form-control" name="village_id" id="village" style="cursor: not-allowed;" disabled>
-                                    @foreach ($villages as $village)
-                                    <option value="{{ $village->id }}" data-district="{{ $village->district_id }}" @if($selectedVillageId==$village->id) selected @endif>{{ $village->name }}</option>
-                                    @endforeach
-                                </select>
-                            </p>
+                            <p class="designation"><input type="text" class="form-control" value="{{$lender->village->district->name}}" disabled></p>
+                            <p class="designation"><input type="text" class="form-control" value="{{$lender->village->name}}" disabled></p>
                         </div>
                     </div>
                 </div>

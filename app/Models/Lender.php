@@ -57,13 +57,13 @@ class Lender extends Model
         
     }
 
-    public static function putDataLender($id, $phone, $street, $village_id)
+    public static function putDataLender($id, $nik, $phone, $street)
     {
         $lender = static::find($id);
         $lender->update([
             'phone' => $phone,
+            'nik' => $nik,
             'street' => $street,
-            'village_id' => $village_id
         ]);
     }
     public static function postDataLender($name, $nik, $phone, $street, $village_id, $user_id)

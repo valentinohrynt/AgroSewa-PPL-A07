@@ -23,6 +23,11 @@
             <h2>Riwayat</h2>
             <h6>DAFTAR RIWAYAT PENGAJUAN BANTUAN</h6>
         </div>
+        <div class="row pb-2 justify-content-between">
+            <div class="col-4">
+                <a href="{{route('HalRiwayatPenyewaanKT()')}}" class="btn btn-secondary"><i class="bi-arrow-left-square"></i> Kembali</a>
+            </div>
+        </div>
         <table class="table">
             <thead>
                 <tr>

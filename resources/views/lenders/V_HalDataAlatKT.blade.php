@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group py-2">
                                         <label for="image">Gambar</label>
-                                        <input class="form-control" type="file" id="image" name="product_img">
+                                        <input class="form-control" type="file" id="image" accept="image/*" name="product_img">
                                     </div>
                             </div>
                             <div class="modal-footer">
@@ -159,7 +159,7 @@
                                 </div>
                                 <div class="form-group py-2">
                                     <label for="image">Gambar</label>
-                                    <input class="form-control" type="file" id="image" name="product_img">
+                                    <input class="form-control" type="file" id="image" accept="image/*" name="product_img">
                                 </div>
                             </form>
                         </div>

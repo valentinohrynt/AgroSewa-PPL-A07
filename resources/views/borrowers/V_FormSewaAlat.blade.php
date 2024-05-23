@@ -100,12 +100,23 @@
         var rentDate = new Date(this.value);
         var returnDateInput = document.getElementById('return_date');
 
-        var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
+        var minReturnDate = new Date(rentDate.getTime());
         returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
 
         if (returnDateInput.valueAsDate < minReturnDate) {
             returnDateInput.value = minReturnDate.toISOString().split('T')[0];
         }
     });
+    // document.getElementById('rent_date').addEventListener('change', function() {
+    //     var rentDate = new Date(this.value);
+    //     var returnDateInput = document.getElementById('return_date');
+
+    //     var minReturnDate = new Date(rentDate.getTime() + (24 * 60 * 60 * 1000));
+    //     returnDateInput.setAttribute('min', minReturnDate.toISOString().split('T')[0]);
+
+    //     if (returnDateInput.valueAsDate < minReturnDate) {
+    //         returnDateInput.value = minReturnDate.toISOString().split('T')[0];
+    //     }
+    // });
 </script>
 @endsection

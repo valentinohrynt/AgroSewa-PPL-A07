@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use TCPDF;
-use setasign\Fpdi\Tcpdf\Fpdi;
-use Setasign\Fpdi\PdfParser;
 use App\Models\Lender;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
@@ -52,21 +49,12 @@ class C_HalPengajuanBantuanKT extends Controller
             $pdfFile = $request->file('pdf_file');
             $extension = $request->file('pdf_file')->getClientOriginalExtension();
             $fileName = $equipmentRequestNumber . '_' . $lender->name . '_pengajuanke' . ($lender->equipmentRequests()->count()) . '.' . $extension;
-            $request->file('pdf_file')->storeAs('pdf_files', $fileName);
-            $filePath = storage_path('app/public/pdf_files/' . $fileName);
-            $pdf = new Fpdi();
-            $pageCount = $pdf->setSourceFile($filePath);
-            for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-                $tplId = $pdf->importPage($pageNo);
-                $pdf->AddPage();
-                $pdf->useTemplate($tplId);
+            $directory = storage_path('app/public/pdf_files');
+            if (!file_exists($directory)) {
+                mkdir($directory, 0775, true);
             }
-            $pdf->SetTitle($fileName);
-            $pdf->SetAuthor($lender->name);
-            $pdf->SetSubject('Pengajuan Bantuan');
-            $pdf->Output($filePath, 'F');
+            $request->file('pdf_file')->storeAs('pdf_files', $fileName);
         }
-        
         $equipmentRequest->pdf_file_name = $fileName;
         $equipmentRequest->save();
 

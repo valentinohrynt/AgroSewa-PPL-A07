@@ -49,6 +49,10 @@ class C_FormEditDataAlat extends Controller {
                 if ( imageistruecolor( $imageGD ) ) {
                     $imageName = $product->product_code . '.webp';
                     if ( function_exists( 'imagewebp' ) ) {
+                        $directory = storage_path('app/public/product_img/');
+                        if (!file_exists($directory)) {
+                            mkdir($directory, 0777, true);
+                        }
                         imagewebp( $imageGD, storage_path( 'app/public/product_img/' . $imageName ), 40 );
                     } else {
                         $imageName = $product->product_code . '.' . $extension;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\RentTransaction;
 use Illuminate\Support\Facades\Log;

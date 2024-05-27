@@ -13,6 +13,7 @@ class Product extends Model
         'product_code',
         'product_description',
         'price',
+        'utilization',
         'product_img',
         'lender_id',
         'created_at',

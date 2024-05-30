@@ -61,7 +61,8 @@ class C_HalPenyewaanPetani extends Controller
 
         $product = Product::getDataProductsbyRentTransaction($rentTransaction);
         $productId = $product->id;
-        Product::patchStatusProductstoNo($productId);
+        $utilization = $product->utilization + 0;
+        Product::patchStatusProductstoNo($productId, $utilization);
 
         RentLog::postDataRentLog($id, $totalPrice, $actualReturnDate);
         return back()->with('success', 'Penyewaan berhasil dibatalkan!');

@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Crypt;
 
 class C_HalDataAkunKelompokTaniPemerintah extends Controller
 {
-    public function setHalDataAkunKelompokTaniPemerintah(Request $request, $lender_id)
+    public function setHalDataAkunKelompokTaniPemerintah(Request $request, $lender_id) // fungsi untuk set halaman data akun kelompok tani pemerintah
     {
-        $lenderId = Crypt::decrypt($lender_id);
-        $lender = Lender::getDataLenderbyId($lenderId);
-        $userId = $lender->user_id;
-        $user = User::getDataUserbyId($userId);
-        return view('government.V_HalDataAkunKelompokTaniPemerintah', compact('lender', 'user'));
+        $lenderId = Crypt::decrypt($lender_id); // decrypt id lender 
+        $lender = Lender::getDataLenderbyId($lenderId); // mengambil data lender berdasarkan id
+        $userId = $lender->user_id; // mengambil id user
+        $user = User::getDataUserbyId($userId); // mengambil data user berdasarkan id
+        return view('government.V_HalDataAkunKelompokTaniPemerintah', compact('lender', 'user')); // mengembalikan view V_HalDataAkunKelompokTaniPemerintah beserta data lender dan user
     }
 }

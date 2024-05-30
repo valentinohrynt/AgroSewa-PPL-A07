@@ -13,16 +13,15 @@ use Illuminate\Support\Facades\Validator;
 
 class C_FormTambahAkunKelompokTaniPemerintah extends Controller
 {
-    public function setFormTambahAkunKelompokTaniPemerintah()
+    public function setFormTambahAkunKelompokTaniPemerintah() // fungsi ini untuk menampilkan halaman form tambah akun kelompok tani oleh pemerintah
     {
-        $districts = District::orderBy('name')->get();
-        $villages = Village::orderBy('name')->get();
-        return view('government.V_FormTambahAkunKelompokTaniPemerintah', compact('villages', 'districts'));
+        $districts = District::orderBy('name')->get(); // mengambil data kecamatan untuk mengisi dropdown / dropbox
+        $villages = Village::orderBy('name')->get(); // mengambil data desa untuk mengisi dropdown / dropbox
+        return view('government.V_FormTambahAkunKelompokTaniPemerintah', compact('villages', 'districts')); // mengembalikan view V_FormTambahAkunKelompokTaniPemerintah
     }
-    public function SimpanTambahAkunKelompokTani(Request $request)
+    public function SimpanTambahAkunKelompokTani(Request $request) // fungsi ini untuk menyimpan data akun kelompok tani
     {
-
-        $messages = [
+        $messages = [  // validasi data yang diinputkan
             'name.required' => 'Nama harus diisi.',
             'email.required' => 'Alamat Email harus diisi.',
             'phone.required' => 'Nomor HP harus diisi.',
@@ -37,35 +36,37 @@ class C_FormTambahAkunKelompokTaniPemerintah extends Controller
             'password.min' => 'Kata sandi minimal berisi 8 karakter.'
         ];
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'nik' => 'required',
-            'email' => ['required', 'email', Rule::unique('users')],
-            'phone' => ['required', 'regex:/^(\+62|0)\d{9,12}$/'],
-            'street' => 'required',
-            'village_id' => 'required',
-            'password' => 'required|min:8',
-            'username' => 'required|unique:users',
+        $validator = Validator::make($request->all(), [ // validasi inputan user
+            'name' => 'required', // harus diisi
+            'nik' => 'required', // harus diisi
+            'email' => ['required', 'email', Rule::unique('users')], // validasi email, dimana email harus diisi, valid berbentuk email (contoh: 4hW9m@example.com), dan unique (email harus unik)
+            'phone' => ['required', 'regex:/^(\+62|0)\d{9,12}$/'], // validasi nomor HP, dimana nomor HP harus diisi, dan harus dimulai dengan 0 atau +62
+            'street' => 'required', // harus diisi
+            'village_id' => 'required', // harus diisi
+            'password' => 'required|min:8', // harus diisi, minimal 8 karakter
+            'username' => 'required|unique:users', // validasi username, dimana username harus diisi, dan unique (username harus unik)
         ], $messages);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+        if ($validator->fails()) { // jika validasi gagal
+            return redirect()->back()->withErrors($validator)->withInput(); // kembalikan ke halaman form
         }
-        $Email = $request->input('email');
-        $Username = $request->input('username');
-        $PasswordUnhashed = $request->input('password');
 
-        $roleId = 4;
-        $user = User::postDataUser($Username, $PasswordUnhashed, $Email, $roleId);
+        // jika validasi sukses
+        $Email = $request->input('email'); // mengambil inputan email
+        $Username = $request->input('username'); // mengambil inputan username
+        $PasswordUnhashed = $request->input('password'); // mengambil inputan password
 
-        $userId = $user;
-        $name = $request->input('name');
-        $nik = $request->input('nik');
-        $phone = $request->input('phone');
-        $street = $request->input('street');
-        $village_id = $request->input('village_id');
-        Lender::postDataLender($name, $nik, $phone, $street, $village_id, $userId);
+        $roleId = 4; // role id 4 = lender
+        $user = User::postDataUser($Username, $PasswordUnhashed, $Email, $roleId); // memanggil fungsi postDataUser (membuat data user baru) 
 
-        return redirect()->back()->with('success', 'Data Akun Kelompok Tani berhasil dibuat');
+        $userId = $user; // mengambil id user
+        $name = $request->input('name'); // mengambil inputan name
+        $nik = $request->input('nik'); // mengambil inputan nik
+        $phone = $request->input('phone'); // mengambil inputan phone
+        $street = $request->input('street'); // mengambil inputan street
+        $village_id = $request->input('village_id'); // mengambil inputan village_id
+        Lender::postDataLender($name, $nik, $phone, $street, $village_id, $userId); // memanggil fungsi postDataLender (membuat data lender baru)
+
+        return redirect()->back()->with('success', 'Data Akun Kelompok Tani berhasil dibuat'); // kembalikan ke halaman form tambah akun kelompok tani pemerintah dengan pemberitahuan data akun kelompok tani berhasil dibuat
     }
 }

@@ -9,29 +9,28 @@ use App\Models\EquipmentRequestLog;
 
 class C_DashboardPemerintah extends Controller
 {
-    public function setDashboardPemerintah()
+    public function setDashboardPemerintah() // set dashboard pemerintah
     {
+        $countofApply = EquipmentRequest::getDataEquipmentRequest()->count(); // menghitung semua equipment request yang sedang diproses
+        $countofDoneApply = EquipmentRequestLog::getDataEquipmentRequestLog()->count(); // menghitung semua equipment request log (riwayat)
+        $countofBorrowers = Borrower::getAllDataBorrower()->count(); // menghitung semua borrower
+        $countofLenders = Lender::getAllDataLender()->count(); // menghitung semua lender
 
-        $countofApply = EquipmentRequest::getDataEquipmentRequest()->count();
-        $countofDoneApply = EquipmentRequestLog::getDataEquipmentRequestLog()->count();
-        $countofBorrowers = Borrower::getAllDataBorrower()->count();
-        $countofLenders = Lender::getAllDataLender()->count();
-
-        return view('government.V_DashboardPemerintah', compact('countofApply', 'countofDoneApply', 'countofBorrowers', 'countofLenders'));
+        return view('government.V_DashboardPemerintah', compact('countofApply', 'countofDoneApply', 'countofBorrowers', 'countofLenders')); // mengembalikan view bersama dengan data - data di atas
     }
-    public function HalPengajuanBantuanPemerintah()
+    public function HalPengajuanBantuanPemerintah() // set halaman pengajuan bantuan pemerintah
     {
         return redirect('HalPengajuanBantuanPemerintah');
     }
-    public function HalRiwayatPemerintah()
+    public function HalRiwayatPemerintah() // set halaman riwayat pemerintah
     {
         return redirect('HalRiwayatPemerintah');
     }
-    public function HalProfilPemerintah()
+    public function HalProfilPemerintah() // set halaman profil pemerintah
     {
         return redirect('HalProfilPemerintah');
     }
-    public function HalAkunKelompokTaniPemerintah()
+    public function HalAkunKelompokTaniPemerintah() // set halaman akun kelompok tani pemerintah
     {
         return redirect('HalAkunKelompokTaniPemerintah');
     }

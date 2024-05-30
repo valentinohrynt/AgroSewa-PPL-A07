@@ -18,54 +18,54 @@ use Illuminate\Auth\Events\PasswordReset;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function login() //untuk menampilkan view login
     {
         return view("V_Login");
     }
 
-    public function register()
+    public function register() //untuk menampilkan view register
     {
         return view("V_Register");
     }
 
-    public function authenticating(Request $request)
+    public function authenticating(Request $request) //untuk memproses login
     {
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required'],
-        ]);
+        ]); //mengecek username dan password yang diinputkan oleh user (yang ini cek null / tidak null, karena kriteria nya 'required')
 
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->status == 'inactive') {
-                return redirect('blocked');
-            } else {
-                if (Auth::user()->role_id == 1) {
-                    return redirect('DashboardSA');
+        if (Auth::attempt($credentials)) { // ini untuk cek kredensial login sesuai tidak dengan yang di database
+            if (Auth::user()->status == 'inactive') { // perkondisian jika status user inactive
+                return redirect('blocked'); // maka redirect ke route bernama blocked
+            } else { // jika status user active
+                if (Auth::user()->role_id == 1) { // cek role_id, jika role_id nya 1 (SuperAdmin)
+                    return redirect('DashboardSA'); // redirect ke route DashboardSA
                 }
-                if (Auth::user()->role_id == 2) {
-                    return redirect('DashboardPemerintah');
+                if (Auth::user()->role_id == 2) { // cek role_id, jika role_id nya 2 (Pemerintah)
+                    return redirect('DashboardPemerintah'); // redirect ke route DashboardPemerintah
                 }
-                if (Auth::user()->role_id == 3) {
-                    return redirect('HomepagePetani');
+                if (Auth::user()->role_id == 3) { // cek role_id, jika role_id nya 3 (Petani)
+                    return redirect('HomepagePetani'); // redirect ke route HomepagePetani
                 }
-                if (Auth::user()->role_id == 4) {
-                    return redirect('HomepageKT');
+                if (Auth::user()->role_id == 4) { // cek role_id, jika role_id nya 4 (Kelompok Tani)
+                    return redirect('HomepageKT'); // redirect ke route HomepageKT
                 }
             }
         }
-        Session::flash('status', 'failed');
-        Session::flash('message', 'Username atau Password salah, silahkan ulangi kembali');
-        return redirect('login');
+        Session::flash('status', 'failed'); // jika kredensial login tidak sesuai
+        Session::flash('message', 'Username atau Password salah, silahkan ulangi kembali'); // set kirim atau show messagenya
+        return redirect('login'); // kembali ke halaman login
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request) //untuk logout
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('login');
+        Auth::logout(); //Auth ini bawaan dari Laravel, untuk handle hal autentikasi. Sedangkan logout ini ya logout, keluar dari sistem
+        $request->session()->invalidate(); //menghilangkan session
+        $request->session()->regenerateToken(); //mengenerate token
+        return redirect('login'); //kembali ke halaman login
     }
-    public function blocked(Request $request)
+    public function blocked(Request $request) //untuk menampilkan view blocked (kurang lebih sama seperti logout, cuma ketambahan pesan akun dinonaktifkan saja)
     {
         Auth::logout();
         $request->session()->invalidate();
@@ -73,19 +73,18 @@ class AuthController extends Controller
         return redirect('login')->with('error', 'Akun anda sedang di nonaktifkan, silahkan hubungi admin');
     }
 
-    public function showDistrictsandVillages()
+    public function showDistrictsandVillages() //untuk mengisi dropdown pemilihan kecamatan, desa, dan kelompok tani di halaman register
     {
-        $districts = District::orderBy('name')->get();
-        $villages = Village::orderBy('name')->get();
-        $lenders = Lender::orderBy('name')->get();
+        $districts = District::orderBy('name')->get(); //mengambil data kecamatan
+        $villages = Village::orderBy('name')->get(); //mengambil data desa
+        $lenders = Lender::orderBy('name')->get(); //mengambil data kelompok tani
 
-        return view("V_Register", compact("districts", "villages", "lenders"));
+        return view("V_Register", compact("districts", "villages", "lenders")); //mengembalikan ke halaman register
     }
 
-    public function registerProcess(Request $request)
+    public function registerProcess(Request $request) //untuk proses register
     {
-
-        $messages = [
+        $messages = [ // mengatur pesan error saat validasi
             'password.required' => 'Kata Sandi harus diisi.',
             'phone.required' => 'Nomor telepon harus diisi.',
             'street.required' => 'Nama Jalan harus diisi.',
@@ -102,7 +101,7 @@ class AuthController extends Controller
             'email.unique' => 'Email sudah terdaftar, silahkan gunakan email lain',
         ];
 
-        $validated = $request->validate([
+        $validated = $request->validate([ // validasi atau cek inputan user
             'username' => 'required|unique:users|max:255',
             'password' => 'required|min:8|confirmed',
             'name' => 'required',
@@ -115,15 +114,15 @@ class AuthController extends Controller
             'village_id' => 'required',
         ], $messages);
 
-        $request->password = Hash::make($request->password);
-        $user = User::create(
+        $request->password = Hash::make($request->password); //enkripsi password
+        $user = User::create( //membuat user dengan inputan user berupa array/list berisi username, password, dan email
             [
-                'username' => $validated['username'],
+                'username' => $validated['username'], 
                 'password' => $validated['password'],
                 'email' => $validated['email'],
             ]
         );
-        Borrower::create(
+        Borrower::create( // membuat data petani baru dengan inputan user berupa array/list berisi name, phone, nik, street, land_area, village_id, user_id, dan lender_id
             [
                 'name' => $validated['name'],
                 'phone' => $validated['phone'],
@@ -135,55 +134,55 @@ class AuthController extends Controller
                 'lender_id' => $validated['lender_id'],
             ]
         );
-        Session::flash('status', 'success');
-        Session::flash('message', 'Registrasi berhasil, silahkan login.');
-        return redirect('login');
+        Session::flash('status', 'success'); // menampilkan pesan success
+        Session::flash('message', 'Registrasi berhasil, silahkan login.'); // set pesan ketika sukses register
+        return redirect('login'); // kembali ke halaman login
     }
 
-    public function forgotPassword()
+    public function forgotPassword() //untuk menampilkan halaman lupa password
     {
         return view('auth.forgot-password');
     }
 
-    public function forgotPasswordProcess(Request $request)
+    public function forgotPasswordProcess(Request $request) // untuk proses lupa password
     {
-        $request->validate(['email' => 'required|email']);
+        $request->validate(['email' => 'required|email']); // validasi atau cek inputan user
 
-        $status = Password::sendResetLink(
-            $request->only('email')
+        $status = Password::sendResetLink( // mengirim email berisi link untuk proses lupa password
+            $request->only('email') // mengambil email
         );
-        return $status === Password::RESET_LINK_SENT
-            ? back()->with(['status' => __($status)])
-            : back()->withErrors(['email' => __($status)]);
+        return $status === Password::RESET_LINK_SENT // jika email terkirim
+            ? back()->with(['status' => __($status)]) // kembalikan ke halaman lupa password
+            : back()->withErrors(['email' => __($status)]); // kembalikan ke halaman lupa password
     }
 
-    public function resetPassword(string $token)
+    public function resetPassword(string $token) //untuk menampilkan halaman reset password
     {
-        return view('auth.reset-password', ['token' => $token]);
+        return view('auth.reset-password', ['token' => $token]); // return ke halaman reset password dengan token lupa password
     }
 
-    public function resetPasswordProcess(Request $request)
+    public function resetPasswordProcess(Request $request) //untuk proses reset password
     {
-        $request->validate([
+        $request->validate([ // validasi atau cek inputan user
             'token' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8|confirmed',
         ]);
-        $status = Password::reset(
+        $status = Password::reset( // proses reset password
             $request->only('email', 'password', 'password_confirmation', 'token'),
-            function (User $user, string $password) {
-                $user->forceFill([
-                    'password' => Hash::make($password)
-                ])->setRememberToken(Str::random(60));
+            function (User $user, string $password) { // fungsi reset password
+                $user->forceFill([ // mengisi user
+                    'password' => Hash::make($password) // enkripsi password
+                ])->setRememberToken(Str::random(60)); // membuat token
 
-                $user->save();
+                $user->save(); // menyimpan
 
-                event(new PasswordReset($user));
+                event(new PasswordReset($user)); // event password reset
             }
         );
 
-        return $status === Password::PASSWORD_RESET
-            ? redirect()->route('login')->with('status', __($status))
-            : back()->withErrors(['email' => [__($status)]]);
+        return $status === Password::PASSWORD_RESET // jika password terreset
+            ? redirect()->route('login')->with('status', __($status)) // kembalikan ke halaman login
+            : back()->withErrors(['email' => [__($status)]]); // kembalikan ke halaman reset password
     }
 }

@@ -61,8 +61,8 @@ class Lender extends Model
     {
         $lender = static::find($id);
         $lender->update([
-            'phone' => $phone,
             'nik' => $nik,
+            'phone' => $phone,
             'street' => $street,
         ]);
     }

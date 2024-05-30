@@ -55,7 +55,7 @@ class C_FormEditAkunKelompokTaniPemerintah extends Controller
             'village_id' => 'required', // village_id harus diisi
             'password' => $request->filled('password') ? 'min:8' : '', // password harus diisi (opsional), jika ada / diisi oleh user maka harus minimal 8 karakter 
             'governmentPassword' => 'required', // governmentPassword harus diisi (password milik pemerintah yang sedang mengubah data kelompok tani)
-            'username' => ['required', Rule::unique('users')->ignore($userId)] // username harus diisi, harus unique (tidak boleh sama dengan username milik akun lainnya)
+            'username' => ['required', Rule::unique('users')->ignore($lender_userId)] // username harus diisi, harus unique (tidak boleh sama dengan username milik akun lainnya)
         ], $messages);
 
         if ($validator->fails()) { // jika validasi gagal / ada inputan yang tidak memenuhi kriteria yang ditentukan pada $validator
@@ -64,12 +64,12 @@ class C_FormEditAkunKelompokTaniPemerintah extends Controller
         if (Hash::check($request->input('governmentPassword'), $signedUser->password)) { // jika password milik pemerintah yang sedang mengubah data kelompok tani cocok dengan password milik user yang sedang login
             $phone = $request->input('phone'); // mendapatkan inputan phone (nomor telepon)
             $street = $request->input('street'); // mendapatkan inputan street (alamat)
-            $village_id = $request->input('village_id'); // mendapatkan inputan village_id (desa)
-            Lender::putDataLender($lenderId, $phone, $street, $village_id); // update data kelompok tani
+            $nik = $lender ->nik; // mendapatkan nilai nik (nomor induk kependudukan)
+            Lender::putDataLender($lenderId, $nik, $phone, $street); // update data kelompok tani
             if ($request->filled('password') || $request->input('username') !== $user->username) { // jika password diisi / ada inputan username yang berbeda dengan username milik kelompok tani yang sedang diedit datanya
                 $newEmail = $request->input('email'); // mendapatkan inputan email
                 $newUsername = $request->input('username'); // mendapatkan inputan username
-                $newPassword = $request->input('newPassword'); // mendapatkan inputan password
+                $newPassword = $request->input('password'); // mendapatkan inputan password
                 User::putDataUser($lender_userId, $newUsername, $newPassword, $newEmail); // update data user
             }
             return redirect()->back()->with('success', 'Sukses, perubahan data akun berhasil disimpan'); // kembalikan ke halaman edit akun kelompok tani pemerintah pesan berhasil
